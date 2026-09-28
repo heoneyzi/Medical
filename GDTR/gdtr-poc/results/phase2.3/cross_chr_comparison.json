@@ -1,0 +1,89 @@
+{
+  "phase": "phase2.3",
+  "gamma_cos": 0.39663,
+  "subsample_per_context": 200000,
+  "per_context": {
+    "intergenic": {
+      "chr17_n": 59974303,
+      "chr22_n": 31396515,
+      "chr17_mean_c": 28.626085,
+      "chr22_mean_c": 28.74747,
+      "chr17_median_c": 31.0,
+      "chr22_median_c": 31.0,
+      "delta_mean": -0.12138500000000008,
+      "ks_stat": 0.01354500000000003,
+      "ks_p": 2.2948294770598035e-16
+    },
+    "intron": {
+      "chr17_n": 94927829,
+      "chr22_n": 41477463,
+      "chr17_mean_c": 27.68831,
+      "chr22_mean_c": 27.812555,
+      "chr17_median_c": 31.0,
+      "chr22_median_c": 31.0,
+      "delta_mean": -0.12424499999999838,
+      "ks_stat": 0.02145000000000008,
+      "ks_p": 2.122389093988669e-40
+    },
+    "coding_exon": {
+      "chr17_n": 6173026,
+      "chr22_n": 3257646,
+      "chr17_mean_c": 28.5047,
+      "chr22_mean_c": 28.29164,
+      "chr17_median_c": 31.0,
+      "chr22_median_c": 31.0,
+      "delta_mean": 0.2130599999999987,
+      "ks_stat": 0.01443999999999998,
+      "ks_p": 1.5303426515461134e-18
+    },
+    "5utr": {
+      "chr17_n": 359776,
+      "chr22_n": 147192,
+      "chr17_mean_c": 29.326205,
+      "chr22_mean_c": 28.99571308223273,
+      "chr17_median_c": 31.0,
+      "chr22_median_c": 32.0,
+      "delta_mean": 0.33049191776727227,
+      "ks_stat": 0.026968687700418492,
+      "ks_p": 5.248228985232482e-54
+    },
+    "3utr": {
+      "chr17_n": 3102136,
+      "chr22_n": 1216058,
+      "chr17_mean_c": 27.748925,
+      "chr22_mean_c": 27.73762,
+      "chr17_median_c": 31.0,
+      "chr22_median_c": 31.0,
+      "delta_mean": 0.01130500000000012,
+      "ks_stat": 0.01234500000000005,
+      "ks_p": 1.1476925001778188e-13
+    },
+    "splice_donor": {
+      "chr17_n": 490458,
+      "chr22_n": 187236,
+      "chr17_mean_c": 25.52432,
+      "chr22_mean_c": 25.567791450362108,
+      "chr17_median_c": 31.0,
+      "chr22_median_c": 31.0,
+      "delta_mean": -0.043471450362108754,
+      "ks_stat": 0.01876636672434795,
+      "ks_p": 5.151336175811335e-30
+    },
+    "splice_acceptor": {
+      "chr17_n": 488472,
+      "chr22_n": 185890,
+      "chr17_mean_c": 26.06436,
+      "chr22_mean_c": 25.688003658077356,
+      "chr17_median_c": 31.0,
+      "chr22_median_c": 31.0,
+      "delta_mean": 0.37635634192264433,
+      "ks_stat": 0.025449031685405354,
+      "ks_p": 1.2251840571997344e-54
+    }
+  },
+  "replication_verdict": {
+    "chr17_intron_gt_exon": false,
+    "chr22_intron_gt_exon": false,
+    "qualitative_replicates": false
+  }
+}

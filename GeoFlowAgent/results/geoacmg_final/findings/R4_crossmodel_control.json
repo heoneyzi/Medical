@@ -1,0 +1,52 @@
+{
+  "split": "dev",
+  "unit": "gene",
+  "n_tasks": 584,
+  "n_runs": 19,
+  "runs": [
+    "cosine-17",
+    "cosine-29",
+    "cosine-43",
+    "cosine-59",
+    "cosine-71",
+    "directed_quasimetric-17",
+    "directed_quasimetric-29",
+    "directed_quasimetric-43",
+    "euclidean-17",
+    "euclidean-29",
+    "euclidean-43",
+    "euclidean-59",
+    "euclidean-71",
+    "pair_mlp-17",
+    "pair_mlp-29",
+    "pair_mlp-43",
+    "poincare-17",
+    "poincare-29",
+    "poincare-43"
+  ],
+  "note": "일치쌍(A=B)과 불일치쌍(A≠B)에서 같은 통계를 재고 차이를 구간으로 낸다. 둘 다 높으면 잰 것은 모델 사이의 관계가 아니라 과제 난이도다.",
+  "relation_to_c5": "이것은 기존 c5_crossmodel_control.json 의 **교정이 아니라 독립 확인**이다. 통계량이 다르다(상관계수 vs 정렬×정책 곱). 앞서 'c5 는 int8 로 접힌 npz 를 평균해 같은 편향 위에 있었다'고 적었으나 그 주장은 **지지되지 않는다** — R2 의 readout 전 행에서 동점이 0건이고 참조 규약과 동점 보정 규약의 차이가 정확히 0 이다. 동점 보정은 c5 의 값을 바꾸지 않았을 것이다. 정정해 남긴다.",
+  "report": {
+    "statistic_name": "ordering_x_policy_product (tie-corrected ordering)",
+    "matched": 0.6354097514176955,
+    "matched_ci": [
+      0.6017254903435414,
+      0.6619641603589098
+    ],
+    "mismatched": 0.6349852953693228,
+    "mismatched_ci": [
+      0.6008520383064698,
+      0.6615062524746271
+    ],
+    "difference": 0.0004244560483726942,
+    "difference_ci": [
+      0.00016943190389099173,
+      0.0007655441186411068
+    ],
+    "n_units": 47,
+    "excludes_zero": true
+  },
+  "source": "per-pair 마진에서 재계산 (store 불필요)",
+  "stage": "R4_crossmodel_control",
+  "status": "complete"
+}

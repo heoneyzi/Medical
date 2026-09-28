@@ -1,0 +1,5 @@
+{
+  "figure_id": "F5",
+  "title": "BRCA1 region UR-gDTR profile",
+  "caption": "BRCA1 region (chr13:43,044,295-43,170,245, ~125 kb). HyenaDNA-medium-160k sliding window=6 kb stride=500 bp (n_windows=252). Tracks: (a) GENCODE v44 canonical BRCA1 transcript (ENST00000357654); (b) UR-gDTR settling depth (primary, gamma_cos=0.508); (c) JSD-gDTR (auxiliary)."
+}

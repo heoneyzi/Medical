@@ -1,0 +1,70 @@
+# Runnable offline smoke-test config (raw-counts space, matches make-synth).
+# 1) python -m vcc_baselines make-synth --out data_synth
+# 2) python -m vcc_baselines ladder  --config configs/synthetic.yaml
+#    python -m vcc_baselines predict --config configs/synthetic.yaml --method gwps_weighted --prep
+# Paths are relative to THIS file's dir (configs/).
+
+run_name: synthetic
+output_dir: ../outputs
+
+data:
+  contexts_dir: ../data_synth/validation
+  control_h5ad: controls.h5ad
+  truth_h5ad: truth.h5ad
+  targets: ../data_synth/validation/targets.csv
+  perts: ../data_synth/validation/pert_counts.csv
+  gene_list: ../data_synth/gene_names.csv
+  pert_col: target_gene
+  control_label: non-targeting
+  context_col: context
+  celltype_col: celltype
+
+gwps:
+  enabled: true
+  sources:
+    k562: ../data_synth/gwps/k562_pseudobulk.h5ad
+    rpe1: ../data_synth/gwps/rpe1_pseudobulk.h5ad
+  pert_col: gene
+  control_label: non-targeting
+  counts_space: true
+  cache: ../data_synth/gwps/effect_library.npz
+
+esm2:
+  enabled: true            # offline: deterministic random fallback (plumbing only)
+  fasta: ""
+  allow_random_fallback: true
+  knn_k: 5
+
+embed:
+  context_embeddings: ""   # provide npz of STATE-SE/STACK embeddings for F6/F7
+
+predict:
+  method: gwps_weighted
+  effect: logfc            # 'logfc' (D2) or 'additive' (D1)
+  generator: multinomial   # 'multinomial' (G0) | 'poisson' (G1) | 'nbinom' (G2)
+  cells_per_pert: 50       # matches synthetic pert_counts n_cells (real: 400)
+  include_controls: false  # submission excludes controls
+  similarity_space: raw    # 'raw' | 'pca' | 'embed'
+  pca_components: 10
+  scale: 1.0               # D2b logFC magnitude sweep
+  shrink: none             # D5: none | context | targetexpr | both
+  tau: 0.10
+  knn_k: 5
+  nb_theta: 10.0
+  clip_negative: true
+  seed: 0
+
+submit:
+  packer: vcc              # 'vcc' (official) | 'cell-eval' | 'auto'
+  gene_dim: 400            # == synthetic n_genes (real: 18533)
+  max_cell_dim: 400000
+  max_counts_per_cell: 1000000
+  encoding: 32
+  require_counts: true
+  reject_controls: true
+  verify_targets: true
+  check_cell_counts: true
+
+eval:
+  profile: full
+  num_threads: 4

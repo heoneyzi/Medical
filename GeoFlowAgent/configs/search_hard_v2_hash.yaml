@@ -1,0 +1,220 @@
+# Development-only compositional stress benchmark. Synthetic by construction:
+# valid for pipeline/model diagnostics, never for biomedical claims.
+seed: 17
+device: cuda:0
+project_root: ..
+
+paths:
+  raw_dir: $GEOFLOW_RUNS/search_hard_v2/raw
+  processed_dir: $GEOFLOW_RUNS/search_hard_v2/development/processed
+  cache_dir: $GEOFLOW_RUNS/search_hard_v2/development/cache_hash
+  embedding_report_dir: $GEOFLOW_RUNS/search_hard_v2/development/reports/embeddings_hash
+  quality_report: $GEOFLOW_RUNS/search_hard_v2/development/reports/data_quality.json
+  value_output_dir: $GEOFLOW_RUNS/search_hard_v2/development/checkpoints/value_hash_small
+  dagger_output_dir: $GEOFLOW_RUNS/search_hard_v2/development/checkpoints/dagger_hash_small
+  state_flow_output_dir: $GEOFLOW_RUNS/search_hard_v2/development/checkpoints/state_flow_hash_small
+  geometry_comparison_dir: $GEOFLOW_RUNS/search_hard_v2/development/checkpoints/geometry_hash_small
+  search_agent_report_dir: $GEOFLOW_RUNS/search_hard_v2/development/reports/search_agent_hash_small
+  run_summary: $GEOFLOW_RUNS/search_hard_v2/development/run_summary_hash_small.json
+  search_prepare_progress_backup: $GEOFLOW_RESULTS/search_hard_v2/development/exact_search_progress.json
+
+synthetic_fixture:
+  enabled: true
+  difficulty: hard_v2
+  task_count: 240
+
+search_preprocessing:
+  max_depth: 18
+  max_states: 20000
+  top_k_paths: 8
+  near_optimal_slack: 0.0
+  include_unreachable: true
+  require_complete_graph: true
+  require_reachable_root: true
+  split_group_kinds: [case, entity, template, source, release]
+  costs:
+    call: 1.0
+    failure: 2.0
+    redundancy: 0.5
+    status: {empty: 1.0, failure: 2.0}
+
+data_quality:
+  min_tasks: 240
+  min_tasks_per_split: {train: 144, dev: 48, test: 48}
+  min_workflow_families: 20
+  min_entities: 240
+  min_sequence_contexts: 240
+  min_templates: 60
+  min_topologies: 20
+  min_sources: 3
+  min_source_releases: 3
+  min_verifier_coverage: 1.0
+  split_group_keys: [case, entity, template, source, release]
+  require_complete_split_group_metadata: true
+  require_search_supervision: true
+  min_known_applicable_action_fraction: 1.0
+  max_unknown_applicable_action_fraction: 0.0
+  min_branch_state_fraction: 0.20
+  min_branch_label_coverage: 1.0
+  min_nontrivial_regret_fraction: 0.20
+  min_multi_path_state_fraction: 0.15
+  max_oracle_contract_collapse_fraction: 0.65
+  min_search_complete_fraction: 1.0
+  max_incomplete_or_unknown_state_fraction: 0.0
+  allow_synthetic: true
+  scope_overrides:
+    sealed_development:
+      min_tasks: 192
+      min_tasks_per_split: {train: 144, dev: 48}
+      min_entities: 192
+      min_sequence_contexts: 192
+      min_templates: 40
+      min_sources: 2
+      min_source_releases: 2
+
+embedding:
+  batch_size: 512
+  storage_dtype: float32
+  views:
+    general:
+      kind: prototype
+      query_encoder: &general_hash
+        backend: hash
+        dim: 128
+        salt: search-hard-v2-general
+        min_ngram: 1
+        max_ngram: 2
+      document_encoder: *general_hash
+      example_fields: [query, goal, state, history]
+      tool_fields: [description, contract]
+      encode_background: true
+    biomedical:
+      kind: prototype
+      query_encoder: &biomedical_hash
+        backend: hash
+        dim: 128
+        salt: search-hard-v2-biomedical
+        min_ngram: 1
+        max_ngram: 3
+      document_encoder: *biomedical_hash
+      example_fields: [query, goal, state, history]
+      tool_fields: [description, contract]
+      encode_background: true
+    entity_aux:
+      kind: state_only
+      snapshot_field: entities
+      encode_pairs: false
+      query_encoder:
+        backend: hash
+        dim: 64
+        salt: search-hard-v2-entity
+        min_ngram: 1
+        max_ngram: 2
+      example_fields: [entities]
+      tool_fields: []
+      encode_background: false
+    sequence_aux:
+      kind: state_only
+      snapshot_field: sequence
+      encode_pairs: false
+      query_encoder:
+        backend: hash
+        dim: 64
+        salt: search-hard-v2-dna
+        min_ngram: 1
+        max_ngram: 1
+      example_fields: [sequence]
+      tool_fields: []
+      encode_background: false
+
+value_training:
+  structured_dim: 64
+  shared_dim: 64
+  hidden_dim: 128
+  energy: euclidean
+  energy_rank: 32
+  dropout: 0.10
+  learning_rate: 0.0007
+  weight_decay: 0.0001
+  batch_size: 512
+  epochs: 70
+  patience: 14
+  max_states_per_task: 64
+  supervision: boltzmann
+  action_temperature: 1.0
+  regret_temperature: 0.25
+  ranking_margin: 0.05
+  gradient_clip: 1.0
+  view_dropout: 0.15
+  embedding_noise_std: 0.005
+  hard_replay_warmup: 5
+  hard_replay_fraction: 0.25
+  threshold_grid: [0.1, 0.3, 0.5, 0.7, 0.9]
+  bootstrap_reps: 1000
+  loss_weights:
+    action: 1.0
+    q: 1.0
+    value: 0.5
+    regret: 0.5
+    bellman: 0.5
+    transition: 0.25
+    action_reachability: 1.0
+    state_reachability: 0.5
+    completion: 1.0
+
+search_dagger:
+  enabled: true
+  rounds: 3
+  replay_fraction: 0.50
+  hard_example_multiplier: 3
+  max_steps: 18
+  stop_contract_guard: true
+  hard_reachability_guard: true
+
+state_flow_training:
+  structured_dim: 64
+  dim: 64
+  hidden_dim: 128
+  layers: 2
+  heads: 8
+  dropout: 0.10
+  projection_seed: 17
+  tool_mix: 0.35
+  max_plan_length: 18
+  path_beta: 1.0
+  learning_rate: 0.0007
+  weight_decay: 0.0001
+  batch_size: 128
+  epochs: 70
+  patience: 14
+  steps_per_epoch: 36
+  pad_weight: 0.05
+  transition_temperature: 0.07
+  gradient_clip: 1.0
+  nfe: 16
+  evaluation_samples_per_state: 4
+  stop_threshold_grid: [0.1, 0.3, 0.5, 0.7, 0.9]
+  resume: true
+  progress_backup_path: $GEOFLOW_RESULTS/search_hard_v2/development/state_flow_hash_small_progress.json
+  loss_weights:
+    flow_matching: 1.0
+    endpoint: 0.5
+    stop: 0.75
+    transition: 0.75
+
+geometry_comparison:
+  energies: [euclidean, asymmetric_bilinear, directed_quasimetric]
+  seeds: [17, 29, 43]
+
+search_agent_evaluation:
+  max_steps: 18
+  runtime_embedding_policy: cache_or_encode
+  retry_limit_per_tool: 1
+  bootstrap_reps: 1000
+  perturbations:
+    - name: annotation_primary_empty
+      task_id: "*"
+      tool_id: annotate_primary
+      kind: empty_result
+      once: true
+      message: The primary annotation source returned an empty result; use the alternate source.

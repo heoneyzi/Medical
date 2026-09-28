@@ -1,0 +1,129 @@
+{
+  "title": "에너지 5종의 순위가 읽는 방법에 의존하는가",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "energies": [
+    "cosine",
+    "euclidean",
+    "directed_quasimetric",
+    "poincare",
+    "pair_mlp"
+  ],
+  "split": "dev",
+  "test_reported": false,
+  "by_readout": {
+    "own_energy": {
+      "accuracies": {
+        "cosine": 0.7366723903606399,
+        "euclidean": 0.5869942598180196,
+        "directed_quasimetric": 0.783691476406839,
+        "poincare": 0.7684612684930667,
+        "pair_mlp": 0.8265838497612772
+      },
+      "best": "pair_mlp",
+      "order": [
+        "pair_mlp",
+        "directed_quasimetric",
+        "poincare",
+        "cosine",
+        "euclidean"
+      ]
+    },
+    "cos": {
+      "accuracies": {
+        "cosine": 0.7366723903606399,
+        "euclidean": 0.566572685024885,
+        "directed_quasimetric": 0.6289680156212092,
+        "poincare": 0.4200414084526947,
+        "pair_mlp": 0.49550937343216706
+      },
+      "best": "cosine",
+      "order": [
+        "cosine",
+        "directed_quasimetric",
+        "euclidean",
+        "pair_mlp",
+        "poincare"
+      ]
+    },
+    "l2": {
+      "accuracies": {
+        "cosine": 0.5799114829549334,
+        "euclidean": 0.5869942598180196,
+        "directed_quasimetric": 0.5764584231340875,
+        "poincare": 0.6055715332198016,
+        "pair_mlp": 0.4994735614802461
+      },
+      "best": "poincare",
+      "order": [
+        "poincare",
+        "euclidean",
+        "cosine",
+        "directed_quasimetric",
+        "pair_mlp"
+      ]
+    },
+    "neg_dot": {
+      "accuracies": {
+        "cosine": 0.735819724838712,
+        "euclidean": 0.5428134664622153,
+        "directed_quasimetric": 0.6242595118136574,
+        "poincare": 0.39385609738288213,
+        "pair_mlp": 0.4925580201200799
+      },
+      "best": "cosine",
+      "order": [
+        "cosine",
+        "directed_quasimetric",
+        "euclidean",
+        "pair_mlp",
+        "poincare"
+      ]
+    },
+    "cos_std": {
+      "accuracies": {
+        "cosine": 0.7536903693549184,
+        "euclidean": 0.7244689095067495,
+        "directed_quasimetric": 0.6926776759447038,
+        "poincare": 0.7370115722257159,
+        "pair_mlp": 0.6917190160899397
+      },
+      "best": "cosine",
+      "order": [
+        "cosine",
+        "poincare",
+        "euclidean",
+        "directed_quasimetric",
+        "pair_mlp"
+      ]
+    },
+    "cos_whiten": {
+      "accuracies": {
+        "cosine": 0.4139267131628473,
+        "euclidean": 0.478437219556661,
+        "directed_quasimetric": 0.4485091308229165,
+        "poincare": 0.47613832024892183,
+        "pair_mlp": 0.3774034214970639
+      },
+      "best": "euclidean",
+      "order": [
+        "euclidean",
+        "poincare",
+        "directed_quasimetric",
+        "cosine",
+        "pair_mlp"
+      ]
+    }
+  },
+  "distinct_orderings": 5,
+  "energies_that_rank_first": [
+    "cosine",
+    "euclidean",
+    "pair_mlp",
+    "poincare"
+  ],
+  "reading": "readout 마다 순위가 다르면 '어느 기하가 낫다'는 readout 독립적 답이 없다. cosine vs euclidean 에서 본 것이 5종 전체로 일반화되는지 확인."
+}

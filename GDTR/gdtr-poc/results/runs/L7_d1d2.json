@@ -1,0 +1,241 @@
+{
+  "script": "L7_d1d2.py",
+  "purpose": "L7 anomaly diagnostics D1 (ln_f isolation) + D2 (residual-norm decomposition)",
+  "seed": 42,
+  "n_per_kind": 25,
+  "n_seq": 50,
+  "length": 6000,
+  "edge_warmup_bp": 5,
+  "L": 8,
+  "labels": [
+    "gc_matched",
+    "gc_matched",
+    "gc_matched",
+    "gc_matched",
+    "gc_matched",
+    "gc_matched",
+    "gc_matched",
+    "gc_matched",
+    "gc_matched",
+    "gc_matched",
+    "gc_matched",
+    "gc_matched",
+    "gc_matched",
+    "gc_matched",
+    "gc_matched",
+    "gc_matched",
+    "gc_matched",
+    "gc_matched",
+    "gc_matched",
+    "gc_matched",
+    "gc_matched",
+    "gc_matched",
+    "gc_matched",
+    "gc_matched",
+    "gc_matched",
+    "dinuc_shuffle",
+    "dinuc_shuffle",
+    "dinuc_shuffle",
+    "dinuc_shuffle",
+    "dinuc_shuffle",
+    "dinuc_shuffle",
+    "dinuc_shuffle",
+    "dinuc_shuffle",
+    "dinuc_shuffle",
+    "dinuc_shuffle",
+    "dinuc_shuffle",
+    "dinuc_shuffle",
+    "dinuc_shuffle",
+    "dinuc_shuffle",
+    "dinuc_shuffle",
+    "dinuc_shuffle",
+    "dinuc_shuffle",
+    "dinuc_shuffle",
+    "dinuc_shuffle",
+    "dinuc_shuffle",
+    "dinuc_shuffle",
+    "dinuc_shuffle",
+    "dinuc_shuffle",
+    "dinuc_shuffle",
+    "dinuc_shuffle"
+  ],
+  "D1": {
+    "M2_post_per_layer": [
+      {
+        "layer": 1,
+        "metric": "M2_post",
+        "rate": 1.0,
+        "n_positions": 299750,
+        "successes": 299750,
+        "passes_perlayer_thresh": true
+      },
+      {
+        "layer": 2,
+        "metric": "M2_post",
+        "rate": 0.5066121768140117,
+        "n_positions": 299750,
+        "successes": 151857,
+        "passes_perlayer_thresh": false
+      },
+      {
+        "layer": 3,
+        "metric": "M2_post",
+        "rate": 0.8943753127606339,
+        "n_positions": 299750,
+        "successes": 268089,
+        "passes_perlayer_thresh": true
+      },
+      {
+        "layer": 4,
+        "metric": "M2_post",
+        "rate": 0.9169808173477898,
+        "n_positions": 299750,
+        "successes": 274865,
+        "passes_perlayer_thresh": true
+      },
+      {
+        "layer": 5,
+        "metric": "M2_post",
+        "rate": 0.9669457881567973,
+        "n_positions": 299750,
+        "successes": 289842,
+        "passes_perlayer_thresh": true
+      },
+      {
+        "layer": 6,
+        "metric": "M2_post",
+        "rate": 0.9862218515429525,
+        "n_positions": 299750,
+        "successes": 295620,
+        "passes_perlayer_thresh": true
+      },
+      {
+        "layer": 7,
+        "metric": "M2_post",
+        "rate": 0.4427789824854045,
+        "n_positions": 299750,
+        "successes": 132723,
+        "passes_perlayer_thresh": false
+      },
+      {
+        "layer": 8,
+        "metric": "M2_post",
+        "rate": 1.0,
+        "n_positions": 299750,
+        "successes": 299750,
+        "passes_perlayer_thresh": true
+      }
+    ],
+    "M2_pre_per_layer": [
+      {
+        "layer": 1,
+        "metric": "M2_pre",
+        "rate": 1.0,
+        "n_positions": 299750,
+        "successes": 299750,
+        "passes_perlayer_thresh": true
+      },
+      {
+        "layer": 2,
+        "metric": "M2_pre",
+        "rate": 0.5069924937447873,
+        "n_positions": 299750,
+        "successes": 151971,
+        "passes_perlayer_thresh": false
+      },
+      {
+        "layer": 3,
+        "metric": "M2_pre",
+        "rate": 0.8989624687239366,
+        "n_positions": 299750,
+        "successes": 269464,
+        "passes_perlayer_thresh": true
+      },
+      {
+        "layer": 4,
+        "metric": "M2_pre",
+        "rate": 0.9183152627189325,
+        "n_positions": 299750,
+        "successes": 275265,
+        "passes_perlayer_thresh": true
+      },
+      {
+        "layer": 5,
+        "metric": "M2_pre",
+        "rate": 0.9686638865721434,
+        "n_positions": 299750,
+        "successes": 290357,
+        "passes_perlayer_thresh": true
+      },
+      {
+        "layer": 6,
+        "metric": "M2_pre",
+        "rate": 0.9878899082568807,
+        "n_positions": 299750,
+        "successes": 296120,
+        "passes_perlayer_thresh": true
+      },
+      {
+        "layer": 7,
+        "metric": "M2_pre",
+        "rate": 0.46584487072560465,
+        "n_positions": 299750,
+        "successes": 139637,
+        "passes_perlayer_thresh": false
+      }
+    ],
+    "M2_post_L7": 0.4427789824854045,
+    "M2_pre_L7": 0.46584487072560465,
+    "ln_f_attribution_pct": 4.139450508001701,
+    "verdict": "ln_f explains a minority of L7 anomaly"
+  },
+  "D2": {
+    "blocks": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "rel_residual_norm_mean": [
+      1.0152926445007324,
+      1.0406770706176758,
+      0.8680554628372192,
+      0.8159647583961487,
+      0.8569879531860352,
+      0.9536033272743225,
+      2.9405441284179688
+    ],
+    "rel_residual_norm_std": [
+      0.19631607830524445,
+      0.10875119268894196,
+      0.09077376127243042,
+      0.07694018632173538,
+      0.08361892402172089,
+      0.11267296224832535,
+      0.5370328426361084
+    ],
+    "r_block8": 2.9405441284179688,
+    "r_mean_blocks_2_7": 0.9250968098640442,
+    "r_max_blocks_2_7": 1.0406770706176758,
+    "block8_ratio_vs_mean": 3.1786339516727145,
+    "block8_ratio_vs_max": 2.825606724161473,
+    "verdict": "block 8 dominates magnitude (consistent with hypotheses (a)+(c))"
+  },
+  "thresholds": {
+    "M2_perlayer": 0.7,
+    "M2_global": 0.85
+  },
+  "outputs": {
+    "json": "/path/to/gDTR-PoC/results/runs/L7_d1d2.json",
+    "csv": "/path/to/gDTR-PoC/results/tables/L7_d1d2_summary.csv",
+    "figure_pdf": "/path/to/gDTR-PoC/results/figures/L7_d1d2.pdf",
+    "figure_png": "/path/to/gDTR-PoC/results/figures/L7_d1d2.png"
+  },
+  "runtime_s": 6.9531471729278564,
+  "host": "<host>",
+  "platform": "Linux-5.4.0-193-generic-x86_64-with-glibc2.35",
+  "torch": "2.3.1+cu121"
+}

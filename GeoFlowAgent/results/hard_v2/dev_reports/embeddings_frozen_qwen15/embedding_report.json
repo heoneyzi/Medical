@@ -1,0 +1,498 @@
+{
+  "auxiliary_views": {
+    "dnabert2_sequence_aux": {
+      "geometry": {
+        "state_anisotropy": 0.7630749344825745,
+        "state_effective_rank": 70.77513122558594
+      },
+      "minimal_pairs": {
+        "count": 0,
+        "excluded_count": 0,
+        "reported_splits": [
+          "train",
+          "dev"
+        ],
+        "total_count": 0
+      },
+      "retrieval": {
+        "not_applicable": "state-only views intentionally have no tool prototypes"
+      },
+      "ridge_probe": {
+        "dev": {
+          "count": 4996,
+          "single_trace_accuracy": 0.05644515612489992,
+          "valid_set_accuracy": 0.11929543634907927
+        }
+      }
+    },
+    "sapbert_entity_aux": {
+      "geometry": {
+        "state_anisotropy": 0.9206856489181519,
+        "state_effective_rank": 33.205936431884766
+      },
+      "minimal_pairs": {
+        "count": 0,
+        "excluded_count": 0,
+        "reported_splits": [
+          "train",
+          "dev"
+        ],
+        "total_count": 0
+      },
+      "retrieval": {
+        "not_applicable": "state-only views intentionally have no tool prototypes"
+      },
+      "ridge_probe": {
+        "dev": {
+          "count": 4996,
+          "single_trace_accuracy": 0.1565252201761409,
+          "valid_set_accuracy": 0.21257005604483586
+        }
+      }
+    }
+  },
+  "cache_config_sha256": "52bfe7d734c4449f98df4d99b501dcf87a1dc531d9dab8e8ba48ba94a37caee8",
+  "cache_content_sha256": "e6b2d57b65b9336495b1965e238689bdbe5914d6acd137b76915ca1cd6550cc5",
+  "cache_version": "geoflowagent.embedding-cache.v3",
+  "cka": {
+    "dnabert2_sequence_aux__medcpt": 0.07362948482615578,
+    "dnabert2_sequence_aux__qwen_general": 0.03861004863588638,
+    "dnabert2_sequence_aux__sapbert_entity_aux": 0.060079526446176215,
+    "medcpt__qwen_general": 0.5284250603601119,
+    "medcpt__sapbert_entity_aux": 0.21273172378676408,
+    "qwen_general__sapbert_entity_aux": 0.203120918834311
+  },
+  "feature_spec_version": "geoflowagent.feature-spec.v1",
+  "reported_splits": [
+    "train",
+    "dev"
+  ],
+  "source_manifest_sha256": "2a2503a4344dc2961f75b75836d3d44d5d120fea5aed16e3608169f4583e7f5a",
+  "test_unsealed": false,
+  "views": {
+    "medcpt": {
+      "geometry": {
+        "state_anisotropy": 0.985174298286438,
+        "state_effective_rank": 20.72977638244629,
+        "tool_anisotropy": 0.9298333094483101,
+        "tool_effective_rank": 10.941530023286372
+      },
+      "goal_progress": {
+        "dev": {
+          "cosine": {
+            "count": 5320,
+            "global_distance_value_spearman": 0.008919139710491238,
+            "mean_nonterminal_distance": 0.09464192390441895,
+            "mean_terminal_distance": 0.0946439728140831,
+            "mean_within_task_distance_value_spearman": 0.4195399615941784,
+            "ordered_pairs": 265792,
+            "within_task_pairwise_progress_order_accuracy": 0.6686995846376114
+          },
+          "squared_euclidean": {
+            "count": 5320,
+            "global_distance_value_spearman": 0.00863171058696009,
+            "mean_nonterminal_distance": 0.1802588254213333,
+            "mean_terminal_distance": 0.18028153479099274,
+            "mean_within_task_distance_value_spearman": 0.4185681612097089,
+            "ordered_pairs": 265792,
+            "within_task_pairwise_progress_order_accuracy": 0.6683760233566097
+          }
+        },
+        "train": {
+          "cosine": {
+            "count": 11526,
+            "global_distance_value_spearman": -0.06650936816247366,
+            "mean_nonterminal_distance": 0.11352722346782684,
+            "mean_terminal_distance": 0.11521972715854645,
+            "mean_within_task_distance_value_spearman": 0.4465903464181664,
+            "ordered_pairs": 430980,
+            "within_task_pairwise_progress_order_accuracy": 0.6858090862685043
+          },
+          "squared_euclidean": {
+            "count": 11526,
+            "global_distance_value_spearman": -0.06892782833086872,
+            "mean_nonterminal_distance": 0.2142755538225174,
+            "mean_terminal_distance": 0.21742549538612366,
+            "mean_within_task_distance_value_spearman": 0.439685096121216,
+            "ordered_pairs": 430980,
+            "within_task_pairwise_progress_order_accuracy": 0.6831082648846815
+          }
+        }
+      },
+      "minimal_pairs": {
+        "count": 0,
+        "excluded_count": 0,
+        "reported_splits": [
+          "train",
+          "dev"
+        ],
+        "total_count": 0
+      },
+      "retrieval": {
+        "cosine.exact_mask": {
+          "dev": {
+            "count": 7782,
+            "distance_regret_spearman": 0.3916972916550387,
+            "regret@1": 0.41339158707579743,
+            "regret_label_coverage": 0.6323567206373683,
+            "single_trace_em": 0.20174762271909535,
+            "top1_hub_share": 0.2809046517604729,
+            "valid_hit@1": 0.30621948085325107,
+            "valid_hit@3": 0.5815985607812901,
+            "valid_mrr": 0.5265157634278682
+          },
+          "train": {
+            "count": 15293,
+            "distance_regret_spearman": 0.5491797513211715,
+            "regret@1": 0.304518921095008,
+            "regret_label_coverage": 0.6497090171974106,
+            "single_trace_em": 0.37886614791080886,
+            "top1_hub_share": 0.1811940103315242,
+            "valid_hit@1": 0.4431439220558425,
+            "valid_hit@3": 0.6295690838945923,
+            "valid_mrr": 0.6252597671514822
+          }
+        },
+        "cosine.no_mask": {
+          "dev": {
+            "count": 7836,
+            "distance_regret_spearman": 0.11343405208429334,
+            "regret@1": 0.9721233766233767,
+            "regret_label_coverage": 0.9826442062276671,
+            "single_trace_em": 0.01748340990301174,
+            "top1_hub_share": 0.4261102603369066,
+            "valid_hit@1": 0.02730985196528841,
+            "valid_hit@3": 0.09047983665135273,
+            "valid_mrr": 0.13268252058068883
+          },
+          "train": {
+            "count": 15460,
+            "distance_regret_spearman": 0.21278595816146267,
+            "regret@1": 0.9288879406551566,
+            "regret_label_coverage": 0.9853169469598965,
+            "single_trace_em": 0.05672703751617076,
+            "top1_hub_share": 0.3839586028460543,
+            "valid_hit@1": 0.06985769728331177,
+            "valid_hit@3": 0.16694695989650712,
+            "valid_mrr": 0.18749609796681235
+          }
+        },
+        "euclidean.exact_mask": {
+          "dev": {
+            "count": 7782,
+            "distance_regret_spearman": 0.402270487723942,
+            "regret@1": 0.4147933211158622,
+            "regret_label_coverage": 0.6310717039321512,
+            "single_trace_em": 0.199177589308661,
+            "top1_hub_share": 0.2688254947314315,
+            "valid_hit@1": 0.301721922384991,
+            "valid_hit@3": 0.5771010023130301,
+            "valid_mrr": 0.5238900459602079
+          },
+          "train": {
+            "count": 15293,
+            "distance_regret_spearman": 0.5579336874946262,
+            "regret@1": 0.30147088454563764,
+            "regret_label_coverage": 0.6490551232590074,
+            "single_trace_em": 0.38017393578761527,
+            "top1_hub_share": 0.16811613156346042,
+            "valid_hit@1": 0.44844046295690837,
+            "valid_hit@3": 0.6287844111685085,
+            "valid_mrr": 0.6280470679084424
+          }
+        },
+        "euclidean.no_mask": {
+          "dev": {
+            "count": 7836,
+            "distance_regret_spearman": 0.10981464007408205,
+            "regret@1": 0.9760432766615147,
+            "regret_label_coverage": 0.9908116385911179,
+            "single_trace_em": 0.016462480857580397,
+            "top1_hub_share": 0.4655436447166922,
+            "valid_hit@1": 0.023736600306278714,
+            "valid_hit@3": 0.07388973966309341,
+            "valid_mrr": 0.12630748227517602
+          },
+          "train": {
+            "count": 15460,
+            "distance_regret_spearman": 0.20979372260639167,
+            "regret@1": 0.9457511629430649,
+            "regret_label_coverage": 0.9872574385510996,
+            "single_trace_em": 0.04540750323415265,
+            "top1_hub_share": 0.3168175937904269,
+            "valid_hit@1": 0.053557567917205694,
+            "valid_hit@3": 0.14514877102199225,
+            "valid_mrr": 0.17281816044052756
+          }
+        },
+        "train_whitened_euclidean.exact_mask": {
+          "dev": {
+            "count": 7782,
+            "distance_regret_spearman": 0.12219939120222882,
+            "regret@1": 0.6526840490797545,
+            "regret_label_coverage": 0.5864816242611154,
+            "single_trace_em": 0.20714469288100745,
+            "top1_hub_share": 0.3454124903623747,
+            "valid_hit@1": 0.29298380878951424,
+            "valid_hit@3": 0.5700334104343356,
+            "valid_mrr": 0.5113366565756696
+          },
+          "train": {
+            "count": 15293,
+            "distance_regret_spearman": 0.3376666470138811,
+            "regret@1": 0.513440288992775,
+            "regret_label_coverage": 0.6154449748250834,
+            "single_trace_em": 0.35617602824821815,
+            "top1_hub_share": 0.21003073301510494,
+            "valid_hit@1": 0.4129340221016151,
+            "valid_hit@3": 0.6000784672726084,
+            "valid_mrr": 0.5938224148614524
+          }
+        },
+        "train_whitened_euclidean.no_mask": {
+          "dev": {
+            "count": 7836,
+            "distance_regret_spearman": -0.020326361109014736,
+            "regret@1": 0.9754224270353302,
+            "regret_label_coverage": 0.996937212863706,
+            "single_trace_em": 0.016845329249617153,
+            "top1_hub_share": 1.0,
+            "valid_hit@1": 0.02450229709035222,
+            "valid_hit@3": 0.07044410413476264,
+            "valid_mrr": 0.11888746954834233
+          },
+          "train": {
+            "count": 15460,
+            "distance_regret_spearman": 0.09804497189938373,
+            "regret@1": 0.9653786307053942,
+            "regret_label_coverage": 0.9976714100905563,
+            "single_trace_em": 0.02755498059508409,
+            "top1_hub_share": 1.0,
+            "valid_hit@1": 0.03454075032341526,
+            "valid_hit@3": 0.1036222509702458,
+            "valid_mrr": 0.1458452322573504
+          }
+        }
+      },
+      "ridge_probe": {
+        "dev": {
+          "count": 4996,
+          "single_trace_accuracy": 0.2201761409127302,
+          "valid_set_accuracy": 0.34727782225780623
+        }
+      }
+    },
+    "qwen_general": {
+      "geometry": {
+        "state_anisotropy": 0.9980546832084656,
+        "state_effective_rank": 9.093968391418457,
+        "tool_anisotropy": 0.9861034075096762,
+        "tool_effective_rank": 8.497851036284294
+      },
+      "goal_progress": {
+        "dev": {
+          "cosine": {
+            "count": 5320,
+            "global_distance_value_spearman": 0.2533650831820046,
+            "mean_nonterminal_distance": 0.07864996790885925,
+            "mean_terminal_distance": 0.07635720819234848,
+            "mean_within_task_distance_value_spearman": 0.8112080891868546,
+            "ordered_pairs": 265792,
+            "within_task_pairwise_progress_order_accuracy": 0.8557217673970624
+          },
+          "squared_euclidean": {
+            "count": 5320,
+            "global_distance_value_spearman": 0.24500786868668079,
+            "mean_nonterminal_distance": 0.15201140940189362,
+            "mean_terminal_distance": 0.14798863232135773,
+            "mean_within_task_distance_value_spearman": 0.8183665509841752,
+            "ordered_pairs": 265792,
+            "within_task_pairwise_progress_order_accuracy": 0.8594351974476282
+          }
+        },
+        "train": {
+          "cosine": {
+            "count": 11526,
+            "global_distance_value_spearman": 0.45033299295882234,
+            "mean_nonterminal_distance": 0.07947661727666855,
+            "mean_terminal_distance": 0.07599949091672897,
+            "mean_within_task_distance_value_spearman": 0.8004738031575749,
+            "ordered_pairs": 430980,
+            "within_task_pairwise_progress_order_accuracy": 0.8604134762633997
+          },
+          "squared_euclidean": {
+            "count": 11526,
+            "global_distance_value_spearman": 0.4420307981948387,
+            "mean_nonterminal_distance": 0.1534455418586731,
+            "mean_terminal_distance": 0.14731177687644958,
+            "mean_within_task_distance_value_spearman": 0.8043838673832778,
+            "ordered_pairs": 430980,
+            "within_task_pairwise_progress_order_accuracy": 0.8624646155274026
+          }
+        }
+      },
+      "minimal_pairs": {
+        "count": 0,
+        "excluded_count": 0,
+        "reported_splits": [
+          "train",
+          "dev"
+        ],
+        "total_count": 0
+      },
+      "retrieval": {
+        "cosine.exact_mask": {
+          "dev": {
+            "count": 7782,
+            "distance_regret_spearman": 0.3720993763203962,
+            "regret@1": 0.5056162246489859,
+            "regret_label_coverage": 0.5765869956309432,
+            "single_trace_em": 0.36700077101002315,
+            "top1_hub_share": 0.2887432536622976,
+            "valid_hit@1": 0.4263685427910563,
+            "valid_hit@3": 0.6135954767411976,
+            "valid_mrr": 0.5975215031691515
+          },
+          "train": {
+            "count": 15293,
+            "distance_regret_spearman": 0.3112910276593169,
+            "regret@1": 0.6472581188897629,
+            "regret_label_coverage": 0.5819002157849996,
+            "single_trace_em": 0.3471522918982541,
+            "top1_hub_share": 0.22611652389982345,
+            "valid_hit@1": 0.38403191002419407,
+            "valid_hit@3": 0.6138756293729157,
+            "valid_mrr": 0.5764567044368261
+          }
+        },
+        "cosine.no_mask": {
+          "dev": {
+            "count": 7836,
+            "distance_regret_spearman": 0.1320022591622909,
+            "regret@1": 0.9789824426502627,
+            "regret_label_coverage": 0.9957886676875957,
+            "single_trace_em": 0.02092904543134252,
+            "top1_hub_share": 0.7829249617151608,
+            "valid_hit@1": 0.02092904543134252,
+            "valid_hit@3": 0.2027820316488004,
+            "valid_mrr": 0.17407940074480605
+          },
+          "train": {
+            "count": 15460,
+            "distance_regret_spearman": 0.10805980600511737,
+            "regret@1": 0.9823326162070539,
+            "regret_label_coverage": 0.9921733505821475,
+            "single_trace_em": 0.020051746442432083,
+            "top1_hub_share": 0.885058214747736,
+            "valid_hit@1": 0.020051746442432083,
+            "valid_hit@3": 0.1595084087968952,
+            "valid_mrr": 0.15511866373175293
+          }
+        },
+        "euclidean.exact_mask": {
+          "dev": {
+            "count": 7782,
+            "distance_regret_spearman": 0.36241199869663576,
+            "regret@1": 0.49666889483065957,
+            "regret_label_coverage": 0.5767154973014649,
+            "single_trace_em": 0.37021331277306607,
+            "top1_hub_share": 0.27769210999743,
+            "valid_hit@1": 0.4289385762014906,
+            "valid_hit@3": 0.6130814700591107,
+            "valid_mrr": 0.598896471043734
+          },
+          "train": {
+            "count": 15293,
+            "distance_regret_spearman": 0.3168419309948993,
+            "regret@1": 0.6264364578639027,
+            "regret_label_coverage": 0.5803962597266723,
+            "single_trace_em": 0.3509448767409926,
+            "top1_hub_share": 0.22088537239259792,
+            "valid_hit@1": 0.3880860524422939,
+            "valid_hit@3": 0.6149872490682011,
+            "valid_mrr": 0.5791943403922741
+          }
+        },
+        "euclidean.no_mask": {
+          "dev": {
+            "count": 7836,
+            "distance_regret_spearman": 0.12643818457021874,
+            "regret@1": 0.981543194052807,
+            "regret_label_coverage": 0.9956610515569168,
+            "single_trace_em": 0.018376722817764167,
+            "top1_hub_share": 0.7755232261357836,
+            "valid_hit@1": 0.018376722817764167,
+            "valid_hit@3": 0.19716692189892804,
+            "valid_mrr": 0.1714304309953588
+          },
+          "train": {
+            "count": 15460,
+            "distance_regret_spearman": 0.10910334355469394,
+            "regret@1": 0.9813449872806731,
+            "regret_label_coverage": 0.9916558861578266,
+            "single_trace_em": 0.021086675291073737,
+            "top1_hub_share": 0.8789133247089262,
+            "valid_hit@1": 0.021086675291073737,
+            "valid_hit@3": 0.15860284605433375,
+            "valid_mrr": 0.15497348737942912
+          }
+        },
+        "train_whitened_euclidean.exact_mask": {
+          "dev": {
+            "count": 7782,
+            "distance_regret_spearman": 0.4206489041675144,
+            "regret@1": 0.604829070045422,
+            "regret_label_coverage": 0.5375224877923414,
+            "single_trace_em": 0.3040349524543819,
+            "top1_hub_share": 0.39321511179645335,
+            "valid_hit@1": 0.3749678745823696,
+            "valid_hit@3": 0.6209200719609355,
+            "valid_mrr": 0.5742262919980731
+          },
+          "train": {
+            "count": 15293,
+            "distance_regret_spearman": 0.3459538644496765,
+            "regret@1": 0.7695099818511797,
+            "regret_label_coverage": 0.5764728960962532,
+            "single_trace_em": 0.32263126920813445,
+            "top1_hub_share": 0.3078532662002223,
+            "valid_hit@1": 0.3546720721898908,
+            "valid_hit@3": 0.6232263126920814,
+            "valid_mrr": 0.5683484196006265
+          }
+        },
+        "train_whitened_euclidean.no_mask": {
+          "dev": {
+            "count": 7836,
+            "distance_regret_spearman": 0.10215340695062586,
+            "regret@1": 0.9735064935064935,
+            "regret_label_coverage": 0.9826442062276671,
+            "single_trace_em": 0.026033690658499236,
+            "top1_hub_share": 0.4032669729453803,
+            "valid_hit@1": 0.026033690658499236,
+            "valid_hit@3": 0.17662072485962227,
+            "valid_mrr": 0.17414840588167788
+          },
+          "train": {
+            "count": 15460,
+            "distance_regret_spearman": 0.06759274946095448,
+            "regret@1": 0.974092582851131,
+            "regret_label_coverage": 0.983699870633894,
+            "single_trace_em": 0.025485122897800777,
+            "top1_hub_share": 0.6975420439844761,
+            "valid_hit@1": 0.025485122897800777,
+            "valid_hit@3": 0.15032341526520052,
+            "valid_mrr": 0.17055808429140787
+          }
+        }
+      },
+      "ridge_probe": {
+        "dev": {
+          "count": 4996,
+          "single_trace_accuracy": 0.07125700560448359,
+          "valid_set_accuracy": 0.13030424339471577
+        }
+      }
+    }
+  }
+}

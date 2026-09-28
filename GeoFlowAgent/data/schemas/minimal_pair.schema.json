@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/geoflowagent/minimal_pair.schema.json",
+  "title": "GeoFlowAgent controlled input pair",
+  "description": "A verified invariant pair or a function-changing pair for embedding-space sensitivity audits.",
+  "type": "object",
+  "required": [
+    "pair_id",
+    "relation",
+    "changed_fields",
+    "split"
+  ],
+  "properties": {
+    "pair_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "relation": {
+      "enum": [
+        "invariant",
+        "functional_sensitive"
+      ]
+    },
+    "changed_fields": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "left_text": {
+      "type": "string"
+    },
+    "right_text": {
+      "type": "string"
+    },
+    "left": true,
+    "right": true,
+    "split": {
+      "enum": [
+        "train",
+        "dev",
+        "test"
+      ]
+    },
+    "source_task_id": {
+      "description": "Optional base task whose assigned split this pair must match.",
+      "type": "string",
+      "minLength": 1
+    },
+    "provenance": {
+      "type": "object"
+    }
+  },
+  "allOf": [
+    {
+      "anyOf": [
+        {
+          "required": [
+            "left_text"
+          ]
+        },
+        {
+          "required": [
+            "left"
+          ]
+        }
+      ]
+    },
+    {
+      "anyOf": [
+        {
+          "required": [
+            "right_text"
+          ]
+        },
+        {
+          "required": [
+            "right"
+          ]
+        }
+      ]
+    }
+  ],
+  "additionalProperties": true
+}

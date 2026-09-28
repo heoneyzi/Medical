@@ -1,0 +1,23 @@
+{
+  "n_synonymous_total": 1808,
+  "n_cryptic_candidates": 181,
+  "candidate_threshold_score": 0.0024291204987093805,
+  "P_LP_rate_in_candidates": 1.6574585635359116,
+  "P_LP_rate_in_non_candidates": 1.1677934849416103,
+  "P_LP_enrichment_fold": 1.4193079383541727,
+  "n_candidate_PLP": 3,
+  "n_candidate_BLB": 177,
+  "n_candidate_VUS": 1,
+  "top_candidate_genes": {
+    "ATM": 39,
+    "MSH2": 35,
+    "RB1": 23,
+    "EGFR": 21,
+    "TP53": 12,
+    "PALB2": 10,
+    "VHL": 10,
+    "PIK3CA": 9,
+    "BRAF": 9,
+    "BRCA2": 8
+  }
+}

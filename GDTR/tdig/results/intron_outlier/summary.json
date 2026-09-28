@@ -1,0 +1,43 @@
+{
+  "n_intron_tokens_total": 31456557,
+  "n_splice_sites": 186713,
+  "top_pct": 0.5,
+  "distance_bp": 200,
+  "per_cell_enrichment": [
+    {
+      "cell": "M3_geo_a0.0_b1.0",
+      "n_outlier": 149412,
+      "outlier_near_splice_frac": 0.1108880143495837,
+      "random_near_splice_frac": 0.09565496747249216,
+      "enrichment_fold": 1.1592499300307866
+    },
+    {
+      "cell": "M3_geo_a0.5_b1.0",
+      "n_outlier": 262041,
+      "outlier_near_splice_frac": 0.10764727657122358,
+      "random_near_splice_frac": 0.07000812849897535,
+      "enrichment_fold": 1.537639683837558
+    },
+    {
+      "cell": "M3_geo_a1.0_b1.0",
+      "n_outlier": 533348,
+      "outlier_near_splice_frac": 0.09991600230993648,
+      "random_near_splice_frac": 0.07228301221716403,
+      "enrichment_fold": 1.382288856609255
+    },
+    {
+      "cell": "M3_geo_a1.0_b0.5",
+      "n_outlier": 2230878,
+      "outlier_near_splice_frac": 0.08849430582936404,
+      "random_near_splice_frac": 0.0783906605381379,
+      "enrichment_fold": 1.1288883806038428
+    },
+    {
+      "cell": "M5_tau_refB",
+      "n_outlier": 1046855,
+      "outlier_near_splice_frac": 0.21048378237673795,
+      "random_near_splice_frac": 0.07806429734777022,
+      "enrichment_fold": 2.6962874134260058
+    }
+  ]
+}

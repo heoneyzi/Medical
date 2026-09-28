@@ -1,0 +1,64 @@
+{
+  "artifacts_root": "artifacts/acmg",
+  "geometry_families": {
+    "cosine": 3,
+    "directed_quasimetric": 3,
+    "euclidean": 3,
+    "pair_mlp": 3,
+    "poincare": 3
+  },
+  "geometry_runs_total": 15,
+  "findings_present": [
+    "R1_paired_zero_param.json",
+    "R1b_new_seed_planning_axis.json",
+    "R2_readout_decomposition.json",
+    "R2_readout_margins.npz",
+    "R3_horizon_strata.json",
+    "R4_crossmodel_control.json",
+    "R7_batched_equivalence.json",
+    "R7_flow_dev_root_only.json",
+    "R7_flowfast_validation.json",
+    "all_findings.jsonl",
+    "b0.jsonl",
+    "c4_alternative_moderator.json",
+    "c4_delta_moderator.json",
+    "c5_crossmodel_control.json",
+    "c5_within_model.json",
+    "capacity_ordering.json",
+    "decomposition_pairs.npz",
+    "generalization_and_strata.json",
+    "graph_structure.json",
+    "mechanism_decomposition.json",
+    "metric_profile.json",
+    "ordering_mechanism.json",
+    "ordering_pairs.npz",
+    "ordering_pooled.json",
+    "rq1.jsonl",
+    "rq1.report.json",
+    "rq2_sealed.jsonl",
+    "rq2_sealed.report.json"
+  ],
+  "per_pair_vectors": [
+    "decomposition_pairs.npz",
+    "ordering_pairs.npz"
+  ],
+  "state_flow_checkpoint": true,
+  "sealed_corpus": true,
+  "reduction_switches": [
+    {
+      "env": "GEOFLOW_STATE_FLOW_REPORT_TRAIN",
+      "file": "$GEOACMG_WORK/src/geoflowagent/training/state_flow.py",
+      "line": 1364,
+      "source": "report_train_rollouts = os.environ.get(\"GEOFLOW_STATE_FLOW_REPORT_TRAIN\", \"1\") != \"0\"",
+      "current": null
+    }
+  ],
+  "worker_budget_example": {
+    "workers": 128,
+    "cgroup_limit_gib": 120.0,
+    "anon_in_use_gib": 0.6,
+    "per_worker_gib": 0.17,
+    "reason": "메모리 기준 680, CPU 128, 상한 128 → 128",
+    "note": "nproc 이 아니라 cgroup 메모리 한도가 동시성을 정한다 (저널 §21)"
+  }
+}

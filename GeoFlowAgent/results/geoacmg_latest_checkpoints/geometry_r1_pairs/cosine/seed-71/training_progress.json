@@ -1,0 +1,52 @@
+{
+  "best_dev_selection_score": 0.7826436503797782,
+  "best_epoch": 5,
+  "cache_content_sha256": "00b19e6e3c669e5d2408ae7c157675fe306e837ec8b65aea1f38d0a789f56903",
+  "checkpoint": "artifacts/acmg/checkpoints/geometry_r1_pairs/cosine/seed-71/value_geometry.pt",
+  "checkpoint_sha256": "d21906eac174e0a620b1c4b8d1e2104f9bfdb0833488c7acf8e0bc19c837e3fa",
+  "completed_epoch": 19,
+  "configured_epochs": 60,
+  "energy": "cosine",
+  "feature_ablation": {
+    "zero_structured": false,
+    "zero_views": []
+  },
+  "latest": {
+    "dev_action_reachability_balanced_accuracy": 0.7417709515880265,
+    "dev_completion_balanced_accuracy": 0.7308154537950896,
+    "dev_joint_stop_action_accuracy": 0.6173212756849316,
+    "dev_policy_optimal_set_accuracy": 0.6744283413848631,
+    "dev_regret_at_1": 0.3464150347441567,
+    "dev_selection_score": 0.6551651479068854,
+    "dev_thresholds": {
+      "action_reachability": 0.1,
+      "completion": 0.1
+    },
+    "epoch": 19,
+    "external_replay_fraction": 0.0,
+    "external_replay_pool": 0,
+    "hard_replay_pool": 3094,
+    "learning_rate": 0.0005406236622552594,
+    "train": {
+      "action": 0.8167633867780617,
+      "action_reachability": 0.038650558801783336,
+      "bellman": 0.034187255520532964,
+      "completion": 0.0884297308224613,
+      "q": 0.034187255520532964,
+      "regret": 0.004752274280029078,
+      "state_reachability": 0.03577499966824048,
+      "total": 1.0317032462314273,
+      "transition": 0.03298339027501281,
+      "value": 0.016138410694255395
+    }
+  },
+  "metrics": "artifacts/acmg/checkpoints/geometry_r1_pairs/cosine/seed-71/value_metrics.json",
+  "model_capacity_override": {},
+  "output_dir": "artifacts/acmg/checkpoints/geometry_r1_pairs/cosine/seed-71",
+  "patience": 14,
+  "resume_checkpoint": "artifacts/acmg/checkpoints/geometry_r1_pairs/cosine/seed-71/training_resume.pt",
+  "seed": 71,
+  "stale_epochs": 14,
+  "status": "complete",
+  "training_config_sha256": "c585a9f9ce0122273c1c47bee7c774d2d4bdb644d00dd2aba68fb8fbfe65088b"
+}

@@ -1,0 +1,52 @@
+{
+  "kind": "geoflowagent_final_evaluation_preregistration_amendment",
+  "version": 2,
+  "registered_at_utc": "2026-09-16T01:03:37Z",
+  "status": "registered_while_test_physically_sealed",
+  "supersedes_only": [
+    "frozen_configuration.input",
+    "frozen_configuration.value_capacity",
+    "single_unseal_evaluation.value_policy_primary"
+  ],
+  "reason": "All decisions use completed development results. MedCPT-only removed negative transfer from naive multiview fusion, and the two-x head passed the predeclared paired task-bootstrap capacity rule. No test artifact or access ledger existed when this amendment was written.",
+  "development_evidence": {
+    "medcpt_geometry_comparison_sha256": "7d519d90f1531bec6fe2bee07ca0bdcad33b49e2506670244b3d232092544143",
+    "selected_energy": "cosine",
+    "medcpt_capacity_comparison_sha256": "e659439325085ae600139ccc134e2c2fe68cbf81f32ea2bceac7d7ed2d3af669",
+    "two_x_minus_configured_task_macro_joint": 0.036809328372849615,
+    "two_x_minus_configured_task_bootstrap_95_ci": [0.02516816, 0.04989931],
+    "test_access_ledger_existed": false
+  },
+  "amended_primary": {
+    "representation": "MedCPT-only frozen view; structured, Qwen, SapBERT, and DNABERT2 inputs zeroed by the checkpoint feature-ablation contract",
+    "energy": "cosine",
+    "capacity": "two_x shared_dim=128 hidden_dim=256 energy_rank=64",
+    "seeds": [17, 29, 43],
+    "primary_closed_loop_seed": 17,
+    "checkpoints": {
+      "17": "5ffca7cba241f498cef2171857b7940fc7cdc6d50abeef0ab3f3fde623587af7",
+      "29": "0d15107b10b8f44d32d32a6348006628b8dfef189723fbf211143a6212ba3cd3",
+      "43": "452ccdbcbc0d7bbdafaaac2f092fab45c0a066620ed7ffaa31d72c97ac53b9f9"
+    }
+  },
+  "original_preregistered_confirmatory_policy": {
+    "role": "reported separately; not silently relabeled",
+    "description": "full-input cosine, dev-selected DAgger round 2",
+    "checkpoint_sha256": "6bee43fb9bb20a8c15d3c20aac5c39340a5aac6cc79b9fcb1fccc885268d41b4"
+  },
+  "state_flow_unchanged": {
+    "seeds": [17, 29, 43],
+    "checkpoint_sha256": {
+      "17": "db95d512e2811eddee5300bdad21102b0232316642a05569725f3145ed1ad034",
+      "29": "ede29707d2f5e51dfdd3ca9ef14463dcb47b1c4c42653e034e3fce7de221b106",
+      "43": "31579059df9854180a485ba2d0c627d47111f082c1c9ac80a5598e327436092b"
+    }
+  },
+  "evaluation_rules": {
+    "no_retraining": true,
+    "no_post_test_adaptation": true,
+    "unseen_tool_registry": "Allowed only after fail-closed bitwise verification that all 43 training tool prototypes and encoder/view metadata are unchanged in the 50-tool final cache.",
+    "uncertainty": "Paired bootstrap over 48 independent test tasks; seeds are paired before task resampling."
+  },
+  "evaluation_source_tree_sha256": "12934f69bddbc4dcf8bd7d6c0491e3f424d25fd22c58f491e4672ecd2a7a1c18"
+}

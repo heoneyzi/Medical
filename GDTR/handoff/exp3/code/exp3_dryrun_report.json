@@ -1,0 +1,320 @@
+{
+  "checks": {
+    "all_exp3_phases_reached": true,
+    "alternative_b29_route_selected": true,
+    "amplifier_route_selected": true,
+    "branch_trace_selected": true,
+    "common_route_completed": true,
+    "exp2_not_executed": true,
+    "negative_route_completed": true,
+    "site_specific_route_selected": true
+  },
+  "program": "EXP3 dry-run",
+  "scenarios": {
+    "alternative": {
+      "active_phases": [
+        "phase1_roles_plateau",
+        "phase2_causal_factorization",
+        "phase3_reverse_trace",
+        "phase4_motif_validation",
+        "phase5_learned_transport",
+        "phase6_applications",
+        "phase7_generalization",
+        "phase8_optional_features"
+      ],
+      "active_states": {
+        "b29_decomposition": "completed",
+        "b29_target_spec": "completed",
+        "bidirectional_direction_transfer": "completed",
+        "branch_specific_reverse_trace": "completed",
+        "causal_factorization_synthesis": "completed",
+        "cross_chromosome_generalization": "completed",
+        "cube_b30_mediation": "completed",
+        "exp1_extension": "completed",
+        "exp3_mechanism_synthesis": "completed",
+        "feature_model_on_branch_delta": "completed",
+        "learned_transport": "completed",
+        "m28_alternative_inputs": "completed",
+        "m28_preconditioning": "completed",
+        "m28_target_spec": "completed",
+        "mechanism_application": "completed",
+        "motif_variant_replay": "completed",
+        "scale_content_carrier_cube": "completed",
+        "scale_plateau": "completed",
+        "scale_target_spec": "completed",
+        "second_writer_mapping": "completed",
+        "site_specific_scale": "completed",
+        "task_heterogeneity": "completed"
+      },
+      "decisions": {
+        "b29_decomposition": {
+          "conclusion_code": "amplifier_refuted",
+          "interpretation": "A valid negative selects writer/editor mapping.",
+          "status": "refuted"
+        },
+        "b29_target_spec": {
+          "conclusion_code": "software_fixture_completed",
+          "interpretation": "The EXP3-only software fixture completed this routed analysis.",
+          "status": "equivalent"
+        },
+        "bidirectional_direction_transfer": {
+          "conclusion_code": "partial_direction_transfer",
+          "interpretation": "The fixture supports branch-specific direction transfer.",
+          "status": "mixed"
+        },
+        "branch_specific_reverse_trace": {
+          "conclusion_code": "branch_reverse_trace_consensus",
+          "interpretation": "A branch-specific fixture candidate passes consensus.",
+          "status": "supported"
+        },
+        "causal_factorization_synthesis": {
+          "conclusion_code": "conditional_scale_carrier_content_factorization",
+          "interpretation": "The fixture seals a conditional factorization overlay.",
+          "status": "mixed"
+        },
+        "cross_chromosome_generalization": {
+          "conclusion_code": "software_fixture_completed",
+          "interpretation": "The EXP3-only software fixture completed this routed analysis.",
+          "status": "equivalent"
+        },
+        "cube_b30_mediation": {
+          "conclusion_code": "partial_b30_mediation",
+          "interpretation": "The fixture supports only partial b30 mediation.",
+          "status": "mixed"
+        },
+        "exp1_extension": {
+          "conclusion_code": "software_fixture_completed",
+          "interpretation": "The EXP3-only software fixture completed this routed analysis.",
+          "status": "equivalent"
+        },
+        "exp3_mechanism_synthesis": {
+          "conclusion_code": "no_common_b29_scale",
+          "interpretation": "No common overlay selects branch-specific reverse tracing.",
+          "status": "refuted"
+        },
+        "feature_model_on_branch_delta": {
+          "conclusion_code": "software_fixture_completed",
+          "interpretation": "The EXP3-only software fixture completed this routed analysis.",
+          "status": "equivalent"
+        },
+        "learned_transport": {
+          "conclusion_code": "branch_specific_predicted_delta",
+          "interpretation": "Only the branch-specific fixture delta is predictively rescued.",
+          "status": "mixed"
+        },
+        "m28_alternative_inputs": {
+          "conclusion_code": "software_fixture_completed",
+          "interpretation": "The EXP3-only software fixture completed this routed analysis.",
+          "status": "equivalent"
+        },
+        "m28_preconditioning": {
+          "conclusion_code": "m28_redundant_inputs",
+          "interpretation": "A mixed local result selects conditional upstream mapping.",
+          "status": "mixed"
+        },
+        "m28_target_spec": {
+          "conclusion_code": "software_fixture_completed",
+          "interpretation": "The EXP3-only software fixture completed this routed analysis.",
+          "status": "equivalent"
+        },
+        "mechanism_application": {
+          "conclusion_code": "software_fixture_completed",
+          "interpretation": "The EXP3-only software fixture completed this routed analysis.",
+          "status": "equivalent"
+        },
+        "motif_variant_replay": {
+          "conclusion_code": "software_fixture_completed",
+          "interpretation": "The EXP3-only software fixture completed this routed analysis.",
+          "status": "equivalent"
+        },
+        "scale_content_carrier_cube": {
+          "conclusion_code": "axes_conditionally_separable",
+          "interpretation": "The fixture resolves a conditional causal cube.",
+          "status": "mixed"
+        },
+        "scale_plateau": {
+          "conclusion_code": "site_specific_transition",
+          "interpretation": "Heterogeneous transitions select a site-specific model.",
+          "status": "mixed"
+        },
+        "scale_target_spec": {
+          "conclusion_code": "software_fixture_completed",
+          "interpretation": "The EXP3-only software fixture completed this routed analysis.",
+          "status": "equivalent"
+        },
+        "second_writer_mapping": {
+          "conclusion_code": "software_fixture_completed",
+          "interpretation": "The EXP3-only software fixture completed this routed analysis.",
+          "status": "equivalent"
+        },
+        "site_specific_scale": {
+          "conclusion_code": "software_fixture_completed",
+          "interpretation": "The EXP3-only software fixture completed this routed analysis.",
+          "status": "equivalent"
+        },
+        "task_heterogeneity": {
+          "conclusion_code": "software_fixture_completed",
+          "interpretation": "The EXP3-only software fixture completed this routed analysis.",
+          "status": "equivalent"
+        }
+      },
+      "exp2_was_executed": false,
+      "report_existed": true,
+      "status": "complete"
+    },
+    "common": {
+      "active_phases": [
+        "phase1_roles_plateau",
+        "phase2_causal_factorization",
+        "phase3_reverse_trace",
+        "phase4_motif_validation",
+        "phase5_learned_transport",
+        "phase6_applications",
+        "phase7_generalization",
+        "phase8_optional_features"
+      ],
+      "active_states": {
+        "amplifier_replication": "completed",
+        "b29_decomposition": "completed",
+        "b29_target_spec": "completed",
+        "bidirectional_direction_transfer": "completed",
+        "causal_factorization_synthesis": "completed",
+        "common_reverse_trace": "completed",
+        "cross_chromosome_generalization": "completed",
+        "cube_b30_mediation": "completed",
+        "exp1_extension": "completed",
+        "exp3_mechanism_synthesis": "completed",
+        "feature_model_on_causal_delta": "completed",
+        "learned_transport": "completed",
+        "m28_preconditioner_mapping": "completed",
+        "m28_preconditioning": "completed",
+        "m28_target_spec": "completed",
+        "mechanism_application": "completed",
+        "motif_variant_replay": "completed",
+        "normalized_scale_transfer": "completed",
+        "scale_content_carrier_cube": "completed",
+        "scale_plateau": "completed",
+        "scale_target_spec": "completed",
+        "task_heterogeneity": "completed"
+      },
+      "decisions": {
+        "amplifier_replication": {
+          "conclusion_code": "software_fixture_completed",
+          "interpretation": "The EXP3-only software fixture completed this routed analysis.",
+          "status": "equivalent"
+        },
+        "b29_decomposition": {
+          "conclusion_code": "b29_amplifier",
+          "interpretation": "The fixture selects the amplifier-compatible EXP3 route.",
+          "status": "supported"
+        },
+        "b29_target_spec": {
+          "conclusion_code": "software_fixture_completed",
+          "interpretation": "The EXP3-only software fixture completed this routed analysis.",
+          "status": "equivalent"
+        },
+        "bidirectional_direction_transfer": {
+          "conclusion_code": "specific_bidirectional_transfer",
+          "interpretation": "The fixture direction beats all matched control families.",
+          "status": "supported"
+        },
+        "causal_factorization_synthesis": {
+          "conclusion_code": "scale_carrier_content_factorization",
+          "interpretation": "The fixture seals the operational causal factorization.",
+          "status": "supported"
+        },
+        "common_reverse_trace": {
+          "conclusion_code": "reverse_trace_consensus",
+          "interpretation": "Two independent attribution methods agree on a fixture candidate.",
+          "status": "supported"
+        },
+        "cross_chromosome_generalization": {
+          "conclusion_code": "software_fixture_completed",
+          "interpretation": "The EXP3-only software fixture completed this routed analysis.",
+          "status": "equivalent"
+        },
+        "cube_b30_mediation": {
+          "conclusion_code": "b30_mediates_content",
+          "interpretation": "The fixture sends the content contrast through b30.",
+          "status": "supported"
+        },
+        "exp1_extension": {
+          "conclusion_code": "software_fixture_completed",
+          "interpretation": "The EXP3-only software fixture completed this routed analysis.",
+          "status": "equivalent"
+        },
+        "exp3_mechanism_synthesis": {
+          "conclusion_code": "common_b29_scale_target",
+          "interpretation": "The fixture defines a common reverse-tracing target.",
+          "status": "supported"
+        },
+        "feature_model_on_causal_delta": {
+          "conclusion_code": "software_fixture_completed",
+          "interpretation": "The EXP3-only software fixture completed this routed analysis.",
+          "status": "equivalent"
+        },
+        "learned_transport": {
+          "conclusion_code": "predicted_delta_rescue",
+          "interpretation": "A held-out fixture delta rescue opens optional interpretation.",
+          "status": "supported"
+        },
+        "m28_preconditioner_mapping": {
+          "conclusion_code": "software_fixture_completed",
+          "interpretation": "The EXP3-only software fixture completed this routed analysis.",
+          "status": "equivalent"
+        },
+        "m28_preconditioning": {
+          "conclusion_code": "m28_preconditions_writer",
+          "interpretation": "The fixture selects upstream mapping for the fixed b28 writer.",
+          "status": "supported"
+        },
+        "m28_target_spec": {
+          "conclusion_code": "software_fixture_completed",
+          "interpretation": "The EXP3-only software fixture completed this routed analysis.",
+          "status": "equivalent"
+        },
+        "mechanism_application": {
+          "conclusion_code": "software_fixture_completed",
+          "interpretation": "The EXP3-only software fixture completed this routed analysis.",
+          "status": "equivalent"
+        },
+        "motif_variant_replay": {
+          "conclusion_code": "software_fixture_completed",
+          "interpretation": "The EXP3-only software fixture completed this routed analysis.",
+          "status": "equivalent"
+        },
+        "normalized_scale_transfer": {
+          "conclusion_code": "software_fixture_completed",
+          "interpretation": "The EXP3-only software fixture completed this routed analysis.",
+          "status": "equivalent"
+        },
+        "scale_content_carrier_cube": {
+          "conclusion_code": "axes_causally_separable",
+          "interpretation": "The fixture resolves all three preregistered causal axes.",
+          "status": "supported"
+        },
+        "scale_plateau": {
+          "conclusion_code": "shared_normalized_transition",
+          "interpretation": "The fixture selects the shared normalized transition route.",
+          "status": "supported"
+        },
+        "scale_target_spec": {
+          "conclusion_code": "software_fixture_completed",
+          "interpretation": "The EXP3-only software fixture completed this routed analysis.",
+          "status": "equivalent"
+        },
+        "task_heterogeneity": {
+          "conclusion_code": "software_fixture_completed",
+          "interpretation": "The EXP3-only software fixture completed this routed analysis.",
+          "status": "equivalent"
+        }
+      },
+      "exp2_was_executed": false,
+      "report_existed": true,
+      "status": "complete"
+    }
+  },
+  "schema_version": 1,
+  "scientific_evidence": false,
+  "status": "pass"
+}

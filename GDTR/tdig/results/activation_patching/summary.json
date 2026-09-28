@@ -1,0 +1,6 @@
+{
+  "n_variants_analyzed": 10,
+  "n_per_class": 5,
+  "wall_time_sec": 8.90317440032959,
+  "note": "Descriptive per-layer \u0394H attribution. True causal patching requires model hooks (deferred)."
+}

@@ -1,0 +1,3 @@
+# Optional extras for the esm2_nn method with real ESM-2 embeddings (GPU).
+torch>=2.1
+transformers>=4.40

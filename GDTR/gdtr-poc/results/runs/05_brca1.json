@@ -1,0 +1,40 @@
+{
+  "script": "05_brca1.py",
+  "purpose": "Stage 5 - BRCA1 extension",
+  "seed": 42,
+  "model": "HyenaDNA-medium-160k (single model used; segmented sliding window)",
+  "n_windows": 252,
+  "window": 6000,
+  "stride": 500,
+  "central_width": 1000,
+  "L": 8,
+  "gamma_jsd": 0.5,
+  "gamma_cos": 0.5082144320011139,
+  "brca1_region": {
+    "chrom": "chr17",
+    "start": 43044295,
+    "end": 43170245,
+    "transcript": "ENST00000357654"
+  },
+  "context_counts": {
+    "coding_exon": 5589,
+    "intron": 73982,
+    "5utr": 113,
+    "3utr": 1386,
+    "splice_donor_acceptor": 880,
+    "intergenic": 50881
+  },
+  "verdict": {
+    "primary_p_value_ur": 0.0,
+    "primary_cohens_d_ur": -0.7772137969560052
+  },
+  "outputs": {
+    "table": "results/tables/brca1_gdtr_by_context.csv",
+    "figure_F5": "results/figures/F5_brca1_profile.{pdf,png}",
+    "cache": "results/runs/05_brca1_cache.npz"
+  },
+  "runtime_s": 31.943533420562744,
+  "host": "<host>",
+  "platform": "Linux-5.4.0-193-generic-x86_64-with-glibc2.35",
+  "torch": "2.3.1+cu121"
+}

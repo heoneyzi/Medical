@@ -1,0 +1,28 @@
+# OS / editor clutter
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Secrets and local config — never commit these
+.env
+.env.*
+api.txt
+*.pem
+
+# Large data, weights and caches stay out of the portfolio (see each project's README for where they live)
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+*.h5ad
+*.parquet
+hf_cache/
+wandb/

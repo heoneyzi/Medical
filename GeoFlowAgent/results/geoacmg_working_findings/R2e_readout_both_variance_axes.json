@@ -1,0 +1,165 @@
+{
+  "title": "읽는 방법에 따른 cosine−euclidean — 두 분산원 모두에서",
+  "split": "dev",
+  "test_reported": false,
+  "seeds": [
+    17,
+    29,
+    43,
+    59,
+    71
+  ],
+  "by_readout": {
+    "own_energy": {
+      "per_seed_difference": [
+        0.06927,
+        0.16696,
+        0.2128,
+        0.14142,
+        0.12554
+      ],
+      "seed_clustered": {
+        "estimate": 0.14319975691966336,
+        "ci": [
+          0.09495537638587592,
+          0.18019036582177406
+        ],
+        "excludes_zero": true
+      },
+      "gene_clustered": {
+        "estimate": 0.14319975691966336,
+        "ci": [
+          0.10786121864145552,
+          0.17877312839010814
+        ],
+        "excludes_zero": true
+      }
+    },
+    "cos_std": {
+      "per_seed_difference": [
+        -0.0032,
+        0.02238,
+        0.06849,
+        0.04217,
+        -0.00244
+      ],
+      "seed_clustered": {
+        "estimate": 0.025478211098313275,
+        "ci": [
+          0.0022468792549940123,
+          0.0500434576764629
+        ],
+        "excludes_zero": true
+      },
+      "gene_clustered": {
+        "estimate": 0.025478211098313275,
+        "ci": [
+          0.007091610522365155,
+          0.03401719264033885
+        ],
+        "excludes_zero": true
+      }
+    },
+    "l2": {
+      "per_seed_difference": [
+        -0.00761,
+        0.00398,
+        -0.01762,
+        0.00787,
+        0.01796
+      ],
+      "seed_clustered": {
+        "estimate": 0.0009157910357059818,
+        "ci": [
+          -0.010517464332906967,
+          0.010841100362500633
+        ],
+        "excludes_zero": false
+      },
+      "gene_clustered": {
+        "estimate": 0.0009157910357059584,
+        "ci": [
+          -0.01044419173854472,
+          0.010338322294961441
+        ],
+        "excludes_zero": false
+      }
+    },
+    "neg_dot": {
+      "per_seed_difference": [
+        0.14949,
+        0.24991,
+        0.17962,
+        0.13166,
+        0.14783
+      ],
+      "seed_clustered": {
+        "estimate": 0.171700926390469,
+        "ci": [
+          0.14492675791601006,
+          0.21576630369496247
+        ],
+        "excludes_zero": true
+      },
+      "gene_clustered": {
+        "estimate": 0.171700926390469,
+        "ci": [
+          0.14704664060797518,
+          0.1884004907645871
+        ],
+        "excludes_zero": true
+      }
+    },
+    "cos": {
+      "per_seed_difference": [
+        0.123,
+        0.21739,
+        0.16991,
+        0.11801,
+        0.14636
+      ],
+      "seed_clustered": {
+        "estimate": 0.15493403619353152,
+        "ci": [
+          0.1293851622066607,
+          0.18901757386038429
+        ],
+        "excludes_zero": true
+      },
+      "gene_clustered": {
+        "estimate": 0.1549340361935315,
+        "ci": [
+          0.13246265240089428,
+          0.176356017918594
+        ],
+        "excludes_zero": true
+      }
+    },
+    "cos_whiten": {
+      "per_seed_difference": [
+        -0.13533,
+        -0.00028,
+        -0.05792,
+        -0.02116,
+        -0.00999
+      ],
+      "seed_clustered": {
+        "estimate": -0.04493735734929373,
+        "ci": [
+          -0.11249955835694654,
+          -0.015692814290862576
+        ],
+        "excludes_zero": true
+      },
+      "gene_clustered": {
+        "estimate": -0.04493735734929373,
+        "ci": [
+          -0.05459726415582373,
+          -0.033097774825019265
+        ],
+        "excludes_zero": true
+      }
+    }
+  },
+  "reading": "readout 이 격차의 크기뿐 아니라 **부호**도 바꾼다. 따라서 '어느 표현이 더 낫다'는 readout 독립적인 답이 없다."
+}

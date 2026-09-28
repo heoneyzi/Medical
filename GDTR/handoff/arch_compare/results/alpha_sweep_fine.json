@@ -1,0 +1,162 @@
+{
+ "0.0": {
+  "alpha": 0.0,
+  "next_base_acc": 0.38745944960816475,
+  "mean_norm_hnorm": 19.75298500061035,
+  "eff_rank_hnorm": 3.7100345486453215,
+  "acgt_frac_hnorm": 0.4652135591648921,
+  "auroc_hnorm": {
+   "coding_exon": 0.6340835845925975,
+   "splice_donor": 0.6988023989251978,
+   "splice_acceptor": 0.7043842883126693,
+   "intergenic": 0.5214354406122312
+  },
+  "eff_rank_b24": 488.0937335597048,
+  "auroc_b24": {
+   "coding_exon": 0.8407915113361017,
+   "splice_donor": 0.9584409931368925,
+   "splice_acceptor": 0.9650060053511401,
+   "intergenic": 0.8251986513025983
+  }
+ },
+ "0.002": {
+  "alpha": 0.002,
+  "next_base_acc": 0.5250464734827774,
+  "mean_norm_hnorm": 21.091989517211914,
+  "eff_rank_hnorm": 3.371142844176297,
+  "acgt_frac_hnorm": 0.498318080882154,
+  "auroc_hnorm": {
+   "coding_exon": 0.7023147262556442,
+   "splice_donor": 0.8365673749248946,
+   "splice_acceptor": 0.839026087290504,
+   "intergenic": 0.5613323744834934
+  },
+  "eff_rank_b24": 488.0937335597048,
+  "auroc_b24": {
+   "coding_exon": 0.8407915113361017,
+   "splice_donor": 0.9584409931368925,
+   "splice_acceptor": 0.9650060053511401,
+   "intergenic": 0.8251986513025983
+  }
+ },
+ "0.005": {
+  "alpha": 0.005,
+  "next_base_acc": 0.5527082194277383,
+  "mean_norm_hnorm": 22.28009033203125,
+  "eff_rank_hnorm": 3.231662457811214,
+  "acgt_frac_hnorm": 0.5322128975662319,
+  "auroc_hnorm": {
+   "coding_exon": 0.7004596273920847,
+   "splice_donor": 0.8731699190637284,
+   "splice_acceptor": 0.8679851301094782,
+   "intergenic": 0.5543385268909979
+  },
+  "eff_rank_b24": 488.0937335597048,
+  "auroc_b24": {
+   "coding_exon": 0.8407915113361017,
+   "splice_donor": 0.9584409931368925,
+   "splice_acceptor": 0.9650060053511401,
+   "intergenic": 0.8251986513025983
+  }
+ },
+ "0.01": {
+  "alpha": 0.01,
+  "next_base_acc": 0.5599690176781483,
+  "mean_norm_hnorm": 22.855863571166992,
+  "eff_rank_hnorm": 3.200409700760115,
+  "acgt_frac_hnorm": 0.5618997594758895,
+  "auroc_hnorm": {
+   "coding_exon": 0.7015600561442566,
+   "splice_donor": 0.8839812553459154,
+   "splice_acceptor": 0.8807337120686147,
+   "intergenic": 0.5576751036088471
+  },
+  "eff_rank_b24": 488.0937335597048,
+  "auroc_b24": {
+   "coding_exon": 0.8407915113361017,
+   "splice_donor": 0.9584409931368925,
+   "splice_acceptor": 0.9650060053511401,
+   "intergenic": 0.8251986513025983
+  }
+ },
+ "0.016": {
+  "alpha": 0.016,
+  "next_base_acc": 0.5620247858574813,
+  "mean_norm_hnorm": 23.110658645629883,
+  "eff_rank_hnorm": 3.204966085589148,
+  "acgt_frac_hnorm": 0.5796257141638455,
+  "auroc_hnorm": {
+   "coding_exon": 0.7011474016172902,
+   "splice_donor": 0.8862881312724754,
+   "splice_acceptor": 0.8857021501178952,
+   "intergenic": 0.5560415226051209
+  },
+  "eff_rank_b24": 488.0937335597048,
+  "auroc_b24": {
+   "coding_exon": 0.8407915113361017,
+   "splice_donor": 0.9584409931368925,
+   "splice_acceptor": 0.9650060053511401,
+   "intergenic": 0.8251986513025983
+  }
+ },
+ "0.025": {
+  "alpha": 0.025,
+  "next_base_acc": 0.562720976854383,
+  "mean_norm_hnorm": 23.277212142944336,
+  "eff_rank_hnorm": 3.2117823173883377,
+  "acgt_frac_hnorm": 0.5925261301914582,
+  "auroc_hnorm": {
+   "coding_exon": 0.7044509755025272,
+   "splice_donor": 0.8895788048021908,
+   "splice_acceptor": 0.8868836294287347,
+   "intergenic": 0.5525477260450942
+  },
+  "eff_rank_b24": 488.0937335597048,
+  "auroc_b24": {
+   "coding_exon": 0.8407915113361017,
+   "splice_donor": 0.9584409931368925,
+   "splice_acceptor": 0.9650060053511401,
+   "intergenic": 0.8251986513025983
+  }
+ },
+ "0.05": {
+  "alpha": 0.05,
+  "next_base_acc": 0.5633788955713505,
+  "mean_norm_hnorm": 23.435779571533203,
+  "eff_rank_hnorm": 3.222566798678834,
+  "acgt_frac_hnorm": 0.6054919997183174,
+  "auroc_hnorm": {
+   "coding_exon": 0.7025219163301161,
+   "splice_donor": 0.8898659288377445,
+   "splice_acceptor": 0.8890448207409628,
+   "intergenic": 0.5499406621366537
+  },
+  "eff_rank_b24": 488.0937335597048,
+  "auroc_b24": {
+   "coding_exon": 0.8407915113361017,
+   "splice_donor": 0.9584409931368925,
+   "splice_acceptor": 0.9650060053511401,
+   "intergenic": 0.8251986513025983
+  }
+ },
+ "0.1": {
+  "alpha": 0.1,
+  "next_base_acc": 0.5633825405503918,
+  "mean_norm_hnorm": 23.522014617919922,
+  "eff_rank_hnorm": 3.2295051360673552,
+  "acgt_frac_hnorm": 0.6130361742893946,
+  "auroc_hnorm": {
+   "coding_exon": 0.702344495244018,
+   "splice_donor": 0.8876246866939838,
+   "splice_acceptor": 0.8896309990903271,
+   "intergenic": 0.555503686492451
+  },
+  "eff_rank_b24": 488.0937335597048,
+  "auroc_b24": {
+   "coding_exon": 0.8407915113361017,
+   "splice_donor": 0.9584409931368925,
+   "splice_acceptor": 0.9650060053511401,
+   "intergenic": 0.8251986513025983
+  }
+ }
+}

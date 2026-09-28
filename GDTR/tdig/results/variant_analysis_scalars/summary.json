@@ -1,0 +1,29 @@
+{
+  "n_variants_total": 10910,
+  "n_binary_PLP": 3514,
+  "n_binary_BLB": 4494,
+  "n_genes": 15,
+  "best_overall": {
+    "delta_h_norm_2": {
+      "best_layer": 8,
+      "best_AUROC": 0.8550146163391448,
+      "L29_AUROC": 0.7921242742172641,
+      "L27_AUROC": 0.8071371453596892,
+      "L0_AUROC": 0.6402493528967605
+    },
+    "delta_h_norm_1": {
+      "best_layer": 8,
+      "best_AUROC": 0.8558793625801961,
+      "L29_AUROC": 0.7926061663448565,
+      "L27_AUROC": 0.8059095869050976,
+      "L0_AUROC": 0.6201002778890161
+    },
+    "delta_cos": {
+      "best_layer": 28,
+      "best_AUROC": 0.840850660553159,
+      "L29_AUROC": 0.7820514622798146,
+      "L27_AUROC": 0.8074482222423169,
+      "L0_AUROC": 0.6874772826805817
+    }
+  }
+}

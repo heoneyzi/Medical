@@ -1,0 +1,7 @@
+{
+  "phase": "phase2.5",
+  "state": "PASS",
+  "chr17_donor_min_c": 24.05709457397461,
+  "chr17_intron_bg": 27.692365646362305,
+  "donor_below_bg": true
+}

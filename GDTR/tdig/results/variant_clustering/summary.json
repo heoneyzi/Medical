@@ -1,0 +1,12 @@
+{
+  "n_variants": 10910,
+  "n_clusters": 15,
+  "n_noise": 1908,
+  "PLP_enriched_clusters": [],
+  "BLB_enriched_clusters": [
+    1,
+    2,
+    3,
+    5
+  ]
+}

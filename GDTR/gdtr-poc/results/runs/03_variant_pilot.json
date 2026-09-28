@@ -1,0 +1,66 @@
+{
+  "script": "03_variant_pilot.py",
+  "purpose": "Gate C - TP53 hotspot variant pilot (UR-gDTR primary)",
+  "seed": 42,
+  "n_hotspots": 5,
+  "n_null": 100,
+  "context_bp": 3000,
+  "L": 8,
+  "gamma_jsd": 0.5,
+  "gamma_cos": 0.5097478747367858,
+  "verdict_gate_C": {
+    "n_exceeding_null_p95_ur": 0,
+    "spearman_rho_dci_signed": 0.39999999999999997,
+    "spearman_rho_disc_interp": NaN,
+    "informational_threshold_3_of_5": false
+  },
+  "metric_agreement_rho_matrix": [
+    [
+      1.0,
+      NaN,
+      NaN
+    ],
+    [
+      NaN,
+      1.0,
+      0.39999999999999997
+    ],
+    [
+      NaN,
+      0.39999999999999997,
+      1.0
+    ]
+  ],
+  "metric_agreement_p_matrix": [
+    [
+      0.0,
+      NaN,
+      NaN
+    ],
+    [
+      NaN,
+      0.0,
+      0.5046315754686911
+    ],
+    [
+      NaN,
+      0.5046315754686911,
+      0.0
+    ]
+  ],
+  "metric_names": [
+    "delta_c_discrete",
+    "delta_c_interp",
+    "signed_argmax_delta_D"
+  ],
+  "outputs": {
+    "table_metrics": "results/tables/tp53_hotspot_metrics.csv",
+    "table_agreement": "results/tables/metric_agreement.csv",
+    "figure_F7": "results/figures/F7_delta_jsd_heatmap.{pdf,png}",
+    "figure_F8": "results/figures/F8_three_metric_agreement.{pdf,png}"
+  },
+  "runtime_s": 81.30685138702393,
+  "host": "<host>",
+  "platform": "Linux-5.4.0-193-generic-x86_64-with-glibc2.35",
+  "torch": "2.3.1+cu121"
+}

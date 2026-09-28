@@ -1,0 +1,4 @@
+2026-08-25T04:44:54Z	prepare protocol data	START	prepare protocol data
+2026-08-25T04:45:05Z	prepare protocol data	DONE	replogle-only
+2026-08-25T04:45:05Z	external model preflight	START	external model preflight
+2026-08-25T04:45:10Z	external model preflight	DONE	uce,transcriptformer_cell

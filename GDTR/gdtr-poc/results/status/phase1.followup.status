@@ -1,0 +1,12 @@
+{
+  "phase": "phase1.followup",
+  "state": "PASS",
+  "best_layer": 28,
+  "any_real_recovery_gt_50pct": true,
+  "fractional_recovery": {
+    "15": 0.9845810689827074,
+    "20": 0.9944125228947285,
+    "25": 0.9894497966252499,
+    "28": 0.9995845198552827
+  }
+}

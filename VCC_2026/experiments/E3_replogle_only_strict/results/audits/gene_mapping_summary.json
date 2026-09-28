@@ -1,0 +1,20 @@
+{
+  "datasets": {
+    "gse270828_rep3_lobo_vcc2026": {
+      "mapped_exact_or_alias": 16149,
+      "n_genes": 19698
+    },
+    "jiang24_ifng_bxpc3_loco": {
+      "mapped_exact_or_alias": 12361,
+      "n_genes": 15473
+    }
+  },
+  "hgnc_source": "<repo>/data/mappings/hgnc_complete_set.txt",
+  "n_union_genes": 24209,
+  "status": {
+    "alias": 892,
+    "ambiguous": 12,
+    "exact": 17856,
+    "missing": 5449
+  }
+}

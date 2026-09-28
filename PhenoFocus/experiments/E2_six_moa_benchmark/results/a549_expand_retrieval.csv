@@ -1,0 +1,7 @@
+moa,n_compounds,auroc,precision_at_k
+mtor_pi3k,2,,
+hsp90,0,,
+jak_rock,0,,
+hdac,3,,
+mapk,22,0.6113157894736843,0.6949999999999998
+cdk,5,0.3925925925925926,0.06000000000000001

@@ -1,0 +1,9 @@
+representation,method,pds,mse,nmae,fid,reach,jac,overall
+PCA,gwps_weighted,0.423,0,0,4.098,0,0,0.753
+UCE-4L,gwps_weighted,0.226,0,0,4.198,0,0,0.737
+TranscriptFormer,gwps_weighted,-0.117,0,0,4.143,0,0,0.671
+raw,gwps_weighted,-0.097,0,0,4.081,0,0,0.664
+STATE-SE-100M,gwps_weighted,0.039,0,0,3.944,0,0,0.664
+scPRINT-2,gwps_weighted,-0.443,0,0,4.229,0,0,0.631
+raw,no_effect,-0.438,0,0,4.072,0,0,0.606
+STACK-Large,gwps_weighted,-0.819,0,0,4.157,0,0,0.556

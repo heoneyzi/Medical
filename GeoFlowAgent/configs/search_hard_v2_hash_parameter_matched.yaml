@@ -1,0 +1,56 @@
+# Development-only capacity control for the real-frozen hard-v2 value model.
+# The hash representation keeps the same four view roles and 64-d latent space,
+# while hidden_dim=343 gives 792,003 trainable parameters versus 791,750 for
+# the frozen cosine/Euclidean model (a +0.032% difference). This separates
+# representation information from the wider frozen model's parameter count.
+seed: 17
+device: cuda:0
+project_root: ..
+
+paths:
+  processed_dir: $GEOFLOW_RUNS/search_hard_v2/development/processed
+  cache_dir: $GEOFLOW_RUNS/search_hard_v2/development/cache_hash
+  geometry_comparison_dir: $GEOFLOW_RUNS/search_hard_v2/development/checkpoints/geometry_hash_parameter_matched_792k
+
+value_training:
+  structured_dim: 64
+  shared_dim: 64
+  hidden_dim: 343
+  energy: euclidean
+  energy_rank: 32
+  dropout: 0.10
+  learning_rate: 0.0007
+  weight_decay: 0.0001
+  batch_size: 512
+  epochs: 70
+  patience: 14
+  max_states_per_task: 64
+  supervision: boltzmann
+  action_temperature: 1.0
+  regret_temperature: 0.25
+  ranking_margin: 0.05
+  gradient_clip: 1.0
+  view_dropout: 0.15
+  embedding_noise_std: 0.005
+  hard_replay_warmup: 5
+  hard_replay_fraction: 0.25
+  threshold_grid: [0.1, 0.3, 0.5, 0.7, 0.9]
+  bootstrap_reps: 1000
+  resume: true
+  loss_weights:
+    action: 1.0
+    q: 1.0
+    value: 0.5
+    regret: 0.5
+    bellman: 0.5
+    transition: 0.25
+    action_reachability: 1.0
+    state_reachability: 0.5
+    completion: 1.0
+
+search_dagger:
+  replay_fraction: 0.50
+
+geometry_comparison:
+  energies: [euclidean]
+  seeds: [17, 29, 43]

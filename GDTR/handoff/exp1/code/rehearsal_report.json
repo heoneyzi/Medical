@@ -1,0 +1,177 @@
+{
+  "root": "/tmp/rh5",
+  "reference": {
+    "chrM_bp": 440800,
+    "chrS_bp": 260800,
+    "units": 1100,
+    "classes": {
+      "GT-AG": 770,
+      "GC-AG": 264,
+      "AT-AC": 66
+    }
+  },
+  "n_steps": 20,
+  "n_failed_critical": 0,
+  "steps": [
+    {
+      "name": "selftest",
+      "ok": true,
+      "critical": true,
+      "seconds": 8.89,
+      "argv": "selftest",
+      "tail": ""
+    },
+    {
+      "name": "step0-motifs plan",
+      "ok": true,
+      "critical": true,
+      "seconds": 0.37,
+      "argv": "step0-motifs plan",
+      "tail": ""
+    },
+    {
+      "name": "step0-motifs acquire",
+      "ok": true,
+      "critical": true,
+      "seconds": 0.57,
+      "argv": "step0-motifs acquire --chroms chrM --no-network",
+      "tail": ""
+    },
+    {
+      "name": "step0-motifs verify",
+      "ok": true,
+      "critical": true,
+      "seconds": 0.34,
+      "argv": "step0-motifs verify",
+      "tail": ""
+    },
+    {
+      "name": "step1-blockmap",
+      "ok": true,
+      "critical": false,
+      "seconds": 0.34,
+      "argv": "step1-blockmap",
+      "tail": ""
+    },
+    {
+      "name": "step4-panel",
+      "ok": true,
+      "critical": true,
+      "seconds": 0.48,
+      "argv": "step4-panel --chrom chrS --n-windows 10",
+      "tail": ""
+    },
+    {
+      "name": "step2-onset",
+      "ok": true,
+      "critical": true,
+      "seconds": 2.02,
+      "argv": "step2-onset --model mock --chrom chrS --device cpu --n-windows 3",
+      "tail": ""
+    },
+    {
+      "name": "step3-fidelity",
+      "ok": true,
+      "critical": true,
+      "seconds": 2.01,
+      "argv": "step3-fidelity --model mock --chrom chrS --device cpu --n-windows 2",
+      "tail": ""
+    },
+    {
+      "name": "step5-uref",
+      "ok": true,
+      "critical": true,
+      "seconds": 1.99,
+      "argv": "step5-uref --model mock --chrom chrS --device cpu --n-windows 4",
+      "tail": ""
+    },
+    {
+      "name": "step6-prereg",
+      "ok": true,
+      "critical": true,
+      "seconds": 0.36,
+      "argv": "step6-prereg --force",
+      "tail": ""
+    },
+    {
+      "name": "step5-extract",
+      "ok": true,
+      "critical": true,
+      "seconds": 66.52,
+      "argv": "step5-extract --model mock --chrom chrS --device cpu --variants real,shuffle_di --raw-per-context 60",
+      "tail": ""
+    },
+    {
+      "name": "step5-extract perturb",
+      "ok": true,
+      "critical": true,
+      "seconds": 95.9,
+      "argv": "step5-extract --model mock --chrom chrS --device cpu --variants real --perturb --perturb-every 2 --perturb-sites 1 --tag perturb --raw-per-context 0",
+      "tail": ""
+    },
+    {
+      "name": "step5-extract shuffled",
+      "ok": true,
+      "critical": false,
+      "seconds": 38.73,
+      "argv": "step5-extract --model mock --chrom chrS --device cpu --variants real --shuffle-seed 1234 --tag shuffled --raw-per-context 0",
+      "tail": ""
+    },
+    {
+      "name": "step7-analysis",
+      "ok": true,
+      "critical": true,
+      "seconds": 7.58,
+      "argv": "step7-analysis --model mock --chrom chrS --device cpu --allow-unfrozen",
+      "tail": ""
+    },
+    {
+      "name": "step7b-regimes",
+      "ok": true,
+      "critical": true,
+      "seconds": 37.57,
+      "argv": "step7b-regimes --model mock --chrom chrS --device cpu",
+      "tail": ""
+    },
+    {
+      "name": "step7c-motifs",
+      "ok": true,
+      "critical": true,
+      "seconds": 5.38,
+      "argv": "step7c-motifs --model mock --chrom chrS --device cpu --tag perturb",
+      "tail": ""
+    },
+    {
+      "name": "step7d-dualref",
+      "ok": true,
+      "critical": true,
+      "seconds": 6.03,
+      "argv": "step7d-dualref --model mock --chrom chrS --device cpu",
+      "tail": ""
+    },
+    {
+      "name": "step7e-sitedefs",
+      "ok": true,
+      "critical": true,
+      "seconds": 3.62,
+      "argv": "step7e-sitedefs --model mock --chrom chrS --device cpu",
+      "tail": ""
+    },
+    {
+      "name": "step8-stage2",
+      "ok": true,
+      "critical": true,
+      "seconds": 24.04,
+      "argv": "step8-stage2 --model mock --chrom chrS --device cpu --allow-unfrozen",
+      "tail": ""
+    },
+    {
+      "name": "step9-profile",
+      "ok": true,
+      "critical": true,
+      "seconds": 26.21,
+      "argv": "step9-profile --model mock --chrom chrS --device cpu --motif-probes",
+      "tail": ""
+    }
+  ]
+}

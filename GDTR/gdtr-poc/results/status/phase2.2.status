@@ -1,0 +1,16 @@
+{
+  "phase": "phase2.2",
+  "state": "PASS",
+  "verdict": {
+    "U": 308218414570426.0,
+    "p_two_sided": 0.0,
+    "alpha_bonf": 1.7e-51,
+    "p_pass": true,
+    "cohens_d": -0.12399556291653442,
+    "d_pass": false,
+    "intron_higher": false,
+    "overall_pass": false,
+    "exon_mean_c": 28.49611584334814,
+    "intron_mean_c": 27.69239096366567
+  }
+}

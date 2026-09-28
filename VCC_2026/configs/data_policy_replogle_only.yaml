@@ -1,0 +1,21 @@
+track: STRICT_REPLOGLE_ONLY
+explicit_perturbation_sources:
+  allowed: [replogle_k562, replogle_rpe1]
+  forbidden:
+    - xatlas
+    - gse281048
+    - gse264667
+    - marson
+    - kolf21j
+    - vcc2025_perturbations
+orthogonal_priors:
+  allowed:
+    - uce
+    - transcriptformer
+    - scgpt
+    - scfoundation
+    - scprint2
+    - state_se
+    - stack_embedding
+external_perturbation_ground_truth_for_tuning:
+  default_allowed: false

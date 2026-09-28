@@ -1,0 +1,7 @@
+{
+  "global_scale": 0.25,
+  "metric_source": "replogle_internal_cv",
+  "n_common_genes": 7093,
+  "n_dual_targets": 2390,
+  "selection_metric": "symmetric_cross_source_nmae"
+}

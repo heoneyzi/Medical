@@ -1,0 +1,5 @@
+artifacts/
+__pycache__/
+*.pyc
+a549_mvp_out/
+a549_data/

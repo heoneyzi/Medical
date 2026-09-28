@@ -1,0 +1,254 @@
+# Preregistered one-time hard-v2 final evaluation. Never use this file for dev
+# selection or DAgger fitting. It materializes a separate full package only
+# after all development controls are terminal and the freeze manifest exists.
+seed: 17
+device: cuda:0
+project_root: ..
+
+paths:
+  raw_dir: $GEOFLOW_RUNS/search_hard_v2/raw
+  processed_dir: $GEOFLOW_RUNS/search_hard_v2/final/processed
+  cache_dir: $GEOFLOW_RUNS/search_hard_v2/final/cache_frozen_qwen15
+  embedding_report_dir: $GEOFLOW_RUNS/search_hard_v2/final/reports/embeddings_frozen_qwen15
+  quality_report: $GEOFLOW_RUNS/search_hard_v2/final/reports/data_quality.json
+  value_output_dir: $GEOFLOW_RUNS/search_hard_v2/final/checkpoints/value_unused
+  dagger_output_dir: $GEOFLOW_RUNS/search_hard_v2/final/checkpoints/dagger_unused
+  state_flow_output_dir: $GEOFLOW_RUNS/search_hard_v2/final/checkpoints/state_flow_unused
+  geometry_comparison_dir: $GEOFLOW_RUNS/search_hard_v2/final/checkpoints/geometry_unused
+  search_agent_report_dir: $GEOFLOW_RUNS/search_hard_v2/final/reports/search_agent
+  run_summary: $GEOFLOW_RUNS/search_hard_v2/final/run_summary.json
+  search_prepare_progress_backup: $GEOFLOW_RESULTS/search_hard_v2/final/exact_search_progress.json
+  embedding_progress_backup: $GEOFLOW_RESULTS/search_hard_v2/final/embedding_progress.json
+  test_access_ledger: $GEOFLOW_RESULTS/search_hard_v2/final/test_access_ledger.jsonl
+
+synthetic_fixture:
+  enabled: false
+
+search_preprocessing:
+  max_depth: 18
+  max_states: 20000
+  top_k_paths: 8
+  near_optimal_slack: 0.0
+  include_unreachable: true
+  require_complete_graph: true
+  require_reachable_root: true
+  split_group_kinds: [case, entity, template, source, release]
+  costs:
+    call: 1.0
+    failure: 2.0
+    redundancy: 0.5
+    status: {empty: 1.0, failure: 2.0}
+
+data_quality:
+  min_tasks: 240
+  min_tasks_per_split: {train: 144, dev: 48, test: 48}
+  min_workflow_families: 20
+  min_entities: 240
+  min_sequence_contexts: 240
+  min_templates: 60
+  min_topologies: 20
+  min_sources: 3
+  min_source_releases: 3
+  min_verifier_coverage: 1.0
+  split_group_keys: [case, entity, template, source, release]
+  require_complete_split_group_metadata: true
+  require_search_supervision: true
+  min_known_applicable_action_fraction: 1.0
+  max_unknown_applicable_action_fraction: 0.0
+  min_branch_state_fraction: 0.20
+  min_branch_label_coverage: 1.0
+  min_nontrivial_regret_fraction: 0.20
+  min_multi_path_state_fraction: 0.15
+  max_oracle_contract_collapse_fraction: 0.65
+  min_search_complete_fraction: 1.0
+  max_incomplete_or_unknown_state_fraction: 0.0
+  allow_synthetic: true
+  scope_overrides:
+    sealed_development:
+      min_tasks: 192
+      min_tasks_per_split: {train: 144, dev: 48}
+      min_entities: 192
+      min_sequence_contexts: 192
+      min_templates: 40
+      min_sources: 2
+      min_source_releases: 2
+
+embedding:
+  batch_size: 8
+  storage_dtype: float16
+  views:
+    qwen_general:
+      kind: prototype
+      query_encoder: &qwen
+        backend: huggingface
+        model_name: Qwen/Qwen2.5-1.5B-Instruct
+        revision: 989aa7980e4cf806f80c7fef2b1adb7bc71aa306
+        pooling: mean
+        normalize: true
+        max_length: 512
+        device: auto
+        dtype: bfloat16
+        trust_remote_code: false
+        local_files_only: true
+      document_encoder: *qwen
+      example_fields: [query, goal, state, history]
+      tool_fields: [description, contract]
+      encode_background: true
+    medcpt:
+      kind: prototype
+      query_encoder:
+        backend: huggingface
+        model_name: ncbi/MedCPT-Query-Encoder
+        revision: d83a36cc6b8e3a5c5e9d9d6ba156808c1643dcbc
+        pooling: cls
+        normalize: true
+        max_length: 512
+        device: auto
+        dtype: float32
+        trust_remote_code: false
+        local_files_only: true
+      document_encoder:
+        backend: huggingface
+        model_name: ncbi/MedCPT-Article-Encoder
+        revision: d05a736da4bb84ee4057b7f7999485be6ed85465
+        pooling: cls
+        normalize: true
+        max_length: 512
+        device: auto
+        dtype: float32
+        trust_remote_code: false
+        local_files_only: true
+      example_fields: [query, goal, state, history]
+      tool_fields: [description, contract]
+      encode_background: true
+    sapbert_entity_aux:
+      kind: state_only
+      snapshot_field: entities
+      encode_pairs: false
+      query_encoder:
+        backend: huggingface
+        model_name: cambridgeltl/SapBERT-from-PubMedBERT-fulltext
+        revision: 090663c3ae57bf35ffe4d0d468a2a88d03051a4d
+        pooling: cls
+        normalize: true
+        max_length: 128
+        device: auto
+        dtype: float32
+        trust_remote_code: false
+        local_files_only: true
+      example_fields: [entities]
+      tool_fields: []
+      encode_background: false
+    dnabert2_sequence_aux:
+      kind: state_only
+      snapshot_field: sequence
+      encode_pairs: false
+      query_encoder:
+        backend: huggingface
+        model_name: zhihan1996/DNABERT-2-117M
+        revision: 7bce263b15377fc15361f52cfab88f8b586abda0
+        pooling: mean
+        normalize: true
+        max_length: 256
+        device: auto
+        dtype: float32
+        trust_remote_code: true
+        local_files_only: true
+        config_overrides:
+          attention_probs_dropout_prob: 1.0e-12
+      example_fields: [sequence]
+      tool_fields: []
+      encode_background: false
+
+# Retained only to document the frozen choice. Final commands pass already
+# selected checkpoints and must not call train-value.
+value_training:
+  structured_dim: 64
+  shared_dim: 64
+  hidden_dim: 128
+  energy: cosine
+  energy_rank: 32
+  dropout: 0.10
+  learning_rate: 0.0007
+  weight_decay: 0.0001
+  batch_size: 256
+  epochs: 70
+  patience: 14
+  max_states_per_task: 64
+  supervision: boltzmann
+  action_temperature: 1.0
+  regret_temperature: 0.25
+  ranking_margin: 0.05
+  gradient_clip: 1.0
+  view_dropout: 0.15
+  embedding_noise_std: 0.005
+  hard_replay_warmup: 5
+  hard_replay_fraction: 0.25
+  threshold_grid: [0.1, 0.3, 0.5, 0.7, 0.9]
+  bootstrap_reps: 1000
+  loss_weights:
+    action: 1.0
+    q: 1.0
+    value: 0.5
+    regret: 0.5
+    bellman: 0.5
+    transition: 0.25
+    action_reachability: 1.0
+    state_reachability: 0.5
+    completion: 1.0
+
+search_dagger:
+  enabled: false
+  final_policy: development_selected_round_2
+  retraining_forbidden: true
+
+state_flow_training:
+  structured_dim: 64
+  dim: 64
+  hidden_dim: 128
+  layers: 2
+  heads: 8
+  dropout: 0.10
+  projection_seed: 17
+  tool_mix: 0.35
+  max_plan_length: 18
+  path_beta: 1.0
+  learning_rate: 0.0007
+  weight_decay: 0.0001
+  batch_size: 128
+  epochs: 70
+  patience: 14
+  steps_per_epoch: 36
+  pad_weight: 0.05
+  transition_temperature: 0.07
+  gradient_clip: 1.0
+  nfe: 16
+  evaluation_samples_per_state: 4
+  stop_threshold_grid: [0.1, 0.3, 0.5, 0.7, 0.9]
+  resume: false
+  loss_weights:
+    flow_matching: 1.0
+    endpoint: 0.5
+    stop: 0.75
+    transition: 0.75
+
+geometry_comparison:
+  energies: [cosine]
+  seeds: [17, 29, 43]
+
+search_agent_evaluation:
+  max_steps: 18
+  runtime_embedding_policy: cache_or_encode
+  retry_limit_per_tool: 1
+  bootstrap_reps: 1000
+  # Training-cache paths are consumed by the fail-closed unseen-tool superset
+  # verifier that must pass before final evaluation.
+  training_processed_dir: $GEOFLOW_RUNS/search_hard_v2/development/processed
+  training_cache_dir: $GEOFLOW_RUNS/search_hard_v2/development/cache_frozen_qwen15
+  perturbations:
+    - name: annotation_primary_empty
+      task_id: "*"
+      tool_id: annotate_primary
+      kind: empty_result
+      once: true
+      message: The primary annotation source returned an empty result; use the alternate source.

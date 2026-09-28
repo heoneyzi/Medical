@@ -1,0 +1,33 @@
+{
+  "script": "04_hp_sweep.py",
+  "purpose": "Phase 1 (gamma_cos, rho) recommendation",
+  "n_grid_points": 18,
+  "gamma_cos_grid": [
+    0.05,
+    0.1,
+    0.2,
+    0.3,
+    0.5,
+    0.7
+  ],
+  "rho_grid": [
+    0.5,
+    0.7,
+    0.85
+  ],
+  "best": {
+    "gamma_cos": 0.5,
+    "rho": 0.85,
+    "cohens_d_exon_vs_intron_c_interp": -1.026400456430725,
+    "mean_abs_delta_c_interp_hotspots": 0.3492581367492676
+  },
+  "notes": "rho=0.85 with L=8 means deep regime is c>6.8, i.e., c in {7, 8} only. rho=0.7 means c>5.6, i.e., c in {6, 7, 8}. rho=0.5 means c>4.",
+  "outputs": {
+    "table": "results/tables/hp_sweep.csv",
+    "figure_F9": "results/figures/F9_hp_heatmap.{pdf,png}"
+  },
+  "runtime_s": 4.43009614944458,
+  "host": "<host>",
+  "platform": "Linux-5.4.0-193-generic-x86_64-with-glibc2.35",
+  "torch": "2.3.1+cu121"
+}

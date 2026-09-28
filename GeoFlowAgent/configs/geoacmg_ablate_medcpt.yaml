@@ -1,0 +1,290 @@
+# GeoACMG run record.
+#
+# The geoacmg CLI is argument driven; this file is what the repository's own
+# pipeline (prepare-search / embed / train-*) reads, and the frozen record of the
+# parameters a run used. Keep it under version control next to the manifests it
+# produced.
+#
+# ---------------------------------------------------------------------------
+# 2026-09-19 수리 기록 (이 주석을 지우지 마라)
+#
+# 이 파일의 최초 버전은 기반 저장소가 읽지 않는 키 이름을 쓰고 있었다.
+# 기반 저장소(src/geoflowagent/cli.py::_paths, _search_prepare_kwargs,
+# embeddings/cache.py::build_embedding_cache)가 실제로 읽는 이름으로 고쳤다.
+#
+#   project_root: .        -> ..        경로는 config 파일의 부모 기준으로 풀린다.
+#                                       '.'이면 raw_dir 이 configs/artifacts/... 가 된다.
+#   search:                -> search_preprocessing:
+#   value:                 -> value_training:
+#   state_flow:            -> state_flow_training:
+#   analysis:              -> 삭제. 어떤 모듈도 읽지 않는다. max_tasks_per_gene 과
+#                             split_by 는 CLI 플래그이고 사전등록에 기록된다.
+#   embedding.views.*.query -> query_encoder, document -> document_encoder,
+#                              model -> model_name
+#                              (+ example_fields / tool_fields / normalize /
+#                               local_files_only. 없으면 cache.py 가
+#                               KeyError('query_encoder') 로 즉사하고, 고쳐도
+#                               examples.state.npy 가 안 생겨 probe 가 빈손이 된다)
+#
+#   MedCPT revision 두 개가 HuggingFace 에 없는 해시였다(404 확인).
+#   1차 사전등록과 같은 실재 리비전으로 되돌렸다. 저장소의 다른 config 13개는
+#   전부 이 값을 쓰고 있었다.
+#
+# 값의 출처: 2차가 선언한 값이 있으면 그것을, 없으면 1차 frozen config
+# (configs/search_hard_v2_frozen.yaml)의 값을 그대로 썼다. 새로 지어낸 값은 없다.
+# data_quality 블록은 일부러 비워 두었다 — 11단계 중 품질 게이트를 호출하는
+# 단계가 없고, 임계값을 지어내는 것은 금지되어 있다.
+# ---------------------------------------------------------------------------
+seed: 17
+device: auto
+project_root: ..
+
+paths:
+  raw_dir: artifacts/acmg/corpus
+  processed_dir: artifacts/acmg/processed
+  cache_dir: artifacts/acmg/cache
+  embedding_report_dir: artifacts/acmg/reports/embeddings
+  quality_report: artifacts/acmg/reports/data_quality.json
+  value_output_dir: artifacts/acmg/checkpoints/value
+  state_flow_output_dir: artifacts/acmg/checkpoints/state_flow
+  geometry_comparison_dir: artifacts/acmg/checkpoints/geometry_comparison
+  search_agent_report_dir: artifacts/acmg/reports/search_agent
+  run_summary: artifacts/acmg/run_summary.json
+
+synthetic_fixture:
+  # The corpus comes from ClinGen. Never overwrite it with the procedural fixture.
+  enabled: false
+
+# ------------------------------------------------------------------- search
+# Exact graph construction is fail-closed. If a bound is hit, shrink each task's
+# candidate catalogue rather than treating unresolved actions as bad actions.
+search_preprocessing:
+  max_depth: 12
+  max_states: 20000
+  top_k_paths: 8
+  near_optimal_slack: 0.0
+  include_unreachable: true
+  require_complete_graph: true
+  require_reachable_root: true
+  split_group_kinds: [case, entity, template, source, release]
+  costs:
+    call: 1.0
+    failure: 1.0
+    redundancy: 0.25
+  # Probe and report costs live in the tool contracts. They are placeholders
+  # until the capture stage measures real per-family latency; a budget-matched
+  # comparison run on placeholder costs measures nothing.
+
+# ---------------------------------------------------------------- encoders
+# Every backbone is frozen. Revisions are pinned so a cache can be attributed to
+# an exact set of weights. Start with MedCPT alone: it was the view that survived
+# phase 1's ablation, it is 110M parameters, and it costs minutes rather than
+# tens of minutes. Add the others when the encoder-arm experiment needs them.
+embedding:
+  batch_size: 32
+  storage_dtype: float16
+  views:
+    medcpt:
+      kind: prototype
+      query_encoder:
+        backend: huggingface
+        model_name: ncbi/MedCPT-Query-Encoder
+        revision: d83a36cc6b8e3a5c5e9d9d6ba156808c1643dcbc
+        pooling: cls
+        normalize: true
+        max_length: 512
+        device: auto
+        dtype: float32
+        trust_remote_code: false
+        local_files_only: true
+      document_encoder:
+        backend: huggingface
+        model_name: ncbi/MedCPT-Article-Encoder
+        revision: d05a736da4bb84ee4057b7f7999485be6ed85465
+        pooling: cls
+        normalize: true
+        max_length: 512
+        device: auto
+        dtype: float32
+        trust_remote_code: false
+        local_files_only: true
+      example_fields: [query, goal, state, history]
+      tool_fields: [description, contract]
+      encode_background: false
+    # The other three phase-1 views. Uncomment when the encoder-arm experiment
+    # (plan step 5, claims C1/C2) needs them. SapBERT and DNABERT-2 collapsed to
+    # the contract-only floor in phase 1 because the gene names were synthetic
+    # and the sequences were random; on ClinGen they get their first fair test.
+    # qwen_general:
+    #   kind: prototype
+    #   query_encoder: &qwen
+    #     backend: huggingface
+    #     model_name: Qwen/Qwen2.5-1.5B-Instruct
+    #     revision: 989aa7980e4cf806f80c7fef2b1adb7bc71aa306
+    #     pooling: mean
+    #     normalize: true
+    #     max_length: 512
+    #     device: auto
+    #     dtype: bfloat16
+    #     trust_remote_code: false
+    #     local_files_only: true
+    #   document_encoder: *qwen
+    #   example_fields: [query, goal, state, history]
+    #   tool_fields: [description, contract]
+    #   encode_background: false
+    # sapbert_entity_aux:
+    #   kind: state_only
+    #   snapshot_field: entities
+    #   encode_pairs: false
+    #   query_encoder:
+    #     backend: huggingface
+    #     model_name: cambridgeltl/SapBERT-from-PubMedBERT-fulltext
+    #     revision: 090663c3ae57bf35ffe4d0d468a2a88d03051a4d
+    #     pooling: cls
+    #     normalize: true
+    #     max_length: 128
+    #     device: auto
+    #     dtype: float32
+    #     trust_remote_code: false
+    #     local_files_only: true
+    #   example_fields: [entities]
+    #   tool_fields: []
+    #   encode_background: false
+    # dnabert2_sequence_aux:
+    #   kind: state_only
+    #   snapshot_field: sequence
+    #   encode_pairs: false
+    #   query_encoder:
+    #     backend: huggingface
+    #     model_name: zhihan1996/DNABERT-2-117M
+    #     revision: 7bce263b15377fc15361f52cfab88f8b586abda0
+    #     pooling: mean
+    #     normalize: true
+    #     max_length: 256
+    #     device: auto
+    #     dtype: float32
+    #     trust_remote_code: true
+    #     local_files_only: true
+    #     config_overrides:
+    #       attention_probs_dropout_prob: 1.0e-12
+    #   example_fields: [sequence]
+    #   tool_fields: []
+    #   encode_background: false
+
+# -------------------------------------------------------------------- value
+# shared_dim / hidden_dim / energy / epochs / batch_size / learning_rate /
+# weight_decay / dropout / view_dropout / max_states_per_task are the values the
+# geoacmg overlay declared. Everything else is phase 1's frozen config verbatim,
+# so the head is the same model, not a new one.
+#
+# energy: cosine is phase 1's final selection (MedCPT-only + cosine + 2x head).
+# The geometry stage re-tests it here rather than assuming it.
+value_training:
+  # ── ABLATION ARM ──────────────────────────────────────────────────────
+  # 동결 MedCPT 뷰를 0 으로 채운다. 기호 해시(StructuredHasher, 학습 없음)만 남는다.
+  # 묻는 것: 학습된 모델이 MedCPT 를 잃으면 무엇을 잃는가.
+  # 근거: R9 에서 기호 해시 단독 PCA-64+cos = 0.7054 (MedCPT 포함 0.7040),
+  #       사전등록 probe 의 E2_depth_matched_ordering_medcpt = -0.0522.
+  feature_ablation:
+    zero_views: [medcpt]
+    zero_structured: false
+  structured_dim: 64
+  shared_dim: 64
+  hidden_dim: 128
+  energy: cosine
+  energy_rank: 32
+  dropout: 0.10
+  learning_rate: 0.0007
+  weight_decay: 0.0001
+  batch_size: 256
+  epochs: 60
+  patience: 14
+  max_states_per_task: 64
+  supervision: boltzmann
+  action_temperature: 1.0
+  regret_temperature: 0.25
+  ranking_margin: 0.05
+  gradient_clip: 1.0
+  view_dropout: 0.15
+  embedding_noise_std: 0.005
+  hard_replay_warmup: 5
+  hard_replay_fraction: 0.25
+  # Phase 2 stops on the ACMG point band, not on a learned threshold. This grid
+  # is kept only because the phase-1 trainer reports it; the band is the rule.
+  threshold_grid: [0.1, 0.3, 0.5, 0.7, 0.9]
+  bootstrap_reps: 1000
+  loss_weights:
+    action: 1.0
+    q: 1.0
+    value: 0.5
+    regret: 0.5
+    bellman: 0.5
+    transition: 0.25
+    action_reachability: 1.0
+    state_reachability: 0.5
+    completion: 1.0
+
+search_dagger:
+  # Phase 1 found no significant DAgger improvement: policy, joint and regret
+  # intervals all contained zero. The plan removes it from the default pipeline.
+  # Turning it back on means pre-registering it as its own hypothesis.
+  enabled: false
+
+state_flow_training:
+  structured_dim: 64
+  dim: 64
+  hidden_dim: 128
+  layers: 2
+  heads: 8
+  dropout: 0.10
+  projection_seed: 17
+  tool_mix: 0.35
+  max_plan_length: 12
+  path_beta: 1.0
+  learning_rate: 0.0007
+  weight_decay: 0.0001
+  batch_size: 128
+  epochs: 60
+  patience: 14
+  steps_per_epoch: 36
+  pad_weight: 0.05
+  transition_temperature: 0.07
+  gradient_clip: 1.0
+  nfe: 16
+  evaluation_samples_per_state: 4
+  stop_threshold_grid: [0.1, 0.3, 0.5, 0.7, 0.9]
+  resume: true
+  loss_weights:
+    flow_matching: 1.0
+    endpoint: 0.5
+    stop: 0.75
+    transition: 0.75
+
+# ----------------------------------------------------------------- geometry
+# Five candidates, not phase 1's nine. Each has a literature warrant and each is
+# an energy that already exists in models/distances.py - no new distance is
+# written, so the phase-1 comparison stays connected.
+#
+#   cosine                 phase 1 winner, symmetric baseline
+#   euclidean              symmetric baseline
+#   directed_quasimetric   asymmetric; evidence only accumulates in this domain
+#   poincare               hyperbolic arm
+#   pair_mlp               metric-free, capacity-matched control
+geometry_comparison:
+  energies: [cosine, euclidean, directed_quasimetric, poincare, pair_mlp]
+  seeds: [17, 29, 43]
+
+search_agent_evaluation:
+  # max_steps tracks state_flow_training.max_plan_length.
+  max_steps: 12
+  runtime_embedding_policy: cache_or_encode
+  retry_limit_per_tool: 1
+  bootstrap_reps: 1000
+  # No perturbation list: phase 1's entries name hard-v2 tool ids that do not
+  # exist in the ACMG registry. A perturbation suite for this domain must be
+  # written against the real tool families and pre-registered.
+
+# data_quality:
+#   Deliberately absent. No stage in the 11-stage pipeline calls the quality
+#   gate, and inventing thresholds is exactly the forbidden move. Pre-register
+#   the floors first, then write them here.

@@ -1,0 +1,5 @@
+{
+  "figure_id": "F2b",
+  "title": "Gate A' UR-gDTR sanity",
+  "caption": "Cosine-distance lens (UR-gDTR) sanity for HyenaDNA-medium-160k on 100 random 6 kb sequences (50 GC-matched chr17 intergenic + 50 dinucleotide-shuffled, seed=42). (a) Per-layer M2_ur - fraction of post-edge positions where the running-min of cosine distance to the final layer remains tied to the raw value. (b) Cosine-distance distribution per layer with gamma_cos = 0.1 default (red dotted) and quantile-calibrated gamma_q70 at the penultimate layer = 0.482 (green dashed). (c) Convergence-depth distribution under both gamma choices."
+}

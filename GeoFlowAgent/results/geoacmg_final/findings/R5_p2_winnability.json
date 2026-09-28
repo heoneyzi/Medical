@@ -1,0 +1,49 @@
+{
+  "question": "P2(동결 vs 처음부터 학습)가 비퇴화 비교를 가질 수 있는가",
+  "scale": {
+    "frozen_encoder_params": 109000000,
+    "trunk_params": 335942,
+    "n_tasks": 2921,
+    "n_examples": 448704,
+    "n_gene_clusters": 155,
+    "effective_clusters": 57.36847378081989,
+    "params_per_effective_cluster": 1899998.2536827077
+  },
+  "axes": [
+    {
+      "axis": "parameters",
+      "description": "두 arm 의 학습 파라미터 수를 맞춘다",
+      "from_scratch_gets": "109,000,000 파라미터",
+      "degenerate_reason": "유효 클러스터 57.4 개 위에서 109,000,000 파라미터를 학습한다. 동결 arm 은 말뭉치 밖에서 이미 학습된 표현을 들고 오므로, 이 축의 비교는 '사전학습이 도움이 되는가'가 아니라 '적은 데이터로 큰 모델을 처음부터 학습할 수 있는가'를 묻게 된다.",
+      "empirical_test": null,
+      "survivable": false
+    },
+    {
+      "axis": "data",
+      "description": "두 arm 이 보는 데이터를 맞춘다",
+      "from_scratch_gets": "task 2,921 / 예제 448,704",
+      "degenerate_reason": "동결 arm 의 표현은 말뭉치 밖에서 왔다. 데이터를 맞추는 순간 '사전학습 말뭉치를 못 쓰게 한다'는 뜻이 되어, 사전학습의 가치를 정의상 0 으로 만든 뒤 사전학습을 평가하게 된다.",
+      "empirical_test": null,
+      "survivable": false
+    },
+    {
+      "axis": "compute",
+      "description": "총 학습 연산(FLOPs·wall-clock)을 맞추고 구조는 자유롭게 둔다",
+      "from_scratch_gets": "동일 연산 예산 안에서 고를 수 있는 아무 크기의 인코더",
+      "degenerate_reason": null,
+      "empirical_test": "learning_curve_probe: 데이터 비율을 올려가며 from-scratch arm 을 학습해 곡선이 전 구간에서 측정된 우연 수준에 붙어 있는지 본다. 붙어 있으면 퇴화(어떤 예산으로도 배우지 못함), 상승 중이면 비퇴화(예산을 늘리면 경쟁이 성립).",
+      "survivable": true
+    },
+    {
+      "axis": "wall_clock",
+      "description": "벽시계 시간을 맞춘다",
+      "from_scratch_gets": "동일 시간",
+      "degenerate_reason": "하드웨어·구현 효율이 결론을 좌우한다. 연산 축과 같은 것을 재면서 재현 불가능한 교란만 더한다.",
+      "empirical_test": null,
+      "survivable": false
+    }
+  ],
+  "survivable_axes": [
+    "compute"
+  ]
+}

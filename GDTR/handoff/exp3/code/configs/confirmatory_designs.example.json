@@ -1,0 +1,110 @@
+{
+  "branch_specific_reverse_trace": {
+    "estimand": "Locked output effect attributable to the weakest link of each branch-specific b30-to-b29-to-b28-to-sequence reverse chain.",
+    "decision_rule": "Require at least two independent candidate methods, a positive held-out output intervention, and a leakage-penalized bottleneck score above the declared margin; otherwise report partial, bounded-null, or unidentified tracing.",
+    "thresholds": {"minimum_candidate_methods": 2, "minimum_output_effect": 0.1, "maximum_off_path_leakage": 0.05},
+    "hyperparameters": {"direction_bank_ranks": [1, 2, 4, 8, 16], "bootstrap_replicates": 10000, "alpha": 0.05},
+    "control_families": ["carrier_only", "wrong_layer", "dose_rank_matched_random"],
+    "control_plan": "Run all controls on the identical locked units and endpoint as each branch-specific reverse direction.",
+    "data_roles": {"selection": "chr22", "development": "chr21", "confirmation": "chr17"}
+  },
+  "common_reverse_trace": {
+    "estimand": "Locked output effect attributable to the weakest link of the common b30-to-b29-to-b28-to-sequence reverse chain.",
+    "decision_rule": "Require at least two independent candidate methods, a positive held-out output intervention, and a leakage-penalized bottleneck score above the declared margin; otherwise report partial, bounded-null, or unidentified tracing.",
+    "thresholds": {"minimum_candidate_methods": 2, "minimum_output_effect": 0.1, "maximum_off_path_leakage": 0.05},
+    "hyperparameters": {"direction_bank_ranks": [1, 2, 4, 8, 16], "bootstrap_replicates": 10000, "alpha": 0.05},
+    "control_families": ["carrier_only", "wrong_layer", "dose_rank_matched_random"],
+    "control_plan": "Run all controls on the identical locked units and endpoint as the common reverse direction.",
+    "data_roles": {"selection": "chr22", "development": "chr21", "confirmation": "chr17"}
+  },
+  "cross_chromosome_generalization": {
+    "estimand": "Preservation of the frozen mechanism across untouched chromosome, task family, model size, checkpoint, context, and training time.",
+    "decision_rule": "Require dependency-cluster confidence bounds for every preregistered domain, internally replayed locked checkpoint predictions, and sustained multi-seed training crossings; do not average away a failed domain.",
+    "thresholds": {"minimum_transfer": 0.1, "control_equivalence": 0.05, "minimum_rescue": 0.1, "minimum_alignment_cosine": 0.8, "identified_fraction_min": 0.8, "ordered_fraction_min": 0.8, "crossing_equivalence_steps": 0},
+    "hyperparameters": {"sustain_checkpoints": 3, "minimum_dependency_clusters": 5, "bootstrap_replicates": 10000, "alpha": 0.05},
+    "control_families": ["wrong_layer", "index_matched_random", "b30_block", "heldout_predicted_delta"],
+    "control_plan": "Use the exact same unit panel for every mechanism-domain cell and fit alignment/predictor only on disjoint discovery/development anchors.",
+    "data_roles": {"alignment_fit": "chr22", "alignment_validation": "chr21", "confirmation": "chr17"}
+  },
+  "exp1_extension": {
+    "estimand": "Out-of-family improvement in explaining EXP1 cases with the fixed EXP2 stage ontology plus the frozen EXP3 factorization fingerprint.",
+    "decision_rule": "Evaluate predeclared stage labels and outcomes on held-out task families; require the full fingerprint to beat task-only and shuffled-fingerprint baselines without selecting on EXP1 outcomes.",
+    "thresholds": {"minimum_oof_improvement": 0.1, "equivalence_margin": 0.05},
+    "hyperparameters": {"label_budgets": [0, 1, 5, 10, 25, 50, 100, 250, "full"], "bootstrap_replicates": 10000, "alpha": 0.05},
+    "control_families": ["task_only", "shuffled_fingerprint", "wrong_stage"],
+    "control_plan": "Use identical family folds, labels, units, and budgets for all feature sets and baselines.",
+    "data_roles": {"selection": "chr22", "development": "chr21", "confirmation": "chr17"}
+  },
+  "feature_model_on_branch_delta": {
+    "estimand": "Held-out branch-specific causal-delta prediction and suffix rescue attributable to a sparse feature vocabulary.",
+    "decision_rule": "Choose complexity by the development one-standard-error rule and require locked delta prediction, feature ablation, decoded rescue, specificity controls, and cross-chromosome stability; reconstruction alone never passes.",
+    "thresholds": {"minimum_delta_r2": 0.1, "minimum_rescue_fraction": 0.1, "minimum_control_superiority": 0.1, "equivalence_margin": 0.05},
+    "hyperparameters": {"model_family_order": ["delta_transcoder", "delta_autoencoder", "state_sae"], "bootstrap_replicates": 10000, "alpha": 0.05},
+    "control_families": ["random_feature", "wrong_layer", "cross_chromosome"],
+    "control_plan": "Fit on train, select complexity on development, freeze the feature artifact, and intervene once on the ordered locked unit panel.",
+    "data_roles": {"train": "chr22", "development": "chr21", "confirmation": "chr17"}
+  },
+  "feature_model_on_causal_delta": {
+    "estimand": "Held-out common causal-delta prediction and suffix rescue attributable to a sparse feature vocabulary.",
+    "decision_rule": "Choose complexity by the development one-standard-error rule and require locked delta prediction, feature ablation, decoded rescue, specificity controls, and cross-chromosome stability; reconstruction alone never passes.",
+    "thresholds": {"minimum_delta_r2": 0.1, "minimum_rescue_fraction": 0.1, "minimum_control_superiority": 0.1, "equivalence_margin": 0.05},
+    "hyperparameters": {"model_family_order": ["delta_transcoder", "delta_autoencoder", "state_sae"], "bootstrap_replicates": 10000, "alpha": 0.05},
+    "control_families": ["random_feature", "wrong_layer", "cross_chromosome"],
+    "control_plan": "Fit on train, select complexity on development, freeze the feature artifact, and intervene once on the ordered locked unit panel.",
+    "data_roles": {"train": "chr22", "development": "chr21", "confirmation": "chr17"}
+  },
+  "feature_target_refinement": {
+    "estimand": "Identifiability of a bounded intervention delta suitable for optional feature modeling.",
+    "decision_rule": "Open a feature model only after a target-free held-out prediction recreates the locked delta and produces suffix rescue above controls; otherwise retain the raw-geometry conclusion and keep feature interpretation closed.",
+    "thresholds": {"minimum_prediction_cosine": 0.5, "minimum_rescue_fraction": 0.1, "minimum_control_superiority": 0.1},
+    "hyperparameters": {"transport_ranks": [1, 2, 4, 8, 16, 32], "ridge_grid": [1e-06, 0.0001, 0.01, 1.0], "bootstrap_replicates": 10000, "alpha": 0.05},
+    "control_families": ["dose_rank_matched_random", "shuffled_prediction", "wrong_layer", "wrong_pair"],
+    "control_plan": "Refine only on development and evaluate the frozen target exactly once on locked units.",
+    "data_roles": {"train": "chr22", "development": "chr21", "confirmation": "chr17"}
+  },
+  "learned_transport": {
+    "estimand": "Recovery of the locked late-stack causal delta and output endpoint by a model fitted only to randomized train/development intervention deltas.",
+    "decision_rule": "Require internally regenerated locked prediction, positive delta geometry, real suffix rescue, and superiority over every mandatory matched control; a cached actual delta or caller-supplied hash cannot pass.",
+    "thresholds": {"minimum_relative_energy": 0.1, "minimum_prediction_cosine": 0.5, "maximum_relative_error": 1.0, "minimum_recovery_fraction": 0.1, "minimum_control_superiority": 0.1},
+    "hyperparameters": {"transport_ranks": [1, 2, 4, 8, 16, 32], "ridge_grid": [1e-06, 0.0001, 0.01, 1.0], "bootstrap_replicates": 10000, "alpha": 0.05},
+    "control_families": ["dose_rank_matched_random", "shuffled_prediction", "wrong_layer", "wrong_pair"],
+    "control_plan": "Generate every endpoint in the same suffix runner with per-unit dose matching, ordered units, and a sealed runtime receipt.",
+    "data_roles": {"train": "chr22", "development": "chr21", "confirmation": "chr17"}
+  },
+  "mechanism_application": {
+    "estimand": "Incremental locked benefit of stage-matched diagnosis, repair, carrier calibration, compression, and sequence steering over matched alternatives.",
+    "decision_rule": "Seal diagnosis or candidate selection before locked outcomes and require stage-matched benefit plus wrong-stage/random/off-target controls; each application is reported separately if another is unsupported.",
+    "thresholds": {"minimum_matched_repair_gain": 0.1, "minimum_steering_gain": 0.1, "maximum_off_target_effect": 0.05, "minimum_compression_retention": 0.9},
+    "hyperparameters": {"minimum_dependency_clusters": 5, "bootstrap_replicates": 10000, "alpha": 0.05},
+    "control_families": ["wrong_stage", "dose_matched_random", "flop_matched_compression", "off_target"],
+    "control_plan": "Use one sealed selected action and an independent locked validation panel for each application.",
+    "data_roles": {"selection": "chr22", "development": "chr21", "confirmation": "chr17"}
+  },
+  "motif_variant_replay": {
+    "estimand": "Locked motif or variant effect transported in the immediate ordered g28-to-b29-to-m30 serial circuit and selectively rescued at the output.",
+    "decision_rule": "Require candidate-method consensus, insertion/deletion or held-out edit, all positive/equivalence contrasts, at least three specificity families, and a separately sealed ordered serial-path verdict.",
+    "thresholds": {"effect_margin": 0.1, "equivalence_margin": 0.05, "rescue_margin": 0.1, "minimum_specificity_families": 3},
+    "hyperparameters": {"context_windows_bp": [5, 9, 17, 33, 65, 129], "bootstrap_replicates": 10000, "alpha": 0.05},
+    "control_families": ["wrong_motif", "wrong_layer", "wrong_direction", "dose_matched_random"],
+    "control_plan": "Run motif/variant, matched controls, immediate block/rescue links, and reverse-order failures on the same locked families and endpoint.",
+    "data_roles": {"candidate_generation": "chr22", "development": "chr21", "confirmation": "chr17"}
+  },
+  "reverse_trace_identifiability": {
+    "estimand": "Identifiability of a stable output-causal direction and its weakest reverse-chain link before motif replay.",
+    "decision_rule": "Refine rank/window only on development, require two-method agreement and a positive held-out intervention, and report an explicit unidentified or bounded-null target if consensus remains absent.",
+    "thresholds": {"minimum_candidate_methods": 2, "minimum_output_effect": 0.1, "maximum_off_path_leakage": 0.05},
+    "hyperparameters": {"direction_bank_ranks": [1, 2, 4, 8, 16], "context_windows_bp": [5, 9, 17, 33, 65, 129], "bootstrap_replicates": 10000, "alpha": 0.05},
+    "control_families": ["carrier_only", "wrong_layer", "dose_rank_matched_random"],
+    "control_plan": "No locked retuning; each refinement candidate is selected on development and evaluated on the identical locked panel.",
+    "data_roles": {"selection": "chr22", "development": "chr21", "confirmation": "chr17"}
+  },
+  "task_heterogeneity": {
+    "estimand": "Out-of-family prediction of benchmark performance and failure stage from the frozen ten-axis mechanism fingerprint.",
+    "decision_rule": "Freeze fingerprint construction before labels and require leave-family-out improvement over task-only, scale-only, and shuffled-fingerprint baselines at identical label budgets.",
+    "thresholds": {"minimum_oof_improvement": 0.1, "equivalence_margin": 0.05},
+    "hyperparameters": {"label_budgets": [0, 1, 5, 10, 25, 50, 100, 250, "full"], "bootstrap_replicates": 10000, "alpha": 0.05},
+    "control_families": ["task_only", "scale_only", "shuffled_fingerprint"],
+    "control_plan": "Use identical task-family folds, dependency groups, labels, and budgets for all models.",
+    "data_roles": {"selection": "chr22", "development": "chr21", "confirmation": "chr17"}
+  }
+}

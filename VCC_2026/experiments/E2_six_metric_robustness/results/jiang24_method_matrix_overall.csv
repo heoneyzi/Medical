@@ -1,0 +1,11 @@
+representation,method,overall
+raw,no_effect,-1.343
+raw,global_mean,-0.846
+raw,gwps_direct,-1.540
+raw,gwps_nearest,-1.062
+raw,gwps_weighted,-0.979
+PCA,gwps_weighted,-0.927
+STATE-SE-100M,gwps_nearest,-0.989
+STATE-SE-100M,gwps_weighted,-1.475
+STACK-Large,gwps_nearest,-0.989
+STACK-Large,gwps_weighted,-1.703

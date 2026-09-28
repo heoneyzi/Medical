@@ -1,0 +1,5 @@
+{
+  "figure_id": "F8",
+  "title": "Three-metric Delta agreement (UR-gDTR)",
+  "caption": "Pairwise scatter and Spearman rho among Delta_c_discrete, Delta_c_interp, and signed_argmax_Delta_D for the 5 TP53 hotspots under UR-gDTR (primary). Diagonal: marginal histogram. Off-diagonal: pairwise scatter with Spearman rho text annotation."
+}

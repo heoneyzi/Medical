@@ -1,0 +1,367 @@
+{
+  "title": "동결 임베딩 공간에 정보가 있는가 — readout 사다리",
+  "question": "지금까지 동결 공간을 cos·l2·dot 세 지표로만 읽고 '우연 수준'이라 판정했다. 학습된 z 에서는 차원 표준화만으로 0.38->0.72 로 뛰었다. 동결 공간의 평균 코사인 유사도가 0.969 (cone effect) 이므로 평범한 코사인이 못 읽는 것이 공간의 정보 부재가 아니라 이방성 때문일 수 있다.",
+  "split": "dev",
+  "test_reported": false,
+  "unit": "gene",
+  "pairs": 141517,
+  "fitting": "표준화·백색화·PCA 는 전부 **train 에서 추정**했다 (홀드아웃). test 미개봉.",
+  "reference_learned": {
+    "trunk+own_energy(cosine, 5seeds)": 0.7327,
+    "trunk+own_energy(euclidean, 5seeds)": 0.5895,
+    "trunk+cos_std(cosine, train-fit)": 0.7515,
+    "trunk+cos_std(euclidean, train-fit)": 0.7345
+  },
+  "results": {
+    "views_only": {
+      "_geometry": {
+        "dimension": 768,
+        "effective_rank": 10.27500428031525,
+        "mean_cosine_similarity": 0.9690400944550347
+      },
+      "cos": {
+        "accuracy": 0.5055364373184847,
+        "minus_chance": {
+          "estimate": 0.005536437318484705,
+          "ci": [
+            -0.03248025232620265,
+            0.0324701733413523
+          ],
+          "excludes_zero": false,
+          "gene_clusters": 47
+        }
+      },
+      "l2": {
+        "accuracy": 0.5077764508857593,
+        "minus_chance": {
+          "estimate": 0.007776450885759308,
+          "ci": [
+            -0.030839137559046187,
+            0.03439133541822876
+          ],
+          "excludes_zero": false,
+          "gene_clusters": 47
+        }
+      },
+      "neg_dot": {
+        "accuracy": 0.49663997964908807,
+        "minus_chance": {
+          "estimate": -0.0033600203509119046,
+          "ci": [
+            -0.03916659818382341,
+            0.02395038047170933
+          ],
+          "excludes_zero": false,
+          "gene_clusters": 47
+        }
+      },
+      "cos_std (train-fit)": {
+        "accuracy": 0.5010634764727913,
+        "minus_chance": {
+          "estimate": 0.0010634764727912548,
+          "ci": [
+            -0.02437542264355964,
+            0.02298106641748562
+          ],
+          "excludes_zero": false,
+          "gene_clusters": 47
+        }
+      },
+      "l2_std (train-fit)": {
+        "accuracy": 0.5663277203445523,
+        "minus_chance": {
+          "estimate": 0.06632772034455224,
+          "ci": [
+            0.04303860842265952,
+            0.08293703925013997
+          ],
+          "excludes_zero": true,
+          "gene_clusters": 47
+        }
+      },
+      "cos_whiten (train-fit)": {
+        "accuracy": 0.5508454814615912,
+        "minus_chance": {
+          "estimate": 0.05084548146159119,
+          "ci": [
+            0.03694288045570838,
+            0.06718982926223661
+          ],
+          "excludes_zero": true,
+          "gene_clusters": 47
+        }
+      },
+      "PCA-8 + cos": {
+        "accuracy": 0.47093282079184834,
+        "minus_chance": {
+          "estimate": -0.02906717920815167,
+          "ci": [
+            -0.07360746994861035,
+            0.008643114955318942
+          ],
+          "excludes_zero": false,
+          "gene_clusters": 47
+        }
+      },
+      "PCA-16 + cos": {
+        "accuracy": 0.506801303023665,
+        "minus_chance": {
+          "estimate": 0.006801303023665001,
+          "ci": [
+            -0.024888738803319356,
+            0.028785597587077594
+          ],
+          "excludes_zero": false,
+          "gene_clusters": 47
+        }
+      },
+      "PCA-32 + cos": {
+        "accuracy": 0.4752361907050036,
+        "minus_chance": {
+          "estimate": -0.024763809294996362,
+          "ci": [
+            -0.04488406705824939,
+            -0.0013112155146426255
+          ],
+          "excludes_zero": true,
+          "gene_clusters": 47
+        }
+      },
+      "PCA-64 + cos": {
+        "accuracy": 0.47745500540571095,
+        "minus_chance": {
+          "estimate": -0.022544994594289026,
+          "ci": [
+            -0.04498807229866812,
+            0.000829031304522634
+          ],
+          "excludes_zero": false,
+          "gene_clusters": 47
+        }
+      },
+      "PCA-128 + cos": {
+        "accuracy": 0.4724379403181243,
+        "minus_chance": {
+          "estimate": -0.027562059681875677,
+          "ci": [
+            -0.049194550103363786,
+            -0.003691092424997994
+          ],
+          "excludes_zero": true,
+          "gene_clusters": 47
+        }
+      },
+      "PCA-256 + cos": {
+        "accuracy": 0.4719150349427984,
+        "minus_chance": {
+          "estimate": -0.028084965057201608,
+          "ci": [
+            -0.05042368811382846,
+            -0.007363963869801712
+          ],
+          "excludes_zero": true,
+          "gene_clusters": 47
+        }
+      },
+      "random-64 + cos": {
+        "accuracy": 0.5980906887511748,
+        "minus_chance": {
+          "estimate": 0.09809068875117477,
+          "ci": [
+            0.05613549251735317,
+            0.12794683920477776
+          ],
+          "excludes_zero": true,
+          "gene_clusters": 47
+        }
+      },
+      "random-64 + cos_std": {
+        "accuracy": 0.5893779545920278,
+        "minus_chance": {
+          "estimate": 0.08937795459202781,
+          "ci": [
+            0.05286554020355523,
+            0.12161053481600588
+          ],
+          "excludes_zero": true,
+          "gene_clusters": 47
+        }
+      }
+    },
+    "views+structured": {
+      "_geometry": {
+        "dimension": 832,
+        "effective_rank": 24.329892869136607,
+        "mean_cosine_similarity": 0.6192877051732358
+      },
+      "cos": {
+        "accuracy": 0.6469399436110149,
+        "minus_chance": {
+          "estimate": 0.14693994361101492,
+          "ci": [
+            0.12172367720044895,
+            0.1679489909146873
+          ],
+          "excludes_zero": true,
+          "gene_clusters": 47
+        }
+      },
+      "l2": {
+        "accuracy": 0.6507910710374019,
+        "minus_chance": {
+          "estimate": 0.15079107103740186,
+          "ci": [
+            0.12551248427814757,
+            0.1713244897243786
+          ],
+          "excludes_zero": true,
+          "gene_clusters": 47
+        }
+      },
+      "neg_dot": {
+        "accuracy": 0.6452087028413548,
+        "minus_chance": {
+          "estimate": 0.14520870284135476,
+          "ci": [
+            0.1196920224111484,
+            0.16586210058797995
+          ],
+          "excludes_zero": true,
+          "gene_clusters": 47
+        }
+      },
+      "cos_std (train-fit)": {
+        "accuracy": 0.5264031883095317,
+        "minus_chance": {
+          "estimate": 0.026403188309531717,
+          "ci": [
+            0.0012389913769093879,
+            0.047540743547757544
+          ],
+          "excludes_zero": true,
+          "gene_clusters": 47
+        }
+      },
+      "l2_std (train-fit)": {
+        "accuracy": 0.556986086477243,
+        "minus_chance": {
+          "estimate": 0.056986086477243014,
+          "ci": [
+            0.03391699202624262,
+            0.07418905600777058
+          ],
+          "excludes_zero": true,
+          "gene_clusters": 47
+        }
+      },
+      "cos_whiten (train-fit)": {
+        "accuracy": 0.5466693047478395,
+        "minus_chance": {
+          "estimate": 0.04666930474783948,
+          "ci": [
+            0.03139930714650163,
+            0.06459367555159576
+          ],
+          "excludes_zero": true,
+          "gene_clusters": 47
+        }
+      },
+      "PCA-8 + cos": {
+        "accuracy": 0.6668244804511119,
+        "minus_chance": {
+          "estimate": 0.16682448045111187,
+          "ci": [
+            0.1517804661165292,
+            0.17901206259621433
+          ],
+          "excludes_zero": true,
+          "gene_clusters": 47
+        }
+      },
+      "PCA-16 + cos": {
+        "accuracy": 0.674547934170453,
+        "minus_chance": {
+          "estimate": 0.17454793417045303,
+          "ci": [
+            0.15960899599582462,
+            0.1866122461209966
+          ],
+          "excludes_zero": true,
+          "gene_clusters": 47
+        }
+      },
+      "PCA-32 + cos": {
+        "accuracy": 0.6944254047216942,
+        "minus_chance": {
+          "estimate": 0.1944254047216942,
+          "ci": [
+            0.18396780232339427,
+            0.20413435536068017
+          ],
+          "excludes_zero": true,
+          "gene_clusters": 47
+        }
+      },
+      "PCA-64 + cos": {
+        "accuracy": 0.7040072924100992,
+        "minus_chance": {
+          "estimate": 0.20400729241009913,
+          "ci": [
+            0.1959520784246385,
+            0.21417635886123487
+          ],
+          "excludes_zero": true,
+          "gene_clusters": 47
+        }
+      },
+      "PCA-128 + cos": {
+        "accuracy": 0.7031169400142739,
+        "minus_chance": {
+          "estimate": 0.2031169400142739,
+          "ci": [
+            0.1945877314970733,
+            0.21271636446080255
+          ],
+          "excludes_zero": true,
+          "gene_clusters": 47
+        }
+      },
+      "PCA-256 + cos": {
+        "accuracy": 0.7028837524820339,
+        "minus_chance": {
+          "estimate": 0.20288375248203397,
+          "ci": [
+            0.19439901036413032,
+            0.21248040218856984
+          ],
+          "excludes_zero": true,
+          "gene_clusters": 47
+        }
+      },
+      "random-64 + cos": {
+        "accuracy": 0.5734010754891639,
+        "minus_chance": {
+          "estimate": 0.07340107548916384,
+          "ci": [
+            0.058446618346296456,
+            0.0897978644774489
+          ],
+          "excludes_zero": true,
+          "gene_clusters": 47
+        }
+      },
+      "random-64 + cos_std": {
+        "accuracy": 0.5911162616505438,
+        "minus_chance": {
+          "estimate": 0.09111626165054375,
+          "ci": [
+            0.07858365269257532,
+            0.1129470003562677
+          ],
+          "excludes_zero": true,
+          "gene_clusters": 47
+        }
+      }
+    }
+  }
+}

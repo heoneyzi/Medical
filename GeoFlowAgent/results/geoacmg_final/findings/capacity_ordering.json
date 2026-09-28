@@ -1,0 +1,45 @@
+{
+  "contrasts": {
+    "A: pair_mlp@h111(335,530) - euclidean@h128(335,942)": {
+      "ci_high": 0.25835260378766245,
+      "ci_low": 0.17301375136952318,
+      "estimate": 0.21798794491121207,
+      "excludes_zero": true,
+      "n_units": 47
+    },
+    "B: pair_mlp@h128(369,479) - euclidean@h147(368,983)": {
+      "ci_high": 0.26608859992098494,
+      "ci_low": 0.2079647191129399,
+      "estimate": 0.2360140477822452,
+      "excludes_zero": true,
+      "n_units": 47
+    },
+    "C: pair_mlp@h111 - pair_mlp@h128": {
+      "ci_high": -0.014228644047564411,
+      "ci_low": -0.03550870125334378,
+      "estimate": -0.021601645032045622,
+      "excludes_zero": true,
+      "n_units": 47
+    },
+    "D: euclidean@h147 - euclidean@h128": {
+      "ci_high": 0.014727769355711271,
+      "ci_low": -0.010329934220389516,
+      "estimate": 0.0035755421610124557,
+      "excludes_zero": false,
+      "n_units": 47
+    }
+  },
+  "ordering": {
+    "euclidean@h128": 0.5869942598180196,
+    "euclidean@h147": 0.5905698019790319,
+    "pair_mlp@h111": 0.8049822047292317,
+    "pair_mlp@h128": 0.8265838497612772
+  },
+  "parameters": {
+    "euclidean@h128": 335942,
+    "euclidean@h147": 368983,
+    "pair_mlp@h111": 335530,
+    "pair_mlp@h128": 369479
+  },
+  "test_reported": false
+}

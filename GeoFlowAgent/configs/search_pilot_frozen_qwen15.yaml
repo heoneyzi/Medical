@@ -1,0 +1,102 @@
+# Actual frozen-backbone representation baseline on the completed procedural
+# pilot. This validates the encoder/cache path while hard-v2 exact search runs;
+# it is not used for a difficulty or biomedical-validity claim.
+seed: 17
+device: cuda:0
+project_root: ..
+
+paths:
+  processed_dir: $GEOFLOW_RUNS/search_pilot_gpu_v1/development/processed
+  cache_dir: $GEOFLOW_RUNS/search_pilot_gpu_v1/development/cache_frozen_qwen15
+  embedding_report_dir: $GEOFLOW_RUNS/search_pilot_gpu_v1/development/reports/embeddings_frozen_qwen15
+  embedding_progress_backup: $GEOFLOW_RESULTS/search_pilot_gpu_v1/development/embedding_frozen_qwen15_progress.json
+  value_output_dir: $GEOFLOW_RUNS/search_pilot_gpu_v1/development/checkpoints/value_frozen_qwen15_euclidean
+  geometry_comparison_dir: $GEOFLOW_RUNS/search_pilot_gpu_v1/development/checkpoints/geometry_frozen_qwen15_euclidean
+
+embedding:
+  batch_size: 8
+  storage_dtype: float16
+  views:
+    qwen_general:
+      kind: prototype
+      query_encoder: &qwen
+        backend: huggingface
+        model_name: Qwen/Qwen2.5-1.5B-Instruct
+        revision: 989aa7980e4cf806f80c7fef2b1adb7bc71aa306
+        pooling: mean
+        normalize: true
+        max_length: 512
+        device: auto
+        dtype: bfloat16
+        trust_remote_code: false
+        local_files_only: true
+      document_encoder: *qwen
+      example_fields: [query, goal, state, history]
+      tool_fields: [description, contract]
+      encode_background: true
+    medcpt:
+      kind: prototype
+      query_encoder:
+        backend: huggingface
+        model_name: ncbi/MedCPT-Query-Encoder
+        revision: d83a36cc6b8e3a5c5e9d9d6ba156808c1643dcbc
+        pooling: cls
+        normalize: true
+        max_length: 512
+        device: auto
+        dtype: float32
+        trust_remote_code: false
+        local_files_only: true
+      document_encoder:
+        backend: huggingface
+        model_name: ncbi/MedCPT-Article-Encoder
+        revision: d05a736da4bb84ee4057b7f7999485be6ed85465
+        pooling: cls
+        normalize: true
+        max_length: 512
+        device: auto
+        dtype: float32
+        trust_remote_code: false
+        local_files_only: true
+      example_fields: [query, goal, state, history]
+      tool_fields: [description, contract]
+      encode_background: true
+
+value_training:
+  structured_dim: 64
+  shared_dim: 64
+  hidden_dim: 128
+  energy: euclidean
+  energy_rank: 32
+  dropout: 0.10
+  learning_rate: 0.0007
+  weight_decay: 0.0001
+  batch_size: 512
+  epochs: 60
+  patience: 12
+  max_states_per_task: 64
+  supervision: boltzmann
+  action_temperature: 1.0
+  regret_temperature: 0.25
+  ranking_margin: 0.05
+  gradient_clip: 1.0
+  view_dropout: 0.15
+  embedding_noise_std: 0.005
+  hard_replay_warmup: 5
+  hard_replay_fraction: 0.25
+  threshold_grid: [0.1, 0.3, 0.5, 0.7, 0.9]
+  bootstrap_reps: 1000
+  loss_weights:
+    action: 1.0
+    q: 1.0
+    value: 0.5
+    regret: 0.5
+    bellman: 0.5
+    transition: 0.25
+    action_reachability: 1.0
+    state_reachability: 0.5
+    completion: 1.0
+
+geometry_comparison:
+  energies: [euclidean]
+  seeds: [17, 29, 43]

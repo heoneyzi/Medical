@@ -1,0 +1,35 @@
+{
+  "n_cells_computed": 15,
+  "robust_cells": [
+    "M1_dir_refA",
+    "M1_dir_refB",
+    "M2_mag_refA",
+    "M3_geo_a1.0_b0.0",
+    "M3_geo_a0.0_b1.0",
+    "M3_geo_a1.0_b1.0",
+    "M3_geo_a1.0_b0.5",
+    "M3_geo_a0.5_b1.0",
+    "M4_set_refA",
+    "M4_set_refB",
+    "M4_set_refC",
+    "M5_tau_refA"
+  ],
+  "sensitive_cells": [
+    {
+      "cell": "M1_dir_refC",
+      "ds": {
+        "q50": 0.07639174737129784,
+        "q70": 0.016878326629864774,
+        "q90": -0.095112957139671
+      }
+    },
+    {
+      "cell": "M5_tau_refC",
+      "ds": {
+        "q50": -0.022745483343316688,
+        "q70": -0.010516438392813894,
+        "q90": 0.013379221004169415
+      }
+    }
+  ]
+}

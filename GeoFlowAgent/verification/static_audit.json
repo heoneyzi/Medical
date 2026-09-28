@@ -1,0 +1,6 @@
+{
+  "syntax_errors": [],
+  "text_files_scanned": 607,
+  "credential_pattern_hits": [],
+  "scope": "High-confidence credential token/private-key patterns in repository text only. Does not certify every binary/archive is credential-free."
+}

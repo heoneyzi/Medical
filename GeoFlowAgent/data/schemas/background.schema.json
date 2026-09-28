@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/geoflowagent/background.schema.json",
+  "title": "GeoFlowAgent background card",
+  "description": "A versioned, redistributable background card encoded independently from static tool prototypes.",
+  "type": "object",
+  "required": [
+    "card_id",
+    "text"
+  ],
+  "properties": {
+    "card_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": "string"
+    },
+    "source_revision": {
+      "type": "string"
+    },
+    "redistribution_status": {
+      "enum": [
+        "allowed",
+        "restricted",
+        "unknown"
+      ]
+    },
+    "provenance": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

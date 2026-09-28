@@ -1,0 +1,25 @@
+2026-09-16 14:18:30	submit	chr19_chain	2692456,2692457,2692458
+2026-09-16 14:18:55	prep	chr19	labels=ok	windows=ok
+2026-09-16 14:21:14	extract	chr19	7B	rows=22227	onset=28	maxratio=5.75e+05
+2026-09-16 14:23:58	dh_geometry	clinvar17	tok_effrank_b30=2	pool_effrank_b30=2
+2026-09-16 14:45:24	analyze	chr19_evo2_7b_all	onset=28	rule_regret_mean=0.0058	rule_regret_max=0.0094
+2026-09-16 22:48:01	submit	followups	2696063,2696064,2696065,2696066
+2026-09-16 22:58:07	surviving_dims	chr22	nextbase_hnorm=0.6694	pool_r2_llr_hnorm=0.288
+2026-09-16 23:21:55	resubmit	followups_fixed	2697369,2697370,2697371
+2026-09-16 23:30:25	extract	chr22_evo2_7b_utr	rows=47217	onset=28
+2026-09-16 23:31:46	extract	chr17_evo2_7b_utr	rows=51110	onset=28
+2026-09-16 23:32:46	extract	chr19_evo2_7b_utr	rows=28228	onset=28
+2026-09-16 23:40:48	extract	chr19_evo2_40b_all	rows=22227	onset=21
+2026-09-17 00:18:52	analyze	chr22_evo2_7b_utr	onset=28	rule_regret_mean=0.0050	rule_regret_max=0.0109
+2026-09-17 01:00:24	analyze	chr17_evo2_7b_utr	onset=28	rule_regret_mean=0.0036	rule_regret_max=0.0076
+2026-09-17 01:30:30	analyze	chr19_evo2_7b_utr	onset=28	rule_regret_mean=0.0095	rule_regret_max=0.0171
+2026-09-17 02:38:15	analyze	chr19_evo2_40b_all	onset=21	rule_regret_mean=0.0092	rule_regret_max=0.0210
+2026-09-17 06:30:07	scalar_dominance	chr22	7B_hnorm_cos=0.943	40B_b30_cos=0.783
+2026-09-17 06:49:43	submit	cross_model	2707309,2707310,2707311
+2026-09-17 06:52:26	extract	chr22_hyenadna_med	rows=47217	vocab=12	maxratio=3.21	onset=None
+2026-09-17 06:56:01	analyze	chr22_hyenadna_med	onset=10	rule_regret_mean=0.0294	rule_regret_max=0.0894
+2026-09-17 07:16:56	submit	cross_model_pinned	2707380,2707381
+2026-09-17 07:22:46	extract	chr22_nt_v2	rows=7811	vocab=4107	maxratio=3.12	onset=None
+2026-09-17 07:25:27	analyze	chr22_nt_v2	onset=30	rule_regret_mean=0.0427	rule_regret_max=0.1316
+2026-09-17 07:28:40	analyze	chr22_hyenadna_med	onset=10	rule_regret_mean=0.0294	rule_regret_max=0.0894
+2026-09-17 07:31:40	analyze	chr22_nt_v2	onset=30	rule_regret_mean=0.0427	rule_regret_max=0.1316

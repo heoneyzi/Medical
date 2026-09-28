@@ -1,0 +1,14 @@
+section,metric,value,extra
+D3,r8_mean_real,2.8119945526123047,"std=0.1435,n=25"
+D3,r8_mean_shuf,2.8853728771209717,"std=0.1252,n=25"
+D3,r8_mean_rand,2.926133394241333,"std=0.0386,n=25"
+D3,MWU_real_vs_shuf_p_two,0.0478057953309806,U=210.0
+D3,MWU_real_vs_rand_p_two,0.00986347712747337,U=179.0
+D3,MWU_shuf_vs_rand_p_two,0.5605090914385145,U=282.0
+D4,align_jump_real_k=1,0.4548953175544739,"E_L7=0.0898,E_L8=0.5447"
+D4,align_jump_real_k=4,0.5356353521347046,"E_L7=0.1129,E_L8=0.6486"
+D4,align_jump_real_k=8,0.5484579801559448,"E_L7=0.2175,E_L8=0.7660"
+D4,align_jump_real_k=12,0.6132782697677612,"E_L7=0.2595,E_L8=0.8727"
+D5,spearman_r8_vs_gc,-0.1859594915887738,"p=0.000e+00,n=50000"
+D5,spearman_r8_vs_entropy,0.13702106639999082,"p=4.376e-208,n=50000"
+D5,spearman_r8_vs_position,0.33847201951219946,"p=0.000e+00,n=50000"

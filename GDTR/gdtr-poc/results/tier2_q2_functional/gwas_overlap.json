@@ -1,0 +1,25 @@
+{
+  "dataset": "gwas",
+  "n_dataset_chr22": 6725,
+  "dataset_chr22_bp_merged": 6725,
+  "q2_n_regions": 5090,
+  "q2_total_bp": 907637,
+  "n_q2_overlap": 168,
+  "intersect_bp": 180,
+  "expected_intersect_bp": 120.11103571638563,
+  "fold_enrichment_bp": 1.4986133366215264,
+  "pval_hypergeom_bp": 1.5931352688248926e-07,
+  "expected_n_q2_hits_binom": 118.27619032414891,
+  "fold_enrichment_region": 1.4204042211672316,
+  "shuffle_null": {
+    "n_obs": 168,
+    "null_mean": 112.72,
+    "null_std": 9.04884523019374,
+    "null_max": 132,
+    "null_min": 92,
+    "pval_shuffle": 0.009900990099009901,
+    "n_shuffles": 100
+  },
+  "n_pair_records": 180,
+  "paired_bed": "/path/to/gDTR/results/tier2_q2_functional/q2_x_gwas.bed"
+}

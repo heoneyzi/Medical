@@ -1,0 +1,20 @@
+{
+  "active_contexts": [
+    "intergenic",
+    "intron",
+    "coding_exon",
+    "5utr",
+    "3utr",
+    "splice_donor",
+    "splice_acceptor"
+  ],
+  "n_pairs": 21,
+  "bonferroni_factor": 21.0,
+  "subsample_per_context": 200000,
+  "strongest_pair": {
+    "row": "intergenic",
+    "col": "splice_donor",
+    "cohens_d": 0.540020665530358,
+    "p_bonf": 0.0
+  }
+}

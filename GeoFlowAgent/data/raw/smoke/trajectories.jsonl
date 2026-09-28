@@ -1,0 +1,12 @@
+{"task_id":"synth-train-001","tool_ids":["parse_variant","liftover_grch37_to_grch38","verify_reference_allele","normalize_variant","annotate_variant","match_phenotype","lookup_gene_disease","integrate_evidence"]}
+{"task_id":"synth-train-002","tool_ids":["match_phenotype","parse_variant","verify_reference_allele","normalize_variant","annotate_variant","lookup_gene_disease","integrate_evidence"]}
+{"task_id":"synth-train-003","tool_ids":["parse_variant","match_phenotype","liftover_grch37_to_grch38","verify_reference_allele","normalize_variant","annotate_variant","lookup_gene_disease","integrate_evidence"]}
+{"task_id":"synth-train-004","tool_ids":["parse_variant","verify_reference_allele","match_phenotype","normalize_variant","annotate_variant","lookup_gene_disease","integrate_evidence"]}
+{"task_id":"synth-train-005","tool_ids":["match_phenotype","parse_variant","liftover_grch37_to_grch38","verify_reference_allele","normalize_variant","annotate_variant","lookup_gene_disease","integrate_evidence"]}
+{"task_id":"synth-train-006","tool_ids":["parse_variant","verify_reference_allele","normalize_variant","annotate_variant","match_phenotype","lookup_gene_disease","integrate_evidence"]}
+{"task_id":"synth-train-007","tool_ids":["parse_variant","liftover_grch37_to_grch38","verify_reference_allele","match_phenotype","normalize_variant","annotate_variant","lookup_gene_disease","integrate_evidence"]}
+{"task_id":"synth-dev-001","tool_ids":["match_phenotype","parse_variant","verify_reference_allele","normalize_variant","annotate_variant","lookup_gene_disease","integrate_evidence"]}
+{"task_id":"synth-dev-002","tool_ids":["parse_variant","liftover_grch37_to_grch38","match_phenotype","verify_reference_allele","normalize_variant","annotate_variant","lookup_gene_disease","integrate_evidence"]}
+{"task_id":"synth-test-001","tool_ids":["parse_variant","match_phenotype","liftover_grch37_to_grch38","verify_reference_allele","normalize_variant","annotate_variant","lookup_gene_disease","integrate_evidence"]}
+{"task_id":"synth-test-002","tool_ids":["parse_variant","verify_reference_allele","normalize_variant","match_phenotype","annotate_variant","lookup_gene_disease","integrate_evidence"]}
+{"task_id":"synth-test-003","tool_ids":["match_phenotype","parse_variant","liftover_grch37_to_grch38","verify_reference_allele","normalize_variant","annotate_variant","lookup_gene_disease","integrate_evidence"]}

@@ -1,0 +1,270 @@
+{
+  "dev_states_total": 112128,
+  "dev_states_used": 31050,
+  "dropped_no_optimal_actions": 81078,
+  "dropped_value_known_mask_false": 0,
+  "energies": {
+    "cosine": {
+      "mean_ordering_accuracy": 0.7366723903606398,
+      "per_seed": {
+        "17": {
+          "minus_raw_cosine": {
+            "ci_high": 0.22905071501675714,
+            "ci_low": 0.154489670649545,
+            "estimate": 0.1899630433092844,
+            "n_units": 47
+          },
+          "ordering_accuracy": 0.6954994806277691,
+          "vs_chance": {
+            "ci_high": 0.21083925781918977,
+            "ci_low": 0.18176478446767566,
+            "estimate": 0.1954994806277691,
+            "n_units": 47
+          }
+        },
+        "29": {
+          "minus_raw_cosine": {
+            "ci_high": 0.268752767707364,
+            "ci_low": 0.20326731819074334,
+            "estimate": 0.23561126931746715,
+            "n_units": 47
+          },
+          "ordering_accuracy": 0.7411477066359519,
+          "vs_chance": {
+            "ci_high": 0.2633801940211329,
+            "ci_low": 0.22397309301077029,
+            "estimate": 0.24114770663595186,
+            "n_units": 47
+          }
+        },
+        "43": {
+          "minus_raw_cosine": {
+            "ci_high": 0.3053660764537386,
+            "ci_low": 0.23597674231524265,
+            "estimate": 0.2678335464997138,
+            "n_units": 47
+          },
+          "ordering_accuracy": 0.7733699838181985,
+          "vs_chance": {
+            "ci_high": 0.30173342381853746,
+            "ci_low": 0.24166073074844643,
+            "estimate": 0.27336998381819855,
+            "n_units": 47
+          }
+        }
+      },
+      "std_ordering_accuracy": 0.03194761502424163
+    },
+    "directed_quasimetric": {
+      "mean_ordering_accuracy": 0.7836914764068391,
+      "per_seed": {
+        "17": {
+          "minus_raw_cosine": {
+            "ci_high": 0.33971736411783743,
+            "ci_low": 0.258764435326966,
+            "estimate": 0.2992502667524043,
+            "n_units": 47
+          },
+          "ordering_accuracy": 0.804786704070889,
+          "vs_chance": {
+            "ci_high": 0.3242118313098053,
+            "ci_low": 0.2793831353226378,
+            "estimate": 0.30478670407088904,
+            "n_units": 47
+          }
+        },
+        "29": {
+          "minus_raw_cosine": {
+            "ci_high": 0.26244982661874205,
+            "ci_low": 0.18403315615816276,
+            "estimate": 0.2313502971374464,
+            "n_units": 47
+          },
+          "ordering_accuracy": 0.7368867344559311,
+          "vs_chance": {
+            "ci_high": 0.2595716576096029,
+            "ci_low": 0.19852523035093247,
+            "estimate": 0.2368867344559311,
+            "n_units": 47
+          }
+        },
+        "43": {
+          "minus_raw_cosine": {
+            "ci_high": 0.3363615851296994,
+            "ci_low": 0.26677168741552776,
+            "estimate": 0.3038645533752129,
+            "n_units": 47
+          },
+          "ordering_accuracy": 0.8094009906936975,
+          "vs_chance": {
+            "ci_high": 0.33100866674770035,
+            "ci_low": 0.2780029692332646,
+            "estimate": 0.3094009906936976,
+            "n_units": 47
+          }
+        }
+      },
+      "std_ordering_accuracy": 0.03314951796610503
+    },
+    "euclidean": {
+      "mean_ordering_accuracy": 0.5869942598180194,
+      "per_seed": {
+        "17": {
+          "minus_raw_cosine": {
+            "ci_high": 0.1759447220189415,
+            "ci_low": 0.06267183830806126,
+            "estimate": 0.12069221365630985,
+            "n_units": 47
+          },
+          "ordering_accuracy": 0.6262286509747945,
+          "vs_chance": {
+            "ci_high": 0.1546021489661067,
+            "ci_low": 0.07594135017420224,
+            "estimate": 0.12622865097479455,
+            "n_units": 47
+          }
+        },
+        "29": {
+          "minus_raw_cosine": {
+            "ci_high": 0.12705175474097608,
+            "ci_low": 0.015260584722259782,
+            "estimate": 0.06864899623366803,
+            "n_units": 47
+          },
+          "ordering_accuracy": 0.5741854335521528,
+          "vs_chance": {
+            "ci_high": 0.1110675627342644,
+            "ci_low": 0.03808987839480225,
+            "estimate": 0.07418543355215275,
+            "n_units": 47
+          }
+        },
+        "43": {
+          "minus_raw_cosine": {
+            "ci_high": 0.1118422919559929,
+            "ci_low": 0.01152835743181074,
+            "estimate": 0.055032257608626525,
+            "n_units": 47
+          },
+          "ordering_accuracy": 0.5605686949271113,
+          "vs_chance": {
+            "ci_high": 0.08839836105508417,
+            "ci_low": 0.028945276862956285,
+            "estimate": 0.06056869492711123,
+            "n_units": 47
+          }
+        }
+      },
+      "std_ordering_accuracy": 0.028294369048484928
+    },
+    "pair_mlp": {
+      "mean_ordering_accuracy": 0.8265838497612772,
+      "per_seed": {
+        "17": {
+          "minus_raw_cosine": {
+            "ci_high": 0.3451143601483287,
+            "ci_low": 0.2831735789781167,
+            "estimate": 0.31017474932340283,
+            "n_units": 47
+          },
+          "ordering_accuracy": 0.8157111866418876,
+          "vs_chance": {
+            "ci_high": 0.3300807903052386,
+            "ci_low": 0.2942567174467583,
+            "estimate": 0.3157111866418875,
+            "n_units": 47
+          }
+        },
+        "29": {
+          "minus_raw_cosine": {
+            "ci_high": 0.35783778002181904,
+            "ci_low": 0.2767641833244749,
+            "estimate": 0.3141177385049146,
+            "n_units": 47
+          },
+          "ordering_accuracy": 0.8196541758233993,
+          "vs_chance": {
+            "ci_high": 0.33995612444517953,
+            "ci_low": 0.3016910579331268,
+            "estimate": 0.31965417582339933,
+            "n_units": 47
+          }
+        },
+        "43": {
+          "minus_raw_cosine": {
+            "ci_high": 0.3664229752829379,
+            "ci_low": 0.30934141673817256,
+            "estimate": 0.3388497495000601,
+            "n_units": 47
+          },
+          "ordering_accuracy": 0.8443861868185447,
+          "vs_chance": {
+            "ci_high": 0.35935667328057924,
+            "ci_low": 0.3257632374938147,
+            "estimate": 0.34438618681854477,
+            "n_units": 47
+          }
+        }
+      },
+      "std_ordering_accuracy": 0.012690657835505088
+    },
+    "poincare": {
+      "mean_ordering_accuracy": 0.7684612684930667,
+      "per_seed": {
+        "17": {
+          "minus_raw_cosine": {
+            "ci_high": 0.34986477972624264,
+            "ci_low": 0.2543370429845722,
+            "estimate": 0.3048397012373072,
+            "n_units": 47
+          },
+          "ordering_accuracy": 0.8103761385557919,
+          "vs_chance": {
+            "ci_high": 0.3336489349413111,
+            "ci_low": 0.26826063421657836,
+            "estimate": 0.3103761385557919,
+            "n_units": 47
+          }
+        },
+        "29": {
+          "minus_raw_cosine": {
+            "ci_high": 0.24759092470040558,
+            "ci_low": 0.1377051452454166,
+            "estimate": 0.20471745444010261,
+            "n_units": 47
+          },
+          "ordering_accuracy": 0.7102538917585873,
+          "vs_chance": {
+            "ci_high": 0.23755999439391723,
+            "ci_low": 0.15423133844151923,
+            "estimate": 0.2102538917585873,
+            "n_units": 47
+          }
+        },
+        "43": {
+          "minus_raw_cosine": {
+            "ci_high": 0.3210565186710494,
+            "ci_low": 0.23222077356033693,
+            "estimate": 0.27921733784633646,
+            "n_units": 47
+          },
+          "ordering_accuracy": 0.7847537751648211,
+          "vs_chance": {
+            "ci_high": 0.30601171301353025,
+            "ci_low": 0.24675371387133116,
+            "estimate": 0.2847537751648212,
+            "n_units": 47
+          }
+        }
+      },
+      "std_ordering_accuracy": 0.04246724546570731
+    }
+  },
+  "gene_clusters": 47,
+  "pairs": 141517,
+  "raw_cosine_ordering_accuracy": 0.5055364373184847,
+  "split": "dev",
+  "task_clusters": 584,
+  "test_reported": false,
+  "unit": "gene"
+}

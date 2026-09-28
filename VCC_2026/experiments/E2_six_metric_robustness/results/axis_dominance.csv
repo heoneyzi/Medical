@@ -1,0 +1,14 @@
+dataset,analysis,axis,value,unit
+jiang24,dominant_axis_count,jac,85/96,results
+jiang24,dominant_axis_count,nmae,11/96,results
+gse270828,dominant_axis_count,fid,96/96,results
+jiang24,overall_variance_share_tau,jac,98.2,percent
+jiang24,overall_variance_share_seed,jac,93.4,percent
+jiang24,overall_variance_share_cells,jac,163.1,percent
+gse270828,overall_variance_share_tau,pds,86.3,percent
+gse270828,overall_variance_share_seed,pds,86.7,percent
+gse270828,overall_variance_share_cells,pds,81.3,percent
+jiang24,leave_one_axis_out_winner_change,jac,11/12,conditions
+jiang24,leave_one_axis_out_winner_change,nmae,1/12,conditions
+gse270828,leave_one_axis_out_winner_change,pds,7/12,conditions
+gse270828,leave_one_axis_out_winner_change,fid,5/12,conditions

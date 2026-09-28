@@ -1,0 +1,29 @@
+# Core (required) — anchors + GWPS matching + raw-count generators + local scoring.
+anndata>=0.10
+scanpy>=1.10
+numpy>=1.24
+scipy>=1.11
+pandas>=2.0
+pyyaml>=6.0
+tabulate>=0.9
+
+# Official 2026 submission packer/CLI (vcc prep / vcc sample / vcc submit / datasets).
+vcc-cli>=0.1.0
+
+# Exact public VCC 2026 scorer.  The vcc2026 preset provides the six enrolled
+# metrics and local baseline/split-half anchor machinery used by this repo.
+cell-eval2==0.16.0
+
+# Legacy public scorer retained only for old proxy diagnostics.  Its
+# PDS/MAE/MSE/PearsonDelta/DirMatch/OverlapN fingerprint is NOT a VCC 2026 score.
+cell-eval>=0.8.2
+
+# For the same GPU DE path used by scripts/run_two_dataset_full_matrix.sh:
+#   uv pip install --python .venv/bin/python --torch-backend=auto \
+#     'cell-eval2[gpu,gpudge]==0.16.0'
+
+# System dependency (NOT pip): the `zstd` CLI, used by vcc prep / cell-eval prep.
+#   apt-get install -y zstd     (or: conda install -c conda-forge zstd)
+
+# Optional — real ESM-2 embeddings for esm2_knn (GPU). See requirements-esm.txt:
+#   torch>=2.1 ; transformers>=4.40

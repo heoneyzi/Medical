@@ -1,0 +1,54 @@
+{
+  "control_filter": "target=non-targeting AND core_control=True",
+  "control_label": "non-targeting",
+  "duplicate_gene_resolution": {
+    "HSPA14": {
+      "dropped_ensembl": "ENSG00000284024",
+      "kept_ensembl": "ENSG00000187522",
+      "rule": "HGNC-approved exact Ensembl ID"
+    }
+  },
+  "lnfc_clip": 3.0,
+  "lnfc_definition": "ln((pert_CPM+a)/(core_control_CPM+a))",
+  "matrix": "X",
+  "n_canonical_genes": 8748,
+  "n_core_control_rows": 113,
+  "n_genes": 8749,
+  "n_non_targeting_rows": 130,
+  "n_rows": 2679,
+  "n_target_labels": 2393,
+  "n_unselected_control_rows_with_missing_cell_count": 17,
+  "obs_columns": [
+    "UMI_count_unfiltered",
+    "num_cells_unfiltered",
+    "num_cells_filtered",
+    "control_expr",
+    "fold_expr",
+    "pct_expr",
+    "core_control",
+    "mean_leverage_score",
+    "std_leverage_score",
+    "energy_test_p_value",
+    "anderson_darling_counts",
+    "mann_whitney_counts",
+    "z_gemgroup_UMI",
+    "mitopercent",
+    "TE_ratio",
+    "cnv_score_z"
+  ],
+  "path": "<repo>/data/replogle/rpe1_raw_bulk_01.h5ad",
+  "pseudocount_cpm": 1.0,
+  "sha256": "603c655f1cfa41d649baf3ae63fca224cc11f297e40d4ed59d390b1e8d2e2db2",
+  "target_parser": "obs_name second underscore-delimited field",
+  "var_columns": [
+    "gene_name",
+    "mean",
+    "std",
+    "cv",
+    "in_matrix",
+    "gini",
+    "clean_mean",
+    "clean_std",
+    "clean_cv"
+  ]
+}

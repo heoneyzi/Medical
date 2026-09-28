@@ -1,0 +1,7 @@
+true_moa,mtor_pi3k,hsp90,jak_rock,hdac,mapk,cdk
+mtor_pi3k,1,0,0,0,0,1
+hsp90,0,0,0,0,0,0
+jak_rock,0,0,0,0,0,0
+hdac,0,0,0,3,0,0
+mapk,4,6,1,3,3,5
+cdk,1,0,1,1,0,2

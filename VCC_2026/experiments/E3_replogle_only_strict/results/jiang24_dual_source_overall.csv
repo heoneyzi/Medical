@@ -1,0 +1,8 @@
+representation,method,stratum,overall
+raw,gwps_weighted,DUAL_SOURCE (8 targets),-0.145
+scPRINT-2,gwps_weighted,DUAL_SOURCE (8 targets),-0.182
+STACK-Large,gwps_weighted,DUAL_SOURCE (8 targets),-0.210
+UCE-4L,gwps_weighted,DUAL_SOURCE (8 targets),-0.220
+STATE-SE-100M,gwps_weighted,DUAL_SOURCE (8 targets),-0.246
+TranscriptFormer,gwps_weighted,DUAL_SOURCE (8 targets),-0.253
+PCA,gwps_weighted,DUAL_SOURCE (8 targets),-0.579

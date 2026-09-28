@@ -1,0 +1,145 @@
+# Frozen upstream revisions verified from the official model repositories on 2026-09-14.
+seed: 17
+device: auto
+project_root: ..
+
+paths:
+  raw_dir: data/raw/geomarrvel
+  processed_dir: artifacts/geomarrvel/processed
+  cache_dir: artifacts/geomarrvel/cache
+  embedding_report_dir: artifacts/geomarrvel/reports/embeddings
+  metric_output_dir: artifacts/geomarrvel/checkpoints/metric
+  flow_output_dir: artifacts/geomarrvel/checkpoints/flow
+  agent_report_dir: artifacts/geomarrvel/reports/agent
+  run_summary: artifacts/geomarrvel/run_summary.json
+
+preprocessing:
+  max_search_depth: 16
+  require_optimal_demo: false
+  # Use observed_only until counterfactual branches have real snapshots.
+  counterfactual_policy: observed_only
+
+embedding:
+  batch_size: 8
+  storage_dtype: float16
+  views:
+    qwen_general:
+      kind: prototype
+      query_encoder: &qwen
+        backend: huggingface
+        # Feasible first run. A pinned 7B ablation is documented in THIRD_PARTY.md.
+        model_name: Qwen/Qwen2.5-1.5B-Instruct
+        revision: 989aa7980e4cf806f80c7fef2b1adb7bc71aa306
+        pooling: mean
+        normalize: true
+        max_length: 2048
+        device: auto
+        dtype: bfloat16
+        trust_remote_code: false
+      document_encoder: *qwen
+      example_fields: [query, goal, state, history]
+      tool_fields: [description, contract]
+      encode_background: true
+    medcpt:
+      kind: prototype
+      query_encoder:
+        backend: huggingface
+        model_name: ncbi/MedCPT-Query-Encoder
+        revision: d83a36cc6b8e3a5c5e9d9d6ba156808c1643dcbc
+        pooling: cls
+        normalize: true
+        max_length: 512
+        device: auto
+        dtype: float32
+        trust_remote_code: false
+      document_encoder:
+        backend: huggingface
+        model_name: ncbi/MedCPT-Article-Encoder
+        revision: d05a736da4bb84ee4057b7f7999485be6ed85465
+        pooling: cls
+        normalize: true
+        max_length: 512
+        device: auto
+        dtype: float32
+        trust_remote_code: false
+      example_fields: [query, goal, state, history]
+      tool_fields: [description, contract]
+      encode_background: true
+    sapbert_entity_aux:
+      kind: state_only
+      snapshot_field: entities
+      query_encoder:
+        backend: huggingface
+        model_name: cambridgeltl/SapBERT-from-PubMedBERT-fulltext
+        revision: 090663c3ae57bf35ffe4d0d468a2a88d03051a4d
+        pooling: cls
+        normalize: true
+        max_length: 128
+        device: auto
+        dtype: float32
+        trust_remote_code: false
+      example_fields: [query, entities]
+      tool_fields: []
+      encode_background: false
+    dnabert2_sequence_aux:
+      kind: state_only
+      encode_pairs: false
+      snapshot_field: sequence
+      query_encoder:
+        backend: huggingface
+        model_name: zhihan1996/DNABERT-2-117M
+        revision: 7bce263b15377fc15361f52cfab88f8b586abda0
+        pooling: mean
+        normalize: true
+        max_length: 512
+        device: auto
+        dtype: bfloat16
+        trust_remote_code: true
+      example_fields: [sequence]
+      tool_fields: []
+      encode_background: false
+
+metric_training:
+  structured_dim: 128
+  shared_dim: 768
+  hidden_dim: 1024
+  distance: lowrank_mahalanobis
+  distance_rank: 256
+  temperature: 0.1
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+  batch_size: 32
+  epochs: 100
+  patience: 15
+  regret_weight: 0.5
+  transition_weight: 0.2
+  rank_margin: 0.1
+  apply_contract_mask: false
+
+flow_training:
+  max_plan_length: 12
+  hidden_dim: 1536
+  layers: 4
+  heads: 12
+  dropout: 0.1
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+  batch_size: 16
+  epochs: 200
+  patience: 25
+  pad_weight: 0.1
+  stop_weight: 1.0
+  tool_weight: 0.5
+  separation_weight: 0.05
+  nfe: 16
+  stop_threshold: 0.5
+
+agent_evaluation:
+  max_steps: 16
+  nfe: 16
+  stop_threshold: 0.5
+  # Cache known trajectory prefixes; invoke frozen encoders only for genuinely new states.
+  runtime_embedding_policy: cache_or_encode
+  # Keep false for a true pre-cache run; use a separate true config for warm-latency comparison.
+  prewarm_runtime_encoders: false
+  perturbations: []

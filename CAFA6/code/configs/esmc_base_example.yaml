@@ -1,0 +1,46 @@
+# ESM-C Base Training Configuration Example
+# This configuration file defines settings for training a base predictor
+# using ESM-C embeddings for GO term prediction.
+
+# Experiment name (used for output directory)
+name: esmc_300m_mean_mlp
+
+# Path configuration
+paths:
+  base_path: /path/to/cafa6
+
+# Embedding configuration
+embed:
+  model: esmc_300m      # ESM-C model: esmc_300m, esmc_600m, esmc_1b
+  mode: mean            # Pooling mode: mean, meanmax, cls
+  device: cuda:0        # Device for embedding generation
+  batch_size: 8         # Batch size for embedding
+
+# Base predictor configuration
+base:
+  head: mlp             # Head type: linear or mlp
+  hidden: [1024, 512]   # Hidden layer sizes for MLP head
+  dropout: 0.2          # Dropout probability
+  lr: 0.001             # Learning rate
+  epochs: 5             # Number of training epochs
+  batch_size: 512       # Training batch size
+  val_batch_size: 1024  # Validation batch size
+  neg_k: 1024           # Number of negative samples per batch
+  weight_decay: 0.0001  # AdamW weight decay
+  grad_clip: 1.0        # Gradient clipping norm
+  amp: true             # Use automatic mixed precision
+  label_limit: 0        # Limit labels (0 = no limit, for debugging)
+  fmax_thresholds:      # Thresholds for F-max validation
+    - 0.05
+    - 0.1
+    - 0.2
+    - 0.3
+    - 0.4
+
+# Cross-validation configuration
+cv:
+  seed: 42              # Random seed for reproducibility
+  n_folds: 5            # Number of folds (uses precomputed folds.npy)
+
+# Device for training (overridden by embed.device if not set)
+device: cuda:0

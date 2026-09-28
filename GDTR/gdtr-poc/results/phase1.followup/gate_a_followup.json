@@ -1,0 +1,29 @@
+{
+  "target_layers": [
+    15,
+    20,
+    25,
+    28
+  ],
+  "initial_losses": {
+    "15": 157.05252075195312,
+    "20": 256.6266174316406,
+    "25": 141.45018005371094,
+    "28": 822.0968627929688
+  },
+  "final_losses": {
+    "15": 2.421581983566284,
+    "20": 1.4338953495025635,
+    "25": 1.49232816696167,
+    "28": 0.34156492352485657
+  },
+  "fractional_recovery": {
+    "15": 0.9845810689827074,
+    "20": 0.9944125228947285,
+    "25": 0.9894497966252499,
+    "28": 0.9995845198552827
+  },
+  "best_layer": 28,
+  "any_real_recovery_gt_50pct": true,
+  "interpretation": "Largest tuned recovery at L=28 (fractional drop 1.000). Tuned-lens-at-earlier-layer story HOLDS \u2014 at least one L showed >50% MSE drop."
+}

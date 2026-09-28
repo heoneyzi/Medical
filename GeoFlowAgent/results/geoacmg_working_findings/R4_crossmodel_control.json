@@ -1,0 +1,25 @@
+{
+  "split": "dev",
+  "unit": "gene",
+  "n_tasks": 584,
+  "note": "R4 입력이 R2 와 같은 측도(깊이고정 순서 일치율)임을 확인하고 동점 보정된 정렬로 재계산했다. 기존 c5_within_model.json 은 int8 로 접힌 npz 를 평균해 같은 편향 위에 있었다.",
+  "report": {
+    "statistic_name": "ordering_x_policy_product (tie-corrected ordering)",
+    "matched": 0.6538957525167347,
+    "matched_ci": [
+      0.6171604814338104,
+      0.6811517677296897
+    ],
+    "mismatched": 0.6536688264620877,
+    "mismatched_ci": [
+      0.6168447403786506,
+      0.6809828161312088
+    ],
+    "difference": 0.0002269260546469331,
+    "difference_ci": [
+      -0.00016138561122627164,
+      0.0005066778757140972
+    ],
+    "n_units": 47
+  }
+}

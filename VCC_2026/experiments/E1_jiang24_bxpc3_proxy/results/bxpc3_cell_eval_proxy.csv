@@ -1,0 +1,8 @@
+representation,method,PDS,MAE,OverlapN
+raw,no_effect,0.5102,0.1806,0.00003
+raw,gwps_nearest,0.5794,0.1807,0.00136
+PCA,gwps_weighted,0.5137,0.1844,0.00072
+STATE-SE-100M,gwps_nearest,0.5316,0.1888,0.00633
+STATE-SE-100M,gwps_weighted,0.5389,0.1872,0.00295
+STACK-Large,gwps_nearest,0.5316,0.1888,0.00633
+STACK-Large,gwps_weighted,0.4959,0.1851,0.00364

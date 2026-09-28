@@ -1,0 +1,54 @@
+{
+  "best_dev_selection_score": 0.7695761013879246,
+  "best_epoch": 1,
+  "cache_content_sha256": "00b19e6e3c669e5d2408ae7c157675fe306e837ec8b65aea1f38d0a789f56903",
+  "checkpoint": "artifacts/acmg/checkpoints/geometry_ablate_medcpt2/euclidean/seed-43/value_geometry.pt",
+  "checkpoint_sha256": "19fcb1b43cc39cc531335ad929fba706e39305717d7503ee582808aa193ffbf4",
+  "completed_epoch": 15,
+  "configured_epochs": 60,
+  "energy": "euclidean",
+  "feature_ablation": {
+    "zero_structured": false,
+    "zero_views": [
+      "medcpt"
+    ]
+  },
+  "latest": {
+    "dev_action_reachability_balanced_accuracy": 0.7280395479216497,
+    "dev_completion_balanced_accuracy": 0.7459620602703839,
+    "dev_joint_stop_action_accuracy": 0.636183647260274,
+    "dev_policy_optimal_set_accuracy": 0.6999677938808374,
+    "dev_regret_at_1": 0.31054452174588987,
+    "dev_selection_score": 0.6595476316539356,
+    "dev_thresholds": {
+      "action_reachability": 0.1,
+      "completion": 0.1
+    },
+    "epoch": 15,
+    "external_replay_fraction": 0.0,
+    "external_replay_pool": 0,
+    "hard_replay_pool": 7711,
+    "learning_rate": 0.0005974873734152915,
+    "train": {
+      "action": 0.9118567412333426,
+      "action_reachability": 0.1020843604480751,
+      "bellman": 0.0400547660270964,
+      "completion": 0.1516476703536762,
+      "q": 0.0400547660270964,
+      "regret": 0.01059454219284028,
+      "state_reachability": 0.07344540602060569,
+      "total": 1.2854839148279333,
+      "transition": 0.023848468089912936,
+      "value": 0.023661804750893228
+    }
+  },
+  "metrics": "artifacts/acmg/checkpoints/geometry_ablate_medcpt2/euclidean/seed-43/value_metrics.json",
+  "model_capacity_override": {},
+  "output_dir": "artifacts/acmg/checkpoints/geometry_ablate_medcpt2/euclidean/seed-43",
+  "patience": 14,
+  "resume_checkpoint": "artifacts/acmg/checkpoints/geometry_ablate_medcpt2/euclidean/seed-43/training_resume.pt",
+  "seed": 43,
+  "stale_epochs": 14,
+  "status": "complete",
+  "training_config_sha256": "16ba343ee8aad7af3b8b3b46b2924bae67ed457355e30b9feed0204455ec6723"
+}

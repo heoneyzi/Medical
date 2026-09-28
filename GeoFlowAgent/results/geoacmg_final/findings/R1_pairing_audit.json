@@ -1,0 +1,27 @@
+{
+  "reusable_seeds": [
+    17,
+    29,
+    43
+  ],
+  "unusable_seeds": [],
+  "target_seeds": 5,
+  "new_pairs_needed": 2,
+  "fingerprints": {
+    "cosine": {
+      "17": "99d2b07a128b11b311541e5ca9190d743d9f9ee656fcc4d33dbf623b544b5fa1",
+      "29": "6995f43cde56819042f4affacb09257af488b700e96f3a28abafe7a10bceb2a3",
+      "43": "95c0ccf77f98037e0f4d88091cbafb47fe6814273cabc186510def2954b4b855"
+    },
+    "euclidean": {
+      "17": "99d2b07a128b11b311541e5ca9190d743d9f9ee656fcc4d33dbf623b544b5fa1",
+      "29": "6995f43cde56819042f4affacb09257af488b700e96f3a28abafe7a10bceb2a3",
+      "43": "95c0ccf77f98037e0f4d88091cbafb47fe6814273cabc186510def2954b4b855"
+    }
+  },
+  "reading": "재사용 가능한 시드는 두 family 의 trunk 해시가 일치하는 시드다. 일치하지 않으면 파라미터 0개 대조의 전제가 깨지므로 그 시드는 쌍으로 쓰지 않고 새로 돌린다.",
+  "measured_at": "2026-09-20",
+  "adapter": "geoflowagent.geoacmg.adapters.load_trunk (init-state trunk, energy_head excluded)",
+  "sensitivity_control": "pair_mlp@17 의 trunk 는 cosine@17 과 다르다 (에너지 파라미터 33,537 개가 뒤따르는 value/reachability/completion 헤드의 난수를 밀어낸다). 따라서 cosine==euclidean 일치는 지문이 둔해서 나온 결과가 아니다.",
+  "total_params_per_arm": 335942
+}

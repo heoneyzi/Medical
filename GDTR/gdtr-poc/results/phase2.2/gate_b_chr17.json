@@ -1,0 +1,72 @@
+{
+  "phase": "phase2.2",
+  "chrom": "chr17",
+  "gamma_cos": 0.39663,
+  "n_windows_done": 27586,
+  "n_positions_total": 165516000,
+  "per_context": {
+    "intergenic": {
+      "n": 59974303,
+      "mean_c": 28.634170888155214,
+      "median_c": 31.0
+    },
+    "intron": {
+      "n": 94927829,
+      "mean_c": 27.69239096366567,
+      "median_c": 31.0
+    },
+    "coding_exon": {
+      "n": 6173026,
+      "mean_c": 28.49611584334814,
+      "median_c": 31.0
+    },
+    "5utr": {
+      "n": 359776,
+      "mean_c": 29.335986836253667,
+      "median_c": 31.0
+    },
+    "3utr": {
+      "n": 3102136,
+      "mean_c": 27.76743669523193,
+      "median_c": 31.0
+    },
+    "splice_donor": {
+      "n": 490458,
+      "mean_c": 25.553880250704445,
+      "median_c": 31.0
+    },
+    "splice_acceptor": {
+      "n": 488472,
+      "mean_c": 26.080166314548222,
+      "median_c": 31.0
+    },
+    "repeat": {
+      "n": 0,
+      "mean_c": null,
+      "median_c": null
+    }
+  },
+  "context_counts": {
+    "intergenic": 59974303,
+    "intron": 94927829,
+    "coding_exon": 6173026,
+    "5utr": 359776,
+    "3utr": 3102136,
+    "splice_donor": 490458,
+    "splice_acceptor": 488472,
+    "repeat": 0
+  },
+  "verdict_gate_b": {
+    "U": 308218414570426.0,
+    "p_two_sided": 0.0,
+    "alpha_bonf": 1.7e-51,
+    "p_pass": true,
+    "cohens_d": -0.12399556291653442,
+    "d_pass": false,
+    "intron_higher": false,
+    "overall_pass": false,
+    "exon_mean_c": 28.49611584334814,
+    "intron_mean_c": 27.69239096366567
+  },
+  "cohens_d_exon_vs_intron": -0.12399556291653442
+}

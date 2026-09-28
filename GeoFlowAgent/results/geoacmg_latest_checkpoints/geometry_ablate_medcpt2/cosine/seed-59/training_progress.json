@@ -1,0 +1,54 @@
+{
+  "best_dev_selection_score": 0.7599942292047202,
+  "best_epoch": 2,
+  "cache_content_sha256": "00b19e6e3c669e5d2408ae7c157675fe306e837ec8b65aea1f38d0a789f56903",
+  "checkpoint": "artifacts/acmg/checkpoints/geometry_ablate_medcpt2/cosine/seed-59/value_geometry.pt",
+  "checkpoint_sha256": "1123dc6e318e7fa6d969f71c648fb04e44358c327a6222e0f8f9396849d1943b",
+  "completed_epoch": 16,
+  "configured_epochs": 60,
+  "energy": "cosine",
+  "feature_ablation": {
+    "zero_structured": false,
+    "zero_views": [
+      "medcpt"
+    ]
+  },
+  "latest": {
+    "dev_action_reachability_balanced_accuracy": 0.7234273794012243,
+    "dev_completion_balanced_accuracy": 0.7129982500075317,
+    "dev_joint_stop_action_accuracy": 0.6212542808219178,
+    "dev_policy_optimal_set_accuracy": 0.6903381642512078,
+    "dev_regret_at_1": 0.35677871900034497,
+    "dev_selection_score": 0.6505860409021057,
+    "dev_thresholds": {
+      "action_reachability": 0.1,
+      "completion": 0.1
+    },
+    "epoch": 16,
+    "external_replay_fraction": 0.0,
+    "external_replay_pool": 0,
+    "hard_replay_pool": 6571,
+    "learning_rate": 0.0005841957122256002,
+    "train": {
+      "action": 0.9211321011449157,
+      "action_reachability": 0.09073050322698581,
+      "bellman": 0.03912956166355799,
+      "completion": 0.1323448894648503,
+      "q": 0.03912956166355799,
+      "regret": 0.008844470161534484,
+      "state_reachability": 0.06569753520602985,
+      "total": 1.2606620921044096,
+      "transition": 0.035716389849382475,
+      "value": 0.02312031875056875
+    }
+  },
+  "metrics": "artifacts/acmg/checkpoints/geometry_ablate_medcpt2/cosine/seed-59/value_metrics.json",
+  "model_capacity_override": {},
+  "output_dir": "artifacts/acmg/checkpoints/geometry_ablate_medcpt2/cosine/seed-59",
+  "patience": 14,
+  "resume_checkpoint": "artifacts/acmg/checkpoints/geometry_ablate_medcpt2/cosine/seed-59/training_resume.pt",
+  "seed": 59,
+  "stale_epochs": 14,
+  "status": "complete",
+  "training_config_sha256": "0d76399ae68009ca7b3849bebd43c2aad5bb8e0b6ba758b27baca661083da8b5"
+}

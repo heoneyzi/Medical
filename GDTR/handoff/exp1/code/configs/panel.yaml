@@ -1,0 +1,22 @@
+# Panel specification.
+#
+# n_windows = 400 rather than 100: with ~266x binomial overdispersion the
+# effective sample size is the number of windows, and only 22-39 of the original
+# 100 were usable per context.  Quadrupling windows roughly halves every
+# interval for a few GPU-hours.
+#
+# legacy_windows: a CSV with columns chrom,start listing the original 100-window
+# panel.  Those windows are placed first so the published estimates can be
+# reproduced on the exact sub-panel and compared with the new ones.
+
+panel:
+  chroms: [chr22, chr17]
+  n_windows: 400
+  window_bp: 6000
+  scored_bp: 3000
+  seed: 42
+  max_n_fraction: 0.02
+  fasta: /data/genomes/hg38/hg38.fa
+  gtf: /data/annotation/gencode.v44.annotation.gtf.gz
+  phylop_bw: /data/conservation/hg38.phyloP100way.bw
+  legacy_windows: ""

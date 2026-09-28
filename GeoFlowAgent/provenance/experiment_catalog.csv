@@ -1,0 +1,35 @@
+﻿id,stage,experiment,sample,design,status,interpretation,evidence
+S01,synthetic-v1,frozen multiview / metric / flow,12 task; 7 train / 2 dev / 3 test,Qwen1.5B·7B + MedCPT·SapBERT·DNABERT2,완료·파일럿,bilinear 신호는 있으나 계약+oracle STOP random도100%; 모델 기여 분리 불가,results/synthetic_v1
+S02,search pilot,exact oracle / hash 대조 / DAgger / State Flow,210 task; 128/41/41,"4,856 states",완료·개발,쉬운 ceiling으로 hard-v2 필요,results/hard_v2/GeoFlowAgent_A_EXPERIMENT_REPORT_CURRENT.md
+H01,hard-v2 dev,데이터 난도·누수·exact search,240 task; 144/48/48,"50 tools; 3,042 snapshots",완료,실패한 template/sequence 설계 수정 후 분할 유지,results/hard_v2/GeoFlowAgent_A_EXPERIMENT_REPORT_CURRENT.md
+H02,hard-v2 dev,geometry sweep,dev 48 task,9 geometry × 3 seed,완료,단순 cosine 선택; 복잡도가 자동으로 우위가 아님,results/hard_v2/dev_reports
+H03,hard-v2 dev,input ablation / capacity / hash,dev 48 task,12 input × 3 seed 및 용량 곡선,완료,MedCPT-only 선택; naive fusion negative transfer,results/hard_v2/dev_reports
+H04,hard-v2 dev,DAgger / state-flow / STOP,dev 48 task,원 full 모델과 재학습·feedback 대조,완료,DAgger의 명확한 추가 이점 미입증,results/hard_v2/dev_reports
+H05,hard-v2 final,frozen representation test,test 48 task,MedCPT seeds17/29/43; DAgger evaluator seed19,완료·test,policy .8010 / joint .7364 / regret .1403,results/hard_v2/final_reports/value_test/summary.json
+H06,hard-v2 final,closed-loop / perturbation,test 48 task,MedCPT seed17와 대조군,완료·test,clean random 대비 차이 있으나 perturbed 우위 없음,results/hard_v2/final_reports/search_agent
+H07,hard-v2 final,observed / blind / one-shot flow,test 48 task × 3 seed,root-only; samples/state4; NFE16,완료·test,observed .4028 > one-shot .1233 > blind0,results/hard_v2/final_reports
+G00,GeoACMG,ClinGen corpus / gene cap / sealing,"2,921 task; 1753/584/584","13,278 원문 행; MedCPT768D; 448,704 train+dev state 예제",완료,실제 자료 기반 offline exact snapshot; live API 아님,docs/original/geoacmg/EXPERIMENT_JOURNAL_20260919.md
+B0,GeoACMG prereg,single-tool-family benchmark gap,"전체 구성 2,921 task /155 gene",원 사전등록에서 완료된 PRIMARY,완료·구성 진단,gap .689832; 학습 표현 성능이 아닌 benchmark 진단,results/geoacmg_final/findings/b0.jsonl
+G01,GeoACMG dev,geometry comparison,584 dev task,5 family × seeds17/29/43,완료·탐색,계획 승자와 표현 정렬 승자의 분리,results/geoacmg_final/findings/metric_profile.json
+G02,GeoACMG dev,ordering / capacity / mechanism / strata,584 dev task /47 gene,"141,517 depth-matched pairs; capacity6run",완료·탐색,depth 통제·누수·용량·readout을 따로 점검,results/geoacmg_final/findings
+R0,GeoACMG final,inventory / margin 보존,dev,증거 목록·원시 쌍별 margin,완료,문서만으로 판정하지 않을 수 있는 기반,results/geoacmg_final/findings/R0_inventory.json
+R1,GeoACMG final,zero-energy-parameter paired seeds,dev; seed17/29/43/59/71,cosine vs euclidean; trunk 시작조건 기록,완료·탐색,ordering Δ+.1432(seed cluster); 기존3seed 재도출+신규2seed,results/geoacmg_final/findings/R1_paired_zero_param.json
+R1b,GeoACMG final,신규 seed planning 반례,584 dev task; seed59/71,cosine − euclidean,완료·탐색,policy −.009880: 기존 방향 반전; seed 분산 CI아님,results/geoacmg_final/findings/R1b_new_seed_planning_axis.json
+R2,GeoACMG final,readout / ties / anisotropy,"141,517 pairs;97 score vectors",own/cos/l2/neg_dot/cos_std/cos_whiten,완료·탐색,동점0; cos_std 상당 복원; family 조건부,results/geoacmg_final/findings/R2_readout_decomposition.json
+R3,GeoACMG final,horizon strata / contrast slope,47 gene clusters,metric·readout별 seed 집합이 다름,완료·탐색,최신 own cosine−euclidean slope 음수CI; README구값 정정,results/geoacmg_final/findings/R3_horizon_strata.json
+R4,GeoACMG final,cross-model cyclic control,19 run ×584 task,정렬·policy 곱; 다음모델로 cyclic 교체,완료·탐색,작은 양의Δ.000424 CI; 인과적 강한 결합 근거 아님,results/geoacmg_final/findings/R4_crossmodel_control.json
+R5,GeoACMG final,P2 winnability,cap100 설정,유효 cluster57.37; compute 축,진단 완료·본검정 잔여,모든 축 검정불가가 아님; learning curve 미완,results/geoacmg_final/findings/R5_p2_winnability.json
+R6,GeoACMG final,prereg amendment / claims,test opened0 / available584 기록,fingerprint54fec6d071e6f752,문서화 완료·정합성 잔여,C5철회·C4주검정 제약; 등록/승격 경로 미완,results/geoacmg_final/findings/R6_amendment.json
+R7,GeoACMG final,batched flow / equivalence,"584 dev roots;2,336 samples",24-root 비교59수치 일치; root-only,완료·dev,observed .5993 vs one-shot .1169 / blind .0274,results/geoacmg_final/findings/R7_arms_and_flow.json
+P1,GeoACMG remaining,raw metric planning arm,dev,raw ordering는측정,부분완료,raw ordering≈chance; 실제 planning 비교는미완,results/geoacmg_final/findings/R7_arms_and_flow.json
+P2,GeoACMG remaining,compute learning curve,미완,실측 가능한compute 축,후속 필요,용량·데이터 퇴화와 compute 실험 가능성 분리,results/geoacmg_final/findings/R5_p2_winnability.json
+P3,GeoACMG remaining,multiple measured cost models,미실행,probe1/report.5는placeholder,비용 실측 필요,실측 전 비용 효율 결론 불가,results/geoacmg_final/findings/R7_arms_and_flow.json
+TEST,GeoACMG remaining,held-out test,584 task,보존된 기록상opened0,봉인,dev탐색을test일반화로소개할수없음,results/geoacmg_final/findings/R6_amendment.json
+EXT,external,MARRVEL/live API/generalization,계획/adapter,최종 실험의외부검증과구분,완료 근거 없음,이 패키지는임상/live API효과를증명하지않음,docs/original/geoacmg
+R2b-f,GeoACMG 2026-09-21,7 seed readout 확장·분산원·홀드아웃,17/29/43/59/71/83/97,후기 dev 분석,완료·탐색,own-energy는양수; cos_std는양축미확정; whitening역전,results/geoacmg_working_findings/R2f_readout_7seeds.json
+R3b-c,GeoACMG 2026-09-21,7 seed planning 축,584 dev task /47 gene,후기 dev 분석,완료·탐색,policy/joint/regret seed CI모두0포함; gene축일부신호,results/geoacmg_working_findings/R3c_planning_axis_7seeds.json
+R8,GeoACMG 2026-09-21,frozen-space readout ladder,dev; train-fit전처리,후기 dev 분석,완료·탐색,일부MedCPT단독readout도chance초과; planning arm아님,results/geoacmg_working_findings/R8_frozen_space_ladder.json
+R9,GeoACMG 2026-09-21,정보원 ablation: MedCPT·structured,dev;141517pairs,후기 dev 분석,완료·탐색,structured PCA64 .705406 vs결합 .704007; 기여0입증아님,results/geoacmg_working_findings/R9_information_source_ablation.json
+R10,GeoACMG 2026-09-21,readout에따른5family순위,공통3seed /일부7seed,후기 dev 분석,완료·탐색,최상위family가읽기방식에따라바뀜,results/geoacmg_working_findings/R10_all_families_neutral_readout.json
+R11,GeoACMG 2026-09-21,MedCPT제거 재학습,cosine/euclidean ×seed17/29,후기 dev 분석,완료·탐색,regret+.044067 양축신호; policy/joint gene미확정,results/geoacmg_working_findings/R11_medcpt_ablation.json
+R11+,GeoACMG 2026-09-21,제거 재학습의후기체크포인트,seed43/59 추가4run,후기 dev 분석,산출물 보존·별도 집계,가중치·지표보존; 기존R11집계에미포함,results/geoacmg_working_findings/../geoacmg_latest_checkpoints/geometry_ablate_medcpt2/comparison.json

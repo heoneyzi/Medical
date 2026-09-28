@@ -1,0 +1,39 @@
+[project]
+name = "tdig"
+version = "0.0.1"
+description = "Think Deep in Genome — multi-axis residual-stream settling analysis for genomic foundation models"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Yoonjin Cho" },
+]
+
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.11",
+    "scikit-learn>=1.3",
+    "pandas>=2.0",
+    "pyarrow>=14.0",
+    "h5py>=3.10",
+    "matplotlib>=3.8",
+    "seaborn>=0.13",
+    "torch>=2.4",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "ruff>=0.4",
+]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

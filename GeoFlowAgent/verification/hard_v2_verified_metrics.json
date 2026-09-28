@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "selected_seeds": [
+    17,
+    29,
+    43
+  ],
+  "reference_seed": 19,
+  "test_tasks": 48,
+  "state_metric_seed_means": {
+    "policy_optimal_set_accuracy": 0.8010464977999763,
+    "joint_stop_action_accuracy": 0.736383804769828,
+    "regret_at_1": 0.140276662921376
+  },
+  "reference_state_metrics": {
+    "policy_optimal_set_accuracy": 0.6874777024616482,
+    "joint_stop_action_accuracy": 0.670216306156406,
+    "regret_at_1": 0.3848232990861964
+  },
+  "paired_task_macro_differences": {
+    "per_task_policy_accuracy": 0.11977837774566448,
+    "per_task_joint_accuracy": 0.06913240123163547,
+    "per_task_regret_at_1": -0.24892119605583612
+  },
+  "flow_seed_means": {
+    "open_loop": 0.12326388888888888,
+    "receding_horizon": 0.4027777777777778,
+    "compute_matched_blind_replanning": 0.0,
+    "receding_horizon_verifier_stop_guard": 0.4375
+  },
+  "scope": "Recomputed point estimates from saved metrics; historical confidence intervals and GPU training not rerun."
+}

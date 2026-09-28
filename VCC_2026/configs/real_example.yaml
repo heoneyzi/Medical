@@ -1,0 +1,70 @@
+# Real VCC 2026 run. Fill paths after `vcc datasets download controls` and GWPS download.
+# Verify against the downloaded bundle: pert_col/control_label, gene count (18533),
+# and the Replogle obs column naming knocked-down genes.
+
+run_name: vcc2026
+output_dir: outputs
+
+data:
+  contexts_dir: data/validation      # data/validation/{A,B,C}/controls.h5ad
+  control_h5ad: controls.h5ad
+  truth_h5ad: truth.h5ad             # only for your OWN shadow-CV contexts
+  targets: data/controls/targets.csv          # or derive from pert_counts.csv
+  perts: data/controls/pert_counts.csv        # official per-context perturbation list + n_cells
+  gene_list: data/controls/gene_names.csv     # 18533 genes, order matters (headerless)
+  pert_col: target_gene
+  control_label: non-targeting
+  context_col: context               # A/B/C
+  celltype_col: celltype
+
+gwps:
+  enabled: true
+  sources:
+    k562: data/gwps/ReplogleWeissman2022_K562_gwps.h5ad
+    rpe1: data/gwps/ReplogleWeissman2022_RPE1_essential.h5ad
+  pert_col: gene                     # confirm real column name in the Replogle h5ad
+  control_label: non-targeting
+  counts_space: true                 # set false if the Replogle X is log-normalized
+  cache: data/gwps/effect_library.npz
+
+esm2:
+  enabled: false                     # true + FASTA for real unseen-gene KNN
+  model: facebook/esm2_t33_650M_UR50D
+  fasta: data/esm2/proteins.fasta
+  allow_random_fallback: false       # never random for a real run
+  knn_k: 5
+  device: cuda
+
+embed:
+  context_embeddings: ""             # npz of STATE-SE/STACK context embeddings -> F6/F7
+
+predict:
+  method: gwps_weighted              # no_effect|global_mean|gwps_direct|gwps_nearest|gwps_weighted|esm2_knn|state|stack
+  effect: logfc                      # logfc (D2, recommended) or additive (D1)
+  generator: multinomial             # multinomial (G0) | poisson (G1) | nbinom (G2)
+  cells_per_pert: 400
+  include_controls: false            # submission excludes controls
+  similarity_space: raw              # raw | pca | embed(=F6/F7)
+  pca_components: 50
+  scale: 1.0                         # D2b logFC magnitude sweep
+  shrink: none                       # D5: none | context | targetexpr | both
+  tau: 0.10
+  knn_k: 5
+  nb_theta: 10.0
+  clip_negative: true
+  seed: 0
+
+submit:
+  packer: vcc                        # official
+  gene_dim: 18533
+  max_cell_dim: 400000
+  max_counts_per_cell: 1000000
+  encoding: 32
+  require_counts: true
+  reject_controls: true
+  verify_targets: true
+  check_cell_counts: true
+
+eval:
+  profile: full                      # 'vcc' for a fast 3-metric check
+  num_threads: 8

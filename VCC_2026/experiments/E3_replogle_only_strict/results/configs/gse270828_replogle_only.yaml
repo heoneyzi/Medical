@@ -1,0 +1,67 @@
+run_name: replogle_only_gse270828
+output_dir: <repo>/data_experiments/replogle_only/gse270828/outputs
+data:
+  contexts_dir: <repo>/data_shadow/gse270828_rep3_lobo_vcc2026/validation
+  control_h5ad: controls.h5ad
+  truth_h5ad: truth.h5ad
+  targets: <repo>/data_shadow/gse270828_rep3_lobo_vcc2026/targets.csv
+  perts: <repo>/data_shadow/gse270828_rep3_lobo_vcc2026/pert_counts.csv
+  gene_list: <repo>/data_shadow/gse270828_rep3_lobo_vcc2026/gene_names.csv
+  pert_col: target_gene
+  control_label: non-targeting
+  context_col: context
+  celltype_col: celltype
+gwps:
+  enabled: true
+  sources:
+    k562: <repo>/data_experiments/replogle_only/gse270828/source_controls/k562.h5ad
+    rpe1: <repo>/data_experiments/replogle_only/gse270828/source_controls/rpe1.h5ad
+  pert_col: gene
+  control_label: non-targeting
+  counts_space: true
+  cache: <repo>/data_experiments/replogle_only/gse270828/effect_library.npz
+esm2:
+  enabled: false
+  model: facebook/esm2_t33_650M_UR50D
+  fasta: ''
+  embedding_cache: <repo>/data_shadow/gse270828_rep3_lobo_vcc2026/data/esm2/gene_embeddings.npz
+  allow_random_fallback: false
+  knn_k: 5
+  device: cuda
+embed:
+  context_embeddings: ''
+predict:
+  method: gwps_weighted
+  effect: logfc
+  generator: pseudobulk_multinomial
+  cells_per_pert: 50
+  include_controls: false
+  similarity_space: raw
+  pca_components: 2
+  scale: 1.0
+  shrink: none
+  tau: 0.1
+  knn_k: 5
+  nb_theta: 10.0
+  multinomial_alpha: 0.001
+  clip_negative: true
+  seed: 2026
+submit:
+  packer: vcc
+  gene_dim: 4095
+  max_cell_dim: 400000
+  max_counts_per_cell: 1000000
+  encoding: 32
+  require_counts: true
+  reject_controls: true
+  verify_targets: true
+  check_cell_counts: true
+eval:
+  profile: full
+  num_threads: 4
+experiment:
+  track: STRICT_REPLOGLE_ONLY
+  metric_source: external_dataset_local_anchors
+  hyperparameter_source: replogle_internal_cv
+  selected_global_scale_baked_into_library: 0.25
+  external_ground_truth_used_for_selection: false

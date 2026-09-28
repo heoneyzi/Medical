@@ -1,0 +1,31 @@
+# data & outputs
+data/
+data_synth/
+data_public/
+data_shadow/
+data_zero_shot/
+data_experiments/
+models/
+outputs/
+external/
+envs/
+*.h5ad
+*.vcc
+*.npz
+*.pkl
+cell-eval-outdir/
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# os
+.DS_Store

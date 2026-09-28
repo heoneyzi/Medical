@@ -1,0 +1,37 @@
+{
+  "vector_auroc_jsd": {
+    "auroc_mean": 0.8225371342866169,
+    "ci_low": 0.812232678013243,
+    "ci_high": 0.8331592759440356,
+    "fold_mean": 0.8227581075060659
+  },
+  "vector_auroc_cos": {
+    "auroc_mean": 0.8436349356922519,
+    "ci_low": 0.8331271443473338,
+    "ci_high": 0.8532875890171663,
+    "fold_mean": 0.8437249028845167
+  },
+  "vector_auroc_jsd_logo": {
+    "auroc_mean": 0.8114004256725855,
+    "ci_low": 0.8007058469883669,
+    "ci_high": 0.8212480174623765,
+    "fold_mean": 0.8213855747870644
+  },
+  "vector_auroc_cos_logo": {
+    "auroc_mean": 0.8253272148342785,
+    "ci_low": 0.8152748472730875,
+    "ci_high": 0.8349488866614352,
+    "fold_mean": 0.8434144453617225
+  },
+  "best_single_layer_jsd": 29,
+  "best_single_layer_cos": 30,
+  "best_single_layer_jsd_auroc": 0.7940251665210957,
+  "best_single_layer_cos_auroc": 0.7290547394148356,
+  "argmax_layer_jsd": 1,
+  "argmax_layer_cos": 1,
+  "n_train": 8008,
+  "p_lp": 3514,
+  "b_lb": 4494,
+  "n_genes": 15,
+  "elapsed_sec": 288.77303552627563
+}

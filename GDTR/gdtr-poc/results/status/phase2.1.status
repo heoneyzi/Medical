@@ -1,0 +1,6 @@
+{
+  "phase": "phase2.1",
+  "state": "PASS",
+  "n_windows": 27586,
+  "h5_path": "/path/to/gDTR/results/phase2.1/chr17_cache.h5"
+}

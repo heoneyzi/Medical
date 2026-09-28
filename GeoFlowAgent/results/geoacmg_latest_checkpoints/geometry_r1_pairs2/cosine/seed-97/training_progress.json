@@ -1,0 +1,52 @@
+{
+  "best_dev_selection_score": 0.8003964862185343,
+  "best_epoch": 2,
+  "cache_content_sha256": "00b19e6e3c669e5d2408ae7c157675fe306e837ec8b65aea1f38d0a789f56903",
+  "checkpoint": "artifacts/acmg/checkpoints/geometry_r1_pairs2/cosine/seed-97/value_geometry.pt",
+  "checkpoint_sha256": "c725c15ccc7ebb9266ac5f4c53bcdfe623250a1da36c37cd730584157d866aba",
+  "completed_epoch": 16,
+  "configured_epochs": 60,
+  "energy": "cosine",
+  "feature_ablation": {
+    "zero_structured": false,
+    "zero_views": []
+  },
+  "latest": {
+    "dev_action_reachability_balanced_accuracy": 0.7630184864004815,
+    "dev_completion_balanced_accuracy": 0.7589900253495181,
+    "dev_joint_stop_action_accuracy": 0.6373876284246576,
+    "dev_policy_optimal_set_accuracy": 0.6911755233494364,
+    "dev_regret_at_1": 0.3257791473261302,
+    "dev_selection_score": 0.6813465432042276,
+    "dev_thresholds": {
+      "action_reachability": 0.1,
+      "completion": 0.1
+    },
+    "epoch": 16,
+    "external_replay_fraction": 0.0,
+    "external_replay_pool": 0,
+    "hard_replay_pool": 4978,
+    "learning_rate": 0.0005841957122256002,
+    "train": {
+      "action": 0.813604425907951,
+      "action_reachability": 0.049102361732961036,
+      "bellman": 0.03446225967073332,
+      "completion": 0.11627827003827723,
+      "q": 0.03446225967073332,
+      "regret": 0.005626966768878175,
+      "state_reachability": 0.0480257814708636,
+      "total": 1.0749157325308865,
+      "transition": 0.03319121123218768,
+      "value": 0.018226217620257508
+    }
+  },
+  "metrics": "artifacts/acmg/checkpoints/geometry_r1_pairs2/cosine/seed-97/value_metrics.json",
+  "model_capacity_override": {},
+  "output_dir": "artifacts/acmg/checkpoints/geometry_r1_pairs2/cosine/seed-97",
+  "patience": 14,
+  "resume_checkpoint": "artifacts/acmg/checkpoints/geometry_r1_pairs2/cosine/seed-97/training_resume.pt",
+  "seed": 97,
+  "stale_epochs": 14,
+  "status": "complete",
+  "training_config_sha256": "c91a433d1a05f0edb33ebebfe411c67e5485fd51749d7d843b748bc026f4a413"
+}

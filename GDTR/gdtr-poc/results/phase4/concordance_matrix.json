@@ -1,0 +1,86 @@
+{
+  "models": [
+    "evo2",
+    "hyenadna",
+    "nt_v2",
+    "dnabert2"
+  ],
+  "spearman_rho": {
+    "evo2": {
+      "evo2": 1.0,
+      "hyenadna": 0.5157668013638929,
+      "nt_v2": -0.11934459729936414,
+      "dnabert2": -0.18782571539173418
+    },
+    "hyenadna": {
+      "evo2": 0.5157668013638929,
+      "hyenadna": 1.0,
+      "nt_v2": -0.28653233665184946,
+      "dnabert2": -0.16579152420626947
+    },
+    "nt_v2": {
+      "evo2": -0.11934459729936414,
+      "hyenadna": -0.28653233665184946,
+      "nt_v2": 1.0,
+      "dnabert2": 0.6632489002813078
+    },
+    "dnabert2": {
+      "evo2": -0.18782571539173418,
+      "hyenadna": -0.16579152420626947,
+      "nt_v2": 0.6632489002813078,
+      "dnabert2": 1.0
+    }
+  },
+  "spearman_p": {
+    "evo2": {
+      "evo2": 0.0,
+      "hyenadna": 0.0,
+      "nt_v2": 2.212114407403311e-42,
+      "dnabert2": 2.3474560773064544e-103
+    },
+    "hyenadna": {
+      "evo2": 0.0,
+      "hyenadna": 0.0,
+      "nt_v2": 1.0041063480575866e-243,
+      "dnabert2": 1.231891012094847e-80
+    },
+    "nt_v2": {
+      "evo2": 2.212114407403311e-42,
+      "hyenadna": 1.0041063480575866e-243,
+      "nt_v2": 0.0,
+      "dnabert2": 0.0
+    },
+    "dnabert2": {
+      "evo2": 2.3474560773064544e-103,
+      "hyenadna": 1.231891012094847e-80,
+      "nt_v2": 0.0,
+      "dnabert2": 0.0
+    }
+  },
+  "top_decile_intersection": {
+    "n_intersect": 0,
+    "jaccard_approx": 0.0,
+    "inter_enrichment": {
+      "n_splice": {
+        "frac_inter_with_feature": null,
+        "frac_all_with_feature": 0.2585144089998459
+      },
+      "n_coding_exon": {
+        "frac_inter_with_feature": null,
+        "frac_all_with_feature": 0.29480659577746954
+      },
+      "n_5utr": {
+        "frac_inter_with_feature": null,
+        "frac_all_with_feature": 0.04291878563723224
+      },
+      "n_3utr": {
+        "frac_inter_with_feature": null,
+        "frac_all_with_feature": 0.04669440591770689
+      },
+      "n_intron": {
+        "frac_inter_with_feature": null,
+        "frac_all_with_feature": 0.6030204962243797
+      }
+    }
+  }
+}

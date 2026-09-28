@@ -1,0 +1,79 @@
+{
+  "rungs": {
+    "blind_replan": {
+      "episodes": 2337,
+      "genes": 108,
+      "success_rate": 1.0,
+      "mean_tool_cost": 5.64377406931964,
+      "mean_progress_efficiency": 0.9617666136009427,
+      "unterminated": 0
+    },
+    "hindsight_whole_plan": {
+      "episodes": 2337,
+      "genes": 108,
+      "success_rate": 1.0,
+      "mean_tool_cost": 5.64377406931964,
+      "mean_progress_efficiency": 0.9617666136009427,
+      "unterminated": 0
+    },
+    "random": {
+      "episodes": 2337,
+      "genes": 108,
+      "success_rate": 0.0,
+      "mean_tool_cost": 1.5,
+      "mean_progress_efficiency": 0.0,
+      "unterminated": 0
+    }
+  },
+  "commit_curve": {
+    "curve": [
+      {
+        "commit": 1,
+        "episodes": 2337,
+        "success_rate": 1.0,
+        "mean_tool_cost": 5.64377406931964,
+        "mean_calls": 3.07188703465982,
+        "mean_plan_evaluations": 49.15019255455712,
+        "mean_progress_efficiency": 0.9617666136009427,
+        "replans": 3.07188703465982
+      },
+      {
+        "commit": 2,
+        "episodes": 2337,
+        "success_rate": 1.0,
+        "mean_tool_cost": 5.64377406931964,
+        "mean_calls": 3.07188703465982,
+        "mean_plan_evaluations": 27.488232777064614,
+        "mean_progress_efficiency": 0.9617666136009427,
+        "replans": 1.7180145485665383
+      },
+      {
+        "commit": 4,
+        "episodes": 2337,
+        "success_rate": 1.0,
+        "mean_tool_cost": 5.64377406931964,
+        "mean_calls": 3.07188703465982,
+        "mean_plan_evaluations": 16.848951647411212,
+        "mean_progress_efficiency": 0.9617666136009427,
+        "replans": 1.0530594779632008
+      },
+      {
+        "commit": 8,
+        "episodes": 2337,
+        "success_rate": 1.0,
+        "mean_tool_cost": 5.64377406931964,
+        "mean_calls": 3.07188703465982,
+        "mean_plan_evaluations": 16.0,
+        "mean_progress_efficiency": 0.9617666136009427,
+        "replans": 1.0
+      }
+    ],
+    "best_commit": 1,
+    "reading": "best_commit == 1 means whole-plan generation adds nothing beyond its first action in this domain; best_commit > 1 means the plan buys lookahead. Read at equal mean_tool_cost, not at equal step count"
+  },
+  "pending": [
+    "greedy / beam over the learned distance head (needs train_value)",
+    "flow whole-plan and raw-L2 ablation (needs train_flow)"
+  ],
+  "note": "hindsight and random bracket every learned policy. A trained rung that falls outside the bracket is a bug, not a finding"
+}

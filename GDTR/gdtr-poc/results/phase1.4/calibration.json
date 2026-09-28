@@ -1,0 +1,10 @@
+{
+  "phase": "phase1.4",
+  "layer_for_calibration": 30,
+  "quantile": 0.7,
+  "gamma_cos_per_region": {
+    "sanity_gc": 0.39621599316596984,
+    "sanity_shuf": 0.3968472480773926
+  },
+  "gamma_cos_global_q70": 0.3966338634490967
+}

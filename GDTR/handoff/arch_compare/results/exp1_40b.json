@@ -1,0 +1,25 @@
+{
+ "chr22_evo2_40b": {
+  "recover_b19": 0.6590631233856474,
+  "recover_b21": 0.7266776562715573,
+  "recover_b22": 0.6849143974851577,
+  "recover_b23": 0.23519226441522112,
+  "recover_b34": 0.24210408787037452,
+  "recover_norm": 0.2726832314281613,
+  "carrier_top_coord": 3113,
+  "carrier_top1_share": 0.11137379485956664,
+  "carrier_top1pct_share": 0.9045801471953127
+ },
+ "chr17_evo2_40b": {
+  "recover_b19": 0.6554523058472388,
+  "recover_b21": 0.7274306866924258,
+  "recover_b22": 0.6855388259589047,
+  "recover_b23": 0.22845840093613423,
+  "recover_b34": 0.23439748363377144,
+  "recover_norm": 0.280542337776715,
+  "carrier_top_coord": 3113,
+  "carrier_top1_share": 0.11113708976897697,
+  "carrier_top1pct_share": 0.9088465896787462
+ },
+ "carrier_cos_chr22_chr17": 0.9998481401675308
+}

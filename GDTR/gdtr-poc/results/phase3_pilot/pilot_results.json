@@ -1,0 +1,128 @@
+{
+  "phase": "phase3_pilot",
+  "config": {
+    "gamma_cos": 0.39663,
+    "seed": 42,
+    "n_folds": 10,
+    "context_half": 3000,
+    "cap_per_cell": 250,
+    "genes": [
+      "TP53",
+      "BRCA1"
+    ],
+    "categories": [
+      "P_LP",
+      "B_LB"
+    ],
+    "model_variant": "evo2_7b_base (8K context, no FP8)"
+  },
+  "cell_counts": {
+    "BRCA1_P_LP": 250,
+    "TP53_B_LB": 250,
+    "BRCA1_B_LB": 250,
+    "TP53_P_LP": 250
+  },
+  "n_total_variants": 1000,
+  "n_processed_variants": 1000,
+  "n_errors": 0,
+  "n_nans": 0,
+  "wall_time_sec": 887.1455070972443,
+  "results": {
+    "dD_jsd_vector": {
+      "name": "dD_jsd_vector",
+      "fold_aurocs": [
+        0.7488,
+        0.826,
+        0.8448,
+        0.874,
+        0.74,
+        0.7340000000000001,
+        0.7328,
+        0.8676,
+        0.7555999999999999,
+        0.7756000000000001
+      ],
+      "mean_auroc": 0.7899200000000001,
+      "std_auroc": 0.05712825337198165,
+      "ci95_lo": 0.7545115417170793,
+      "ci95_hi": 0.8253284582829208,
+      "n_features": 32,
+      "n_samples": 1000,
+      "pooled_auroc": 0.7903239999999999
+    },
+    "dD_cos_vector": {
+      "name": "dD_cos_vector",
+      "fold_aurocs": [
+        0.8244,
+        0.8160000000000001,
+        0.9164,
+        0.8864,
+        0.768,
+        0.8172,
+        0.7704,
+        0.8939999999999999,
+        0.8152,
+        0.798
+      ],
+      "mean_auroc": 0.8306000000000001,
+      "std_auroc": 0.05139035793696018,
+      "ci95_lo": 0.7987479261529874,
+      "ci95_hi": 0.8624520738470128,
+      "n_features": 32,
+      "n_samples": 1000,
+      "pooled_auroc": 0.829868
+    },
+    "dc_interp_scalar": {
+      "name": "dc_interp_scalar",
+      "fold_aurocs": [
+        0.4206,
+        0.3848,
+        0.30279999999999996,
+        0.28480000000000005,
+        0.33999999999999997,
+        0.314,
+        0.3692,
+        0.4008,
+        0.38079999999999997,
+        0.39960000000000007
+      ],
+      "mean_auroc": 0.35973999999999995,
+      "std_auroc": 0.04652321284405596,
+      "ci95_lo": 0.33090461393542064,
+      "ci95_hi": 0.38857538606457925,
+      "n_features": 1,
+      "n_samples": 1000,
+      "pooled_auroc": 0.3968299999999999
+    },
+    "max_abs_dD_scalar": {
+      "name": "max_abs_dD_scalar",
+      "fold_aurocs": [
+        0.8472,
+        0.8151999999999999,
+        0.8396,
+        0.8140000000000001,
+        0.772,
+        0.8200000000000001,
+        0.7712,
+        0.866,
+        0.7731999999999999,
+        0.718
+      ],
+      "mean_auroc": 0.80364,
+      "std_auroc": 0.044599730940892465,
+      "ci95_lo": 0.7759968003704347,
+      "ci95_hi": 0.8312831996295653,
+      "n_features": 1,
+      "n_samples": 1000,
+      "pooled_auroc": 0.801276
+    }
+  },
+  "verdict": {
+    "primary_dD_jsd_auroc": 0.7899200000000001,
+    "primary_passes_0.65": true,
+    "primary_passes_0.55": true,
+    "any_above_chance": true,
+    "best_feature": "dD_cos_vector",
+    "best_auroc": 0.8306000000000001
+  }
+}

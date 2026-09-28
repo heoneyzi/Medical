@@ -1,0 +1,13 @@
+{
+  "tests": 296,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 1,
+  "seconds": 80.751,
+  "passed": 295,
+  "skip_reasons": [
+    "optional generated search smoke artifacts are not present"
+  ],
+  "command": "python -B -X utf8 -m pytest -q -o addopts= -p no:cacheprovider",
+  "note": "Fresh Windows Python 3.12 CPU QA environment; original source unchanged. First non-UTF8 invocation had one CP949 decode error; UTF-8 full rerun passed."
+}

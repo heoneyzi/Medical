@@ -1,0 +1,54 @@
+{
+  "best_dev_selection_score": 0.7805538720146299,
+  "best_epoch": 2,
+  "cache_content_sha256": "00b19e6e3c669e5d2408ae7c157675fe306e837ec8b65aea1f38d0a789f56903",
+  "checkpoint": "artifacts/acmg/checkpoints/geometry_ablate_medcpt/cosine/seed-17/value_geometry.pt",
+  "checkpoint_sha256": "fe559be3582a90590abaedfdd5418c868da52f9874fc5b0938d8b590640b682d",
+  "completed_epoch": 16,
+  "configured_epochs": 60,
+  "energy": "cosine",
+  "feature_ablation": {
+    "zero_structured": false,
+    "zero_views": [
+      "medcpt"
+    ]
+  },
+  "latest": {
+    "dev_action_reachability_balanced_accuracy": 0.7156271019141678,
+    "dev_completion_balanced_accuracy": 0.7400201978937351,
+    "dev_joint_stop_action_accuracy": 0.623849529109589,
+    "dev_policy_optimal_set_accuracy": 0.686731078904992,
+    "dev_regret_at_1": 0.3533727170933241,
+    "dev_selection_score": 0.6516733711454585,
+    "dev_thresholds": {
+      "action_reachability": 0.1,
+      "completion": 0.1
+    },
+    "epoch": 16,
+    "external_replay_fraction": 0.0,
+    "external_replay_pool": 0,
+    "hard_replay_pool": 5449,
+    "learning_rate": 0.0005841957122256002,
+    "train": {
+      "action": 0.9535627260795676,
+      "action_reachability": 0.09768701089547147,
+      "bellman": 0.038609704385254975,
+      "completion": 0.12440373670252404,
+      "q": 0.038609704385254975,
+      "regret": 0.009348941878274857,
+      "state_reachability": 0.06769293015063046,
+      "total": 1.2927170035231135,
+      "transition": 0.0362723020332001,
+      "value": 0.023119924821839357
+    }
+  },
+  "metrics": "artifacts/acmg/checkpoints/geometry_ablate_medcpt/cosine/seed-17/value_metrics.json",
+  "model_capacity_override": {},
+  "output_dir": "artifacts/acmg/checkpoints/geometry_ablate_medcpt/cosine/seed-17",
+  "patience": 14,
+  "resume_checkpoint": "artifacts/acmg/checkpoints/geometry_ablate_medcpt/cosine/seed-17/training_resume.pt",
+  "seed": 17,
+  "stale_epochs": 14,
+  "status": "complete",
+  "training_config_sha256": "b488a4db83e4caa80c5bcd100f03baef7d43d0273f7bd07b6ebf9ba8ab527b42"
+}

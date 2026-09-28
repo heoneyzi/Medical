@@ -1,0 +1,689 @@
+{
+  "split": "dev",
+  "unit": "gene",
+  "moderator": "root_v_star",
+  "moderator_source": "task root state value_star (자리표시자 0 을 쓰지 않는다)",
+  "note": "1차 보고는 연속 기울기, 층별 표는 표시용. 경계는 dev 경험분위수.",
+  "contrasts": {
+    "cosine_minus_euclidean@own_energy": {
+      "moderator": "root_v_star",
+      "primary": "continuous slope (no binning)",
+      "slope": {
+        "estimate": -0.015672031009967825,
+        "ci": [
+          -0.03750700537711344,
+          0.0053605896044865795
+        ],
+        "n_units": 47,
+        "method": "OLS slope with cluster bootstrap, 2000 resamples"
+      },
+      "boundary_rule": "dev empirical quantiles, n_strata=4",
+      "boundaries": [
+        3.5,
+        5.5,
+        7.5,
+        9.5
+      ],
+      "strata": [
+        {
+          "index": 0,
+          "range": [
+            3.5,
+            5.5
+          ],
+          "n": 50050,
+          "effect": 0.19992007992007996,
+          "ci": [
+            0.0880695847592445,
+            0.27847642345998525
+          ],
+          "absolute": 0.7673393273393272,
+          "headroom": 0.2326606726606728
+        },
+        {
+          "index": 1,
+          "range": [
+            5.5,
+            7.5
+          ],
+          "n": 48928,
+          "effect": 0.10704845214737302,
+          "ci": [
+            0.07122714462441573,
+            0.1380225551562444
+          ],
+          "absolute": 0.7275111728798779,
+          "headroom": 0.2724888271201221
+        },
+        {
+          "index": 2,
+          "range": [
+            7.5,
+            9.5
+          ],
+          "n": 42539,
+          "effect": 0.1395973890625857,
+          "ci": [
+            0.12025634708386577,
+            0.17036882674998796
+          ],
+          "absolute": 0.711127827797237,
+          "headroom": 0.28887217220276296
+        }
+      ],
+      "note": "층은 표시용이다. 판정은 연속 기울기로 한다. headroom = 1 - 해당 층의 절대 성능 — 포화가 어디서 무는지 보이게 함께 싣는다."
+    },
+    "cosine_minus_euclidean@cos": {
+      "moderator": "root_v_star",
+      "primary": "continuous slope (no binning)",
+      "slope": {
+        "estimate": -0.014234660574958079,
+        "ci": [
+          -0.027400829572271822,
+          -0.0022943427002868316
+        ],
+        "n_units": 47,
+        "method": "OLS slope with cluster bootstrap, 2000 resamples"
+      },
+      "boundary_rule": "dev empirical quantiles, n_strata=4",
+      "boundaries": [
+        3.5,
+        5.5,
+        7.5,
+        9.5
+      ],
+      "strata": [
+        {
+          "index": 0,
+          "range": [
+            3.5,
+            5.5
+          ],
+          "n": 50050,
+          "effect": 0.21942723942723943,
+          "ci": [
+            0.14244242710549085,
+            0.26339747086455456
+          ],
+          "absolute": 0.7673393273393272,
+          "headroom": 0.2326606726606728
+        },
+        {
+          "index": 1,
+          "range": [
+            5.5,
+            7.5
+          ],
+          "n": 48928,
+          "effect": 0.12377370830608242,
+          "ci": [
+            0.10806676918049411,
+            0.14283403406001285
+          ],
+          "absolute": 0.7275111728798779,
+          "headroom": 0.2724888271201221
+        },
+        {
+          "index": 2,
+          "range": [
+            7.5,
+            9.5
+          ],
+          "n": 42539,
+          "effect": 0.1653463096609386,
+          "ci": [
+            0.14534019664908138,
+            0.1896822922601431
+          ],
+          "absolute": 0.711127827797237,
+          "headroom": 0.28887217220276296
+        }
+      ],
+      "note": "층은 표시용이다. 판정은 연속 기울기로 한다. headroom = 1 - 해당 층의 절대 성능 — 포화가 어디서 무는지 보이게 함께 싣는다."
+    },
+    "pair_mlp_minus_euclidean@own_energy": {
+      "moderator": "root_v_star",
+      "primary": "continuous slope (no binning)",
+      "slope": {
+        "estimate": -0.025405627243150458,
+        "ci": [
+          -0.044297793756067454,
+          -0.007997823260807389
+        ],
+        "n_units": 47,
+        "method": "OLS slope with cluster bootstrap, 2000 resamples"
+      },
+      "boundary_rule": "dev empirical quantiles, n_strata=4",
+      "boundaries": [
+        3.5,
+        5.5,
+        7.5,
+        9.5
+      ],
+      "strata": [
+        {
+          "index": 0,
+          "range": [
+            3.5,
+            5.5
+          ],
+          "n": 50050,
+          "effect": 0.31164835164835164,
+          "ci": [
+            0.21731262363773576,
+            0.3788512646144275
+          ],
+          "absolute": 0.8790675990675991,
+          "headroom": 0.12093240093240087
+        },
+        {
+          "index": 1,
+          "range": [
+            5.5,
+            7.5
+          ],
+          "n": 48928,
+          "effect": 0.1885355352081971,
+          "ci": [
+            0.15180404420661409,
+            0.22250071925909512
+          ],
+          "absolute": 0.808998255940702,
+          "headroom": 0.19100174405929804
+        },
+        {
+          "index": 2,
+          "range": [
+            7.5,
+            9.5
+          ],
+          "n": 42539,
+          "effect": 0.2135295454367365,
+          "ci": [
+            0.18969915747783095,
+            0.24249043644466634
+          ],
+          "absolute": 0.7850599841713878,
+          "headroom": 0.21494001582861222
+        }
+      ],
+      "note": "층은 표시용이다. 판정은 연속 기울기로 한다. headroom = 1 - 해당 층의 절대 성능 — 포화가 어디서 무는지 보이게 함께 싣는다."
+    },
+    "pair_mlp_minus_euclidean@cos": {
+      "moderator": "root_v_star",
+      "primary": "continuous slope (no binning)",
+      "slope": {
+        "estimate": 0.009644806372794799,
+        "ci": [
+          0.0018961255037201227,
+          0.016065884444897538
+        ],
+        "n_units": 47,
+        "method": "OLS slope with cluster bootstrap, 2000 resamples"
+      },
+      "boundary_rule": "dev empirical quantiles, n_strata=4",
+      "boundaries": [
+        3.5,
+        5.5,
+        7.5,
+        9.5
+      ],
+      "strata": [
+        {
+          "index": 0,
+          "range": [
+            3.5,
+            5.5
+          ],
+          "n": 50050,
+          "effect": -0.08281052281052281,
+          "ci": [
+            -0.12222068166824267,
+            -0.054267554437892974
+          ],
+          "absolute": 0.4651015651015651,
+          "headroom": 0.5348984348984349
+        },
+        {
+          "index": 1,
+          "range": [
+            5.5,
+            7.5
+          ],
+          "n": 48928,
+          "effect": -0.08443018312622629,
+          "ci": [
+            -0.10805131448695289,
+            -0.048917551416091026
+          ],
+          "absolute": 0.5193072814475692,
+          "headroom": 0.4806927185524308
+        },
+        {
+          "index": 2,
+          "range": [
+            7.5,
+            9.5
+          ],
+          "n": 42539,
+          "effect": -0.04186746279884342,
+          "ci": [
+            -0.0559646898533433,
+            -0.021912842072092254
+          ],
+          "absolute": 0.503914055337455,
+          "headroom": 0.49608594466254496
+        }
+      ],
+      "note": "층은 표시용이다. 판정은 연속 기울기로 한다. headroom = 1 - 해당 층의 절대 성능 — 포화가 어디서 무는지 보이게 함께 싣는다."
+    },
+    "directed_quasimetric_minus_euclidean@own_energy": {
+      "moderator": "root_v_star",
+      "primary": "continuous slope (no binning)",
+      "slope": {
+        "estimate": -0.02791275798461403,
+        "ci": [
+          -0.04839791104447699,
+          -0.008771617542409274
+        ],
+        "n_units": 47,
+        "method": "OLS slope with cluster bootstrap, 2000 resamples"
+      },
+      "boundary_rule": "dev empirical quantiles, n_strata=4",
+      "boundaries": [
+        3.5,
+        5.5,
+        7.5,
+        9.5
+      ],
+      "strata": [
+        {
+          "index": 0,
+          "range": [
+            3.5,
+            5.5
+          ],
+          "n": 50050,
+          "effect": 0.26938394938394944,
+          "ci": [
+            0.16485653035740852,
+            0.3394903793238805
+          ],
+          "absolute": 0.8368031968031968,
+          "headroom": 0.1631968031968032
+        },
+        {
+          "index": 1,
+          "range": [
+            5.5,
+            7.5
+          ],
+          "n": 48928,
+          "effect": 0.1551054610856769,
+          "ci": [
+            0.1298785654227404,
+            0.17546986344194285
+          ],
+          "absolute": 0.775568181818182,
+          "headroom": 0.224431818181818
+        },
+        {
+          "index": 2,
+          "range": [
+            7.5,
+            9.5
+          ],
+          "n": 42539,
+          "effect": 0.15901486479074103,
+          "ci": [
+            0.13952487684780104,
+            0.1767019633153829
+          ],
+          "absolute": 0.7305453035253924,
+          "headroom": 0.2694546964746076
+        }
+      ],
+      "note": "층은 표시용이다. 판정은 연속 기울기로 한다. headroom = 1 - 해당 층의 절대 성능 — 포화가 어디서 무는지 보이게 함께 싣는다."
+    },
+    "directed_quasimetric_minus_euclidean@cos": {
+      "moderator": "root_v_star",
+      "primary": "continuous slope (no binning)",
+      "slope": {
+        "estimate": -0.011429482697383787,
+        "ci": [
+          -0.020349222363241364,
+          -0.0029560278485558336
+        ],
+        "n_units": 47,
+        "method": "OLS slope with cluster bootstrap, 2000 resamples"
+      },
+      "boundary_rule": "dev empirical quantiles, n_strata=4",
+      "boundaries": [
+        3.5,
+        5.5,
+        7.5,
+        9.5
+      ],
+      "strata": [
+        {
+          "index": 0,
+          "range": [
+            3.5,
+            5.5
+          ],
+          "n": 50050,
+          "effect": 0.08911088911088909,
+          "ci": [
+            0.0353496055233704,
+            0.12049947304577122
+          ],
+          "absolute": 0.6370229770229769,
+          "headroom": 0.36297702297702306
+        },
+        {
+          "index": 1,
+          "range": [
+            5.5,
+            7.5
+          ],
+          "n": 48928,
+          "effect": 0.049256049705689996,
+          "ci": [
+            0.032321284446653116,
+            0.08247457640896637
+          ],
+          "absolute": 0.6529935142794855,
+          "headroom": 0.3470064857205145
+        },
+        {
+          "index": 2,
+          "range": [
+            7.5,
+            9.5
+          ],
+          "n": 42539,
+          "effect": 0.04607536613460589,
+          "ci": [
+            0.027297954620505292,
+            0.08106281833530064
+          ],
+          "absolute": 0.5918568842709042,
+          "headroom": 0.4081431157290958
+        }
+      ],
+      "note": "층은 표시용이다. 판정은 연속 기울기로 한다. headroom = 1 - 해당 층의 절대 성능 — 포화가 어디서 무는지 보이게 함께 싣는다."
+    },
+    "poincare_minus_euclidean@own_energy": {
+      "moderator": "root_v_star",
+      "primary": "continuous slope (no binning)",
+      "slope": {
+        "estimate": -0.039760190870755996,
+        "ci": [
+          -0.05903034357035338,
+          -0.021636483055746683
+        ],
+        "n_units": 47,
+        "method": "OLS slope with cluster bootstrap, 2000 resamples"
+      },
+      "boundary_rule": "dev empirical quantiles, n_strata=4",
+      "boundaries": [
+        3.5,
+        5.5,
+        7.5,
+        9.5
+      ],
+      "strata": [
+        {
+          "index": 0,
+          "range": [
+            3.5,
+            5.5
+          ],
+          "n": 50050,
+          "effect": 0.2858874458874459,
+          "ci": [
+            0.19902088181885264,
+            0.35513813606896527
+          ],
+          "absolute": 0.8533066933066933,
+          "headroom": 0.1466933066933067
+        },
+        {
+          "index": 1,
+          "range": [
+            5.5,
+            7.5
+          ],
+          "n": 48928,
+          "effect": 0.1228608022672771,
+          "ci": [
+            0.1081036451512573,
+            0.1399888328664704
+          ],
+          "absolute": 0.7433235229997819,
+          "headroom": 0.2566764770002181
+        },
+        {
+          "index": 2,
+          "range": [
+            7.5,
+            9.5
+          ],
+          "n": 42539,
+          "effect": 0.12601769356747142,
+          "ci": [
+            0.11353285615649537,
+            0.14109078385735715
+          ],
+          "absolute": 0.6975481323021228,
+          "headroom": 0.30245186769787724
+        }
+      ],
+      "note": "층은 표시용이다. 판정은 연속 기울기로 한다. headroom = 1 - 해당 층의 절대 성능 — 포화가 어디서 무는지 보이게 함께 싣는다."
+    },
+    "poincare_minus_euclidean@cos": {
+      "moderator": "root_v_star",
+      "primary": "continuous slope (no binning)",
+      "slope": {
+        "estimate": 0.010102278667491483,
+        "ci": [
+          0.004036010803386892,
+          0.016698585492394998
+        ],
+        "n_units": 47,
+        "method": "OLS slope with cluster bootstrap, 2000 resamples"
+      },
+      "boundary_rule": "dev empirical quantiles, n_strata=4",
+      "boundaries": [
+        3.5,
+        5.5,
+        7.5,
+        9.5
+      ],
+      "strata": [
+        {
+          "index": 0,
+          "range": [
+            3.5,
+            5.5
+          ],
+          "n": 50050,
+          "effect": -0.1727738927738928,
+          "ci": [
+            -0.19760442444820583,
+            -0.15047367646481571
+          ],
+          "absolute": 0.3751381951381952,
+          "headroom": 0.6248618048618049
+        },
+        {
+          "index": 1,
+          "range": [
+            5.5,
+            7.5
+          ],
+          "n": 48928,
+          "effect": -0.13248037933289733,
+          "ci": [
+            -0.15277366973208317,
+            -0.10962518602257737
+          ],
+          "absolute": 0.4712570852408982,
+          "headroom": 0.5287429147591018
+        },
+        {
+          "index": 2,
+          "range": [
+            7.5,
+            9.5
+          ],
+          "n": 42539,
+          "effect": -0.1318162940674048,
+          "ci": [
+            -0.14666305935273455,
+            -0.11916692697577468
+          ],
+          "absolute": 0.4139652240688936,
+          "headroom": 0.5860347759311064
+        }
+      ],
+      "note": "층은 표시용이다. 판정은 연속 기울기로 한다. headroom = 1 - 해당 층의 절대 성능 — 포화가 어디서 무는지 보이게 함께 싣는다."
+    },
+    "pair_mlp_minus_cosine@own_energy": {
+      "moderator": "root_v_star",
+      "primary": "continuous slope (no binning)",
+      "slope": {
+        "estimate": -0.00973359623318263,
+        "ci": [
+          -0.014525015911939635,
+          -0.004953083624200628
+        ],
+        "n_units": 47,
+        "method": "OLS slope with cluster bootstrap, 2000 resamples"
+      },
+      "boundary_rule": "dev empirical quantiles, n_strata=4",
+      "boundaries": [
+        3.5,
+        5.5,
+        7.5,
+        9.5
+      ],
+      "strata": [
+        {
+          "index": 0,
+          "range": [
+            3.5,
+            5.5
+          ],
+          "n": 50050,
+          "effect": 0.11172827172827175,
+          "ci": [
+            0.0947543883993667,
+            0.13251483053927532
+          ],
+          "absolute": 0.8790675990675991,
+          "headroom": 0.12093240093240087
+        },
+        {
+          "index": 1,
+          "range": [
+            5.5,
+            7.5
+          ],
+          "n": 48928,
+          "effect": 0.08148708306082408,
+          "ci": [
+            0.07270274697240131,
+            0.08953544494287106
+          ],
+          "absolute": 0.808998255940702,
+          "headroom": 0.19100174405929804
+        },
+        {
+          "index": 2,
+          "range": [
+            7.5,
+            9.5
+          ],
+          "n": 42539,
+          "effect": 0.07393215637415078,
+          "ci": [
+            0.06391621804912166,
+            0.08681456101129056
+          ],
+          "absolute": 0.7850599841713878,
+          "headroom": 0.21494001582861222
+        }
+      ],
+      "note": "층은 표시용이다. 판정은 연속 기울기로 한다. headroom = 1 - 해당 층의 절대 성능 — 포화가 어디서 무는지 보이게 함께 싣는다."
+    },
+    "pair_mlp_minus_cosine@cos": {
+      "moderator": "root_v_star",
+      "primary": "continuous slope (no binning)",
+      "slope": {
+        "estimate": 0.023879466947752878,
+        "ci": [
+          0.014203543319562102,
+          0.03516307644364991
+        ],
+        "n_units": 47,
+        "method": "OLS slope with cluster bootstrap, 2000 resamples"
+      },
+      "boundary_rule": "dev empirical quantiles, n_strata=4",
+      "boundaries": [
+        3.5,
+        5.5,
+        7.5,
+        9.5
+      ],
+      "strata": [
+        {
+          "index": 0,
+          "range": [
+            3.5,
+            5.5
+          ],
+          "n": 50050,
+          "effect": -0.3022377622377623,
+          "ci": [
+            -0.34110540807470974,
+            -0.2670715135310645
+          ],
+          "absolute": 0.4651015651015651,
+          "headroom": 0.5348984348984349
+        },
+        {
+          "index": 1,
+          "range": [
+            5.5,
+            7.5
+          ],
+          "n": 48928,
+          "effect": -0.2082038914323087,
+          "ci": [
+            -0.22959074707113755,
+            -0.18373108207527006
+          ],
+          "absolute": 0.5193072814475692,
+          "headroom": 0.4806927185524308
+        },
+        {
+          "index": 2,
+          "range": [
+            7.5,
+            9.5
+          ],
+          "n": 42539,
+          "effect": -0.20721377245978204,
+          "ci": [
+            -0.2239162774168743,
+            -0.19163826881666018
+          ],
+          "absolute": 0.503914055337455,
+          "headroom": 0.49608594466254496
+        }
+      ],
+      "note": "층은 표시용이다. 판정은 연속 기울기로 한다. headroom = 1 - 해당 층의 절대 성능 — 포화가 어디서 무는지 보이게 함께 싣는다."
+    }
+  }
+}

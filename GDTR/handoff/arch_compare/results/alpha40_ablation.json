@@ -1,0 +1,26 @@
+{
+ "1.0": {
+  "alpha": 1.0,
+  "next_base_acc": 0.6287843994897029,
+  "eff_rank_hnorm": 5.560293749020619,
+  "acgt_frac_hnorm": 0.3443266601764831,
+  "auroc_hnorm": {
+   "coding_exon": 0.7514397609343906,
+   "splice_donor": 0.8268342337771264,
+   "splice_acceptor": 0.8558408792887129,
+   "intergenic": 0.5787832592841513
+  }
+ },
+ "0.0": {
+  "alpha": 0.0,
+  "next_base_acc": 0.4611244760342628,
+  "eff_rank_hnorm": 3.5310178854291174,
+  "acgt_frac_hnorm": 0.009831429187742683,
+  "auroc_hnorm": {
+   "coding_exon": 0.7169452592066409,
+   "splice_donor": 0.801267173894369,
+   "splice_acceptor": 0.8287291464331055,
+   "intergenic": 0.5630582460741387
+  }
+ }
+}

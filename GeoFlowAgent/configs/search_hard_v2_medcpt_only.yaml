@@ -1,0 +1,62 @@
+# Development-only follow-up selected after the capacity-matched input ablation.
+# The value head sees only frozen MedCPT features; its architecture is unchanged,
+# so results remain directly comparable with the full/structured controls.
+seed: 17
+device: cuda:0
+project_root: ..
+
+paths:
+  processed_dir: $GEOFLOW_RUNS/search_hard_v2/development/processed
+  cache_dir: $GEOFLOW_RUNS/search_hard_v2/development/cache_frozen_qwen15
+  geometry_comparison_dir: $GEOFLOW_RUNS/search_hard_v2/development/checkpoints/medcpt_only_controls/geometry
+
+value_training:
+  structured_dim: 64
+  shared_dim: 64
+  hidden_dim: 128
+  energy: cosine
+  energy_rank: 32
+  dropout: 0.10
+  learning_rate: 0.0007
+  weight_decay: 0.0001
+  batch_size: 256
+  epochs: 70
+  patience: 14
+  max_states_per_task: 64
+  supervision: boltzmann
+  action_temperature: 1.0
+  regret_temperature: 0.25
+  ranking_margin: 0.05
+  gradient_clip: 1.0
+  view_dropout: 0.15
+  embedding_noise_std: 0.005
+  hard_replay_warmup: 5
+  hard_replay_fraction: 0.25
+  threshold_grid: [0.1, 0.3, 0.5, 0.7, 0.9]
+  bootstrap_reps: 1000
+  feature_ablation:
+    zero_structured: true
+    zero_views: [dnabert2_sequence_aux, qwen_general, sapbert_entity_aux]
+  loss_weights:
+    action: 1.0
+    q: 1.0
+    value: 0.5
+    regret: 0.5
+    bellman: 0.5
+    transition: 0.25
+    action_reachability: 1.0
+    state_reachability: 0.5
+    completion: 1.0
+
+geometry_comparison:
+  energies:
+    - cosine
+    - euclidean
+    - diagonal_mahalanobis
+    - lowrank_mahalanobis
+    - asymmetric_bilinear
+    - order_violation
+    - directed_quasimetric
+    - pair_mlp
+    - poincare
+  seeds: [17, 29, 43]

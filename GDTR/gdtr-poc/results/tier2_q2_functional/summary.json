@@ -1,0 +1,88 @@
+{
+  "tier": "tier2_q2_functional",
+  "chrom": "chr22",
+  "chr22_len": 50818468,
+  "q2_n_regions": 5090,
+  "q2_total_bp_min100": 907637,
+  "phase5_reference": {
+    "ENCODE_cCRE_all_fold": 1.2839,
+    "note": "Phase 5 used position-level (bp) ENCODE cCRE annotation; Tier-2 uses region-level Q2 BED (\u2265100 bp regions only) \u2229 chr22-filtered datasets."
+  },
+  "datasets": {
+    "eqtl": {
+      "dataset": "eqtl",
+      "n_dataset_chr22": 42312,
+      "dataset_chr22_bp_merged": 42312,
+      "q2_n_regions": 5090,
+      "q2_total_bp": 907637,
+      "n_q2_overlap": 789,
+      "intersect_bp": 1222,
+      "expected_intersect_bp": 755.7082740864994,
+      "fold_enrichment_bp": 1.617026095786968,
+      "pval_hypergeom_bp": 5.433255231458584e-56,
+      "expected_n_q2_hits_binom": 688.3011765249369,
+      "fold_enrichment_region": 1.1463005249874287,
+      "shuffle_null": {
+        "n_obs": 789,
+        "null_mean": 556.33,
+        "null_std": 23.339689372397395,
+        "null_max": 612,
+        "null_min": 497,
+        "pval_shuffle": 0.009900990099009901,
+        "n_shuffles": 100
+      },
+      "n_pair_records": 1222,
+      "paired_bed": "/path/to/gDTR/results/tier2_q2_functional/q2_x_eqtl.bed"
+    },
+    "gwas": {
+      "dataset": "gwas",
+      "n_dataset_chr22": 6725,
+      "dataset_chr22_bp_merged": 6725,
+      "q2_n_regions": 5090,
+      "q2_total_bp": 907637,
+      "n_q2_overlap": 168,
+      "intersect_bp": 180,
+      "expected_intersect_bp": 120.11103571638563,
+      "fold_enrichment_bp": 1.4986133366215264,
+      "pval_hypergeom_bp": 1.5931352688248926e-07,
+      "expected_n_q2_hits_binom": 118.27619032414891,
+      "fold_enrichment_region": 1.4204042211672316,
+      "shuffle_null": {
+        "n_obs": 168,
+        "null_mean": 112.72,
+        "null_std": 9.04884523019374,
+        "null_max": 132,
+        "null_min": 92,
+        "pval_shuffle": 0.009900990099009901,
+        "n_shuffles": 100
+      },
+      "n_pair_records": 180,
+      "paired_bed": "/path/to/gDTR/results/tier2_q2_functional/q2_x_gwas.bed"
+    },
+    "cre_els": {
+      "dataset": "cre_els",
+      "n_dataset_chr22": 19708,
+      "dataset_chr22_bp_merged": 5300507,
+      "q2_n_regions": 5090,
+      "q2_total_bp": 907637,
+      "n_q2_overlap": 1439,
+      "intersect_bp": 180054,
+      "expected_intersect_bp": 94669.05361962112,
+      "fold_enrichment_bp": 1.9019309173983545,
+      "pval_hypergeom_bp": 0.0,
+      "expected_n_q2_hits_binom": 5089.986955796089,
+      "fold_enrichment_region": 0.28271192293751884,
+      "shuffle_null": {
+        "n_obs": 1439,
+        "null_mean": 781.56,
+        "null_std": 28.64692653671594,
+        "null_max": 849,
+        "null_min": 697,
+        "pval_shuffle": 0.009900990099009901,
+        "n_shuffles": 100
+      },
+      "n_pair_records": 1630,
+      "paired_bed": "/path/to/gDTR/results/tier2_q2_functional/q2_x_cre_els.bed"
+    }
+  }
+}

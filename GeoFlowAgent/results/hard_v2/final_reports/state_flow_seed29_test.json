@@ -1,0 +1,166 @@
+{
+  "cache_config_sha256": "52bfe7d734c4449f98df4d99b501dcf87a1dc531d9dab8e8ba48ba94a37caee8",
+  "cache_content_sha256": "696139a596273d4b04b22eb5d8da0d6b15dea9979f22a1ff372d9b169de15a27",
+  "cache_evaluation_fingerprint_sha256": "83a703a6ca69124b9623c67ab42a962df06c5c974de3d1b325782044c0fb56fb",
+  "checkpoint_selection_split": "dev",
+  "checkpoint_sha256": "ede29707d2f5e51dfdd3ca9ef14463dcb47b1c4c42653e034e3fce7de221b106",
+  "checkpoint_test_labels_loaded": false,
+  "checkpoint_training_cache_sha256": "e6b2d57b65b9336495b1965e238689bdbe5914d6acd137b76915ca1cd6550cc5",
+  "evaluation_cache_matches_training_cache": false,
+  "evaluation_scope": "task_roots",
+  "evaluation_split": "test",
+  "kind": "search_state_flow_evaluation",
+  "metrics": {
+    "compute_matched_blind_replanning": {
+      "control": "Uses the same per-state noise sequence and exactly the observed policy's planner-call/NFE budget, but never exposes successor observations to the planner. Calls left after an early blind failure are spent without execution.",
+      "failure_counts": {
+        "blind_invalid_action": 48
+      },
+      "goal_completion_rate": 0.0,
+      "mean_excess_cost_given_goal": null,
+      "mean_planner_calls": 13.3125,
+      "mean_total_nfe": 213.0,
+      "per_state_planner_call_match_rate": 1.0,
+      "rollouts": 48
+    },
+    "eligible_states": 48,
+    "eligible_tasks": 48,
+    "evaluation_scope": "task_roots",
+    "feedback_effects": {
+      "interpretation": "Intervals bootstrap independent tasks (or one root per task), not correlated search-state prefixes. A positive interval excluding zero supports a feedback benefit under this synthetic snapshot distribution.",
+      "replanning_minus_blind_task_macro": {
+        "estimate": 0.3958333333333333,
+        "high": 0.5213541666666639,
+        "low": 0.25,
+        "unit": "independent_task",
+        "units": 48
+      },
+      "replanning_minus_one_shot_task_macro": {
+        "estimate": 0.2760416666666667,
+        "high": 0.4166666666666667,
+        "low": 0.15091145833333333,
+        "unit": "independent_task",
+        "units": 48
+      },
+      "root_start": {
+        "blind_replanning_goal_completion_rate": 0.0,
+        "one_shot_goal_completion_rate": 0.11979166666666667,
+        "replanning_goal_completion_rate": 0.3958333333333333,
+        "replanning_minus_blind": {
+          "estimate": 0.3958333333333333,
+          "high": 0.5416666666666666,
+          "low": 0.2708333333333333,
+          "units": 48
+        },
+        "replanning_minus_one_shot": {
+          "estimate": 0.2760416666666667,
+          "high": 0.4166666666666667,
+          "low": 0.15091145833333333,
+          "units": 48
+        },
+        "tasks": 48
+      }
+    },
+    "nfe": 16,
+    "open_loop": {
+      "closest_reference_normalized_edit_distance": 0.4540608696858697,
+      "first_action_optimal_set_accuracy": 0.9895833333333334,
+      "goal_completion_rate": 0.11979166666666667,
+      "mean_excess_cost_given_goal": 3.55434774937837,
+      "mean_reference_coverage_at_k": 0.0078125,
+      "mean_unique_paths_at_k": 3.9166666666666665,
+      "novel_valid_goal_path_rate": 0.10416666666666667,
+      "optimal_cost_given_goal_rate": 0.2608695652173913,
+      "premature_stop_rate": 0.7760416666666666,
+      "serialized_top_k_path_rate": 0.015625,
+      "task_macro_goal_completion_rate": 0.11979166666666667,
+      "valid_stop_after_goal_rate": 0.010416666666666666,
+      "valid_transition_chain_rate": 0.8958333333333334
+    },
+    "receding_horizon": {
+      "boundary": "Offline exact-snapshot execute-observe-replan; no live APIs or perturbation recovery are exercised.",
+      "failure_counts": {
+        "no_decodable_transition": 24,
+        "premature_stop": 5
+      },
+      "goal_completion_rate": 0.3958333333333333,
+      "mean_excess_cost_given_goal": 4.007894588771618,
+      "mean_planner_calls": 13.3125,
+      "mean_total_nfe": 213.0,
+      "rollouts": 48
+    },
+    "receding_horizon_verifier_stop_guard": {
+      "ablation": "STOP is rejected whenever the exact snapshot is nonterminal; this measures transition generation with an external verifier guard.",
+      "failure_counts": {
+        "no_decodable_transition": 28
+      },
+      "goal_completion_rate": 0.4166666666666667,
+      "mean_excess_cost_given_goal": 4.187499837875366,
+      "mean_planner_calls": 13.5,
+      "mean_total_nfe": 216.0,
+      "rollouts": 48
+    },
+    "sample_count": 192,
+    "samples_per_state": 4,
+    "split": "test",
+    "stop_threshold": 0.7,
+    "test_unsealed": true
+  },
+  "path_supervision": {
+    "beta": 1.0,
+    "cost_diverse_states": 23,
+    "eligible_states": 5606,
+    "eligible_tasks": 48,
+    "excluded_rows": {
+      "terminal": 404,
+      "unreachable_or_unknown": 4350
+    },
+    "horizon_histogram": {
+      "1": 404,
+      "10": 1308,
+      "11": 544,
+      "12": 64,
+      "2": 404,
+      "3": 1272,
+      "4": 2798,
+      "5": 3906,
+      "6": 2432,
+      "7": 1856,
+      "8": 1376,
+      "9": 1376
+    },
+    "max_horizon": 12,
+    "max_paths_per_state": 8,
+    "mean_excess_cost": 1.6021256725143183e-18,
+    "mean_horizon": 6.006651634723788,
+    "mean_path_entropy": 0.8106084322641344,
+    "mean_paths_per_state": 3.164466642882626,
+    "multi_path_states": 3498,
+    "references": 17740,
+    "split": "test"
+  },
+  "registry_superset_verification": {
+    "checked_tool_arrays": [
+      "medcpt/tools.contract.npy",
+      "medcpt/tools.description.npy",
+      "qwen_general/tools.contract.npy",
+      "qwen_general/tools.description.npy"
+    ],
+    "compatible": true,
+    "evaluation_evaluation_fingerprint_sha256": "83a703a6ca69124b9623c67ab42a962df06c5c974de3d1b325782044c0fb56fb",
+    "evaluation_tool_count": 50,
+    "training_evaluation_fingerprint_sha256": "b0aa8d70a7294ac0e6d893d4797c86b92dd9741800609e4ae3499966c678ef9a",
+    "training_tool_count": 43,
+    "unseen_tool_ids": [
+      "finish_disease_population_literature_report",
+      "finish_phenotype_disease_ortholog_report",
+      "finish_phenotype_disease_population_literature_report",
+      "finish_phenotype_ortholog_literature_report",
+      "finish_phenotype_population_ortholog_literature_report",
+      "finish_phenotype_population_ortholog_report",
+      "finish_population_ortholog_literature_report"
+    ]
+  },
+  "scientific_boundary": "Offline exact-snapshot evaluation; verifier-guarded STOP is an ablation, not learned-policy performance.",
+  "test_unsealed": true
+}

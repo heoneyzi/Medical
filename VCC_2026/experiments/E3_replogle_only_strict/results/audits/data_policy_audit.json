@@ -1,0 +1,74 @@
+{
+  "configs": [
+    {
+      "config": "<repo>/data_experiments/replogle_only/jiang24/shadow.yaml",
+      "effect_manifest": "<repo>/data_experiments/replogle_only/jiang24/effect_library.npz.manifest.json",
+      "errors": [],
+      "ready": true
+    },
+    {
+      "config": "<repo>/data_experiments/replogle_only/gse270828/shadow.yaml",
+      "effect_manifest": "<repo>/data_experiments/replogle_only/gse270828/effect_library.npz.manifest.json",
+      "errors": [],
+      "ready": true
+    }
+  ],
+  "model_roles": {
+    "geneformer": {
+      "reason": "Deletion distance is not CRISPRi magnitude and must pass the Replogle correlation gate.",
+      "role": "gated_confidence_prior",
+      "status": "excluded_from_context_matrix",
+      "track": "B_FM_AUGMENTED"
+    },
+    "scfoundation": {
+      "reason": "",
+      "role": "context_encoder",
+      "status": "enabled",
+      "track": "B_FM_AUGMENTED"
+    },
+    "scfoundation_retrieval": {
+      "reason": "Missing-target KNN must first pass Replogle leave-one-target-out reconstruction.",
+      "role": "gated_missing_retriever",
+      "status": "excluded_from_context_matrix",
+      "track": "B_FM_AUGMENTED"
+    },
+    "scgpt": {
+      "reason": "",
+      "role": "context_encoder",
+      "status": "enabled",
+      "track": "B_FM_AUGMENTED"
+    },
+    "scprint2": {
+      "reason": "",
+      "role": "context_encoder",
+      "status": "enabled",
+      "track": "B_FM_AUGMENTED"
+    },
+    "scprint2_grn": {
+      "reason": "GRN neighbors must pass Replogle DEG enrichment before prediction use.",
+      "role": "gated_grn_prior",
+      "status": "excluded_from_context_matrix",
+      "track": "B_FM_AUGMENTED"
+    },
+    "transcriptformer_cell": {
+      "reason": "",
+      "role": "context_encoder",
+      "status": "enabled",
+      "track": "B_FM_AUGMENTED"
+    },
+    "transcriptformer_cge": {
+      "reason": "Requires target-wise CGE presence gate; not a global context encoder.",
+      "role": "gated_target_prior",
+      "status": "excluded_from_context_matrix",
+      "track": "B_FM_AUGMENTED"
+    },
+    "uce": {
+      "reason": "",
+      "role": "context_encoder",
+      "status": "enabled",
+      "track": "B_FM_AUGMENTED"
+    }
+  },
+  "passed": true,
+  "policy": "<repo>/configs/data_policy_replogle_only.yaml"
+}

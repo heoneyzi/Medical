@@ -1,0 +1,237 @@
+schema_version: 1
+models:
+  uce:
+    display_name: UCE-4L
+    role: context_encoder
+    track: B_FM_AUGMENTED
+    official_repo: https://github.com/snap-stanford/UCE
+    repo: external/UCE
+    repo_commit: 9c416007be15ad6753dc84af4468c1dc10421ab9
+    executable: envs/uce/bin/python
+    checkpoint: external/UCE/model_files/4layer_model.torch
+    checkpoint_sha256: acb28f3f0a1d803e4a4ffe891b9bab38bf93c84762dc06b2452f0d515da91560
+    required_runtime_files:
+      - external/UCE/model_files/species_chrom.csv
+      - external/UCE/model_files/species_offsets.pkl
+      - external/UCE/model_files/all_tokens.torch
+      - external/UCE/model_files/protein_embeddings/Homo_sapiens.GRCh38.gene_symbol_to_embedding_ESM2.pt
+      - external/UCE/model_files/protein_embeddings/Mus_musculus.GRCm39.gene_symbol_to_embedding_ESM2.pt
+      - external/UCE/model_files/protein_embeddings/Xenopus_tropicalis.Xenopus_tropicalis_v9.1.gene_symbol_to_embedding_ESM2.pt
+      - external/UCE/model_files/protein_embeddings/Danio_rerio.GRCz11.gene_symbol_to_embedding_ESM2.pt
+      - external/UCE/model_files/protein_embeddings/Microcebus_murinus.Mmur_3.0.gene_symbol_to_embedding_ESM2.pt
+      - external/UCE/model_files/protein_embeddings/Sus_scrofa.Sscrofa11.1.gene_symbol_to_embedding_ESM2.pt
+      - external/UCE/model_files/protein_embeddings/Macaca_fascicularis.Macaca_fascicularis_6.0.gene_symbol_to_embedding_ESM2.pt
+      - external/UCE/model_files/protein_embeddings/Macaca_mulatta.Mmul_10.gene_symbol_to_embedding_ESM2.pt
+    input_gene_id: symbol
+    cwd: external/UCE
+    command:
+      - "{executable}"
+      - "{repo}/eval_single_anndata.py"
+      - --adata_path
+      - "{input}"
+      - --dir
+      - "{work_dir}/native/"
+      - --species
+      - human
+      - --model_loc
+      - "{checkpoint}"
+      - --batch_size
+      - "16"
+      - --nlayers
+      - "4"
+    output_glob: "{work_dir}/native/*.h5ad"
+    output_type: h5ad
+    embedding_key: X_uce
+    expected_dim: 1280
+
+  transcriptformer_cell:
+    display_name: TranscriptFormer-Sapiens-cell
+    role: context_encoder
+    track: B_FM_AUGMENTED
+    official_repo: https://github.com/czi-ai/transcriptformer
+    repo: external/transcriptformer
+    repo_commit: c943a89a4de9511a8ab1010715bf1cfa8827cc99
+    executable: envs/transcriptformer/bin/transcriptformer
+    checkpoint: models/transcriptformer/tf_sapiens
+    checkpoint_sha256: 6d01c49f06bb902541243a72939cb21a1f30fea2fc2efd8787e4478b49aa2e05
+    required_checkpoint_files:
+      - config.json
+      - model_weights.pt
+      - vocabs/assay_vocab.json
+      - vocabs/homo_sapiens_gene.h5
+    input_gene_id: ensembl
+    min_gene_mapping_fraction: 0.50
+    required_obs_defaults:
+      assay: unknown
+    command:
+      - "{executable}"
+      - inference
+      - --checkpoint-path
+      - "{checkpoint}"
+      - --data-file
+      - "{input}"
+      - --output-path
+      - "{work_dir}/native"
+      - --output-filename
+      - embeddings.h5ad
+      - --batch-size
+      - "4"
+      - --gene-col-name
+      - ensembl_id
+      - --precision
+      - 16-mixed
+      - --use-raw
+      - "false"
+      - --emb-type
+      - cell
+      - --device
+      - cuda
+      - --disable-compile-block-mask
+      - --oom-dataloader
+      - --n-data-workers
+      - "0"
+    output_glob: "{work_dir}/native/embeddings.h5ad"
+    output_type: h5ad
+    embedding_key: embeddings
+    expected_dim: 2048
+    output_cell_identity: positional_exact_count
+
+  scgpt:
+    display_name: scGPT-whole-human
+    role: context_encoder
+    track: B_FM_AUGMENTED
+    official_repo: https://github.com/bowang-lab/scGPT
+    repo: external/scGPT
+    repo_commit: cebd6fae655b9c585a4807daa3ac31bb764f06b4
+    executable: envs/scgpt/bin/python
+    checkpoint: models/scGPT/whole-human
+    required_checkpoint_files: [args.json, vocab.json, best_model.pt]
+    input_gene_id: symbol
+    command:
+      - "{executable}"
+      - "{root}/scripts/adapters/scgpt_embed.py"
+      - --input
+      - "{input}"
+      - --model-dir
+      - "{checkpoint}"
+      - --output
+      - "{work_dir}/native/scgpt.h5ad"
+      - --batch-size
+      - "32"
+      - --device
+      - cuda
+    output_glob: "{work_dir}/native/scgpt.h5ad"
+    output_type: h5ad
+    embedding_key: X_scGPT
+
+  scfoundation:
+    display_name: scFoundation-100M-cell
+    role: context_encoder
+    track: B_FM_AUGMENTED
+    official_repo: https://github.com/biomap-research/scFoundation
+    repo: external/scFoundation
+    repo_commit: 397631c495eddf9ad6644fc00c6ea8139e651245
+    executable: envs/scfoundation/bin/python
+    checkpoint: external/scFoundation/model/models/models.ckpt
+    input_gene_id: symbol
+    cwd: external/scFoundation/model
+    command:
+      - "{executable}"
+      - "{repo}/model/get_embedding.py"
+      - --task_name
+      - "{context}"
+      - --input_type
+      - singlecell
+      - --output_type
+      - cell
+      - --pool_type
+      - all
+      - --tgthighres
+      - t4
+      - --data_path
+      - "{input}"
+      - --save_path
+      - "{work_dir}/native"
+      - --pre_normalized
+      - F
+      - --version
+      - ce
+      - --ckpt_name
+      - 01B-resolution
+    output_glob: "{work_dir}/native/{context}_*_cell_embedding_*_resolution.npy"
+    output_type: npy
+    output_cell_identity: positional_exact_count
+
+  scprint2:
+    display_name: scPRINT-2-small-v2
+    role: context_encoder
+    track: B_FM_AUGMENTED
+    official_repo: https://github.com/cantinilab/scPRINT-2
+    repo: external/scPRINT-2
+    repo_commit: 9dbc57acb66ec45cf0a8676740473e0328887188
+    executable: envs/scprint2/bin/scprint2
+    checkpoint: models/scPRINT-2/small-v2.ckpt
+    checkpoint_sha256: 2b586c144cf9a1f638b4b3e803554ebf6ce389f81c5f34179288a970addfd822
+    required_runtime_files:
+      - models/scPRINT-2/lamin-settings/.lamin/current_instance.env
+      - models/scPRINT-2/lamin-storage/.lamindb/lamin.db
+    input_gene_id: symbol
+    min_input_genes: 12000
+    command:
+      - /usr/bin/env
+      - "LAMIN_SETTINGS_DIR={root}/models/scPRINT-2/lamin-settings"
+      - "LAMIN_CACHE_DIR={root}/models/scPRINT-2/lamin-cache"
+      - "{executable}"
+      - embed
+      - --adata
+      - "{input}"
+      - --ckpt_path
+      - "{checkpoint}"
+      - --species
+      - NCBITaxon:9606
+      - --output_filename
+      - "{work_dir}/native/scprint2"
+      - --is_symbol
+      - "true"
+      - --use_raw
+      - "false"
+      - --skip_validate
+      - "true"
+      - --batch_size
+      - "8"
+      - --num_workers
+      - "0"
+      - --doplot
+      - "false"
+      - --doclass
+      - "false"
+    output_glob: "{work_dir}/native/scprint2_embedded.h5ad"
+    output_type: h5ad
+    embedding_key: scprint_emb
+    expected_dim: 424
+    output_cell_identity: positional_exact_count
+
+  transcriptformer_cge:
+    display_name: TranscriptFormer-Sapiens-CGE
+    role: gated_target_prior
+    track: B_FM_AUGMENTED
+    status: excluded_from_context_matrix
+    reason: Requires target-wise CGE presence gate; not a global context encoder.
+  geneformer:
+    display_name: Geneformer-delete
+    role: gated_confidence_prior
+    track: B_FM_AUGMENTED
+    status: excluded_from_context_matrix
+    reason: Deletion distance is not CRISPRi magnitude and must pass the Replogle correlation gate.
+  scfoundation_retrieval:
+    display_name: scFoundation-gene-retrieval
+    role: gated_missing_retriever
+    track: B_FM_AUGMENTED
+    status: excluded_from_context_matrix
+    reason: Missing-target KNN must first pass Replogle leave-one-target-out reconstruction.
+  scprint2_grn:
+    display_name: scPRINT-2-GRN
+    role: gated_grn_prior
+    track: B_FM_AUGMENTED
+    status: excluded_from_context_matrix
+    reason: GRN neighbors must pass Replogle DEG enrichment before prediction use.

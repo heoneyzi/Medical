@@ -1,0 +1,31 @@
+{
+  "mock": false,
+  "direction": "A (structure-based)",
+  "anchor_modality": "joint",
+  "n_compounds": 32,
+  "moa_mapped_counts": {
+    "mtor_pi3k": 2,
+    "hsp90": 0,
+    "jak_rock": 0,
+    "hdac": 3,
+    "mapk": 22,
+    "cdk": 5,
+    "(unmapped)": 0
+  },
+  "demo1_cross_context": {
+    "macro_ovr_auroc": 0.7156478578892371,
+    "rank1_accuracy": 0.28125,
+    "top1_moa_recovery_enrichment": 1.6875
+  },
+  "demo2_fewshot_expand": {
+    "n_anchor": 3,
+    "k": 10,
+    "macro_auroc": 0.5019541910331384,
+    "mean_precision_at_k": 0.37749999999999995
+  },
+  "structural_independence": {
+    "n_with_tanimoto": 32,
+    "n_correct_novel_lt0.4": 9,
+    "median_max_tanimoto": 0.1917741935483871
+  }
+}

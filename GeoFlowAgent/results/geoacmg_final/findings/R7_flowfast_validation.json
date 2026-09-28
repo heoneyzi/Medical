@@ -1,0 +1,35 @@
+{
+  "measured_at": "2026-09-20",
+  "device": "cuda",
+  "dev_roots_total": 584,
+  "validated_on_roots": 64,
+  "samples_per_state": 4,
+  "nfe": 16,
+  "plan_sampling": {
+    "original_seconds": 4.026,
+    "batched_seconds": 0.063,
+    "measured_speedup": 63.81
+  },
+  "equivalence": {
+    "checked": 64,
+    "decision_matches": 64,
+    "decisions_identical": true,
+    "max_absolute_difference": 4.76837158203125e-07,
+    "mismatches": [],
+    "rule": "배치화는 적분만 합치고 난수는 행별 생성기에서 그대로 뽑는다. 따라서 결정(선택된 도구 인덱스)은 반드시 일치해야 한다. 부동소수점 값 차이는 배치 축약 순서 때문에 허용하되 크기를 보고한다."
+  },
+  "projected_call_reduction": {
+    "n_roots": 584,
+    "model_calls_original": 42632,
+    "model_calls_batched": 73,
+    "call_reduction_factor": 584.0,
+    "euler_steps_per_call": 16,
+    "note": "호출 수 비교다. 배치 하나가 더 큰 만큼 GPU 시간은 늘지만, 지난 실행에서 병목은 GPU 가 아니라 파이썬 디스패치였다 (1.2코어)."
+  },
+  "checkpoint": {
+    "best_epoch": 49,
+    "best_loss": 1.4802867376775273
+  },
+  "context": "실제 store(448,704 예제)와 60epoch 체크포인트(best_epoch=49) 위에서 잰 값이다. 합성 테스트가 아니다. 원본 _sample_plans 와 배치본을 행별 생성기 같은 시드로 비교했다.",
+  "store_load_seconds": 648.5
+}

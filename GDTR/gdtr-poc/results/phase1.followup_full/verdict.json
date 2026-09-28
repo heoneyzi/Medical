@@ -1,0 +1,15 @@
+{
+  "n_layers": 32,
+  "peak_divergence_layer": 2,
+  "peak_divergence_initial_loss": 1259.3974609375,
+  "worst_recovery_layer": 12,
+  "worst_recovery_pct": 0.9816305190344087,
+  "canonical_deep_thinking_layer": 29,
+  "canonical_recovery_pct": 0.9995992092045454,
+  "canonical_initial_loss": 764.8263549804688,
+  "degenerate_layers": [
+    30,
+    31
+  ],
+  "n_layers_recovery_gt_0p90": 30
+}

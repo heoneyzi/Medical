@@ -1,0 +1,26 @@
+{
+  "cosine-83": {
+    "standardiser_scale_min": 0.12405878747904775,
+    "standardiser_scale_max": 0.31350334581653216,
+    "whitener_frobenius": 181.28793398914303,
+    "fitted_on": "dev z (state+goal concatenated)"
+  },
+  "cosine-97": {
+    "standardiser_scale_min": 0.11042560473315516,
+    "standardiser_scale_max": 0.3619844258969717,
+    "whitener_frobenius": 169.63425492682276,
+    "fitted_on": "dev z (state+goal concatenated)"
+  },
+  "euclidean-83": {
+    "standardiser_scale_min": 0.04787390392331588,
+    "standardiser_scale_max": 0.17880906139151778,
+    "whitener_frobenius": 290.0751685399051,
+    "fitted_on": "dev z (state+goal concatenated)"
+  },
+  "euclidean-97": {
+    "standardiser_scale_min": 0.045479689350598256,
+    "standardiser_scale_max": 0.12697717273517523,
+    "whitener_frobenius": 476.0969905603554,
+    "fitted_on": "dev z (state+goal concatenated)"
+  }
+}

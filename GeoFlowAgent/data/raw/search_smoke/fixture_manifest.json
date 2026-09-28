@@ -1,0 +1,38 @@
+{
+  "content_sha256": "3425429b5397aacc8636b9eab6d68e1b4a31f5a103f7b40fcb0c35b781dec6e1",
+  "counts": {
+    "entities": 21,
+    "snapshots": 172,
+    "split_tasks": {
+      "dev": 7,
+      "test": 7,
+      "train": 7
+    },
+    "tasks": 21,
+    "templates": 21,
+    "tools": 19,
+    "verifiers": 21,
+    "workflow_families": 7
+  },
+  "files": {
+    "background.jsonl": "0322861bcd7b0421021a30c1e7cfef561391e4c6fef89e3986ff549267b1a526",
+    "snapshots.jsonl": "a1bd5e77032b70eddb13017cbcb81cb64ed94b3553371f64c81403e680ac3c67",
+    "tasks.jsonl": "19cd3f82fc0d00e28b280f5b5ba003f6cb06e8cc2873670be8172818610db456",
+    "tools.jsonl": "a3c17baf357130a961d1f52ccf99facf222f4d34fb27bb620a662ad9c1e4d46d",
+    "verifiers.private.jsonl": "2020acda9255e2861cbbf146158ac75eee3ea9aa1977fa194c9b03afebff969b"
+  },
+  "invariants": {
+    "contains_alternate_sources": true,
+    "contains_contract_valid_detours": true,
+    "contains_verifier_detectable_dead_ends": true,
+    "private_verifier_separate": true,
+    "runtime_empty_results_reserved_for_perturbation_eval": true,
+    "source_revision_pinned": true,
+    "synthetic_identifiers_only": true,
+    "task_level_splits": true
+  },
+  "kind": "synthetic_search_pipeline_fixture",
+  "research_evidence": false,
+  "seed": 17,
+  "task_count": 21
+}

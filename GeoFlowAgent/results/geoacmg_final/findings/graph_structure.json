@@ -1,0 +1,10 @@
+{
+  "tasks": 2337,
+  "resolved_edges": 1458964,
+  "unresolved": 0,
+  "prefix_increasing": 1458964,
+  "prefix_decreasing": 0,
+  "prefix_same": 0,
+  "median_states": 192,
+  "median_edges": 628
+}

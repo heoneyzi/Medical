@@ -1,0 +1,22 @@
+# analysis core (needed everywhere, including the self-test)
+numpy>=1.24
+pandas>=2.0
+scipy>=1.10
+matplotlib>=3.7
+pyyaml>=6.0
+
+# storage (falls back to gzipped csv if absent)
+pyarrow>=14.0
+
+# extraction on the server
+torch>=2.2
+# evo2  -- install from https://github.com/ArcInstitute/evo2 (pip install evo2)
+# transformer_engine  -- only needed for the 40B FP8 path
+
+# annotation tracks
+pyfaidx>=0.7
+pyBigWig>=0.3
+
+# motif models
+# maxentpy  -- OPTIONAL. Only needed for MaxEntScan splice strength;
+#              absent, exp1 raises rather than approximating it with a PWM.

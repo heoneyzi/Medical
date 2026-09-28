@@ -1,0 +1,1508 @@
+{
+  "within": [
+    0.11505049820291553,
+    0.3323943700512714,
+    0.4725107375855797,
+    -0.03665418719209812,
+    -0.10753975269237045,
+    -0.1276846994653675,
+    0.5318895427081042,
+    0.31163555146635313,
+    0.5578099897989504,
+    0.5297710229745242,
+    0.3113910036315721,
+    0.5431570039903244,
+    0.3554433495027813,
+    0.6142283975862712,
+    0.5198724441933837
+  ],
+  "cross_same_energy": [
+    0.1500291693728286,
+    0.132092888145599,
+    0.32063606172773845,
+    0.33759040189053346,
+    0.4210127546858982,
+    0.4530061786568897,
+    0.026207112513578597,
+    -0.010181077815731514,
+    -0.10481037851063296,
+    -0.11760951230745217,
+    -0.09761875074393614,
+    -0.12014166315069613,
+    0.5544439899895119,
+    0.5363725606906551,
+    0.27081381066818405,
+    0.2879211132505427,
+    0.48903948701617045,
+    0.539384748028518,
+    0.43645009236225224,
+    0.5679348225915194,
+    0.29242559062673656,
+    0.365183918823474,
+    0.49309430886035155,
+    0.41878146404021566,
+    0.46239640218683514,
+    0.394166832419601,
+    0.5467546670817,
+    0.5977107714442408,
+    0.4528880215088811,
+    0.5217456190196462
+  ],
+  "cross_diff_energy": [
+    0.07694893360605101,
+    0.21430863532527894,
+    0.1812173534881958,
+    0.18633323852816003,
+    0.22191806674266737,
+    0.214878397905603,
+    0.09439023501581274,
+    0.11448837966127673,
+    0.19587758560863758,
+    0.06939041405447846,
+    0.2683629863991945,
+    0.17227068814682966,
+    0.32771081218600384,
+    0.3917464027188678,
+    0.38643520758347244,
+    0.3455326531136637,
+    0.4055047757938607,
+    0.3725498061297284,
+    0.31707128290135667,
+    0.32409231429708046,
+    0.39780871142904145,
+    0.3021836316971037,
+    0.3849566895044238,
+    0.33257825932916496,
+    0.4182877923725727,
+    0.4938089122290283,
+    0.578683135586735,
+    0.4711126164205993,
+    0.5135284862869796,
+    0.49493246113544603,
+    0.4016769638845155,
+    0.41439696121797964,
+    0.504386141795509,
+    0.3601176241998329,
+    0.5160731746722191,
+    0.4391734247299159,
+    -0.016131308255044243,
+    -0.04810397163082143,
+    0.029314082397937147,
+    0.03572349329713336,
+    0.02186579904990381,
+    0.05809274669886924,
+    0.007157093765222128,
+    -0.022853814929132542,
+    0.06443161803091237,
+    0.0425016997020613,
+    0.09454065060945403,
+    0.09647246576990713,
+    -0.10130411125745542,
+    -0.15719859706187775,
+    -0.09048517748878661,
+    -0.07759992457681007,
+    -0.0852461949930177,
+    -0.04284619284944655,
+    -0.05635202541184734,
+    -0.12722855936137722,
+    -0.021622493495994877,
+    -0.023953284490342064,
+    -0.05508909418899494,
+    -0.013369301237930157,
+    -0.1033546839075993,
+    -0.15949390862394977,
+    -0.05772282217424145,
+    -0.08259712358134025,
+    -0.09996675997158849,
+    -0.021799964923977806,
+    -0.059104597824628874,
+    -0.12168478454781105,
+    -0.03727073247422973,
+    -0.01332573952425191,
+    -0.03652303218998732,
+    0.00257181471285564,
+    0.49426565840232084,
+    0.4609370107513736,
+    0.5443776555458328,
+    0.494329568877609,
+    0.5228639540950609,
+    0.5074620510795695,
+    0.5021591299430072,
+    0.4392098770105456,
+    0.5353613546906392,
+    0.4988272506087441,
+    0.5924809632502552,
+    0.5595984353734584,
+    0.21855096533104543,
+    0.23004476681615416,
+    0.20965096179883044,
+    0.18411718530969104,
+    0.3128520851580462,
+    0.3435608685400584,
+    0.20662247943995576,
+    0.23891856845961645,
+    0.33839717782168455,
+    0.18431699754259992,
+    0.3207764398072736,
+    0.2617750487947302,
+    0.4429250036734657,
+    0.45752410826994844,
+    0.513782071671362,
+    0.47523597504104964,
+    0.5117172522574881,
+    0.5639143163325759,
+    0.46400695543903303,
+    0.4524532121827992,
+    0.5532193704269036,
+    0.4527275288621271,
+    0.5419185695685663,
+    0.5246115976057417,
+    0.49255918777012053,
+    0.44863397978419417,
+    0.5527481104339025,
+    0.5114485055886323,
+    0.5424500394097825,
+    0.49391636679778533,
+    0.5464530737208859,
+    0.547703607377806,
+    0.5380454735653548,
+    0.5302406617638524,
+    0.5913488527018819,
+    0.5907995814937966,
+    0.28248217824045907,
+    0.3031292815378501,
+    0.28986735096840377,
+    0.26064947273768946,
+    0.4047619697533757,
+    0.3654310922575611,
+    0.3495196169771892,
+    0.37805693444171456,
+    0.32327607708132566,
+    0.2584180747658579,
+    0.3553956727297668,
+    0.31041150844091253,
+    0.4743022241319956,
+    0.41796632431399,
+    0.513129368691995,
+    0.4839308381794467,
+    0.4859394686338103,
+    0.517654453903901,
+    0.5097273959876323,
+    0.517403166786904,
+    0.5253816347411153,
+    0.48902733052071073,
+    0.5383735683060042,
+    0.5376709538729634,
+    0.3733986006628394,
+    0.39296158019987537,
+    0.3805157842917765,
+    0.35963717789175065,
+    0.4675468732553695,
+    0.45862987347702333,
+    0.4179553428911507,
+    0.46494099880735285,
+    0.43516165195454537,
+    0.3539244383582415,
+    0.36642003922638805,
+    0.452068975794155,
+    0.5064764467766626,
+    0.48205489603843776,
+    0.5944751125183917,
+    0.5324208002400501,
+    0.5555634362371085,
+    0.5258784406902643,
+    0.539676426633584,
+    0.5871624546701073,
+    0.5634407081393897,
+    0.5490748588617257,
+    0.4591026174326401,
+    0.5721215701585723,
+    0.4485125401852276,
+    0.4540018065559457,
+    0.4692568642235492,
+    0.43411150038991847,
+    0.4989633681568178,
+    0.5415315997275798,
+    0.4553676612860221,
+    0.5042988056811699,
+    0.5270286832380748,
+    0.44569011527068303,
+    0.426014963271222,
+    0.543870120966319
+  ],
+  "good_within": [
+    0.11505049820291553,
+    0.3323943700512714,
+    0.4725107375855797,
+    0.5318895427081042,
+    0.31163555146635313,
+    0.5578099897989504,
+    0.5297710229745242,
+    0.3113910036315721,
+    0.5431570039903244,
+    0.3554433495027813,
+    0.6142283975862712,
+    0.5198724441933837
+  ],
+  "good_cross": [
+    0.1500291693728286,
+    0.132092888145599,
+    0.18633323852816003,
+    0.22191806674266737,
+    0.214878397905603,
+    0.09439023501581274,
+    0.11448837966127673,
+    0.19587758560863758,
+    0.06939041405447846,
+    0.2683629863991945,
+    0.17227068814682966,
+    0.32063606172773845,
+    0.33759040189053346,
+    0.3455326531136637,
+    0.4055047757938607,
+    0.3725498061297284,
+    0.31707128290135667,
+    0.32409231429708046,
+    0.39780871142904145,
+    0.3021836316971037,
+    0.3849566895044238,
+    0.33257825932916496,
+    0.4210127546858982,
+    0.4530061786568897,
+    0.4711126164205993,
+    0.5135284862869796,
+    0.49493246113544603,
+    0.4016769638845155,
+    0.41439696121797964,
+    0.504386141795509,
+    0.3601176241998329,
+    0.5160731746722191,
+    0.4391734247299159,
+    0.49426565840232084,
+    0.4609370107513736,
+    0.5443776555458328,
+    0.5544439899895119,
+    0.5363725606906551,
+    0.5021591299430072,
+    0.4392098770105456,
+    0.5353613546906392,
+    0.4988272506087441,
+    0.5924809632502552,
+    0.5595984353734584,
+    0.21855096533104543,
+    0.23004476681615416,
+    0.20965096179883044,
+    0.27081381066818405,
+    0.2879211132505427,
+    0.20662247943995576,
+    0.23891856845961645,
+    0.33839717782168455,
+    0.18431699754259992,
+    0.3207764398072736,
+    0.2617750487947302,
+    0.4429250036734657,
+    0.45752410826994844,
+    0.513782071671362,
+    0.48903948701617045,
+    0.539384748028518,
+    0.46400695543903303,
+    0.4524532121827992,
+    0.5532193704269036,
+    0.4527275288621271,
+    0.5419185695685663,
+    0.5246115976057417,
+    0.49255918777012053,
+    0.44863397978419417,
+    0.5527481104339025,
+    0.5464530737208859,
+    0.547703607377806,
+    0.5380454735653548,
+    0.43645009236225224,
+    0.5679348225915194,
+    0.5302406617638524,
+    0.5913488527018819,
+    0.5907995814937966,
+    0.28248217824045907,
+    0.3031292815378501,
+    0.28986735096840377,
+    0.3495196169771892,
+    0.37805693444171456,
+    0.32327607708132566,
+    0.29242559062673656,
+    0.365183918823474,
+    0.2584180747658579,
+    0.3553956727297668,
+    0.31041150844091253,
+    0.4743022241319956,
+    0.41796632431399,
+    0.513129368691995,
+    0.5097273959876323,
+    0.517403166786904,
+    0.5253816347411153,
+    0.49309430886035155,
+    0.41878146404021566,
+    0.48902733052071073,
+    0.5383735683060042,
+    0.5376709538729634,
+    0.3733986006628394,
+    0.39296158019987537,
+    0.3805157842917765,
+    0.4179553428911507,
+    0.46494099880735285,
+    0.43516165195454537,
+    0.3539244383582415,
+    0.36642003922638805,
+    0.452068975794155,
+    0.46239640218683514,
+    0.394166832419601,
+    0.5064764467766626,
+    0.48205489603843776,
+    0.5944751125183917,
+    0.539676426633584,
+    0.5871624546701073,
+    0.5634407081393897,
+    0.5490748588617257,
+    0.4591026174326401,
+    0.5721215701585723,
+    0.5467546670817,
+    0.5977107714442408,
+    0.4485125401852276,
+    0.4540018065559457,
+    0.4692568642235492,
+    0.4553676612860221,
+    0.5042988056811699,
+    0.5270286832380748,
+    0.44569011527068303,
+    0.426014963271222,
+    0.543870120966319,
+    0.4528880215088811,
+    0.5217456190196462
+  ],
+  "detail": [
+    {
+      "ordering_from": "cosine-17",
+      "policy_from": "cosine-17",
+      "r": 0.11505049820291553
+    },
+    {
+      "ordering_from": "cosine-17",
+      "policy_from": "cosine-29",
+      "r": 0.1500291693728286
+    },
+    {
+      "ordering_from": "cosine-17",
+      "policy_from": "cosine-43",
+      "r": 0.132092888145599
+    },
+    {
+      "ordering_from": "cosine-17",
+      "policy_from": "euclidean-17",
+      "r": 0.07694893360605101
+    },
+    {
+      "ordering_from": "cosine-17",
+      "policy_from": "euclidean-29",
+      "r": 0.21430863532527894
+    },
+    {
+      "ordering_from": "cosine-17",
+      "policy_from": "euclidean-43",
+      "r": 0.1812173534881958
+    },
+    {
+      "ordering_from": "cosine-17",
+      "policy_from": "directed_quasimetric-17",
+      "r": 0.18633323852816003
+    },
+    {
+      "ordering_from": "cosine-17",
+      "policy_from": "directed_quasimetric-29",
+      "r": 0.22191806674266737
+    },
+    {
+      "ordering_from": "cosine-17",
+      "policy_from": "directed_quasimetric-43",
+      "r": 0.214878397905603
+    },
+    {
+      "ordering_from": "cosine-17",
+      "policy_from": "poincare-17",
+      "r": 0.09439023501581274
+    },
+    {
+      "ordering_from": "cosine-17",
+      "policy_from": "poincare-29",
+      "r": 0.11448837966127673
+    },
+    {
+      "ordering_from": "cosine-17",
+      "policy_from": "poincare-43",
+      "r": 0.19587758560863758
+    },
+    {
+      "ordering_from": "cosine-17",
+      "policy_from": "pair_mlp-17",
+      "r": 0.06939041405447846
+    },
+    {
+      "ordering_from": "cosine-17",
+      "policy_from": "pair_mlp-29",
+      "r": 0.2683629863991945
+    },
+    {
+      "ordering_from": "cosine-17",
+      "policy_from": "pair_mlp-43",
+      "r": 0.17227068814682966
+    },
+    {
+      "ordering_from": "cosine-29",
+      "policy_from": "cosine-17",
+      "r": 0.32063606172773845
+    },
+    {
+      "ordering_from": "cosine-29",
+      "policy_from": "cosine-29",
+      "r": 0.3323943700512714
+    },
+    {
+      "ordering_from": "cosine-29",
+      "policy_from": "cosine-43",
+      "r": 0.33759040189053346
+    },
+    {
+      "ordering_from": "cosine-29",
+      "policy_from": "euclidean-17",
+      "r": 0.32771081218600384
+    },
+    {
+      "ordering_from": "cosine-29",
+      "policy_from": "euclidean-29",
+      "r": 0.3917464027188678
+    },
+    {
+      "ordering_from": "cosine-29",
+      "policy_from": "euclidean-43",
+      "r": 0.38643520758347244
+    },
+    {
+      "ordering_from": "cosine-29",
+      "policy_from": "directed_quasimetric-17",
+      "r": 0.3455326531136637
+    },
+    {
+      "ordering_from": "cosine-29",
+      "policy_from": "directed_quasimetric-29",
+      "r": 0.4055047757938607
+    },
+    {
+      "ordering_from": "cosine-29",
+      "policy_from": "directed_quasimetric-43",
+      "r": 0.3725498061297284
+    },
+    {
+      "ordering_from": "cosine-29",
+      "policy_from": "poincare-17",
+      "r": 0.31707128290135667
+    },
+    {
+      "ordering_from": "cosine-29",
+      "policy_from": "poincare-29",
+      "r": 0.32409231429708046
+    },
+    {
+      "ordering_from": "cosine-29",
+      "policy_from": "poincare-43",
+      "r": 0.39780871142904145
+    },
+    {
+      "ordering_from": "cosine-29",
+      "policy_from": "pair_mlp-17",
+      "r": 0.3021836316971037
+    },
+    {
+      "ordering_from": "cosine-29",
+      "policy_from": "pair_mlp-29",
+      "r": 0.3849566895044238
+    },
+    {
+      "ordering_from": "cosine-29",
+      "policy_from": "pair_mlp-43",
+      "r": 0.33257825932916496
+    },
+    {
+      "ordering_from": "cosine-43",
+      "policy_from": "cosine-17",
+      "r": 0.4210127546858982
+    },
+    {
+      "ordering_from": "cosine-43",
+      "policy_from": "cosine-29",
+      "r": 0.4530061786568897
+    },
+    {
+      "ordering_from": "cosine-43",
+      "policy_from": "cosine-43",
+      "r": 0.4725107375855797
+    },
+    {
+      "ordering_from": "cosine-43",
+      "policy_from": "euclidean-17",
+      "r": 0.4182877923725727
+    },
+    {
+      "ordering_from": "cosine-43",
+      "policy_from": "euclidean-29",
+      "r": 0.4938089122290283
+    },
+    {
+      "ordering_from": "cosine-43",
+      "policy_from": "euclidean-43",
+      "r": 0.578683135586735
+    },
+    {
+      "ordering_from": "cosine-43",
+      "policy_from": "directed_quasimetric-17",
+      "r": 0.4711126164205993
+    },
+    {
+      "ordering_from": "cosine-43",
+      "policy_from": "directed_quasimetric-29",
+      "r": 0.5135284862869796
+    },
+    {
+      "ordering_from": "cosine-43",
+      "policy_from": "directed_quasimetric-43",
+      "r": 0.49493246113544603
+    },
+    {
+      "ordering_from": "cosine-43",
+      "policy_from": "poincare-17",
+      "r": 0.4016769638845155
+    },
+    {
+      "ordering_from": "cosine-43",
+      "policy_from": "poincare-29",
+      "r": 0.41439696121797964
+    },
+    {
+      "ordering_from": "cosine-43",
+      "policy_from": "poincare-43",
+      "r": 0.504386141795509
+    },
+    {
+      "ordering_from": "cosine-43",
+      "policy_from": "pair_mlp-17",
+      "r": 0.3601176241998329
+    },
+    {
+      "ordering_from": "cosine-43",
+      "policy_from": "pair_mlp-29",
+      "r": 0.5160731746722191
+    },
+    {
+      "ordering_from": "cosine-43",
+      "policy_from": "pair_mlp-43",
+      "r": 0.4391734247299159
+    },
+    {
+      "ordering_from": "euclidean-17",
+      "policy_from": "cosine-17",
+      "r": -0.016131308255044243
+    },
+    {
+      "ordering_from": "euclidean-17",
+      "policy_from": "cosine-29",
+      "r": -0.04810397163082143
+    },
+    {
+      "ordering_from": "euclidean-17",
+      "policy_from": "cosine-43",
+      "r": 0.029314082397937147
+    },
+    {
+      "ordering_from": "euclidean-17",
+      "policy_from": "euclidean-17",
+      "r": -0.03665418719209812
+    },
+    {
+      "ordering_from": "euclidean-17",
+      "policy_from": "euclidean-29",
+      "r": 0.026207112513578597
+    },
+    {
+      "ordering_from": "euclidean-17",
+      "policy_from": "euclidean-43",
+      "r": -0.010181077815731514
+    },
+    {
+      "ordering_from": "euclidean-17",
+      "policy_from": "directed_quasimetric-17",
+      "r": 0.03572349329713336
+    },
+    {
+      "ordering_from": "euclidean-17",
+      "policy_from": "directed_quasimetric-29",
+      "r": 0.02186579904990381
+    },
+    {
+      "ordering_from": "euclidean-17",
+      "policy_from": "directed_quasimetric-43",
+      "r": 0.05809274669886924
+    },
+    {
+      "ordering_from": "euclidean-17",
+      "policy_from": "poincare-17",
+      "r": 0.007157093765222128
+    },
+    {
+      "ordering_from": "euclidean-17",
+      "policy_from": "poincare-29",
+      "r": -0.022853814929132542
+    },
+    {
+      "ordering_from": "euclidean-17",
+      "policy_from": "poincare-43",
+      "r": 0.06443161803091237
+    },
+    {
+      "ordering_from": "euclidean-17",
+      "policy_from": "pair_mlp-17",
+      "r": 0.0425016997020613
+    },
+    {
+      "ordering_from": "euclidean-17",
+      "policy_from": "pair_mlp-29",
+      "r": 0.09454065060945403
+    },
+    {
+      "ordering_from": "euclidean-17",
+      "policy_from": "pair_mlp-43",
+      "r": 0.09647246576990713
+    },
+    {
+      "ordering_from": "euclidean-29",
+      "policy_from": "cosine-17",
+      "r": -0.10130411125745542
+    },
+    {
+      "ordering_from": "euclidean-29",
+      "policy_from": "cosine-29",
+      "r": -0.15719859706187775
+    },
+    {
+      "ordering_from": "euclidean-29",
+      "policy_from": "cosine-43",
+      "r": -0.09048517748878661
+    },
+    {
+      "ordering_from": "euclidean-29",
+      "policy_from": "euclidean-17",
+      "r": -0.10481037851063296
+    },
+    {
+      "ordering_from": "euclidean-29",
+      "policy_from": "euclidean-29",
+      "r": -0.10753975269237045
+    },
+    {
+      "ordering_from": "euclidean-29",
+      "policy_from": "euclidean-43",
+      "r": -0.11760951230745217
+    },
+    {
+      "ordering_from": "euclidean-29",
+      "policy_from": "directed_quasimetric-17",
+      "r": -0.07759992457681007
+    },
+    {
+      "ordering_from": "euclidean-29",
+      "policy_from": "directed_quasimetric-29",
+      "r": -0.0852461949930177
+    },
+    {
+      "ordering_from": "euclidean-29",
+      "policy_from": "directed_quasimetric-43",
+      "r": -0.04284619284944655
+    },
+    {
+      "ordering_from": "euclidean-29",
+      "policy_from": "poincare-17",
+      "r": -0.05635202541184734
+    },
+    {
+      "ordering_from": "euclidean-29",
+      "policy_from": "poincare-29",
+      "r": -0.12722855936137722
+    },
+    {
+      "ordering_from": "euclidean-29",
+      "policy_from": "poincare-43",
+      "r": -0.021622493495994877
+    },
+    {
+      "ordering_from": "euclidean-29",
+      "policy_from": "pair_mlp-17",
+      "r": -0.023953284490342064
+    },
+    {
+      "ordering_from": "euclidean-29",
+      "policy_from": "pair_mlp-29",
+      "r": -0.05508909418899494
+    },
+    {
+      "ordering_from": "euclidean-29",
+      "policy_from": "pair_mlp-43",
+      "r": -0.013369301237930157
+    },
+    {
+      "ordering_from": "euclidean-43",
+      "policy_from": "cosine-17",
+      "r": -0.1033546839075993
+    },
+    {
+      "ordering_from": "euclidean-43",
+      "policy_from": "cosine-29",
+      "r": -0.15949390862394977
+    },
+    {
+      "ordering_from": "euclidean-43",
+      "policy_from": "cosine-43",
+      "r": -0.05772282217424145
+    },
+    {
+      "ordering_from": "euclidean-43",
+      "policy_from": "euclidean-17",
+      "r": -0.09761875074393614
+    },
+    {
+      "ordering_from": "euclidean-43",
+      "policy_from": "euclidean-29",
+      "r": -0.12014166315069613
+    },
+    {
+      "ordering_from": "euclidean-43",
+      "policy_from": "euclidean-43",
+      "r": -0.1276846994653675
+    },
+    {
+      "ordering_from": "euclidean-43",
+      "policy_from": "directed_quasimetric-17",
+      "r": -0.08259712358134025
+    },
+    {
+      "ordering_from": "euclidean-43",
+      "policy_from": "directed_quasimetric-29",
+      "r": -0.09996675997158849
+    },
+    {
+      "ordering_from": "euclidean-43",
+      "policy_from": "directed_quasimetric-43",
+      "r": -0.021799964923977806
+    },
+    {
+      "ordering_from": "euclidean-43",
+      "policy_from": "poincare-17",
+      "r": -0.059104597824628874
+    },
+    {
+      "ordering_from": "euclidean-43",
+      "policy_from": "poincare-29",
+      "r": -0.12168478454781105
+    },
+    {
+      "ordering_from": "euclidean-43",
+      "policy_from": "poincare-43",
+      "r": -0.03727073247422973
+    },
+    {
+      "ordering_from": "euclidean-43",
+      "policy_from": "pair_mlp-17",
+      "r": -0.01332573952425191
+    },
+    {
+      "ordering_from": "euclidean-43",
+      "policy_from": "pair_mlp-29",
+      "r": -0.03652303218998732
+    },
+    {
+      "ordering_from": "euclidean-43",
+      "policy_from": "pair_mlp-43",
+      "r": 0.00257181471285564
+    },
+    {
+      "ordering_from": "directed_quasimetric-17",
+      "policy_from": "cosine-17",
+      "r": 0.49426565840232084
+    },
+    {
+      "ordering_from": "directed_quasimetric-17",
+      "policy_from": "cosine-29",
+      "r": 0.4609370107513736
+    },
+    {
+      "ordering_from": "directed_quasimetric-17",
+      "policy_from": "cosine-43",
+      "r": 0.5443776555458328
+    },
+    {
+      "ordering_from": "directed_quasimetric-17",
+      "policy_from": "euclidean-17",
+      "r": 0.494329568877609
+    },
+    {
+      "ordering_from": "directed_quasimetric-17",
+      "policy_from": "euclidean-29",
+      "r": 0.5228639540950609
+    },
+    {
+      "ordering_from": "directed_quasimetric-17",
+      "policy_from": "euclidean-43",
+      "r": 0.5074620510795695
+    },
+    {
+      "ordering_from": "directed_quasimetric-17",
+      "policy_from": "directed_quasimetric-17",
+      "r": 0.5318895427081042
+    },
+    {
+      "ordering_from": "directed_quasimetric-17",
+      "policy_from": "directed_quasimetric-29",
+      "r": 0.5544439899895119
+    },
+    {
+      "ordering_from": "directed_quasimetric-17",
+      "policy_from": "directed_quasimetric-43",
+      "r": 0.5363725606906551
+    },
+    {
+      "ordering_from": "directed_quasimetric-17",
+      "policy_from": "poincare-17",
+      "r": 0.5021591299430072
+    },
+    {
+      "ordering_from": "directed_quasimetric-17",
+      "policy_from": "poincare-29",
+      "r": 0.4392098770105456
+    },
+    {
+      "ordering_from": "directed_quasimetric-17",
+      "policy_from": "poincare-43",
+      "r": 0.5353613546906392
+    },
+    {
+      "ordering_from": "directed_quasimetric-17",
+      "policy_from": "pair_mlp-17",
+      "r": 0.4988272506087441
+    },
+    {
+      "ordering_from": "directed_quasimetric-17",
+      "policy_from": "pair_mlp-29",
+      "r": 0.5924809632502552
+    },
+    {
+      "ordering_from": "directed_quasimetric-17",
+      "policy_from": "pair_mlp-43",
+      "r": 0.5595984353734584
+    },
+    {
+      "ordering_from": "directed_quasimetric-29",
+      "policy_from": "cosine-17",
+      "r": 0.21855096533104543
+    },
+    {
+      "ordering_from": "directed_quasimetric-29",
+      "policy_from": "cosine-29",
+      "r": 0.23004476681615416
+    },
+    {
+      "ordering_from": "directed_quasimetric-29",
+      "policy_from": "cosine-43",
+      "r": 0.20965096179883044
+    },
+    {
+      "ordering_from": "directed_quasimetric-29",
+      "policy_from": "euclidean-17",
+      "r": 0.18411718530969104
+    },
+    {
+      "ordering_from": "directed_quasimetric-29",
+      "policy_from": "euclidean-29",
+      "r": 0.3128520851580462
+    },
+    {
+      "ordering_from": "directed_quasimetric-29",
+      "policy_from": "euclidean-43",
+      "r": 0.3435608685400584
+    },
+    {
+      "ordering_from": "directed_quasimetric-29",
+      "policy_from": "directed_quasimetric-17",
+      "r": 0.27081381066818405
+    },
+    {
+      "ordering_from": "directed_quasimetric-29",
+      "policy_from": "directed_quasimetric-29",
+      "r": 0.31163555146635313
+    },
+    {
+      "ordering_from": "directed_quasimetric-29",
+      "policy_from": "directed_quasimetric-43",
+      "r": 0.2879211132505427
+    },
+    {
+      "ordering_from": "directed_quasimetric-29",
+      "policy_from": "poincare-17",
+      "r": 0.20662247943995576
+    },
+    {
+      "ordering_from": "directed_quasimetric-29",
+      "policy_from": "poincare-29",
+      "r": 0.23891856845961645
+    },
+    {
+      "ordering_from": "directed_quasimetric-29",
+      "policy_from": "poincare-43",
+      "r": 0.33839717782168455
+    },
+    {
+      "ordering_from": "directed_quasimetric-29",
+      "policy_from": "pair_mlp-17",
+      "r": 0.18431699754259992
+    },
+    {
+      "ordering_from": "directed_quasimetric-29",
+      "policy_from": "pair_mlp-29",
+      "r": 0.3207764398072736
+    },
+    {
+      "ordering_from": "directed_quasimetric-29",
+      "policy_from": "pair_mlp-43",
+      "r": 0.2617750487947302
+    },
+    {
+      "ordering_from": "directed_quasimetric-43",
+      "policy_from": "cosine-17",
+      "r": 0.4429250036734657
+    },
+    {
+      "ordering_from": "directed_quasimetric-43",
+      "policy_from": "cosine-29",
+      "r": 0.45752410826994844
+    },
+    {
+      "ordering_from": "directed_quasimetric-43",
+      "policy_from": "cosine-43",
+      "r": 0.513782071671362
+    },
+    {
+      "ordering_from": "directed_quasimetric-43",
+      "policy_from": "euclidean-17",
+      "r": 0.47523597504104964
+    },
+    {
+      "ordering_from": "directed_quasimetric-43",
+      "policy_from": "euclidean-29",
+      "r": 0.5117172522574881
+    },
+    {
+      "ordering_from": "directed_quasimetric-43",
+      "policy_from": "euclidean-43",
+      "r": 0.5639143163325759
+    },
+    {
+      "ordering_from": "directed_quasimetric-43",
+      "policy_from": "directed_quasimetric-17",
+      "r": 0.48903948701617045
+    },
+    {
+      "ordering_from": "directed_quasimetric-43",
+      "policy_from": "directed_quasimetric-29",
+      "r": 0.539384748028518
+    },
+    {
+      "ordering_from": "directed_quasimetric-43",
+      "policy_from": "directed_quasimetric-43",
+      "r": 0.5578099897989504
+    },
+    {
+      "ordering_from": "directed_quasimetric-43",
+      "policy_from": "poincare-17",
+      "r": 0.46400695543903303
+    },
+    {
+      "ordering_from": "directed_quasimetric-43",
+      "policy_from": "poincare-29",
+      "r": 0.4524532121827992
+    },
+    {
+      "ordering_from": "directed_quasimetric-43",
+      "policy_from": "poincare-43",
+      "r": 0.5532193704269036
+    },
+    {
+      "ordering_from": "directed_quasimetric-43",
+      "policy_from": "pair_mlp-17",
+      "r": 0.4527275288621271
+    },
+    {
+      "ordering_from": "directed_quasimetric-43",
+      "policy_from": "pair_mlp-29",
+      "r": 0.5419185695685663
+    },
+    {
+      "ordering_from": "directed_quasimetric-43",
+      "policy_from": "pair_mlp-43",
+      "r": 0.5246115976057417
+    },
+    {
+      "ordering_from": "poincare-17",
+      "policy_from": "cosine-17",
+      "r": 0.49255918777012053
+    },
+    {
+      "ordering_from": "poincare-17",
+      "policy_from": "cosine-29",
+      "r": 0.44863397978419417
+    },
+    {
+      "ordering_from": "poincare-17",
+      "policy_from": "cosine-43",
+      "r": 0.5527481104339025
+    },
+    {
+      "ordering_from": "poincare-17",
+      "policy_from": "euclidean-17",
+      "r": 0.5114485055886323
+    },
+    {
+      "ordering_from": "poincare-17",
+      "policy_from": "euclidean-29",
+      "r": 0.5424500394097825
+    },
+    {
+      "ordering_from": "poincare-17",
+      "policy_from": "euclidean-43",
+      "r": 0.49391636679778533
+    },
+    {
+      "ordering_from": "poincare-17",
+      "policy_from": "directed_quasimetric-17",
+      "r": 0.5464530737208859
+    },
+    {
+      "ordering_from": "poincare-17",
+      "policy_from": "directed_quasimetric-29",
+      "r": 0.547703607377806
+    },
+    {
+      "ordering_from": "poincare-17",
+      "policy_from": "directed_quasimetric-43",
+      "r": 0.5380454735653548
+    },
+    {
+      "ordering_from": "poincare-17",
+      "policy_from": "poincare-17",
+      "r": 0.5297710229745242
+    },
+    {
+      "ordering_from": "poincare-17",
+      "policy_from": "poincare-29",
+      "r": 0.43645009236225224
+    },
+    {
+      "ordering_from": "poincare-17",
+      "policy_from": "poincare-43",
+      "r": 0.5679348225915194
+    },
+    {
+      "ordering_from": "poincare-17",
+      "policy_from": "pair_mlp-17",
+      "r": 0.5302406617638524
+    },
+    {
+      "ordering_from": "poincare-17",
+      "policy_from": "pair_mlp-29",
+      "r": 0.5913488527018819
+    },
+    {
+      "ordering_from": "poincare-17",
+      "policy_from": "pair_mlp-43",
+      "r": 0.5907995814937966
+    },
+    {
+      "ordering_from": "poincare-29",
+      "policy_from": "cosine-17",
+      "r": 0.28248217824045907
+    },
+    {
+      "ordering_from": "poincare-29",
+      "policy_from": "cosine-29",
+      "r": 0.3031292815378501
+    },
+    {
+      "ordering_from": "poincare-29",
+      "policy_from": "cosine-43",
+      "r": 0.28986735096840377
+    },
+    {
+      "ordering_from": "poincare-29",
+      "policy_from": "euclidean-17",
+      "r": 0.26064947273768946
+    },
+    {
+      "ordering_from": "poincare-29",
+      "policy_from": "euclidean-29",
+      "r": 0.4047619697533757
+    },
+    {
+      "ordering_from": "poincare-29",
+      "policy_from": "euclidean-43",
+      "r": 0.3654310922575611
+    },
+    {
+      "ordering_from": "poincare-29",
+      "policy_from": "directed_quasimetric-17",
+      "r": 0.3495196169771892
+    },
+    {
+      "ordering_from": "poincare-29",
+      "policy_from": "directed_quasimetric-29",
+      "r": 0.37805693444171456
+    },
+    {
+      "ordering_from": "poincare-29",
+      "policy_from": "directed_quasimetric-43",
+      "r": 0.32327607708132566
+    },
+    {
+      "ordering_from": "poincare-29",
+      "policy_from": "poincare-17",
+      "r": 0.29242559062673656
+    },
+    {
+      "ordering_from": "poincare-29",
+      "policy_from": "poincare-29",
+      "r": 0.3113910036315721
+    },
+    {
+      "ordering_from": "poincare-29",
+      "policy_from": "poincare-43",
+      "r": 0.365183918823474
+    },
+    {
+      "ordering_from": "poincare-29",
+      "policy_from": "pair_mlp-17",
+      "r": 0.2584180747658579
+    },
+    {
+      "ordering_from": "poincare-29",
+      "policy_from": "pair_mlp-29",
+      "r": 0.3553956727297668
+    },
+    {
+      "ordering_from": "poincare-29",
+      "policy_from": "pair_mlp-43",
+      "r": 0.31041150844091253
+    },
+    {
+      "ordering_from": "poincare-43",
+      "policy_from": "cosine-17",
+      "r": 0.4743022241319956
+    },
+    {
+      "ordering_from": "poincare-43",
+      "policy_from": "cosine-29",
+      "r": 0.41796632431399
+    },
+    {
+      "ordering_from": "poincare-43",
+      "policy_from": "cosine-43",
+      "r": 0.513129368691995
+    },
+    {
+      "ordering_from": "poincare-43",
+      "policy_from": "euclidean-17",
+      "r": 0.4839308381794467
+    },
+    {
+      "ordering_from": "poincare-43",
+      "policy_from": "euclidean-29",
+      "r": 0.4859394686338103
+    },
+    {
+      "ordering_from": "poincare-43",
+      "policy_from": "euclidean-43",
+      "r": 0.517654453903901
+    },
+    {
+      "ordering_from": "poincare-43",
+      "policy_from": "directed_quasimetric-17",
+      "r": 0.5097273959876323
+    },
+    {
+      "ordering_from": "poincare-43",
+      "policy_from": "directed_quasimetric-29",
+      "r": 0.517403166786904
+    },
+    {
+      "ordering_from": "poincare-43",
+      "policy_from": "directed_quasimetric-43",
+      "r": 0.5253816347411153
+    },
+    {
+      "ordering_from": "poincare-43",
+      "policy_from": "poincare-17",
+      "r": 0.49309430886035155
+    },
+    {
+      "ordering_from": "poincare-43",
+      "policy_from": "poincare-29",
+      "r": 0.41878146404021566
+    },
+    {
+      "ordering_from": "poincare-43",
+      "policy_from": "poincare-43",
+      "r": 0.5431570039903244
+    },
+    {
+      "ordering_from": "poincare-43",
+      "policy_from": "pair_mlp-17",
+      "r": 0.48902733052071073
+    },
+    {
+      "ordering_from": "poincare-43",
+      "policy_from": "pair_mlp-29",
+      "r": 0.5383735683060042
+    },
+    {
+      "ordering_from": "poincare-43",
+      "policy_from": "pair_mlp-43",
+      "r": 0.5376709538729634
+    },
+    {
+      "ordering_from": "pair_mlp-17",
+      "policy_from": "cosine-17",
+      "r": 0.3733986006628394
+    },
+    {
+      "ordering_from": "pair_mlp-17",
+      "policy_from": "cosine-29",
+      "r": 0.39296158019987537
+    },
+    {
+      "ordering_from": "pair_mlp-17",
+      "policy_from": "cosine-43",
+      "r": 0.3805157842917765
+    },
+    {
+      "ordering_from": "pair_mlp-17",
+      "policy_from": "euclidean-17",
+      "r": 0.35963717789175065
+    },
+    {
+      "ordering_from": "pair_mlp-17",
+      "policy_from": "euclidean-29",
+      "r": 0.4675468732553695
+    },
+    {
+      "ordering_from": "pair_mlp-17",
+      "policy_from": "euclidean-43",
+      "r": 0.45862987347702333
+    },
+    {
+      "ordering_from": "pair_mlp-17",
+      "policy_from": "directed_quasimetric-17",
+      "r": 0.4179553428911507
+    },
+    {
+      "ordering_from": "pair_mlp-17",
+      "policy_from": "directed_quasimetric-29",
+      "r": 0.46494099880735285
+    },
+    {
+      "ordering_from": "pair_mlp-17",
+      "policy_from": "directed_quasimetric-43",
+      "r": 0.43516165195454537
+    },
+    {
+      "ordering_from": "pair_mlp-17",
+      "policy_from": "poincare-17",
+      "r": 0.3539244383582415
+    },
+    {
+      "ordering_from": "pair_mlp-17",
+      "policy_from": "poincare-29",
+      "r": 0.36642003922638805
+    },
+    {
+      "ordering_from": "pair_mlp-17",
+      "policy_from": "poincare-43",
+      "r": 0.452068975794155
+    },
+    {
+      "ordering_from": "pair_mlp-17",
+      "policy_from": "pair_mlp-17",
+      "r": 0.3554433495027813
+    },
+    {
+      "ordering_from": "pair_mlp-17",
+      "policy_from": "pair_mlp-29",
+      "r": 0.46239640218683514
+    },
+    {
+      "ordering_from": "pair_mlp-17",
+      "policy_from": "pair_mlp-43",
+      "r": 0.394166832419601
+    },
+    {
+      "ordering_from": "pair_mlp-29",
+      "policy_from": "cosine-17",
+      "r": 0.5064764467766626
+    },
+    {
+      "ordering_from": "pair_mlp-29",
+      "policy_from": "cosine-29",
+      "r": 0.48205489603843776
+    },
+    {
+      "ordering_from": "pair_mlp-29",
+      "policy_from": "cosine-43",
+      "r": 0.5944751125183917
+    },
+    {
+      "ordering_from": "pair_mlp-29",
+      "policy_from": "euclidean-17",
+      "r": 0.5324208002400501
+    },
+    {
+      "ordering_from": "pair_mlp-29",
+      "policy_from": "euclidean-29",
+      "r": 0.5555634362371085
+    },
+    {
+      "ordering_from": "pair_mlp-29",
+      "policy_from": "euclidean-43",
+      "r": 0.5258784406902643
+    },
+    {
+      "ordering_from": "pair_mlp-29",
+      "policy_from": "directed_quasimetric-17",
+      "r": 0.539676426633584
+    },
+    {
+      "ordering_from": "pair_mlp-29",
+      "policy_from": "directed_quasimetric-29",
+      "r": 0.5871624546701073
+    },
+    {
+      "ordering_from": "pair_mlp-29",
+      "policy_from": "directed_quasimetric-43",
+      "r": 0.5634407081393897
+    },
+    {
+      "ordering_from": "pair_mlp-29",
+      "policy_from": "poincare-17",
+      "r": 0.5490748588617257
+    },
+    {
+      "ordering_from": "pair_mlp-29",
+      "policy_from": "poincare-29",
+      "r": 0.4591026174326401
+    },
+    {
+      "ordering_from": "pair_mlp-29",
+      "policy_from": "poincare-43",
+      "r": 0.5721215701585723
+    },
+    {
+      "ordering_from": "pair_mlp-29",
+      "policy_from": "pair_mlp-17",
+      "r": 0.5467546670817
+    },
+    {
+      "ordering_from": "pair_mlp-29",
+      "policy_from": "pair_mlp-29",
+      "r": 0.6142283975862712
+    },
+    {
+      "ordering_from": "pair_mlp-29",
+      "policy_from": "pair_mlp-43",
+      "r": 0.5977107714442408
+    },
+    {
+      "ordering_from": "pair_mlp-43",
+      "policy_from": "cosine-17",
+      "r": 0.4485125401852276
+    },
+    {
+      "ordering_from": "pair_mlp-43",
+      "policy_from": "cosine-29",
+      "r": 0.4540018065559457
+    },
+    {
+      "ordering_from": "pair_mlp-43",
+      "policy_from": "cosine-43",
+      "r": 0.4692568642235492
+    },
+    {
+      "ordering_from": "pair_mlp-43",
+      "policy_from": "euclidean-17",
+      "r": 0.43411150038991847
+    },
+    {
+      "ordering_from": "pair_mlp-43",
+      "policy_from": "euclidean-29",
+      "r": 0.4989633681568178
+    },
+    {
+      "ordering_from": "pair_mlp-43",
+      "policy_from": "euclidean-43",
+      "r": 0.5415315997275798
+    },
+    {
+      "ordering_from": "pair_mlp-43",
+      "policy_from": "directed_quasimetric-17",
+      "r": 0.4553676612860221
+    },
+    {
+      "ordering_from": "pair_mlp-43",
+      "policy_from": "directed_quasimetric-29",
+      "r": 0.5042988056811699
+    },
+    {
+      "ordering_from": "pair_mlp-43",
+      "policy_from": "directed_quasimetric-43",
+      "r": 0.5270286832380748
+    },
+    {
+      "ordering_from": "pair_mlp-43",
+      "policy_from": "poincare-17",
+      "r": 0.44569011527068303
+    },
+    {
+      "ordering_from": "pair_mlp-43",
+      "policy_from": "poincare-29",
+      "r": 0.426014963271222
+    },
+    {
+      "ordering_from": "pair_mlp-43",
+      "policy_from": "poincare-43",
+      "r": 0.543870120966319
+    },
+    {
+      "ordering_from": "pair_mlp-43",
+      "policy_from": "pair_mlp-17",
+      "r": 0.4528880215088811
+    },
+    {
+      "ordering_from": "pair_mlp-43",
+      "policy_from": "pair_mlp-29",
+      "r": 0.5217456190196462
+    },
+    {
+      "ordering_from": "pair_mlp-43",
+      "policy_from": "pair_mlp-43",
+      "r": 0.5198724441933837
+    }
+  ]
+}

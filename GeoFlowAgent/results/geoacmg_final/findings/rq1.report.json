@@ -1,0 +1,24 @@
+{
+  "counts": {
+    "examples_read": 448704,
+    "with_known_value_and_optimal_action": 128164,
+    "tasks": 2337,
+    "genes": 108
+  },
+  "used_rows": 128164,
+  "views": {
+    "medcpt": {
+      "rows": 128164,
+      "hubness": {
+        "k": 10,
+        "hub_occurrence_gini": 0.32188782222222223,
+        "top1_hub_share": 0.002266666666666667,
+        "mean_cosine_similarity": 0.9764022564274535,
+        "effective_rank": 18.06698885884336,
+        "dimension": 768,
+        "note": "effective rank far below the dimension, or a large hub share, means the space is not usable as a global retrieval index even if a probe reads it"
+      }
+    }
+  },
+  "rows_with_embeddings": 128164
+}

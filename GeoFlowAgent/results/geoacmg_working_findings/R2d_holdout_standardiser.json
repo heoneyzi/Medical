@@ -1,0 +1,55 @@
+{
+  "title": "cos_std 의 표준화 통계를 홀드아웃에서 추정해도 격차 감소가 유지되는가",
+  "split": "dev",
+  "test_reported": false,
+  "unit": "gene",
+  "seeds": [
+    17,
+    29,
+    43,
+    59,
+    71
+  ],
+  "pairs": 141517,
+  "fits": {
+    "dev_fit": "평가에 쓰는 dev z 에서 추정 (in-sample, 기존 방식)",
+    "train_fit": "train z 에서 추정 (깨끗한 홀드아웃, test 미개봉)",
+    "logo_fit": "유전자 leave-one-out — 각 유전자 쌍은 그 유전자를 뺀 dev z 통계로"
+  },
+  "results": {
+    "dev_fit": {
+      "cosine": 0.7401287477829519,
+      "euclidean": 0.7146505366846386,
+      "difference": 0.025478211098313275,
+      "ci": [
+        0.007091610522365155,
+        0.03401719264033885
+      ],
+      "gene_clusters": 47,
+      "excludes_zero": true
+    },
+    "train_fit": {
+      "cosine": 0.7515238451917438,
+      "euclidean": 0.7345435530713623,
+      "difference": 0.016980292120381296,
+      "ci": [
+        0.01176541415522264,
+        0.022242708857780208
+      ],
+      "gene_clusters": 47,
+      "excludes_zero": true
+    },
+    "logo_fit": {
+      "cosine": 0.7404523838125455,
+      "euclidean": 0.7155239299872101,
+      "difference": 0.02492845382533547,
+      "ci": [
+        0.000981167246364429,
+        0.03476960499650963
+      ],
+      "gene_clusters": 47,
+      "excludes_zero": true
+    }
+  },
+  "reference_own_energy": "자기 에너지로 읽으면 +0.1432 [+0.1079, +0.1788] (5시드, 유전자)"
+}

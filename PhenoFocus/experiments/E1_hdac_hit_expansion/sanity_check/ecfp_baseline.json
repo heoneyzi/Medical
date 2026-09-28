@@ -1,0 +1,62 @@
+{
+  "note": "Portfolio sanity check added during curation; not part of the original team run.",
+  "library_size": 31,
+  "same_moa_in_library": 2,
+  "fingerprint": "Morgan/ECFP4, radius 2, 2048 bits",
+  "tanimoto_recheck_top5": [
+    {
+      "rank": 1,
+      "moa": "hdac",
+      "reported": 0.3404,
+      "recomputed": 0.3404
+    },
+    {
+      "rank": 2,
+      "moa": "mapk",
+      "reported": 0.0845,
+      "recomputed": 0.0845
+    },
+    {
+      "rank": 3,
+      "moa": "mapk",
+      "reported": 0.1429,
+      "recomputed": 0.1429
+    },
+    {
+      "rank": 4,
+      "moa": "hdac",
+      "reported": 0.1039,
+      "recomputed": 0.1039
+    },
+    {
+      "rank": 5,
+      "moa": "mapk",
+      "reported": 0.0933,
+      "recomputed": 0.0933
+    }
+  ],
+  "phenocompass_structure_ranking_from_reported_ranks": {
+    "auroc": 0.9655172413793103,
+    "top_k": 5,
+    "same_moa_in_top_k": 2,
+    "expected_by_chance": 0.3225806451612903,
+    "fold_enrichment": 6.2,
+    "hypergeom_p": 0.021505376344086023,
+    "ranks_of_same_moa": [
+      1,
+      4
+    ]
+  },
+  "ecfp4_nearest_neighbour_baseline": {
+    "auroc": 0.7068965517241379,
+    "top_k": 5,
+    "same_moa_in_top_k": 1,
+    "expected_by_chance": 0.3225806451612903,
+    "fold_enrichment": 3.1,
+    "hypergeom_p": 0.3010752688172043,
+    "ranks_of_same_moa": [
+      1,
+      19
+    ]
+  }
+}

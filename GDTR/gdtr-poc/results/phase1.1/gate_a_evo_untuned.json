@@ -1,0 +1,51 @@
+{
+  "phase": "phase1.1",
+  "n_seqs": 100,
+  "T": 6000,
+  "n_layers": 32,
+  "loaded_variant": "evo2_7b_base (8K context, no FP8)",
+  "M1": 0.27788666769862175,
+  "M1_ci95": [
+    0.27788666769862175,
+    0.2568838348127902,
+    0.3021555434949696
+  ],
+  "M2_jsd_overall": 0.0,
+  "M2_jsd_ci95": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "M2_cos_overall": 0.0,
+  "M2_cos_ci95": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "per_block_M2_jsd": {
+    "attn": 0.308313,
+    "hcs": 0.3278588888888889,
+    "hcm": 0.1776875925925926,
+    "hcl": 0.285435
+  },
+  "per_block_M2_cos": {
+    "attn": 0.20845566666666662,
+    "hcs": 0.455673888888889,
+    "hcm": 0.1298988888888889,
+    "hcl": 0.24267999999999998
+  },
+  "M2_ur_global": 0.0,
+  "verdict_untuned": {
+    "attn_M2_jsd_pass": false,
+    "hyena_M2_jsd_pass": false,
+    "ur_M2_global_pass": false,
+    "overall_pass": false,
+    "tuned_recovery_required_for": [
+      "hcs",
+      "hcm",
+      "hcl",
+      "attn"
+    ]
+  },
+  "elapsed_s": 156.13
+}

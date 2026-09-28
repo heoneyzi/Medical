@@ -1,0 +1,5 @@
+{
+  "figure_id": "F9",
+  "title": "UR-gDTR hyperparameter sweep",
+  "caption": "Hyperparameter sensitivity for UR-gDTR over gamma_cos in [0.05, 0.1, 0.2, 0.3, 0.5, 0.7] and rho in [0.5, 0.7, 0.85]. (a) Cohen's d for exon vs intron settling depth (Gate B effect size). (b) Mean |Delta_c_interp| across the 5 TP53 hotspots. Both reuse the Stage 2 and Stage 3 cosine forwards (no additional GPU compute)."
+}

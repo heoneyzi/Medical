@@ -1,0 +1,2 @@
+model,n_layers,gamma_q70_curvature,donor_n,intron_n,donor_mean,intron_mean,cohen_d_donor_minus_intron,evo2_reference_d_M3_geo_a0.5_b1.0,sign_agreement_with_evo2,ratio_magnitude_vs_evo2
+HyenaDNA-medium-160k,10,1.1941598773002624,1561,283806,2.716848174247277,2.944655856465332,-0.13815804520994618,-0.81,True,0.17056548791351378

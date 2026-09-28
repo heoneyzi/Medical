@@ -1,0 +1,211 @@
+# Real frozen encoders over the synthetic hard-v2 search graph. The benchmark is
+# still synthetic; this isolates representation quality, not biomedical validity.
+seed: 17
+device: cuda:0
+project_root: ..
+
+paths:
+  raw_dir: $GEOFLOW_RUNS/search_hard_v2/raw
+  processed_dir: $GEOFLOW_RUNS/search_hard_v2/development/processed
+  cache_dir: $GEOFLOW_RUNS/search_hard_v2/development/cache_frozen_qwen15
+  embedding_report_dir: $GEOFLOW_RUNS/search_hard_v2/development/reports/embeddings_frozen_qwen15
+  value_output_dir: $GEOFLOW_RUNS/search_hard_v2/development/checkpoints/value_frozen_qwen15_small
+  dagger_output_dir: $GEOFLOW_RUNS/search_hard_v2/development/checkpoints/dagger_frozen_qwen15_small
+  state_flow_output_dir: $GEOFLOW_RUNS/search_hard_v2/development/checkpoints/state_flow_frozen_qwen15_small
+  geometry_comparison_dir: $GEOFLOW_RUNS/search_hard_v2/development/checkpoints/geometry_frozen_qwen15_small
+  search_agent_report_dir: $GEOFLOW_RUNS/search_hard_v2/development/reports/search_agent_frozen_qwen15_small
+  run_summary: $GEOFLOW_RUNS/search_hard_v2/development/run_summary_frozen_qwen15_small.json
+  embedding_progress_backup: $GEOFLOW_RESULTS/search_hard_v2/development/embedding_frozen_qwen15_progress.json
+
+synthetic_fixture:
+  enabled: false
+
+embedding:
+  batch_size: 8
+  storage_dtype: float16
+  views:
+    qwen_general:
+      kind: prototype
+      query_encoder: &qwen
+        backend: huggingface
+        model_name: Qwen/Qwen2.5-1.5B-Instruct
+        revision: 989aa7980e4cf806f80c7fef2b1adb7bc71aa306
+        pooling: mean
+        normalize: true
+        max_length: 512
+        device: auto
+        dtype: bfloat16
+        trust_remote_code: false
+        local_files_only: true
+      document_encoder: *qwen
+      example_fields: [query, goal, state, history]
+      tool_fields: [description, contract]
+      encode_background: true
+    medcpt:
+      kind: prototype
+      query_encoder:
+        backend: huggingface
+        model_name: ncbi/MedCPT-Query-Encoder
+        revision: d83a36cc6b8e3a5c5e9d9d6ba156808c1643dcbc
+        pooling: cls
+        normalize: true
+        max_length: 512
+        device: auto
+        dtype: float32
+        trust_remote_code: false
+        local_files_only: true
+      document_encoder:
+        backend: huggingface
+        model_name: ncbi/MedCPT-Article-Encoder
+        revision: d05a736da4bb84ee4057b7f7999485be6ed85465
+        pooling: cls
+        normalize: true
+        max_length: 512
+        device: auto
+        dtype: float32
+        trust_remote_code: false
+        local_files_only: true
+      example_fields: [query, goal, state, history]
+      tool_fields: [description, contract]
+      encode_background: true
+    sapbert_entity_aux:
+      kind: state_only
+      snapshot_field: entities
+      encode_pairs: false
+      query_encoder:
+        backend: huggingface
+        model_name: cambridgeltl/SapBERT-from-PubMedBERT-fulltext
+        revision: 090663c3ae57bf35ffe4d0d468a2a88d03051a4d
+        pooling: cls
+        normalize: true
+        max_length: 128
+        device: auto
+        dtype: float32
+        trust_remote_code: false
+        local_files_only: true
+      example_fields: [entities]
+      tool_fields: []
+      encode_background: false
+    dnabert2_sequence_aux:
+      kind: state_only
+      snapshot_field: sequence
+      encode_pairs: false
+      query_encoder:
+        backend: huggingface
+        model_name: zhihan1996/DNABERT-2-117M
+        revision: 7bce263b15377fc15361f52cfab88f8b586abda0
+        pooling: mean
+        normalize: true
+        max_length: 256
+        device: auto
+        dtype: float32
+        trust_remote_code: true
+        local_files_only: true
+        config_overrides:
+          attention_probs_dropout_prob: 1.0e-12
+      example_fields: [sequence]
+      tool_fields: []
+      encode_background: false
+
+value_training:
+  structured_dim: 64
+  shared_dim: 64
+  hidden_dim: 128
+  energy: euclidean
+  energy_rank: 32
+  dropout: 0.10
+  learning_rate: 0.0007
+  weight_decay: 0.0001
+  # Four real frozen views are much wider than the 384-d hash control. A batch
+  # of 512 materializes every successor view for 43 actions and exceeds 24 GB.
+  batch_size: 256
+  epochs: 70
+  patience: 14
+  max_states_per_task: 64
+  supervision: boltzmann
+  action_temperature: 1.0
+  regret_temperature: 0.25
+  ranking_margin: 0.05
+  gradient_clip: 1.0
+  view_dropout: 0.15
+  embedding_noise_std: 0.005
+  hard_replay_warmup: 5
+  hard_replay_fraction: 0.25
+  threshold_grid: [0.1, 0.3, 0.5, 0.7, 0.9]
+  bootstrap_reps: 1000
+  loss_weights:
+    action: 1.0
+    q: 1.0
+    value: 0.5
+    regret: 0.5
+    bellman: 0.5
+    transition: 0.25
+    action_reachability: 1.0
+    state_reachability: 0.5
+    completion: 1.0
+
+search_dagger:
+  enabled: true
+  rounds: 3
+  replay_fraction: 0.50
+  hard_example_multiplier: 3
+  max_steps: 18
+  stop_contract_guard: true
+  hard_reachability_guard: true
+
+state_flow_training:
+  structured_dim: 64
+  dim: 64
+  hidden_dim: 128
+  layers: 2
+  heads: 8
+  dropout: 0.10
+  projection_seed: 17
+  tool_mix: 0.35
+  max_plan_length: 18
+  path_beta: 1.0
+  learning_rate: 0.0007
+  weight_decay: 0.0001
+  batch_size: 128
+  epochs: 70
+  patience: 14
+  steps_per_epoch: 36
+  pad_weight: 0.05
+  transition_temperature: 0.07
+  gradient_clip: 1.0
+  nfe: 16
+  evaluation_samples_per_state: 4
+  stop_threshold_grid: [0.1, 0.3, 0.5, 0.7, 0.9]
+  resume: true
+  progress_backup_path: $GEOFLOW_RESULTS/search_hard_v2/development/state_flow_frozen_qwen15_progress.json
+  loss_weights:
+    flow_matching: 1.0
+    endpoint: 0.5
+    stop: 0.75
+    transition: 0.75
+
+geometry_comparison:
+  energies:
+    - cosine
+    - euclidean
+    - diagonal_mahalanobis
+    - lowrank_mahalanobis
+    - asymmetric_bilinear
+    - order_violation
+    - directed_quasimetric
+    - pair_mlp
+    - poincare
+  seeds: [17, 29, 43]
+
+search_agent_evaluation:
+  max_steps: 18
+  runtime_embedding_policy: cache_or_encode
+  retry_limit_per_tool: 1
+  bootstrap_reps: 1000
+  perturbations:
+    - name: annotation_primary_empty
+      task_id: "*"
+      tool_id: annotate_primary
+      kind: empty_result
+      once: true
+      message: The primary annotation source returned an empty result; use the alternate source.

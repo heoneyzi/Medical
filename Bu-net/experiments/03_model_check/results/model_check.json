@@ -1,0 +1,14 @@
+{
+  "note": "Synthetic check only: random/meta tensors, no MRI data, no training, no weights.",
+  "torch": "2.14.0+cpu",
+  "python": "3.11.15",
+  "results": [
+    {"model": "U-Net baseline", "source": "code/bu-net_pytorch/model/Unet.py", "class": "Unet", "input": [1, 1, 256, 256], "params": 31042564, "shape_check": "pass", "output": [1, 4, 256, 256], "cpu_forward": {"output": [1, 4, 256, 256], "finite": true, "sums_to_one_over_classes": true}},
+    {"model": "U-Net + WC", "source": "code/bu-net_pytorch/model/Unet_WC.py", "class": "BU_net", "input": [1, 1, 256, 256], "params": 92394508, "shape_check": "fail", "error": "RuntimeError: running_mean should contain 1024 elements not 4"},
+    {"model": "Simplified BU-Net", "source": "code/bu-net_pytorch/model/SimpleBUnet.py", "class": "SimpleBUnet", "input": [1, 1, 256, 256], "params": 97381892, "shape_check": "pass", "output": [1, 4, 256, 256], "cpu_forward": {"output": [1, 4, 256, 256], "finite": true, "sums_to_one_over_classes": true}},
+    {"model": "Full BU-Net draft (repo)", "source": "code/bu-net_pytorch/model/BUnet.py", "class": "BUNet", "input": [1, 3, 256, 256], "params": 171925636, "shape_check": "fail", "error": "RuntimeError: running_mean should contain 1024 elements not 512"},
+    {"model": "Full BU-Net draft (Jiheon)", "source": "code/reinforcing_material/notebooks/BU_net/Jiheon_BU_net.ipynb", "class": "BU_net", "input": [1, 3, 256, 256], "params": 103783428, "shape_check": "fail", "error": "RuntimeError: Invalid channel dimensions"},
+    {"model": "Full BU-Net draft (Jaeryeong)", "source": "code/reinforcing_material/notebooks/BU_net/Jaeryeong_Bu_net.ipynb", "class": "BU_net", "input": [1, 3, 256, 256], "params": 176644740, "shape_check": "fail", "error": "RuntimeError: Sizes of tensors must match except in dimension 1. Expected 16 in dimension 2 but got 2 for tensor number 1 in the list"},
+    {"model": "Full BU-Net draft (model_modified)", "source": "code/reinforcing_material/notebooks/BU_net/model_modified.ipynb", "class": "BU_net", "input": [1, 3, 256, 256], "params": 1954750468, "shape_check": "fail", "error": "RuntimeError: Sizes of tensors must match except in dimension 1. Expected 34 in dimension 2 but got 33 for tensor number 1 in the list"}
+  ]
+}

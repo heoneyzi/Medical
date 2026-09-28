@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/geoflowagent/task.schema.json",
+  "title": "GeoFlowAgent task",
+  "description": "A base task. Splitting happens at this level before prefix expansion.",
+  "type": "object",
+  "required": [
+    "task_id",
+    "query",
+    "initial_state",
+    "goal",
+    "available_tools"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "query": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "initial_state": {
+      "type": "object"
+    },
+    "goal": {
+      "description": "Public intent predicates safe to expose to the model; evaluation-only predicates belong in verifiers.private.jsonl.",
+      "$ref": "#/$defs/goal"
+    },
+    "available_tools": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/callableToolId"
+      }
+    },
+    "background_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "split": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "train",
+        "dev",
+        "test",
+        null
+      ]
+    },
+    "split_group": {
+      "description": "Cases sharing this ID are forced into one research split.",
+      "type": "string",
+      "minLength": 1
+    },
+    "provenance": {
+      "type": "object"
+    },
+    "expected_answer": false,
+    "private_verifier": false,
+    "verification_goal": false,
+    "gold_tool_ids": false,
+    "gold_next_tool": false,
+    "gold_suffix_tool_ids": false,
+    "stop_target": false
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "callableToolId": {
+      "type": "string",
+      "minLength": 1,
+      "not": {
+        "enum": [
+          "<STOP>",
+          "<PAD>"
+        ]
+      }
+    },
+    "condition": {
+      "type": "object",
+      "required": [
+        "field",
+        "op"
+      ],
+      "properties": {
+        "field": {
+          "type": "string",
+          "minLength": 1
+        },
+        "op": {
+          "enum": [
+            "eq",
+            "neq",
+            "exists",
+            "missing",
+            "nonempty",
+            "in",
+            "not_in",
+            "contains",
+            "gte",
+            "lte"
+          ]
+        },
+        "value": true
+      },
+      "additionalProperties": true
+    },
+    "goal": {
+      "type": "object",
+      "minProperties": 1,
+      "properties": {
+        "conditions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/condition"
+          }
+        },
+        "private_verifier": false,
+        "verification_goal": false,
+        "expected_answer": false
+      },
+      "additionalProperties": true
+    }
+  }
+}

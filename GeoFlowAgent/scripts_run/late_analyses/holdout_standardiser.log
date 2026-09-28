@@ -1,0 +1,20 @@
+[  666.0s] store 적재 완료
+[  667.4s] dev 31,050 · train(표준화 추정용) 40,000
+[  667.6s] 쌍 141,517 · 유전자 47
+[  671.7s]   cosine     s17: dev_fit 0.7523 | train_fit 0.7634 | logo 0.7524
+[  673.4s]   cosine     s29: dev_fit 0.7498 | train_fit 0.7549 | logo 0.7504
+[  675.0s]   cosine     s43: dev_fit 0.7590 | train_fit 0.7616 | logo 0.7591
+[  676.6s]   cosine     s59: dev_fit 0.7759 | train_fit 0.7992 | logo 0.7767
+[  678.3s]   cosine     s71: dev_fit 0.6636 | train_fit 0.6786 | logo 0.6637
+[  679.9s]   euclidean  s17: dev_fit 0.7555 | train_fit 0.8022 | logo 0.7529
+[  681.5s]   euclidean  s29: dev_fit 0.7274 | train_fit 0.7364 | logo 0.7294
+[  683.2s]   euclidean  s43: dev_fit 0.6905 | train_fit 0.6981 | logo 0.6913
+[  684.8s]   euclidean  s59: dev_fit 0.7338 | train_fit 0.7511 | logo 0.7360
+[  686.5s]   euclidean  s71: dev_fit 0.6661 | train_fit 0.6849 | logo 0.6680
+
+[  686.5s] === cosine − euclidean, cos_std 의 통계를 어디서 추정했는가 ===
+[  687.1s]   dev_fit    cos 0.7401 / euc 0.7147 -> +0.0255 [+0.0071, +0.0340] 0배제
+[  687.6s]   train_fit  cos 0.7515 / euc 0.7345 -> +0.0170 [+0.0118, +0.0222] 0배제
+[  688.2s]   logo_fit   cos 0.7405 / euc 0.7155 -> +0.0249 [+0.0010, +0.0348] 0배제
+[  688.2s] 기록: R2d_holdout_standardiser.json
+[  688.2s] 완료 11.5 분

@@ -1,0 +1,2131 @@
+{
+  "split": "dev",
+  "test_reported": false,
+  "unit": "gene",
+  "pairs": 141517,
+  "tasks": 584,
+  "genes": 47,
+  "dev_states_total": 112128,
+  "dev_states_used": 31050,
+  "tie_convention_note": "A=참조 구현((s[a]<s[b])==(t[a]<t[b]), 동점이 참 순서 방향으로 접힘), B=동점 보정(동점 0.5). 동점률이 readout 마다 다르므로 차이값에서 상쇄되지 않는다.",
+  "standardiser_whitener_stats": {
+    "cosine-17": {
+      "standardiser_mean_norm": 0.613311999878183,
+      "standardiser_scale_min": 0.13389228795093122,
+      "standardiser_scale_max": 0.4386113937198261,
+      "whitener_frobenius": 154.2276939967819,
+      "fitted_on": "dev z (state+goal concatenated)"
+    },
+    "cosine-29": {
+      "standardiser_mean_norm": 0.6688790885938217,
+      "standardiser_scale_min": 0.12520390291774317,
+      "standardiser_scale_max": 0.33488382853341886,
+      "whitener_frobenius": 171.92286178999572,
+      "fitted_on": "dev z (state+goal concatenated)"
+    },
+    "cosine-43": {
+      "standardiser_mean_norm": 0.6918948808818691,
+      "standardiser_scale_min": 0.11242501291865738,
+      "standardiser_scale_max": 0.3495979006009101,
+      "whitener_frobenius": 171.12945884458952,
+      "fitted_on": "dev z (state+goal concatenated)"
+    },
+    "euclidean-17": {
+      "standardiser_mean_norm": 0.4282530570126362,
+      "standardiser_scale_min": 0.046566642415440285,
+      "standardiser_scale_max": 0.14117385617160233,
+      "whitener_frobenius": 307.1477311277451,
+      "fitted_on": "dev z (state+goal concatenated)"
+    },
+    "euclidean-29": {
+      "standardiser_mean_norm": 0.4781459050405516,
+      "standardiser_scale_min": 0.05700504262858167,
+      "standardiser_scale_max": 0.1487502128601848,
+      "whitener_frobenius": 364.16167137564423,
+      "fitted_on": "dev z (state+goal concatenated)"
+    },
+    "euclidean-43": {
+      "standardiser_mean_norm": 0.5043076637807663,
+      "standardiser_scale_min": 0.06275079906871668,
+      "standardiser_scale_max": 0.1588870500482318,
+      "whitener_frobenius": 326.58214885055855,
+      "fitted_on": "dev z (state+goal concatenated)"
+    },
+    "directed_quasimetric-17": {
+      "standardiser_mean_norm": 0.5234105229754171,
+      "standardiser_scale_min": 0.1533914823455903,
+      "standardiser_scale_max": 0.32182817393252783,
+      "whitener_frobenius": 164.14048925030409,
+      "fitted_on": "dev z (state+goal concatenated)"
+    },
+    "directed_quasimetric-29": {
+      "standardiser_mean_norm": 0.5578886265396957,
+      "standardiser_scale_min": 0.10218112424947945,
+      "standardiser_scale_max": 0.25505212708149755,
+      "whitener_frobenius": 228.06922673831704,
+      "fitted_on": "dev z (state+goal concatenated)"
+    },
+    "directed_quasimetric-43": {
+      "standardiser_mean_norm": 0.44227041003366413,
+      "standardiser_scale_min": 0.10794752100094422,
+      "standardiser_scale_max": 0.29034961004293586,
+      "whitener_frobenius": 220.73117195523218,
+      "fitted_on": "dev z (state+goal concatenated)"
+    },
+    "poincare-17": {
+      "standardiser_mean_norm": 0.4712106031535104,
+      "standardiser_scale_min": 0.07975650374422931,
+      "standardiser_scale_max": 0.22034349752593096,
+      "whitener_frobenius": 286.33961337710855,
+      "fitted_on": "dev z (state+goal concatenated)"
+    },
+    "poincare-29": {
+      "standardiser_mean_norm": 0.46160384178818714,
+      "standardiser_scale_min": 0.05641841664415381,
+      "standardiser_scale_max": 0.19203710297875606,
+      "whitener_frobenius": 380.7408105440069,
+      "fitted_on": "dev z (state+goal concatenated)"
+    },
+    "poincare-43": {
+      "standardiser_mean_norm": 0.5088070932232068,
+      "standardiser_scale_min": 0.09139786641201889,
+      "standardiser_scale_max": 0.2373308818012639,
+      "whitener_frobenius": 314.4735115474652,
+      "fitted_on": "dev z (state+goal concatenated)"
+    },
+    "pair_mlp-17": {
+      "standardiser_mean_norm": 0.6568445481730463,
+      "standardiser_scale_min": 0.11988504436576533,
+      "standardiser_scale_max": 0.3665897955003758,
+      "whitener_frobenius": 152.34609446152825,
+      "fitted_on": "dev z (state+goal concatenated)"
+    },
+    "pair_mlp-29": {
+      "standardiser_mean_norm": 0.6918831519100218,
+      "standardiser_scale_min": 0.1041245524618961,
+      "standardiser_scale_max": 0.3274936130950654,
+      "whitener_frobenius": 193.33154147683516,
+      "fitted_on": "dev z (state+goal concatenated)"
+    },
+    "pair_mlp-43": {
+      "standardiser_mean_norm": 0.5688475176405996,
+      "standardiser_scale_min": 0.13233945777517458,
+      "standardiser_scale_max": 0.35820277261869776,
+      "whitener_frobenius": 154.042290675708,
+      "fitted_on": "dev z (state+goal concatenated)"
+    }
+  },
+  "per_pair_margins": {
+    "path": "$GEOACMG_DURABLE/pairs/R2_readout_margins.npz",
+    "error": null,
+    "size_mb": 49.0
+  },
+  "readouts": [
+    {
+      "readout": "raw_cos",
+      "accuracy_reference_convention": 0.5055364373184847,
+      "accuracy_tie_corrected": 0.5055364373184847,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0
+    },
+    {
+      "readout": "raw_l2",
+      "accuracy_reference_convention": 0.5077764508857593,
+      "accuracy_tie_corrected": 0.5077764508857593,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0
+    },
+    {
+      "readout": "raw_dot",
+      "accuracy_reference_convention": 0.49663997964908807,
+      "accuracy_tie_corrected": 0.49663997964908807,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0
+    },
+    {
+      "readout": "own_energy_cosine-17",
+      "accuracy_reference_convention": 0.6954994806277691,
+      "accuracy_tie_corrected": 0.6954994806277691,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "cosine",
+      "seed": 17,
+      "readout_kind": "own_energy"
+    },
+    {
+      "readout": "cos_cosine-17",
+      "accuracy_reference_convention": 0.6954994806277691,
+      "accuracy_tie_corrected": 0.6954994806277691,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "cosine",
+      "seed": 17,
+      "readout_kind": "cos"
+    },
+    {
+      "readout": "l2_cosine-17",
+      "accuracy_reference_convention": 0.6186182578771455,
+      "accuracy_tie_corrected": 0.6186182578771455,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "cosine",
+      "seed": 17,
+      "readout_kind": "l2"
+    },
+    {
+      "readout": "neg_dot_cosine-17",
+      "accuracy_reference_convention": 0.6940932891454736,
+      "accuracy_tie_corrected": 0.6940932891454736,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "cosine",
+      "seed": 17,
+      "readout_kind": "neg_dot"
+    },
+    {
+      "readout": "cos_std_cosine-17",
+      "accuracy_reference_convention": 0.7522629790060558,
+      "accuracy_tie_corrected": 0.7522629790060558,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "cosine",
+      "seed": 17,
+      "readout_kind": "cos_std"
+    },
+    {
+      "readout": "cos_whiten_cosine-17",
+      "accuracy_reference_convention": 0.42741154772924805,
+      "accuracy_tie_corrected": 0.42741154772924805,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "cosine",
+      "seed": 17,
+      "readout_kind": "cos_whiten"
+    },
+    {
+      "readout": "own_energy_cosine-29",
+      "accuracy_reference_convention": 0.7411477066359519,
+      "accuracy_tie_corrected": 0.7411477066359519,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "cosine",
+      "seed": 29,
+      "readout_kind": "own_energy"
+    },
+    {
+      "readout": "cos_cosine-29",
+      "accuracy_reference_convention": 0.7411477066359519,
+      "accuracy_tie_corrected": 0.7411477066359519,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "cosine",
+      "seed": 29,
+      "readout_kind": "cos"
+    },
+    {
+      "readout": "l2_cosine-29",
+      "accuracy_reference_convention": 0.5781637541779433,
+      "accuracy_tie_corrected": 0.5781637541779433,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "cosine",
+      "seed": 29,
+      "readout_kind": "l2"
+    },
+    {
+      "readout": "neg_dot_cosine-29",
+      "accuracy_reference_convention": 0.7391267480232057,
+      "accuracy_tie_corrected": 0.7391267480232057,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "cosine",
+      "seed": 29,
+      "readout_kind": "neg_dot"
+    },
+    {
+      "readout": "cos_std_cosine-29",
+      "accuracy_reference_convention": 0.7498039104842528,
+      "accuracy_tie_corrected": 0.7498039104842528,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "cosine",
+      "seed": 29,
+      "readout_kind": "cos_std"
+    },
+    {
+      "readout": "cos_whiten_cosine-29",
+      "accuracy_reference_convention": 0.3896210349286658,
+      "accuracy_tie_corrected": 0.3896210349286658,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "cosine",
+      "seed": 29,
+      "readout_kind": "cos_whiten"
+    },
+    {
+      "readout": "own_energy_cosine-43",
+      "accuracy_reference_convention": 0.7733699838181985,
+      "accuracy_tie_corrected": 0.7733699838181985,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "cosine",
+      "seed": 43,
+      "readout_kind": "own_energy"
+    },
+    {
+      "readout": "cos_cosine-43",
+      "accuracy_reference_convention": 0.7733699838181985,
+      "accuracy_tie_corrected": 0.7733699838181985,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "cosine",
+      "seed": 43,
+      "readout_kind": "cos"
+    },
+    {
+      "readout": "l2_cosine-43",
+      "accuracy_reference_convention": 0.542952436809712,
+      "accuracy_tie_corrected": 0.542952436809712,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "cosine",
+      "seed": 43,
+      "readout_kind": "l2"
+    },
+    {
+      "readout": "neg_dot_cosine-43",
+      "accuracy_reference_convention": 0.7742391373474565,
+      "accuracy_tie_corrected": 0.7742391373474565,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "cosine",
+      "seed": 43,
+      "readout_kind": "neg_dot"
+    },
+    {
+      "readout": "cos_std_cosine-43",
+      "accuracy_reference_convention": 0.7590042185744469,
+      "accuracy_tie_corrected": 0.7590042185744469,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "cosine",
+      "seed": 43,
+      "readout_kind": "cos_std"
+    },
+    {
+      "readout": "cos_whiten_cosine-43",
+      "accuracy_reference_convention": 0.42474755683062815,
+      "accuracy_tie_corrected": 0.42474755683062815,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "cosine",
+      "seed": 43,
+      "readout_kind": "cos_whiten"
+    },
+    {
+      "readout": "own_energy_euclidean-17",
+      "accuracy_reference_convention": 0.6262286509747945,
+      "accuracy_tie_corrected": 0.6262286509747945,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "euclidean",
+      "seed": 17,
+      "readout_kind": "own_energy"
+    },
+    {
+      "readout": "cos_euclidean-17",
+      "accuracy_reference_convention": 0.5725036568044829,
+      "accuracy_tie_corrected": 0.5725036568044829,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "euclidean",
+      "seed": 17,
+      "readout_kind": "cos"
+    },
+    {
+      "readout": "l2_euclidean-17",
+      "accuracy_reference_convention": 0.6262286509747945,
+      "accuracy_tie_corrected": 0.6262286509747945,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "euclidean",
+      "seed": 17,
+      "readout_kind": "l2"
+    },
+    {
+      "readout": "neg_dot_euclidean-17",
+      "accuracy_reference_convention": 0.544598882113103,
+      "accuracy_tie_corrected": 0.544598882113103,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "euclidean",
+      "seed": 17,
+      "readout_kind": "neg_dot"
+    },
+    {
+      "readout": "cos_std_euclidean-17",
+      "accuracy_reference_convention": 0.7554640078577132,
+      "accuracy_tie_corrected": 0.7554640078577132,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "euclidean",
+      "seed": 17,
+      "readout_kind": "cos_std"
+    },
+    {
+      "readout": "cos_whiten_euclidean-17",
+      "accuracy_reference_convention": 0.562745111894684,
+      "accuracy_tie_corrected": 0.562745111894684,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "euclidean",
+      "seed": 17,
+      "readout_kind": "cos_whiten"
+    },
+    {
+      "readout": "own_energy_euclidean-29",
+      "accuracy_reference_convention": 0.5741854335521528,
+      "accuracy_tie_corrected": 0.5741854335521528,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "euclidean",
+      "seed": 29,
+      "readout_kind": "own_energy"
+    },
+    {
+      "readout": "cos_euclidean-29",
+      "accuracy_reference_convention": 0.5237533299886232,
+      "accuracy_tie_corrected": 0.5237533299886232,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "euclidean",
+      "seed": 29,
+      "readout_kind": "cos"
+    },
+    {
+      "readout": "l2_euclidean-29",
+      "accuracy_reference_convention": 0.5741854335521528,
+      "accuracy_tie_corrected": 0.5741854335521528,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "euclidean",
+      "seed": 29,
+      "readout_kind": "l2"
+    },
+    {
+      "readout": "neg_dot_euclidean-29",
+      "accuracy_reference_convention": 0.48922037635054444,
+      "accuracy_tie_corrected": 0.48922037635054444,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "euclidean",
+      "seed": 29,
+      "readout_kind": "neg_dot"
+    },
+    {
+      "readout": "cos_std_euclidean-29",
+      "accuracy_reference_convention": 0.727424973678074,
+      "accuracy_tie_corrected": 0.727424973678074,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "euclidean",
+      "seed": 29,
+      "readout_kind": "cos_std"
+    },
+    {
+      "readout": "cos_whiten_euclidean-29",
+      "accuracy_reference_convention": 0.38990368648289603,
+      "accuracy_tie_corrected": 0.38990368648289603,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "euclidean",
+      "seed": 29,
+      "readout_kind": "cos_whiten"
+    },
+    {
+      "readout": "own_energy_euclidean-43",
+      "accuracy_reference_convention": 0.5605686949271113,
+      "accuracy_tie_corrected": 0.5605686949271113,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "euclidean",
+      "seed": 43,
+      "readout_kind": "own_energy"
+    },
+    {
+      "readout": "cos_euclidean-43",
+      "accuracy_reference_convention": 0.6034610682815492,
+      "accuracy_tie_corrected": 0.6034610682815492,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "euclidean",
+      "seed": 43,
+      "readout_kind": "cos"
+    },
+    {
+      "readout": "l2_euclidean-43",
+      "accuracy_reference_convention": 0.5605686949271113,
+      "accuracy_tie_corrected": 0.5605686949271113,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "euclidean",
+      "seed": 43,
+      "readout_kind": "l2"
+    },
+    {
+      "readout": "neg_dot_euclidean-43",
+      "accuracy_reference_convention": 0.5946211409229987,
+      "accuracy_tie_corrected": 0.5946211409229987,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "euclidean",
+      "seed": 43,
+      "readout_kind": "neg_dot"
+    },
+    {
+      "readout": "cos_std_euclidean-43",
+      "accuracy_reference_convention": 0.6905177469844612,
+      "accuracy_tie_corrected": 0.6905177469844612,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "euclidean",
+      "seed": 43,
+      "readout_kind": "cos_std"
+    },
+    {
+      "readout": "cos_whiten_euclidean-43",
+      "accuracy_reference_convention": 0.482662860292403,
+      "accuracy_tie_corrected": 0.482662860292403,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "euclidean",
+      "seed": 43,
+      "readout_kind": "cos_whiten"
+    },
+    {
+      "readout": "own_energy_directed_quasimetric-17",
+      "accuracy_reference_convention": 0.804786704070889,
+      "accuracy_tie_corrected": 0.804786704070889,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "directed_quasimetric",
+      "seed": 17,
+      "readout_kind": "own_energy"
+    },
+    {
+      "readout": "cos_directed_quasimetric-17",
+      "accuracy_reference_convention": 0.6861154490273254,
+      "accuracy_tie_corrected": 0.6861154490273254,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "directed_quasimetric",
+      "seed": 17,
+      "readout_kind": "cos"
+    },
+    {
+      "readout": "l2_directed_quasimetric-17",
+      "accuracy_reference_convention": 0.6371036695238028,
+      "accuracy_tie_corrected": 0.6371036695238028,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "directed_quasimetric",
+      "seed": 17,
+      "readout_kind": "l2"
+    },
+    {
+      "readout": "neg_dot_directed_quasimetric-17",
+      "accuracy_reference_convention": 0.6866312881137955,
+      "accuracy_tie_corrected": 0.6866312881137955,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "directed_quasimetric",
+      "seed": 17,
+      "readout_kind": "neg_dot"
+    },
+    {
+      "readout": "cos_std_directed_quasimetric-17",
+      "accuracy_reference_convention": 0.7335231809605913,
+      "accuracy_tie_corrected": 0.7335231809605913,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "directed_quasimetric",
+      "seed": 17,
+      "readout_kind": "cos_std"
+    },
+    {
+      "readout": "cos_whiten_directed_quasimetric-17",
+      "accuracy_reference_convention": 0.4887681338637761,
+      "accuracy_tie_corrected": 0.4887681338637761,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "directed_quasimetric",
+      "seed": 17,
+      "readout_kind": "cos_whiten"
+    },
+    {
+      "readout": "own_energy_directed_quasimetric-29",
+      "accuracy_reference_convention": 0.7368867344559311,
+      "accuracy_tie_corrected": 0.7368867344559311,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "directed_quasimetric",
+      "seed": 29,
+      "readout_kind": "own_energy"
+    },
+    {
+      "readout": "cos_directed_quasimetric-29",
+      "accuracy_reference_convention": 0.5108149550937343,
+      "accuracy_tie_corrected": 0.5108149550937343,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "directed_quasimetric",
+      "seed": 29,
+      "readout_kind": "cos"
+    },
+    {
+      "readout": "l2_directed_quasimetric-29",
+      "accuracy_reference_convention": 0.5537143947370281,
+      "accuracy_tie_corrected": 0.5537143947370281,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "directed_quasimetric",
+      "seed": 29,
+      "readout_kind": "l2"
+    },
+    {
+      "readout": "neg_dot_directed_quasimetric-29",
+      "accuracy_reference_convention": 0.5080237709957107,
+      "accuracy_tie_corrected": 0.5080237709957107,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "directed_quasimetric",
+      "seed": 29,
+      "readout_kind": "neg_dot"
+    },
+    {
+      "readout": "cos_std_directed_quasimetric-29",
+      "accuracy_reference_convention": 0.6686829144201757,
+      "accuracy_tie_corrected": 0.6686829144201757,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "directed_quasimetric",
+      "seed": 29,
+      "readout_kind": "cos_std"
+    },
+    {
+      "readout": "cos_whiten_directed_quasimetric-29",
+      "accuracy_reference_convention": 0.4213769370464326,
+      "accuracy_tie_corrected": 0.4213769370464326,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "directed_quasimetric",
+      "seed": 29,
+      "readout_kind": "cos_whiten"
+    },
+    {
+      "readout": "own_energy_directed_quasimetric-43",
+      "accuracy_reference_convention": 0.8094009906936975,
+      "accuracy_tie_corrected": 0.8094009906936975,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "directed_quasimetric",
+      "seed": 43,
+      "readout_kind": "own_energy"
+    },
+    {
+      "readout": "cos_directed_quasimetric-43",
+      "accuracy_reference_convention": 0.689973642742568,
+      "accuracy_tie_corrected": 0.689973642742568,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "directed_quasimetric",
+      "seed": 43,
+      "readout_kind": "cos"
+    },
+    {
+      "readout": "l2_directed_quasimetric-43",
+      "accuracy_reference_convention": 0.5385572051414318,
+      "accuracy_tie_corrected": 0.5385572051414318,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "directed_quasimetric",
+      "seed": 43,
+      "readout_kind": "l2"
+    },
+    {
+      "readout": "neg_dot_directed_quasimetric-43",
+      "accuracy_reference_convention": 0.6781234763314655,
+      "accuracy_tie_corrected": 0.6781234763314655,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "directed_quasimetric",
+      "seed": 43,
+      "readout_kind": "neg_dot"
+    },
+    {
+      "readout": "cos_std_directed_quasimetric-43",
+      "accuracy_reference_convention": 0.6758269324533448,
+      "accuracy_tie_corrected": 0.6758269324533448,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "directed_quasimetric",
+      "seed": 43,
+      "readout_kind": "cos_std"
+    },
+    {
+      "readout": "cos_whiten_directed_quasimetric-43",
+      "accuracy_reference_convention": 0.4353823215585407,
+      "accuracy_tie_corrected": 0.4353823215585407,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "directed_quasimetric",
+      "seed": 43,
+      "readout_kind": "cos_whiten"
+    },
+    {
+      "readout": "own_energy_poincare-17",
+      "accuracy_reference_convention": 0.8103761385557919,
+      "accuracy_tie_corrected": 0.8103761385557919,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "poincare",
+      "seed": 17,
+      "readout_kind": "own_energy"
+    },
+    {
+      "readout": "cos_poincare-17",
+      "accuracy_reference_convention": 0.4392829130069179,
+      "accuracy_tie_corrected": 0.4392829130069179,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "poincare",
+      "seed": 17,
+      "readout_kind": "cos"
+    },
+    {
+      "readout": "l2_poincare-17",
+      "accuracy_reference_convention": 0.6461767844145933,
+      "accuracy_tie_corrected": 0.6461767844145933,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "poincare",
+      "seed": 17,
+      "readout_kind": "l2"
+    },
+    {
+      "readout": "neg_dot_poincare-17",
+      "accuracy_reference_convention": 0.3974504829808433,
+      "accuracy_tie_corrected": 0.3974504829808433,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "poincare",
+      "seed": 17,
+      "readout_kind": "neg_dot"
+    },
+    {
+      "readout": "cos_std_poincare-17",
+      "accuracy_reference_convention": 0.7940459450101401,
+      "accuracy_tie_corrected": 0.7940459450101401,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "poincare",
+      "seed": 17,
+      "readout_kind": "cos_std"
+    },
+    {
+      "readout": "cos_whiten_poincare-17",
+      "accuracy_reference_convention": 0.5513966519923401,
+      "accuracy_tie_corrected": 0.5513966519923401,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "poincare",
+      "seed": 17,
+      "readout_kind": "cos_whiten"
+    },
+    {
+      "readout": "own_energy_poincare-29",
+      "accuracy_reference_convention": 0.7102538917585873,
+      "accuracy_tie_corrected": 0.7102538917585873,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "poincare",
+      "seed": 29,
+      "readout_kind": "own_energy"
+    },
+    {
+      "readout": "cos_poincare-29",
+      "accuracy_reference_convention": 0.3802440696170778,
+      "accuracy_tie_corrected": 0.3802440696170778,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "poincare",
+      "seed": 29,
+      "readout_kind": "cos"
+    },
+    {
+      "readout": "l2_poincare-29",
+      "accuracy_reference_convention": 0.5589999788011334,
+      "accuracy_tie_corrected": 0.5589999788011334,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "poincare",
+      "seed": 29,
+      "readout_kind": "l2"
+    },
+    {
+      "readout": "neg_dot_poincare-29",
+      "accuracy_reference_convention": 0.36477596331182827,
+      "accuracy_tie_corrected": 0.36477596331182827,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "poincare",
+      "seed": 29,
+      "readout_kind": "neg_dot"
+    },
+    {
+      "readout": "cos_std_poincare-29",
+      "accuracy_reference_convention": 0.741924998410085,
+      "accuracy_tie_corrected": 0.741924998410085,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "poincare",
+      "seed": 29,
+      "readout_kind": "cos_std"
+    },
+    {
+      "readout": "cos_whiten_poincare-29",
+      "accuracy_reference_convention": 0.4010966880304133,
+      "accuracy_tie_corrected": 0.4010966880304133,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "poincare",
+      "seed": 29,
+      "readout_kind": "cos_whiten"
+    },
+    {
+      "readout": "own_energy_poincare-43",
+      "accuracy_reference_convention": 0.7847537751648211,
+      "accuracy_tie_corrected": 0.7847537751648211,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "poincare",
+      "seed": 43,
+      "readout_kind": "own_energy"
+    },
+    {
+      "readout": "cos_poincare-43",
+      "accuracy_reference_convention": 0.44059724273408846,
+      "accuracy_tie_corrected": 0.44059724273408846,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "poincare",
+      "seed": 43,
+      "readout_kind": "cos"
+    },
+    {
+      "readout": "l2_poincare-43",
+      "accuracy_reference_convention": 0.6115378364436781,
+      "accuracy_tie_corrected": 0.6115378364436781,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "poincare",
+      "seed": 43,
+      "readout_kind": "l2"
+    },
+    {
+      "readout": "neg_dot_poincare-43",
+      "accuracy_reference_convention": 0.4193418458559749,
+      "accuracy_tie_corrected": 0.4193418458559749,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "poincare",
+      "seed": 43,
+      "readout_kind": "neg_dot"
+    },
+    {
+      "readout": "cos_std_poincare-43",
+      "accuracy_reference_convention": 0.6750637732569232,
+      "accuracy_tie_corrected": 0.6750637732569232,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "poincare",
+      "seed": 43,
+      "readout_kind": "cos_std"
+    },
+    {
+      "readout": "cos_whiten_poincare-43",
+      "accuracy_reference_convention": 0.47592162072401195,
+      "accuracy_tie_corrected": 0.47592162072401195,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "poincare",
+      "seed": 43,
+      "readout_kind": "cos_whiten"
+    },
+    {
+      "readout": "own_energy_pair_mlp-17",
+      "accuracy_reference_convention": 0.8157111866418876,
+      "accuracy_tie_corrected": 0.8157111866418876,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "pair_mlp",
+      "seed": 17,
+      "readout_kind": "own_energy"
+    },
+    {
+      "readout": "cos_pair_mlp-17",
+      "accuracy_reference_convention": 0.38454037324137735,
+      "accuracy_tie_corrected": 0.38454037324137735,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "pair_mlp",
+      "seed": 17,
+      "readout_kind": "cos"
+    },
+    {
+      "readout": "l2_pair_mlp-17",
+      "accuracy_reference_convention": 0.5211458694008494,
+      "accuracy_tie_corrected": 0.5211458694008494,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "pair_mlp",
+      "seed": 17,
+      "readout_kind": "l2"
+    },
+    {
+      "readout": "neg_dot_pair_mlp-17",
+      "accuracy_reference_convention": 0.3790710656670223,
+      "accuracy_tie_corrected": 0.3790710656670223,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "pair_mlp",
+      "seed": 17,
+      "readout_kind": "neg_dot"
+    },
+    {
+      "readout": "cos_std_pair_mlp-17",
+      "accuracy_reference_convention": 0.7239978235830324,
+      "accuracy_tie_corrected": 0.7239978235830324,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "pair_mlp",
+      "seed": 17,
+      "readout_kind": "cos_std"
+    },
+    {
+      "readout": "cos_whiten_pair_mlp-17",
+      "accuracy_reference_convention": 0.3615678681713151,
+      "accuracy_tie_corrected": 0.3615678681713151,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "pair_mlp",
+      "seed": 17,
+      "readout_kind": "cos_whiten"
+    },
+    {
+      "readout": "own_energy_pair_mlp-29",
+      "accuracy_reference_convention": 0.8196541758233993,
+      "accuracy_tie_corrected": 0.8196541758233993,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "pair_mlp",
+      "seed": 29,
+      "readout_kind": "own_energy"
+    },
+    {
+      "readout": "cos_pair_mlp-29",
+      "accuracy_reference_convention": 0.3556039203770572,
+      "accuracy_tie_corrected": 0.3556039203770572,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "pair_mlp",
+      "seed": 29,
+      "readout_kind": "cos"
+    },
+    {
+      "readout": "l2_pair_mlp-29",
+      "accuracy_reference_convention": 0.5032540260180756,
+      "accuracy_tie_corrected": 0.5032540260180756,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "pair_mlp",
+      "seed": 29,
+      "readout_kind": "l2"
+    },
+    {
+      "readout": "neg_dot_pair_mlp-29",
+      "accuracy_reference_convention": 0.3555685889327784,
+      "accuracy_tie_corrected": 0.3555685889327784,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "pair_mlp",
+      "seed": 29,
+      "readout_kind": "neg_dot"
+    },
+    {
+      "readout": "cos_std_pair_mlp-29",
+      "accuracy_reference_convention": 0.5983804065942607,
+      "accuracy_tie_corrected": 0.5983804065942607,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "pair_mlp",
+      "seed": 29,
+      "readout_kind": "cos_std"
+    },
+    {
+      "readout": "cos_whiten_pair_mlp-29",
+      "accuracy_reference_convention": 0.3949490167259057,
+      "accuracy_tie_corrected": 0.3949490167259057,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "pair_mlp",
+      "seed": 29,
+      "readout_kind": "cos_whiten"
+    },
+    {
+      "readout": "own_energy_pair_mlp-43",
+      "accuracy_reference_convention": 0.8443861868185447,
+      "accuracy_tie_corrected": 0.8443861868185447,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "pair_mlp",
+      "seed": 43,
+      "readout_kind": "own_energy"
+    },
+    {
+      "readout": "cos_pair_mlp-43",
+      "accuracy_reference_convention": 0.7463838266780669,
+      "accuracy_tie_corrected": 0.7463838266780669,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "pair_mlp",
+      "seed": 43,
+      "readout_kind": "cos"
+    },
+    {
+      "readout": "l2_pair_mlp-43",
+      "accuracy_reference_convention": 0.47402078902181366,
+      "accuracy_tie_corrected": 0.47402078902181366,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "pair_mlp",
+      "seed": 43,
+      "readout_kind": "l2"
+    },
+    {
+      "readout": "neg_dot_pair_mlp-43",
+      "accuracy_reference_convention": 0.7430344057604387,
+      "accuracy_tie_corrected": 0.7430344057604387,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "pair_mlp",
+      "seed": 43,
+      "readout_kind": "neg_dot"
+    },
+    {
+      "readout": "cos_std_pair_mlp-43",
+      "accuracy_reference_convention": 0.752778818092526,
+      "accuracy_tie_corrected": 0.752778818092526,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "pair_mlp",
+      "seed": 43,
+      "readout_kind": "cos_std"
+    },
+    {
+      "readout": "cos_whiten_pair_mlp-43",
+      "accuracy_reference_convention": 0.37569337959397103,
+      "accuracy_tie_corrected": 0.37569337959397103,
+      "difference": 0.0,
+      "tie_count": 0,
+      "tie_rate": 0.0,
+      "energy": "pair_mlp",
+      "seed": 43,
+      "readout_kind": "cos_whiten"
+    }
+  ],
+  "recovery_vs_own_energy": {
+    "cosine-17": {
+      "cos": {
+        "tie_corrected": 0.6954994806277691,
+        "reference_convention": 0.6954994806277691,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos-own@cosine-17",
+          "estimate": 0.0,
+          "low": 0.0,
+          "high": 0.0,
+          "units": 47,
+          "excludes_zero": false
+        }
+      },
+      "l2": {
+        "tie_corrected": 0.6186182578771455,
+        "reference_convention": 0.6186182578771455,
+        "minus_own_energy_tie_corrected": {
+          "name": "l2-own@cosine-17",
+          "estimate": -0.0768812227506236,
+          "low": -0.10801302608317422,
+          "high": -0.054060328667947306,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "neg_dot": {
+        "tie_corrected": 0.6940932891454736,
+        "reference_convention": 0.6940932891454736,
+        "minus_own_energy_tie_corrected": {
+          "name": "neg_dot-own@cosine-17",
+          "estimate": -0.0014061914822954132,
+          "low": -0.004277833219807467,
+          "high": 0.002392956458775369,
+          "units": 47,
+          "excludes_zero": false
+        }
+      },
+      "cos_std": {
+        "tie_corrected": 0.7522629790060558,
+        "reference_convention": 0.7522629790060558,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_std-own@cosine-17",
+          "estimate": 0.05676349837828671,
+          "low": 0.04167472049887896,
+          "high": 0.07996509933226964,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "cos_whiten": {
+        "tie_corrected": 0.42741154772924805,
+        "reference_convention": 0.42741154772924805,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_whiten-own@cosine-17",
+          "estimate": -0.268087932898521,
+          "low": -0.2923225800248238,
+          "high": -0.23202204588776007,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "own_energy": {
+        "tie_corrected": 0.6954994806277691,
+        "reference_convention": 0.6954994806277691
+      }
+    },
+    "cosine-29": {
+      "cos": {
+        "tie_corrected": 0.7411477066359519,
+        "reference_convention": 0.7411477066359519,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos-own@cosine-29",
+          "estimate": 0.0,
+          "low": 0.0,
+          "high": 0.0,
+          "units": 47,
+          "excludes_zero": false
+        }
+      },
+      "l2": {
+        "tie_corrected": 0.5781637541779433,
+        "reference_convention": 0.5781637541779433,
+        "minus_own_energy_tie_corrected": {
+          "name": "l2-own@cosine-29",
+          "estimate": -0.1629839524580086,
+          "low": -0.20255285149789473,
+          "high": -0.12373953447361846,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "neg_dot": {
+        "tie_corrected": 0.7391267480232057,
+        "reference_convention": 0.7391267480232057,
+        "minus_own_energy_tie_corrected": {
+          "name": "neg_dot-own@cosine-29",
+          "estimate": -0.0020209586127461717,
+          "low": -0.006288662666612413,
+          "high": 0.006580681705448064,
+          "units": 47,
+          "excludes_zero": false
+        }
+      },
+      "cos_std": {
+        "tie_corrected": 0.7498039104842528,
+        "reference_convention": 0.7498039104842528,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_std-own@cosine-29",
+          "estimate": 0.008656203848300912,
+          "low": -0.003059432518236073,
+          "high": 0.021437955832138825,
+          "units": 47,
+          "excludes_zero": false
+        }
+      },
+      "cos_whiten": {
+        "tie_corrected": 0.3896210349286658,
+        "reference_convention": 0.3896210349286658,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_whiten-own@cosine-29",
+          "estimate": -0.3515266717072861,
+          "low": -0.39586909994683517,
+          "high": -0.32277286784811293,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "own_energy": {
+        "tie_corrected": 0.7411477066359519,
+        "reference_convention": 0.7411477066359519
+      }
+    },
+    "cosine-43": {
+      "cos": {
+        "tie_corrected": 0.7733699838181985,
+        "reference_convention": 0.7733699838181985,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos-own@cosine-43",
+          "estimate": 0.0,
+          "low": 0.0,
+          "high": 0.0,
+          "units": 47,
+          "excludes_zero": false
+        }
+      },
+      "l2": {
+        "tie_corrected": 0.542952436809712,
+        "reference_convention": 0.542952436809712,
+        "minus_own_energy_tie_corrected": {
+          "name": "l2-own@cosine-43",
+          "estimate": -0.2304175470084866,
+          "low": -0.28551819446003057,
+          "high": -0.19568188550572901,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "neg_dot": {
+        "tie_corrected": 0.7742391373474565,
+        "reference_convention": 0.7742391373474565,
+        "minus_own_energy_tie_corrected": {
+          "name": "neg_dot-own@cosine-43",
+          "estimate": 0.000869153529257969,
+          "low": -0.0031391294990569044,
+          "high": 0.005301589484330825,
+          "units": 47,
+          "excludes_zero": false
+        }
+      },
+      "cos_std": {
+        "tie_corrected": 0.7590042185744469,
+        "reference_convention": 0.7590042185744469,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_std-own@cosine-43",
+          "estimate": -0.014365765243751634,
+          "low": -0.027659869297610874,
+          "high": -0.002106673149388053,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "cos_whiten": {
+        "tie_corrected": 0.42474755683062815,
+        "reference_convention": 0.42474755683062815,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_whiten-own@cosine-43",
+          "estimate": -0.3486224269875704,
+          "low": -0.38791178165323104,
+          "high": -0.3182017961883894,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "own_energy": {
+        "tie_corrected": 0.7733699838181985,
+        "reference_convention": 0.7733699838181985
+      }
+    },
+    "euclidean-17": {
+      "cos": {
+        "tie_corrected": 0.5725036568044829,
+        "reference_convention": 0.5725036568044829,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos-own@euclidean-17",
+          "estimate": -0.05372499417031169,
+          "low": -0.06568015777922522,
+          "high": -0.03361116340653576,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "l2": {
+        "tie_corrected": 0.6262286509747945,
+        "reference_convention": 0.6262286509747945,
+        "minus_own_energy_tie_corrected": {
+          "name": "l2-own@euclidean-17",
+          "estimate": 0.0,
+          "low": 0.0,
+          "high": 0.0,
+          "units": 47,
+          "excludes_zero": false
+        }
+      },
+      "neg_dot": {
+        "tie_corrected": 0.544598882113103,
+        "reference_convention": 0.544598882113103,
+        "minus_own_energy_tie_corrected": {
+          "name": "neg_dot-own@euclidean-17",
+          "estimate": -0.08162976886169153,
+          "low": -0.0963794632033326,
+          "high": -0.043217022526772904,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "cos_std": {
+        "tie_corrected": 0.7554640078577132,
+        "reference_convention": 0.7554640078577132,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_std-own@euclidean-17",
+          "estimate": 0.12923535688291865,
+          "low": 0.10484000696577062,
+          "high": 0.1627869941112732,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "cos_whiten": {
+        "tie_corrected": 0.562745111894684,
+        "reference_convention": 0.562745111894684,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_whiten-own@euclidean-17",
+          "estimate": -0.06348353908011052,
+          "low": -0.08469123124489883,
+          "high": -0.04091329042830734,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "own_energy": {
+        "tie_corrected": 0.6262286509747945,
+        "reference_convention": 0.6262286509747945
+      }
+    },
+    "euclidean-29": {
+      "cos": {
+        "tie_corrected": 0.5237533299886232,
+        "reference_convention": 0.5237533299886232,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos-own@euclidean-29",
+          "estimate": -0.05043210356352947,
+          "low": -0.07643986242580668,
+          "high": -0.029481135618234646,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "l2": {
+        "tie_corrected": 0.5741854335521528,
+        "reference_convention": 0.5741854335521528,
+        "minus_own_energy_tie_corrected": {
+          "name": "l2-own@euclidean-29",
+          "estimate": 0.0,
+          "low": 0.0,
+          "high": 0.0,
+          "units": 47,
+          "excludes_zero": false
+        }
+      },
+      "neg_dot": {
+        "tie_corrected": 0.48922037635054444,
+        "reference_convention": 0.48922037635054444,
+        "minus_own_energy_tie_corrected": {
+          "name": "neg_dot-own@euclidean-29",
+          "estimate": -0.08496505720160828,
+          "low": -0.12866350986842415,
+          "high": -0.05336372780764542,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "cos_std": {
+        "tie_corrected": 0.727424973678074,
+        "reference_convention": 0.727424973678074,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_std-own@euclidean-29",
+          "estimate": 0.15323954012592128,
+          "low": 0.1110062435095298,
+          "high": 0.2041550732588651,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "cos_whiten": {
+        "tie_corrected": 0.38990368648289603,
+        "reference_convention": 0.38990368648289603,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_whiten-own@euclidean-29",
+          "estimate": -0.1842817470692567,
+          "low": -0.2298963436009147,
+          "high": -0.14996578783160763,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "own_energy": {
+        "tie_corrected": 0.5741854335521528,
+        "reference_convention": 0.5741854335521528
+      }
+    },
+    "euclidean-43": {
+      "cos": {
+        "tie_corrected": 0.6034610682815492,
+        "reference_convention": 0.6034610682815492,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos-own@euclidean-43",
+          "estimate": 0.04289237335443798,
+          "low": 0.012368524967233169,
+          "high": 0.08607611520326487,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "l2": {
+        "tie_corrected": 0.5605686949271113,
+        "reference_convention": 0.5605686949271113,
+        "minus_own_energy_tie_corrected": {
+          "name": "l2-own@euclidean-43",
+          "estimate": 0.0,
+          "low": 0.0,
+          "high": 0.0,
+          "units": 47,
+          "excludes_zero": false
+        }
+      },
+      "neg_dot": {
+        "tie_corrected": 0.5946211409229987,
+        "reference_convention": 0.5946211409229987,
+        "minus_own_energy_tie_corrected": {
+          "name": "neg_dot-own@euclidean-43",
+          "estimate": 0.03405244599588742,
+          "low": 0.0016523554165197144,
+          "high": 0.0808521841001321,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "cos_std": {
+        "tie_corrected": 0.6905177469844612,
+        "reference_convention": 0.6905177469844612,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_std-own@euclidean-43",
+          "estimate": 0.12994905205735,
+          "low": 0.09667491397899511,
+          "high": 0.17689071165139122,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "cos_whiten": {
+        "tie_corrected": 0.482662860292403,
+        "reference_convention": 0.482662860292403,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_whiten-own@euclidean-43",
+          "estimate": -0.0779058346347082,
+          "low": -0.09578070083175894,
+          "high": -0.06194071975800284,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "own_energy": {
+        "tie_corrected": 0.5605686949271113,
+        "reference_convention": 0.5605686949271113
+      }
+    },
+    "directed_quasimetric-17": {
+      "cos": {
+        "tie_corrected": 0.6861154490273254,
+        "reference_convention": 0.6861154490273254,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos-own@directed_quasimetric-17",
+          "estimate": -0.11867125504356367,
+          "low": -0.14206306756934053,
+          "high": -0.09559171842837229,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "l2": {
+        "tie_corrected": 0.6371036695238028,
+        "reference_convention": 0.6371036695238028,
+        "minus_own_energy_tie_corrected": {
+          "name": "l2-own@directed_quasimetric-17",
+          "estimate": -0.16768303454708622,
+          "low": -0.1994931489234436,
+          "high": -0.1429142547316796,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "neg_dot": {
+        "tie_corrected": 0.6866312881137955,
+        "reference_convention": 0.6866312881137955,
+        "minus_own_energy_tie_corrected": {
+          "name": "neg_dot-own@directed_quasimetric-17",
+          "estimate": -0.11815541595709349,
+          "low": -0.13985966545478767,
+          "high": -0.0970801212000132,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "cos_std": {
+        "tie_corrected": 0.7335231809605913,
+        "reference_convention": 0.7335231809605913,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_std-own@directed_quasimetric-17",
+          "estimate": -0.0712635231102977,
+          "low": -0.09977541007591928,
+          "high": -0.05426834424199378,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "cos_whiten": {
+        "tie_corrected": 0.4887681338637761,
+        "reference_convention": 0.4887681338637761,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_whiten-own@directed_quasimetric-17",
+          "estimate": -0.31601857020711294,
+          "low": -0.34847181454954435,
+          "high": -0.2873758762877656,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "own_energy": {
+        "tie_corrected": 0.804786704070889,
+        "reference_convention": 0.804786704070889
+      }
+    },
+    "directed_quasimetric-29": {
+      "cos": {
+        "tie_corrected": 0.5108149550937343,
+        "reference_convention": 0.5108149550937343,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos-own@directed_quasimetric-29",
+          "estimate": -0.22607177936219677,
+          "low": -0.25055993709094826,
+          "high": -0.17016554498321396,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "l2": {
+        "tie_corrected": 0.5537143947370281,
+        "reference_convention": 0.5537143947370281,
+        "minus_own_energy_tie_corrected": {
+          "name": "l2-own@directed_quasimetric-29",
+          "estimate": -0.18317233971890304,
+          "low": -0.2156657422682417,
+          "high": -0.15524919278891144,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "neg_dot": {
+        "tie_corrected": 0.5080237709957107,
+        "reference_convention": 0.5080237709957107,
+        "minus_own_energy_tie_corrected": {
+          "name": "neg_dot-own@directed_quasimetric-29",
+          "estimate": -0.22886296346022034,
+          "low": -0.26058144808517814,
+          "high": -0.1741520726105354,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "cos_std": {
+        "tie_corrected": 0.6686829144201757,
+        "reference_convention": 0.6686829144201757,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_std-own@directed_quasimetric-29",
+          "estimate": -0.06820382003575542,
+          "low": -0.09061398827487918,
+          "high": -0.03063207576309798,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "cos_whiten": {
+        "tie_corrected": 0.4213769370464326,
+        "reference_convention": 0.4213769370464326,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_whiten-own@directed_quasimetric-29",
+          "estimate": -0.3155097974094985,
+          "low": -0.3450609261904636,
+          "high": -0.2741146357293542,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "own_energy": {
+        "tie_corrected": 0.7368867344559311,
+        "reference_convention": 0.7368867344559311
+      }
+    },
+    "directed_quasimetric-43": {
+      "cos": {
+        "tie_corrected": 0.689973642742568,
+        "reference_convention": 0.689973642742568,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos-own@directed_quasimetric-43",
+          "estimate": -0.11942734795112954,
+          "low": -0.14376840199673357,
+          "high": -0.09678330893602342,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "l2": {
+        "tie_corrected": 0.5385572051414318,
+        "reference_convention": 0.5385572051414318,
+        "minus_own_energy_tie_corrected": {
+          "name": "l2-own@directed_quasimetric-43",
+          "estimate": -0.2708437855522658,
+          "low": -0.3263862190518945,
+          "high": -0.22964204085453974,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "neg_dot": {
+        "tie_corrected": 0.6781234763314655,
+        "reference_convention": 0.6781234763314655,
+        "minus_own_energy_tie_corrected": {
+          "name": "neg_dot-own@directed_quasimetric-43",
+          "estimate": -0.1312775143622321,
+          "low": -0.16049241277449552,
+          "high": -0.10770045721965253,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "cos_std": {
+        "tie_corrected": 0.6758269324533448,
+        "reference_convention": 0.6758269324533448,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_std-own@directed_quasimetric-43",
+          "estimate": -0.13357405824035276,
+          "low": -0.15721217294204048,
+          "high": -0.10896809020583725,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "cos_whiten": {
+        "tie_corrected": 0.4353823215585407,
+        "reference_convention": 0.4353823215585407,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_whiten-own@directed_quasimetric-43",
+          "estimate": -0.3740186691351569,
+          "low": -0.4107185887118397,
+          "high": -0.3500189091029075,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "own_energy": {
+        "tie_corrected": 0.8094009906936975,
+        "reference_convention": 0.8094009906936975
+      }
+    },
+    "poincare-17": {
+      "cos": {
+        "tie_corrected": 0.4392829130069179,
+        "reference_convention": 0.4392829130069179,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos-own@poincare-17",
+          "estimate": -0.371093225548874,
+          "low": -0.40843709835796865,
+          "high": -0.33769393718986235,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "l2": {
+        "tie_corrected": 0.6461767844145933,
+        "reference_convention": 0.6461767844145933,
+        "minus_own_energy_tie_corrected": {
+          "name": "l2-own@poincare-17",
+          "estimate": -0.16419935414119857,
+          "low": -0.20129402954628653,
+          "high": -0.137194344308146,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "neg_dot": {
+        "tie_corrected": 0.3974504829808433,
+        "reference_convention": 0.3974504829808433,
+        "minus_own_energy_tie_corrected": {
+          "name": "neg_dot-own@poincare-17",
+          "estimate": -0.4129256555749486,
+          "low": -0.44691926434995655,
+          "high": -0.37226141121789313,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "cos_std": {
+        "tie_corrected": 0.7940459450101401,
+        "reference_convention": 0.7940459450101401,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_std-own@poincare-17",
+          "estimate": -0.01633019354565176,
+          "low": -0.0322893574545896,
+          "high": 0.0033927141771043635,
+          "units": 47,
+          "excludes_zero": false
+        }
+      },
+      "cos_whiten": {
+        "tie_corrected": 0.5513966519923401,
+        "reference_convention": 0.5513966519923401,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_whiten-own@poincare-17",
+          "estimate": -0.25897948656345177,
+          "low": -0.28713881654391127,
+          "high": -0.23351135825640548,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "own_energy": {
+        "tie_corrected": 0.8103761385557919,
+        "reference_convention": 0.8103761385557919
+      }
+    },
+    "poincare-29": {
+      "cos": {
+        "tie_corrected": 0.3802440696170778,
+        "reference_convention": 0.3802440696170778,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos-own@poincare-29",
+          "estimate": -0.3300098221415095,
+          "low": -0.3749948713273756,
+          "high": -0.28119349469168664,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "l2": {
+        "tie_corrected": 0.5589999788011334,
+        "reference_convention": 0.5589999788011334,
+        "minus_own_energy_tie_corrected": {
+          "name": "l2-own@poincare-29",
+          "estimate": -0.15125391295745388,
+          "low": -0.19944462286853326,
+          "high": -0.11798318047094346,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "neg_dot": {
+        "tie_corrected": 0.36477596331182827,
+        "reference_convention": 0.36477596331182827,
+        "minus_own_energy_tie_corrected": {
+          "name": "neg_dot-own@poincare-29",
+          "estimate": -0.34547792844675906,
+          "low": -0.38826799742115675,
+          "high": -0.28112420835621293,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "cos_std": {
+        "tie_corrected": 0.741924998410085,
+        "reference_convention": 0.741924998410085,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_std-own@poincare-29",
+          "estimate": 0.0316711066514977,
+          "low": 0.004380848477631295,
+          "high": 0.07175240228372379,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "cos_whiten": {
+        "tie_corrected": 0.4010966880304133,
+        "reference_convention": 0.4010966880304133,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_whiten-own@poincare-29",
+          "estimate": -0.309157203728174,
+          "low": -0.34558028464089696,
+          "high": -0.259513971953396,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "own_energy": {
+        "tie_corrected": 0.7102538917585873,
+        "reference_convention": 0.7102538917585873
+      }
+    },
+    "poincare-43": {
+      "cos": {
+        "tie_corrected": 0.44059724273408846,
+        "reference_convention": 0.44059724273408846,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos-own@poincare-43",
+          "estimate": -0.3441565324307327,
+          "low": -0.3701841456549195,
+          "high": -0.31233081837759896,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "l2": {
+        "tie_corrected": 0.6115378364436781,
+        "reference_convention": 0.6115378364436781,
+        "minus_own_energy_tie_corrected": {
+          "name": "l2-own@poincare-43",
+          "estimate": -0.17321593872114305,
+          "low": -0.20723142152133955,
+          "high": -0.14797234190951067,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "neg_dot": {
+        "tie_corrected": 0.4193418458559749,
+        "reference_convention": 0.4193418458559749,
+        "minus_own_energy_tie_corrected": {
+          "name": "neg_dot-own@poincare-43",
+          "estimate": -0.3654119293088463,
+          "low": -0.3964220005496856,
+          "high": -0.3349453566143675,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "cos_std": {
+        "tie_corrected": 0.6750637732569232,
+        "reference_convention": 0.6750637732569232,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_std-own@poincare-43",
+          "estimate": -0.10969000190789799,
+          "low": -0.13287435928113897,
+          "high": -0.08511513725249811,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "cos_whiten": {
+        "tie_corrected": 0.47592162072401195,
+        "reference_convention": 0.47592162072401195,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_whiten-own@poincare-43",
+          "estimate": -0.30883215444080925,
+          "low": -0.3360597309435177,
+          "high": -0.2828159418453749,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "own_energy": {
+        "tie_corrected": 0.7847537751648211,
+        "reference_convention": 0.7847537751648211
+      }
+    },
+    "pair_mlp-17": {
+      "cos": {
+        "tie_corrected": 0.38454037324137735,
+        "reference_convention": 0.38454037324137735,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos-own@pair_mlp-17",
+          "estimate": -0.43117081340051017,
+          "low": -0.4528643812906738,
+          "high": -0.4127391204343374,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "l2": {
+        "tie_corrected": 0.5211458694008494,
+        "reference_convention": 0.5211458694008494,
+        "minus_own_energy_tie_corrected": {
+          "name": "l2-own@pair_mlp-17",
+          "estimate": -0.2945653172410382,
+          "low": -0.3305709386801207,
+          "high": -0.2549759829860202,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "neg_dot": {
+        "tie_corrected": 0.3790710656670223,
+        "reference_convention": 0.3790710656670223,
+        "minus_own_energy_tie_corrected": {
+          "name": "neg_dot-own@pair_mlp-17",
+          "estimate": -0.4366401209748652,
+          "low": -0.45644888075692525,
+          "high": -0.4171110098294257,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "cos_std": {
+        "tie_corrected": 0.7239978235830324,
+        "reference_convention": 0.7239978235830324,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_std-own@pair_mlp-17",
+          "estimate": -0.09171336305885512,
+          "low": -0.10610734276175793,
+          "high": -0.07378427491584767,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "cos_whiten": {
+        "tie_corrected": 0.3615678681713151,
+        "reference_convention": 0.3615678681713151,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_whiten-own@pair_mlp-17",
+          "estimate": -0.45414331847057243,
+          "low": -0.4918387895819804,
+          "high": -0.418116778879898,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "own_energy": {
+        "tie_corrected": 0.8157111866418876,
+        "reference_convention": 0.8157111866418876
+      }
+    },
+    "pair_mlp-29": {
+      "cos": {
+        "tie_corrected": 0.3556039203770572,
+        "reference_convention": 0.3556039203770572,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos-own@pair_mlp-29",
+          "estimate": -0.46405025544634215,
+          "low": -0.4929492588219568,
+          "high": -0.44339758978640603,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "l2": {
+        "tie_corrected": 0.5032540260180756,
+        "reference_convention": 0.5032540260180756,
+        "minus_own_energy_tie_corrected": {
+          "name": "l2-own@pair_mlp-29",
+          "estimate": -0.3164001498053237,
+          "low": -0.3609038291661701,
+          "high": -0.28337235252604487,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "neg_dot": {
+        "tie_corrected": 0.3555685889327784,
+        "reference_convention": 0.3555685889327784,
+        "minus_own_energy_tie_corrected": {
+          "name": "neg_dot-own@pair_mlp-29",
+          "estimate": -0.4640855868906209,
+          "low": -0.4921384805634044,
+          "high": -0.4432245142512056,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "cos_std": {
+        "tie_corrected": 0.5983804065942607,
+        "reference_convention": 0.5983804065942607,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_std-own@pair_mlp-29",
+          "estimate": -0.22127376922913855,
+          "low": -0.2410138320753889,
+          "high": -0.2068939288471662,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "cos_whiten": {
+        "tie_corrected": 0.3949490167259057,
+        "reference_convention": 0.3949490167259057,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_whiten-own@pair_mlp-29",
+          "estimate": -0.42470515909749357,
+          "low": -0.45391194912371885,
+          "high": -0.3984239714101574,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "own_energy": {
+        "tie_corrected": 0.8196541758233993,
+        "reference_convention": 0.8196541758233993
+      }
+    },
+    "pair_mlp-43": {
+      "cos": {
+        "tie_corrected": 0.7463838266780669,
+        "reference_convention": 0.7463838266780669,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos-own@pair_mlp-43",
+          "estimate": -0.09800236014047782,
+          "low": -0.11350143603300235,
+          "high": -0.08315030031469699,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "l2": {
+        "tie_corrected": 0.47402078902181366,
+        "reference_convention": 0.47402078902181366,
+        "minus_own_energy_tie_corrected": {
+          "name": "l2-own@pair_mlp-43",
+          "estimate": -0.3703653977967311,
+          "low": -0.4227552880645776,
+          "high": -0.332198780280528,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "neg_dot": {
+        "tie_corrected": 0.7430344057604387,
+        "reference_convention": 0.7430344057604387,
+        "minus_own_energy_tie_corrected": {
+          "name": "neg_dot-own@pair_mlp-43",
+          "estimate": -0.10135178105810609,
+          "low": -0.1186116372618911,
+          "high": -0.08386195648393537,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "cos_std": {
+        "tie_corrected": 0.752778818092526,
+        "reference_convention": 0.752778818092526,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_std-own@pair_mlp-43",
+          "estimate": -0.09160736872601878,
+          "low": -0.11431894806921222,
+          "high": -0.07055668425855711,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "cos_whiten": {
+        "tie_corrected": 0.37569337959397103,
+        "reference_convention": 0.37569337959397103,
+        "minus_own_energy_tie_corrected": {
+          "name": "cos_whiten-own@pair_mlp-43",
+          "estimate": -0.46869280722457374,
+          "low": -0.4952069776290204,
+          "high": -0.44503133582233134,
+          "units": 47,
+          "excludes_zero": true
+        }
+      },
+      "own_energy": {
+        "tie_corrected": 0.8443861868185447,
+        "reference_convention": 0.8443861868185447
+      }
+    }
+  }
+}

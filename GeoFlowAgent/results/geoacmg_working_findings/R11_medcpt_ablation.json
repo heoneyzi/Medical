@@ -1,0 +1,82 @@
+{
+  "title": "동결 MedCPT 를 0 으로 채우고 같은 학습 — 학습된 모델은 무엇을 잃는가",
+  "design": "zero_views=[medcpt], 기호 해시(StructuredHasher)만 남김. cosine·euclidean × 시드 17·29.",
+  "split": "dev",
+  "test_reported": false,
+  "contrast": "제거 − 있음",
+  "context": "선형 readout 에서는 동결 MedCPT 기여가 0 이었다 (깊이고정 정렬 cos 0.5055 · PCA-64+cos 0.4775, 기호 해시 단독 0.7054 vs 합쳐도 0.7040). 학습된 비선형 결합 안에서도 0 인지를 묻는다.",
+  "axes": {
+    "policy": {
+      "per_run": {
+        "cosine-17": -0.00657,
+        "cosine-29": -0.01894,
+        "euclidean-17": -0.00122,
+        "euclidean-29": -0.03198
+      },
+      "run_clustered": {
+        "est": -0.014677588680744064,
+        "ci": [
+          -0.0287194901021611,
+          -0.0056497807640510656
+        ],
+        "excludes_zero": true
+      },
+      "gene_clustered": {
+        "est": -0.01467758868074406,
+        "ci": [
+          -0.027555248645670515,
+          0.015862805245836244
+        ],
+        "excludes_zero": false
+      }
+    },
+    "joint": {
+      "per_run": {
+        "cosine-17": -0.00725,
+        "cosine-29": -0.00781,
+        "euclidean-17": -0.01415,
+        "euclidean-29": -0.03564
+      },
+      "run_clustered": {
+        "est": -0.01621361301369864,
+        "ci": [
+          -0.03563784246575341,
+          -0.009116812928082196
+        ],
+        "excludes_zero": true
+      },
+      "gene_clustered": {
+        "est": -0.01621361301369863,
+        "ci": [
+          -0.027303563187095262,
+          0.0026915525712647537
+        ],
+        "excludes_zero": false
+      }
+    },
+    "regret@1": {
+      "per_run": {
+        "cosine-17": 0.05051,
+        "cosine-29": 0.0313,
+        "euclidean-17": 0.02076,
+        "euclidean-29": 0.07369
+      },
+      "run_clustered": {
+        "est": 0.04406734074682283,
+        "ci": [
+          0.026030612117568838,
+          0.0630958950386028
+        ],
+        "excludes_zero": true
+      },
+      "gene_clustered": {
+        "est": 0.04406734074682281,
+        "ci": [
+          0.001075928144351603,
+          0.06828032539877876
+        ],
+        "excludes_zero": true
+      }
+    }
+  }
+}

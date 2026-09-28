@@ -1,0 +1,52 @@
+{
+  "best_dev_selection_score": 0.7869130704000564,
+  "best_epoch": 3,
+  "cache_content_sha256": "00b19e6e3c669e5d2408ae7c157675fe306e837ec8b65aea1f38d0a789f56903",
+  "checkpoint": "artifacts/acmg/checkpoints/geometry_comparison/poincare/seed-17/value_geometry.pt",
+  "checkpoint_sha256": "544fe8fb92b7a755affa27471dfac0651fd08df941b167eca5a7bd617e5fdee8",
+  "completed_epoch": 17,
+  "configured_epochs": 60,
+  "energy": "poincare",
+  "feature_ablation": {
+    "zero_structured": false,
+    "zero_views": []
+  },
+  "latest": {
+    "dev_action_reachability_balanced_accuracy": 0.7382258465021938,
+    "dev_completion_balanced_accuracy": 0.7328930151700458,
+    "dev_joint_stop_action_accuracy": 0.635648544520548,
+    "dev_policy_optimal_set_accuracy": 0.6950402576489533,
+    "dev_regret_at_1": 0.29829679861220626,
+    "dev_selection_score": 0.6617457063497758,
+    "dev_thresholds": {
+      "action_reachability": 0.1,
+      "completion": 0.1
+    },
+    "epoch": 17,
+    "external_replay_fraction": 0.0,
+    "external_replay_pool": 0,
+    "hard_replay_pool": 4544,
+    "learning_rate": 0.000570262136867443,
+    "train": {
+      "action": 0.8062296193052685,
+      "action_reachability": 0.04789910528147928,
+      "bellman": 0.03480797542744681,
+      "completion": 0.11109803795848516,
+      "q": 0.03480797542744681,
+      "regret": 0.0054001510753979,
+      "state_reachability": 0.046163737746056525,
+      "total": 1.0577100644231319,
+      "transition": 0.02177330483042269,
+      "value": 0.018092133831795938
+    }
+  },
+  "metrics": "artifacts/acmg/checkpoints/geometry_comparison/poincare/seed-17/value_metrics.json",
+  "model_capacity_override": {},
+  "output_dir": "artifacts/acmg/checkpoints/geometry_comparison/poincare/seed-17",
+  "patience": 14,
+  "resume_checkpoint": "artifacts/acmg/checkpoints/geometry_comparison/poincare/seed-17/training_resume.pt",
+  "seed": 17,
+  "stale_epochs": 14,
+  "status": "complete",
+  "training_config_sha256": "71749e1c93db66df40e496d4f040a7ba4c72f57c989335412e074c7169ad0c70"
+}

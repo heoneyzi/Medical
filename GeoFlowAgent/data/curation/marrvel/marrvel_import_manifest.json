@@ -1,0 +1,7 @@
+{
+  "content_sha256": "9a4c1b6a92ebdefbf0a65e2395418781999f3ee4b0919a72ed4435b701cbbb2e",
+  "dataset_id": "hjeong84/marrvel-mcp-benchmark-data",
+  "revision": "8e895924b1b19dc5ede19669bbf66c2d8d2eb5f0",
+  "rows": 100,
+  "warning": "The public benchmark is QA-only. initial_state, public goal, private_verifier, available_tools, and gold_tool_ids must be manually curated and execution-validated before training."
+}

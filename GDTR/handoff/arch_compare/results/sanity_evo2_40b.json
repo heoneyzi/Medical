@@ -1,0 +1,9 @@
+{
+ "model": "evo2_40b",
+ "noflash": false,
+ "windows": 10,
+ "positions": 54870,
+ "acc": 0.6427373792600692,
+ "bits_per_base": 1.2499935019765556,
+ "acc_window_sd": 0.05040842936322235
+}

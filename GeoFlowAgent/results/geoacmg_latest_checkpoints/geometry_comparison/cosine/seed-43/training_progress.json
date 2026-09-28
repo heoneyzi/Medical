@@ -1,0 +1,52 @@
+{
+  "best_dev_selection_score": 0.8001743276313346,
+  "best_epoch": 3,
+  "cache_content_sha256": "00b19e6e3c669e5d2408ae7c157675fe306e837ec8b65aea1f38d0a789f56903",
+  "checkpoint": "artifacts/acmg/checkpoints/geometry_comparison/cosine/seed-43/value_geometry.pt",
+  "checkpoint_sha256": "610ab547365f7fcb14a24df43c22e0fb227bd36482f5903e192548047deceeab",
+  "completed_epoch": 17,
+  "configured_epochs": 60,
+  "energy": "cosine",
+  "feature_ablation": {
+    "zero_structured": false,
+    "zero_views": []
+  },
+  "latest": {
+    "dev_action_reachability_balanced_accuracy": 0.7486477757886281,
+    "dev_completion_balanced_accuracy": 0.7439583592645209,
+    "dev_joint_stop_action_accuracy": 0.6326252140410958,
+    "dev_policy_optimal_set_accuracy": 0.6869243156199678,
+    "dev_regret_at_1": 0.32061729853155385,
+    "dev_selection_score": 0.6710560683795078,
+    "dev_thresholds": {
+      "action_reachability": 0.1,
+      "completion": 0.1
+    },
+    "epoch": 17,
+    "external_replay_fraction": 0.0,
+    "external_replay_pool": 0,
+    "hard_replay_pool": 4297,
+    "learning_rate": 0.000570262136867443,
+    "train": {
+      "action": 0.8215788483959705,
+      "action_reachability": 0.04863304470395335,
+      "bellman": 0.03486491746507708,
+      "completion": 0.11491467438540456,
+      "q": 0.03486491746507708,
+      "regret": 0.005230095027311728,
+      "state_reachability": 0.04790022990624359,
+      "total": 1.0817097141208203,
+      "transition": 0.03426228132390051,
+      "value": 0.018310067980219245
+    }
+  },
+  "metrics": "artifacts/acmg/checkpoints/geometry_comparison/cosine/seed-43/value_metrics.json",
+  "model_capacity_override": {},
+  "output_dir": "artifacts/acmg/checkpoints/geometry_comparison/cosine/seed-43",
+  "patience": 14,
+  "resume_checkpoint": "artifacts/acmg/checkpoints/geometry_comparison/cosine/seed-43/training_resume.pt",
+  "seed": 43,
+  "stale_epochs": 14,
+  "status": "complete",
+  "training_config_sha256": "1c741524a07caab60e51ffbba293d78c781efd5c5621ac151862987ef92477e8"
+}

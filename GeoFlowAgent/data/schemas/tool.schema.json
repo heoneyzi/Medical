@@ -1,0 +1,191 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/geoflowagent/tool.schema.json",
+  "title": "GeoFlowAgent callable tool",
+  "description": "A callable tool and its deterministic contract. <STOP> and <PAD> are planner sentinels, not tools.",
+  "type": "object",
+  "required": [
+    "tool_id",
+    "name",
+    "description",
+    "preconditions",
+    "effects"
+  ],
+  "properties": {
+    "tool_id": {
+      "$ref": "#/$defs/callableToolId"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "execution_mode": {
+      "description": "symbolic (default) applies deterministic effects; snapshot requires an exact offline result.",
+      "enum": [
+        "symbolic",
+        "snapshot"
+      ]
+    },
+    "input_schema": {
+      "type": "object"
+    },
+    "argument_bindings": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "output_schema": {
+      "type": "object"
+    },
+    "output_bindings": {
+      "description": "Maps each dotted path in a successful snapshot output to its dotted destination path in typed state.",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "preconditions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/condition"
+      }
+    },
+    "effects": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/effect"
+      }
+    },
+    "observation": {
+      "type": "string"
+    },
+    "provenance": {
+      "type": "object"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "execution_mode": {
+            "const": "snapshot"
+          }
+        },
+        "required": [
+          "execution_mode"
+        ]
+      },
+      "then": {
+        "required": [
+          "output_bindings"
+        ],
+        "properties": {
+          "output_bindings": {
+            "minProperties": 1
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": true,
+  "$defs": {
+    "callableToolId": {
+      "type": "string",
+      "minLength": 1,
+      "not": {
+        "enum": [
+          "<STOP>",
+          "<PAD>"
+        ]
+      }
+    },
+    "condition": {
+      "type": "object",
+      "required": [
+        "field",
+        "op"
+      ],
+      "properties": {
+        "field": {
+          "type": "string",
+          "minLength": 1
+        },
+        "op": {
+          "enum": [
+            "eq",
+            "neq",
+            "exists",
+            "missing",
+            "nonempty",
+            "in",
+            "not_in",
+            "contains",
+            "gte",
+            "lte"
+          ]
+        },
+        "value": true
+      },
+      "additionalProperties": true
+    },
+    "effect": {
+      "type": "object",
+      "required": [
+        "field",
+        "op"
+      ],
+      "properties": {
+        "field": {
+          "type": "string",
+          "minLength": 1
+        },
+        "op": {
+          "enum": [
+            "set",
+            "copy",
+            "delete",
+            "append",
+            "increment"
+          ]
+        },
+        "value": true,
+        "from": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "op": {
+                "const": "copy"
+              }
+            },
+            "required": [
+              "op"
+            ]
+          },
+          "then": {
+            "required": [
+              "from"
+            ]
+          }
+        }
+      ],
+      "additionalProperties": true
+    }
+  }
+}

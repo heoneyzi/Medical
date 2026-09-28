@@ -1,0 +1,174 @@
+{
+  "title": "정보의 출처 — 동결 LM 임베딩인가, 학습 없는 기호 해시인가",
+  "question": "R8 에서 MedCPT 단독은 어떤 선형 readout 으로도 우연 수준이었고, 기호 해시를 더하자 PCA-64+cos 가 0.7040 이 됐다. 기호 해시 단독으로도 같은 값이 나오면 동결 LM 임베딩의 기여는 0 이다.",
+  "structured_is_not_an_embedding": "data/structured.py 의 StructuredHasher — 상태 dict 의 key=value 를 blake2b 로 64 차원에 해싱한다. 학습도 언어모델도 없다.",
+  "split": "dev",
+  "test_reported": false,
+  "unit": "gene",
+  "pairs": 141517,
+  "fitting": "PCA 는 train 에서 적합. test 미개봉.",
+  "reference_learned_trunk": {
+    "cosine own_energy (5seeds)": 0.7327,
+    "euclidean own_energy (5seeds)": 0.5895,
+    "cosine cos_std train-fit": 0.7515,
+    "euclidean cos_std train-fit": 0.7345
+  },
+  "results": {
+    "medcpt_only": {
+      "_geometry": {
+        "dimension": 768.0,
+        "effective_rank": 10.27500428031525,
+        "mean_cosine_similarity": 0.9690400944550347
+      },
+      "cos": {
+        "accuracy": 0.5055364373184847,
+        "minus_chance": 0.005536437318484705,
+        "ci": [
+          -0.03248025232620265,
+          0.0324701733413523
+        ],
+        "excludes_zero": false
+      },
+      "l2": {
+        "accuracy": 0.5077764508857593,
+        "minus_chance": 0.007776450885759308,
+        "ci": [
+          -0.030839137559046187,
+          0.03439133541822876
+        ],
+        "excludes_zero": false
+      },
+      "PCA-16 + cos": {
+        "accuracy": 0.506801303023665,
+        "minus_chance": 0.006801303023665001,
+        "ci": [
+          -0.024888738803319356,
+          0.028785597587077594
+        ],
+        "excludes_zero": false
+      },
+      "PCA-32 + cos": {
+        "accuracy": 0.4752361907050036,
+        "minus_chance": -0.024763809294996362,
+        "ci": [
+          -0.04488406705824939,
+          -0.0013112155146426255
+        ],
+        "excludes_zero": true
+      },
+      "PCA-64 + cos": {
+        "accuracy": 0.47745500540571095,
+        "minus_chance": -0.022544994594289026,
+        "ci": [
+          -0.04498807229866812,
+          0.000829031304522634
+        ],
+        "excludes_zero": false
+      }
+    },
+    "structured_only": {
+      "_geometry": {
+        "dimension": 64.0,
+        "effective_rank": 23.788125502804093,
+        "mean_cosine_similarity": 0.30361035264873626
+      },
+      "cos": {
+        "accuracy": 0.6228650974794547,
+        "minus_chance": 0.12286509747945476,
+        "ci": [
+          0.1123335844981393,
+          0.13208979392259224
+        ],
+        "excludes_zero": true
+      },
+      "l2": {
+        "accuracy": 0.6228438986128875,
+        "minus_chance": 0.1228438986128875,
+        "ci": [
+          0.11233405972984435,
+          0.13447869545585048
+        ],
+        "excludes_zero": true
+      },
+      "PCA-16 + cos": {
+        "accuracy": 0.6840238275260216,
+        "minus_chance": 0.18402382752602162,
+        "ci": [
+          0.16900861719852028,
+          0.1950855675110667
+        ],
+        "excludes_zero": true
+      },
+      "PCA-32 + cos": {
+        "accuracy": 0.7018874057533724,
+        "minus_chance": 0.20188740575337238,
+        "ci": [
+          0.19040320754609777,
+          0.21202199751427492
+        ],
+        "excludes_zero": true
+      },
+      "PCA-64 + cos": {
+        "accuracy": 0.7054064176035388,
+        "minus_chance": 0.2054064176035388,
+        "ci": [
+          0.19565297074279348,
+          0.2162045391565283
+        ],
+        "excludes_zero": true
+      }
+    },
+    "medcpt_plus_structured": {
+      "_geometry": {
+        "dimension": 832.0,
+        "effective_rank": 24.329892869136607,
+        "mean_cosine_similarity": 0.6192877051732358
+      },
+      "cos": {
+        "accuracy": 0.6469399436110149,
+        "minus_chance": 0.14693994361101492,
+        "ci": [
+          0.12172367720044895,
+          0.1679489909146873
+        ],
+        "excludes_zero": true
+      },
+      "l2": {
+        "accuracy": 0.6507910710374019,
+        "minus_chance": 0.15079107103740186,
+        "ci": [
+          0.12551248427814757,
+          0.1713244897243786
+        ],
+        "excludes_zero": true
+      },
+      "PCA-16 + cos": {
+        "accuracy": 0.674547934170453,
+        "minus_chance": 0.17454793417045303,
+        "ci": [
+          0.15960899599582462,
+          0.1866122461209966
+        ],
+        "excludes_zero": true
+      },
+      "PCA-32 + cos": {
+        "accuracy": 0.6944254047216942,
+        "minus_chance": 0.1944254047216942,
+        "ci": [
+          0.18396780232339427,
+          0.20413435536068017
+        ],
+        "excludes_zero": true
+      },
+      "PCA-64 + cos": {
+        "accuracy": 0.7040072924100992,
+        "minus_chance": 0.20400729241009913,
+        "ci": [
+          0.1959520784246385,
+          0.21417635886123487
+        ],
+        "excludes_zero": true
+      }
+    }
+  }
+}

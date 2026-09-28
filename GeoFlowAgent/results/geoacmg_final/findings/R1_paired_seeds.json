@@ -1,0 +1,189 @@
+{
+  "families": [
+    "cosine",
+    "euclidean"
+  ],
+  "seeds": [
+    17,
+    29,
+    43,
+    59,
+    71
+  ],
+  "by_seed": {
+    "17": {
+      "trunk_fingerprint": "99d2b07a128b11b311541e5ca9190d743d9f9ee656fcc4d33dbf623b544b5fa1",
+      "energy_params": {
+        "cosine": 0,
+        "euclidean": 0
+      },
+      "total_params": {
+        "cosine": 335942,
+        "euclidean": 335942
+      },
+      "cosine": {
+        "ordering": 0.6954994806277691
+      },
+      "euclidean": {
+        "ordering": 0.6262286509747945
+      },
+      "difference": 0.0692708296529746
+    },
+    "29": {
+      "trunk_fingerprint": "6995f43cde56819042f4affacb09257af488b700e96f3a28abafe7a10bceb2a3",
+      "energy_params": {
+        "cosine": 0,
+        "euclidean": 0
+      },
+      "total_params": {
+        "cosine": 335942,
+        "euclidean": 335942
+      },
+      "cosine": {
+        "ordering": 0.7411477066359519
+      },
+      "euclidean": {
+        "ordering": 0.5741854335521528
+      },
+      "difference": 0.16696227308379907
+    },
+    "43": {
+      "trunk_fingerprint": "95c0ccf77f98037e0f4d88091cbafb47fe6814273cabc186510def2954b4b855",
+      "energy_params": {
+        "cosine": 0,
+        "euclidean": 0
+      },
+      "total_params": {
+        "cosine": 335942,
+        "euclidean": 335942
+      },
+      "cosine": {
+        "ordering": 0.7733699838181985
+      },
+      "euclidean": {
+        "ordering": 0.5605686949271113
+      },
+      "difference": 0.2128012888910873
+    },
+    "59": {
+      "trunk_fingerprint": "6ce2dcc79baed23c0ae514178d4dad3ada45988665fff0bc418bd8987356e41c",
+      "energy_params": {
+        "cosine": 0,
+        "euclidean": 0
+      },
+      "total_params": {
+        "cosine": 335942,
+        "euclidean": 335942
+      },
+      "cosine": {
+        "ordering": 0.7560222446773179
+      },
+      "euclidean": {
+        "ordering": 0.6145975395182204
+      },
+      "difference": 0.14142470515909755
+    },
+    "71": {
+      "trunk_fingerprint": "293d256296d8969ed639c2bcdc6fcd2362c659d8b2eea7320b964cf146e61460",
+      "energy_params": {
+        "cosine": 0,
+        "euclidean": 0
+      },
+      "total_params": {
+        "cosine": 335942,
+        "euclidean": 335942
+      },
+      "cosine": {
+        "ordering": 0.6974568426408134
+      },
+      "euclidean": {
+        "ordering": 0.5719171548294552
+      },
+      "difference": 0.12553968781135827
+    }
+  },
+  "prior_prediction": {
+    "source": "EXPERIMENT_JOURNAL_20260919.md §14",
+    "contrast": "cosine - euclidean",
+    "metric": "ordering",
+    "estimate": 0.1497,
+    "ci_low": 0.1076,
+    "ci_high": 0.187,
+    "leave_one_gene_out": "47/47 excluding zero",
+    "seeds": 3,
+    "note": "소실 이전 실행값. 재현 대상이지 통과 기준이 아니다. 다만 시드 17·29·43 은 이 값을 만든 실행 자체이므로 그 세 시드의 기여분은 '재현'이 아니라 '재도출'이다 — 새로 독립인 것은 시드 59·71 뿐이다."
+  },
+  "findings": [
+    {
+      "claim_id": "C2",
+      "name": "ordering:cosine_minus_euclidean:seed_clustered",
+      "evidence": "paired_interval",
+      "estimate": 0.14319975691966336,
+      "unit": "seed",
+      "n_units": 5,
+      "role": "exploratory",
+      "ci_low": 0.09495537638587592,
+      "ci_high": 0.18019036582177406,
+      "p_value": null,
+      "null_mean": null,
+      "null_draws": null,
+      "method": "paired cluster bootstrap (bca), 2000 resamples",
+      "detail": {
+        "left_mean": 0.7326992516800102,
+        "right_mean": 0.5894994947603468,
+        "n_observations": 5,
+        "variance_source": "training run (seed)",
+        "question": "학습을 다시 돌려도 이 차이가 재현되는가",
+        "n_seeds": 5,
+        "prior_prediction": {
+          "source": "EXPERIMENT_JOURNAL_20260919.md §14",
+          "contrast": "cosine - euclidean",
+          "metric": "ordering",
+          "estimate": 0.1497,
+          "ci_low": 0.1076,
+          "ci_high": 0.187,
+          "leave_one_gene_out": "47/47 excluding zero",
+          "seeds": 3,
+          "note": "소실 이전 실행값. 재현 대상이지 통과 기준이 아니다. 다만 시드 17·29·43 은 이 값을 만든 실행 자체이므로 그 세 시드의 기여분은 '재현'이 아니라 '재도출'이다 — 새로 독립인 것은 시드 59·71 뿐이다."
+        }
+      }
+    },
+    {
+      "claim_id": "C2",
+      "name": "ordering:cosine_minus_euclidean:gene_clustered",
+      "evidence": "paired_interval",
+      "estimate": 0.15304908351605767,
+      "unit": "gene",
+      "n_units": 47,
+      "role": "exploratory",
+      "ci_low": 0.1098960225333183,
+      "ci_high": 0.1943400066005071,
+      "p_value": null,
+      "null_mean": null,
+      "null_draws": null,
+      "method": "paired cluster bootstrap (bca), 2000 resamples",
+      "detail": {
+        "left_mean": 0.7380887456452728,
+        "right_mean": 0.585039662129217,
+        "n_observations": 2920,
+        "variance_source": "gene cluster",
+        "question": "다른 유전자에서도 같은 방향인가",
+        "n_seed_task_observations": 2920,
+        "n_unique_tasks": 584,
+        "n_seeds_pooled": 5,
+        "caveat": "이 구간은 시드마다의 per-task 값을 모두 쌓아 유전자로 재표집한다. 따라서 시드 분산이 부분적으로 섞여 있다. 시드 축 판정은 seed_clustered finding 을 쓸 것.",
+        "note": "시드 구간과 합치지 않는다 — 다른 것을 재는 구간이다"
+      }
+    }
+  ],
+  "seeds_used": [
+    17,
+    29,
+    43,
+    59,
+    71
+  ],
+  "source": "per-pair 마진에서 재계산 (store 불필요)",
+  "stage": "R1_paired_seeds",
+  "status": "complete"
+}

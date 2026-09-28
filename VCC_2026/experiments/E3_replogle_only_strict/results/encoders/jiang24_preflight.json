@@ -1,0 +1,34 @@
+{
+  "config": "<repo>/data_experiments/replogle_only/jiang24/shadow.yaml",
+  "contexts": {
+    "bxpc3": "<repo>/data_shadow/jiang24_ifng_bxpc3_loco/validation/bxpc3/controls.h5ad",
+    "k562": "<repo>/data_experiments/replogle_only/jiang24/source_controls/k562.h5ad",
+    "rpe1": "<repo>/data_experiments/replogle_only/jiang24/source_controls/rpe1.h5ad"
+  },
+  "models": [
+    {
+      "checkpoint": "<repo>/external/UCE/model_files/4layer_model.torch",
+      "checkpoint_sha256": "acb28f3f0a1d803e4a4ffe891b9bab38bf93c84762dc06b2452f0d515da91560",
+      "errors": [],
+      "executable": "<repo>/envs/uce/bin/python",
+      "model": "uce",
+      "ready": true,
+      "repo": "<repo>/external/UCE",
+      "repo_commit": "9c416007be15ad6753dc84af4468c1dc10421ab9",
+      "role": "context_encoder",
+      "track": "B_FM_AUGMENTED"
+    },
+    {
+      "checkpoint": "<repo>/models/transcriptformer/tf_sapiens",
+      "checkpoint_sha256": "6d01c49f06bb902541243a72939cb21a1f30fea2fc2efd8787e4478b49aa2e05",
+      "errors": [],
+      "executable": "<repo>/envs/transcriptformer/bin/transcriptformer",
+      "model": "transcriptformer_cell",
+      "ready": true,
+      "repo": "<repo>/external/transcriptformer",
+      "repo_commit": "c943a89a4de9511a8ab1010715bf1cfa8827cc99",
+      "role": "context_encoder",
+      "track": "B_FM_AUGMENTED"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vcc2026-frozen-baselines"
+version = "0.2.0"
+description = "Training-free (frozen) baselines for the Virtual Cell Challenge 2026: Replogle GWPS matching + raw-count generators + STATE/STACK adapters, with leaderboard-ready vcc-cli submissions."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+    "anndata>=0.10",
+    "scanpy>=1.10",
+    "numpy>=1.24",
+    "scipy>=1.11",
+    "pandas>=2.0",
+    "pyyaml>=6.0",
+    "tabulate>=0.9",
+    "vcc-cli>=0.1.0",
+    "cell-eval2==0.16.0",
+    "cell-eval>=0.8.2",
+]
+
+[project.optional-dependencies]
+esm = ["torch>=2.1", "transformers>=4.40"]
+official-eval = ["cell-eval2[gpu,gpudge]==0.16.0"]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+vcc-baselines = "vcc_baselines.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]

@@ -1,0 +1,181 @@
+{
+  "phase": "phase5",
+  "seed": 42,
+  "chrom": "chr22",
+  "chrom_len": 50818468,
+  "smoothing_bp": 100,
+  "n_valid_positions": 36176994,
+  "frac_valid": 0.7118867495179115,
+  "frac_phylop_nan_raw": 0.2873059849029687,
+  "frac_c_nan_raw": 0.23197212477951912,
+  "c_threshold_top25pct_smoothed": 31.094999313354492,
+  "phylop_threshold_bot25pct_smoothed": -0.2195499986410141,
+  "quadrant_sizes_bp": {
+    "Q1": 7162687,
+    "Q2": 1885030,
+    "Q3": 19969852,
+    "Q4": 7159425,
+    "NA": 14641474
+  },
+  "quadrant_pct_of_chr22": {
+    "Q1": 14.094653542094186,
+    "Q2": 3.7093404704762056,
+    "Q3": 39.2964463234114,
+    "Q4": 14.088234615809355,
+    "NA": 28.81132504820885
+  },
+  "q2_n_runs_total": 64603,
+  "q2_n_regions_min100bp": 5090,
+  "annotation_enrichment": {
+    "ENCODE_cCRE": {
+      "n_overlap_q2": 387721,
+      "n_overlap_total_valid": 5795716,
+      "n_q2": 1885030,
+      "n_total_valid": 36176994,
+      "obs_frac_in_q2": 0.20568425966695492,
+      "exp_frac_genome": 0.1602044658547363,
+      "fold_enrichment": 1.2838859302053223,
+      "hypergeom_pval_oneSided_overrep": 0.0
+    },
+    "ENCODE_rDHS": {
+      "n_overlap_q2": 849051,
+      "n_overlap_total_valid": 13048436,
+      "n_q2": 1885030,
+      "n_total_valid": 36176994,
+      "obs_frac_in_q2": 0.45041776523450555,
+      "exp_frac_genome": 0.3606832563258296,
+      "fold_enrichment": 1.248790337047453,
+      "hypergeom_pval_oneSided_overrep": 0.0
+    },
+    "rmsk_SINE": {
+      "n_overlap_q2": 384427,
+      "n_overlap_total_valid": 7909763,
+      "n_q2": 1885030,
+      "n_total_valid": 36176994,
+      "obs_frac_in_q2": 0.20393680737176598,
+      "exp_frac_genome": 0.21864069192702965,
+      "fold_enrichment": 0.9327486369272422,
+      "hypergeom_pval_oneSided_overrep": 1.0
+    },
+    "rmsk_LINE": {
+      "n_overlap_q2": 390610,
+      "n_overlap_total_valid": 5720450,
+      "n_q2": 1885030,
+      "n_total_valid": 36176994,
+      "obs_frac_in_q2": 0.2072168612701124,
+      "exp_frac_genome": 0.15812397237868905,
+      "fold_enrichment": 1.310470880239787,
+      "hypergeom_pval_oneSided_overrep": 0.0
+    },
+    "rmsk_LTR": {
+      "n_overlap_q2": 174220,
+      "n_overlap_total_valid": 2399302,
+      "n_q2": 1885030,
+      "n_total_valid": 36176994,
+      "obs_frac_in_q2": 0.09242293226102502,
+      "exp_frac_genome": 0.0663212095510202,
+      "fold_enrichment": 1.3935652393360687,
+      "hypergeom_pval_oneSided_overrep": 0.0
+    },
+    "rmsk_DNA": {
+      "n_overlap_q2": 63357,
+      "n_overlap_total_valid": 1010595,
+      "n_q2": 1885030,
+      "n_total_valid": 36176994,
+      "obs_frac_in_q2": 0.033610605666753314,
+      "exp_frac_genome": 0.027934742173437627,
+      "fold_enrichment": 1.203182956122384,
+      "hypergeom_pval_oneSided_overrep": 0.0
+    },
+    "rmsk_Simple_repeat": {
+      "n_overlap_q2": 44955,
+      "n_overlap_total_valid": 566791,
+      "n_q2": 1885030,
+      "n_total_valid": 36176994,
+      "obs_frac_in_q2": 0.023848426815488346,
+      "exp_frac_genome": 0.01566716681877991,
+      "fold_enrichment": 1.5221914141427106,
+      "hypergeom_pval_oneSided_overrep": 0.0
+    },
+    "rmsk_Low_complexity": {
+      "n_overlap_q2": 9495,
+      "n_overlap_total_valid": 90186,
+      "n_q2": 1885030,
+      "n_total_valid": 36176994,
+      "obs_frac_in_q2": 0.0050370551131812226,
+      "exp_frac_genome": 0.002492910273307948,
+      "fold_enrichment": 2.020552110163733,
+      "hypergeom_pval_oneSided_overrep": 0.0
+    },
+    "rmsk_Satellite": {
+      "n_overlap_q2": 1450,
+      "n_overlap_total_valid": 210593,
+      "n_q2": 1885030,
+      "n_total_valid": 36176994,
+      "obs_frac_in_q2": 0.0007692185270260951,
+      "exp_frac_genome": 0.005821185696080774,
+      "fold_enrichment": 0.13214121094676404,
+      "hypergeom_pval_oneSided_overrep": 1.0
+    },
+    "rmsk_Retroposon": {
+      "n_overlap_q2": 732,
+      "n_overlap_total_valid": 27452,
+      "n_q2": 1885030,
+      "n_total_valid": 36176994,
+      "obs_frac_in_q2": 0.000388322732264208,
+      "exp_frac_genome": 0.0007588247934585167,
+      "fold_enrichment": 0.5117422830826847,
+      "hypergeom_pval_oneSided_overrep": 1.0
+    }
+  },
+  "context_enrichment_in_q2": {
+    "intergenic": {
+      "n_overlap_q2": 747416,
+      "n_overlap_total_valid": 13051594,
+      "fold_enrichment": 1.0990388548504326,
+      "hypergeom_pval_oneSided_overrep": 0.0
+    },
+    "intron": {
+      "n_overlap_q2": 1031222,
+      "n_overlap_total_valid": 20635928,
+      "fold_enrichment": 0.9590524899991411,
+      "hypergeom_pval_oneSided_overrep": 1.0
+    },
+    "coding_exon": {
+      "n_overlap_q2": 62717,
+      "n_overlap_total_valid": 1621494,
+      "fold_enrichment": 0.7423080010771684,
+      "hypergeom_pval_oneSided_overrep": 1.0
+    },
+    "5utr": {
+      "n_overlap_q2": 7485,
+      "n_overlap_total_valid": 73596,
+      "fold_enrichment": 1.951874118592328,
+      "hypergeom_pval_oneSided_overrep": 0.0
+    },
+    "3utr": {
+      "n_overlap_q2": 33044,
+      "n_overlap_total_valid": 608029,
+      "fold_enrichment": 1.0429957326056716,
+      "hypergeom_pval_oneSided_overrep": 1.723728257190347e-15
+    },
+    "splice_donor": {
+      "n_overlap_q2": 1896,
+      "n_overlap_total_valid": 93468,
+      "fold_enrichment": 0.38930465314321056,
+      "hypergeom_pval_oneSided_overrep": 1.0
+    },
+    "splice_acceptor": {
+      "n_overlap_q2": 1250,
+      "n_overlap_total_valid": 92885,
+      "fold_enrichment": 0.25827278110782037,
+      "hypergeom_pval_oneSided_overrep": 1.0
+    },
+    "repeat": {
+      "n_overlap_q2": 0,
+      "n_overlap_total_valid": 0,
+      "fold_enrichment": NaN,
+      "hypergeom_pval_oneSided_overrep": 1.0
+    }
+  }
+}

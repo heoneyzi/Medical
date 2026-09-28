@@ -1,0 +1,27 @@
+# Phase 4 cross-architecture model revisions (locked at download time)
+# Generated: 2026-04-26T17:00:19Z
+
+[arcinstitute/evo2_7b]
+revision: bda0089f92582d5baabf0f22d9fc85f3588f6b58
+size: 13.8G
+trust_remote_code: n/a (pre-existing)
+load_test: n/a (pre-existing)
+
+[LongSafari/hyenadna-large-1m-seqlen-hf]
+revision: 0a629abf9c7f85b4ec9aa6a1aefa3adcf1907446
+size: 218.3M
+trust_remote_code: true
+load_test: PASS (6.6M params via AutoModel; backbone only, full LM head not loaded by AutoModel)
+
+[InstaDeepAI/nucleotide-transformer-v2-500m-multi-species]
+revision: 06615c1660c892fc199840c18123f8385b3542a8
+size: 6.0G
+trust_remote_code: true (required, but conflicts with AutoModel)
+load_test: FAIL ValueError: Unrecognized configuration class transformers_modules....EsmConfig for AutoModel; weights downloaded OK; needs custom loader (e.g. AutoModelForMaskedLM with trust_remote_code=True or direct EsmModel from remote code)
+note: HF ID corrected from spec (underscores -> dashes)
+
+[zhihan1996/DNABERT-2-117M]
+revision: 7bce263b15377fc15361f52cfab88f8b586abda0
+size: 468.6M
+trust_remote_code: true
+load_test: PASS (117.1M params via AutoModel; warns pooler not initialized — expected for pretrained-only checkpoint)

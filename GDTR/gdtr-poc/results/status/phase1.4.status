@@ -1,0 +1,5 @@
+{
+  "phase": "phase1.4",
+  "state": "PASS",
+  "reason": "idempotent skip \u2014 _done marker exists"
+}

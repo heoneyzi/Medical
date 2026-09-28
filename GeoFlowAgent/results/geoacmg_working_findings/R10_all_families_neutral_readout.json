@@ -1,0 +1,253 @@
+{
+  "title": "읽기 채널 설명이 cosine/euclidean 에만 특수한가, 모든 family 에 일반인가",
+  "split": "dev",
+  "test_reported": false,
+  "unit": "gene",
+  "family_means": {
+    "cosine": {
+      "seeds": [
+        17,
+        29,
+        43,
+        59,
+        71,
+        83,
+        97
+      ],
+      "own_energy": 0.7388410680594659,
+      "cos_std": 0.7362305790621824,
+      "l2": 0.5883674752856546,
+      "cos_whiten": 0.44086071436142454
+    },
+    "euclidean": {
+      "seeds": [
+        17,
+        29,
+        43,
+        59,
+        71,
+        83,
+        97
+      ],
+      "own_energy": 0.5865060129070813,
+      "cos_std": 0.7164974626975658,
+      "l2": 0.5865060129070813,
+      "cos_whiten": 0.4777104012743547
+    },
+    "directed_quasimetric": {
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "own_energy": 0.783691476406839,
+      "cos_std": 0.6926776759447038,
+      "l2": 0.5764584231340875,
+      "cos_whiten": 0.4485091308229165
+    },
+    "poincare": {
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "own_energy": 0.7684612684930667,
+      "cos_std": 0.7370115722257159,
+      "l2": 0.6055715332198016,
+      "cos_whiten": 0.47613832024892183
+    },
+    "pair_mlp": {
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "own_energy": 0.8265838497612772,
+      "cos_std": 0.6917190160899397,
+      "l2": 0.4994735614802461,
+      "cos_whiten": 0.3774034214970639
+    }
+  },
+  "pairwise": {
+    "cosine_minus_euclidean@own_energy": {
+      "estimate": 0.15233505515238452,
+      "ci": [
+        0.11574757565955049,
+        0.1867599667602749
+      ],
+      "excludes_zero": true,
+      "n_seeds": 7
+    },
+    "cosine_minus_euclidean@cos_std": {
+      "estimate": 0.019733116364616464,
+      "ci": [
+        -0.000668841378845019,
+        0.029127401950866924
+      ],
+      "excludes_zero": false,
+      "n_seeds": 7
+    },
+    "cosine_minus_directed_quasimetric@own_energy": {
+      "estimate": -0.04701908604619939,
+      "ci": [
+        -0.055736496138253856,
+        -0.026754433169273117
+      ],
+      "excludes_zero": true,
+      "n_seeds": 3
+    },
+    "cosine_minus_directed_quasimetric@cos_std": {
+      "estimate": 0.061012693410214563,
+      "ci": [
+        0.05116186232972282,
+        0.07442931884103543
+      ],
+      "excludes_zero": true,
+      "n_seeds": 3
+    },
+    "cosine_minus_poincare@own_energy": {
+      "estimate": -0.03178887813242697,
+      "ci": [
+        -0.0495828246943816,
+        -0.0007029100290335085
+      ],
+      "excludes_zero": true,
+      "n_seeds": 3
+    },
+    "cosine_minus_poincare@cos_std": {
+      "estimate": 0.016678797129202384,
+      "ci": [
+        -0.01062960551957141,
+        0.0319538028704375
+      ],
+      "excludes_zero": false,
+      "n_seeds": 3
+    },
+    "cosine_minus_pair_mlp@own_energy": {
+      "estimate": -0.08991145940063738,
+      "ci": [
+        -0.10147434413569278,
+        -0.08258512795834302
+      ],
+      "excludes_zero": true,
+      "n_seeds": 3
+    },
+    "cosine_minus_pair_mlp@cos_std": {
+      "estimate": 0.061971353264978754,
+      "ci": [
+        0.052656828274551724,
+        0.07129874715499217
+      ],
+      "excludes_zero": true,
+      "n_seeds": 3
+    },
+    "euclidean_minus_directed_quasimetric@own_energy": {
+      "estimate": -0.1966972165888197,
+      "ci": [
+        -0.2289610295042353,
+        -0.16295443632416415
+      ],
+      "excludes_zero": true,
+      "n_seeds": 3
+    },
+    "euclidean_minus_directed_quasimetric@cos_std": {
+      "estimate": 0.03179123356204555,
+      "ci": [
+        0.01957526584927491,
+        0.051533712706442275
+      ],
+      "excludes_zero": true,
+      "n_seeds": 3
+    },
+    "euclidean_minus_poincare@own_energy": {
+      "estimate": -0.18146700867504728,
+      "ci": [
+        -0.21811445435143453,
+        -0.15454071344517414
+      ],
+      "excludes_zero": true,
+      "n_seeds": 3
+    },
+    "euclidean_minus_poincare@cos_std": {
+      "estimate": -0.012542662718966625,
+      "ci": [
+        -0.019453284654998276,
+        -0.0021628601581981126
+      ],
+      "excludes_zero": true,
+      "n_seeds": 3
+    },
+    "euclidean_minus_pair_mlp@own_energy": {
+      "estimate": -0.23958958994325774,
+      "ci": [
+        -0.27505338110396643,
+        -0.20538088542084446
+      ],
+      "excludes_zero": true,
+      "n_seeds": 3
+    },
+    "euclidean_minus_pair_mlp@cos_std": {
+      "estimate": 0.03274989341680976,
+      "ci": [
+        0.024279115675801804,
+        0.04982047604843466
+      ],
+      "excludes_zero": true,
+      "n_seeds": 3
+    },
+    "directed_quasimetric_minus_poincare@own_energy": {
+      "estimate": 0.01523020791377243,
+      "ci": [
+        0.0020996052065493775,
+        0.02897195741451523
+      ],
+      "excludes_zero": true,
+      "n_seeds": 3
+    },
+    "directed_quasimetric_minus_poincare@cos_std": {
+      "estimate": -0.044333896281012176,
+      "ci": [
+        -0.06793126295663397,
+        -0.033041379394687875
+      ],
+      "excludes_zero": true,
+      "n_seeds": 3
+    },
+    "directed_quasimetric_minus_pair_mlp@own_energy": {
+      "estimate": -0.04289237335443798,
+      "ci": [
+        -0.061336983279131056,
+        -0.033584372591809214
+      ],
+      "excludes_zero": true,
+      "n_seeds": 3
+    },
+    "directed_quasimetric_minus_pair_mlp@cos_std": {
+      "estimate": 0.0009586598547642123,
+      "ci": [
+        -0.007236517214455841,
+        0.009037891765508626
+      ],
+      "excludes_zero": false,
+      "n_seeds": 3
+    },
+    "poincare_minus_pair_mlp@own_energy": {
+      "estimate": -0.05812258126821042,
+      "ci": [
+        -0.09169713535715035,
+        -0.042655176809009356
+      ],
+      "excludes_zero": true,
+      "n_seeds": 3
+    },
+    "poincare_minus_pair_mlp@cos_std": {
+      "estimate": 0.04529255613577638,
+      "ci": [
+        0.03503777386133013,
+        0.06825335107401063
+      ],
+      "excludes_zero": true,
+      "n_seeds": 3
+    }
+  }
+}

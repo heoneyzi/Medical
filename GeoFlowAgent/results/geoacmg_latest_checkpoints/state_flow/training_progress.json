@@ -1,0 +1,30 @@
+{
+  "best_dev_validation_loss": 1.4802867376775273,
+  "best_epoch": 49,
+  "cache_content_sha256": "00b19e6e3c669e5d2408ae7c157675fe306e837ec8b65aea1f38d0a789f56903",
+  "completed_epoch": 60,
+  "configured_epochs": 60,
+  "latest": {
+    "dev": {
+      "endpoint": 0.3908067545448526,
+      "flow_matching": 0.2451106903627508,
+      "stop": 0.2227109435152197,
+      "total": 1.480736460326339,
+      "transition": 1.164252246067001
+    },
+    "epoch": 60,
+    "learning_rate": 0.0,
+    "train": {
+      "endpoint": 0.36455437127086854,
+      "flow_matching": 0.25340133822626537,
+      "stop": 0.20968554003371132,
+      "total": 1.3502813180287678,
+      "transition": 1.0097848541206784
+    }
+  },
+  "patience": 14,
+  "resume_checkpoint": "$GEOACMG_WORK/artifacts/acmg/checkpoints/state_flow/training_resume.pt",
+  "stale_epochs": 11,
+  "status": "running",
+  "training_config_sha256": "a921b7c04076ad67a7e98d26810f8272e31992bb48605aa72d87abcd04702483"
+}

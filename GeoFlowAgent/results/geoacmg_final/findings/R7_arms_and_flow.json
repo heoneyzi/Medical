@@ -1,0 +1,86 @@
+{
+  "flow": {
+    "status": "complete",
+    "protocol": "root-only (task 당 독립 루트 1개), train 롤아웃 미보고. 전수 평가와 다른 프로토콜이다.",
+    "evaluation_scope": "task_roots",
+    "eligible_states": 584,
+    "stop_threshold": 0.5,
+    "runtime_seconds": 19.2,
+    "checkpoint": {
+      "best_epoch": 49,
+      "best_loss": 1.4802867376775273
+    },
+    "goal_completion": {
+      "one_shot": 0.11686643835616438,
+      "observed_replan": 0.5993150684931506,
+      "verifier_stop_guard": 0.6232876712328768,
+      "blind_compute_matched": 0.0273972602739726
+    },
+    "feedback_effects": {
+      "tasks": 584,
+      "one_shot_goal_completion_rate": 0.11686643835616438,
+      "replanning_goal_completion_rate": 0.5993150684931506,
+      "blind_replanning_goal_completion_rate": 0.0273972602739726,
+      "replanning_minus_one_shot": {
+        "estimate": 0.4824486301369863,
+        "low": 0.44389982876712325,
+        "high": 0.5222602739726028,
+        "units": 584
+      },
+      "replanning_minus_blind": {
+        "estimate": 0.571917808219178,
+        "low": 0.5308219178082192,
+        "high": 0.6113013698630136,
+        "units": 584
+      }
+    },
+    "equivalence_to_reference_implementation": {
+      "measured_at": "2026-09-20",
+      "stop_threshold": 0.5,
+      "dev_roots_total": 584,
+      "equivalence_subset": 24,
+      "original_seconds": 24.58,
+      "batched_seconds": 6.52,
+      "speedup": 3.77,
+      "metrics_compared": 59,
+      "metrics_mismatched": 0,
+      "mismatches": [],
+      "equivalent": true
+    }
+  },
+  "p1_raw_metric_arm": {
+    "status": "ordering_measured_planning_arm_pending",
+    "raw_frozen_ordering": {
+      "raw_cos": 0.5055364373184847,
+      "raw_l2": 0.5077764508857593,
+      "raw_dot": 0.49663997964908807
+    },
+    "what_is_measured": "동결 공간 raw metric 의 깊이고정 순서 일치율. 세 지표 모두 우연 수준이다.",
+    "what_is_still_needed": "P1 은 정렬이 아니라 **계획 arm** 이다. arms.raw_metric_plan_source 로 ladder.Greedy 를 만들고 runners.ladder_findings 와 같은 에피소드 위에서 돌려야 한다. corpus_sealed 와 동결 임베딩이 필요하다."
+  },
+  "p3_cost_models": {
+    "status": "structurally_blocked",
+    "observed_tool_costs": {
+      "probe_clinical_assertion": 1.0,
+      "probe_gene_mechanism": 1.0,
+      "probe_in_silico": 1.0,
+      "probe_molecular_consequence": 1.0,
+      "probe_population_frequency": 1.0,
+      "report_pathogenic": 0.5,
+      "report_likely_pathogenic": 0.5,
+      "report_uncertain_significance": 0.5,
+      "report_likely_benign": 0.5,
+      "report_benign": 0.5
+    },
+    "distinct_cost_values": [
+      0.5,
+      1.0
+    ],
+    "why_blocked": "도구 비용이 자리표시자다(probe 1.0 / report 0.5). arms.CostModel 은 모든 항목이 Provenance.MEASURED 이기를 요구하고, CLAUDE.md 금지사항 7 은 자리표시자 비용으로 cost-matched 결론을 내는 것을 금지한다. 따라서 P3 는 비용을 **실측하기 전에는 시작하지 않는다**.",
+    "what_would_unblock": "도구군마다 실제 wall-clock / 호출수 / 금액을 반복 측정해 arms.measured_cost_model 에 넘긴다. 측정 없이는 만들지 않는다.",
+    "precedent": "C4 와 같은 처리 — 검정 불가를 선언하고 통과시키지 않는다"
+  },
+  "note": "셋의 상태가 다르다: flow 는 완료, P1 은 정렬만 측정되고 계획 arm 이 남았으며, P3 는 비용 실측 전까지 구조적으로 막혀 있다. 하나로 뭉뚱그리지 않는다.",
+  "stage": "R7_arms_and_flow",
+  "status": "complete"
+}

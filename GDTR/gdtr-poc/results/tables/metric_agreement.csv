@@ -1,0 +1,4 @@
+,delta_c_discrete,delta_c_interp,signed_argmax_delta_D
+delta_c_discrete,1.0,,
+delta_c_interp,,1.0,0.39999999999999997
+signed_argmax_delta_D,,0.39999999999999997,1.0

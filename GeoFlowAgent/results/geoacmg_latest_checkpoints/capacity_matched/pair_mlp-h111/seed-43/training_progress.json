@@ -1,0 +1,54 @@
+{
+  "best_dev_selection_score": 0.8097694574854316,
+  "best_epoch": 3,
+  "cache_content_sha256": "00b19e6e3c669e5d2408ae7c157675fe306e837ec8b65aea1f38d0a789f56903",
+  "checkpoint": "artifacts/acmg/checkpoints/capacity_matched/pair_mlp-h111/seed-43/value_geometry.pt",
+  "checkpoint_sha256": "a4b3f7b1fcdeedf61f5c9d4861e32a07c57fa504668e951f7900f7ec971ab16e",
+  "completed_epoch": 17,
+  "configured_epochs": 60,
+  "energy": "pair_mlp",
+  "feature_ablation": {
+    "zero_structured": false,
+    "zero_views": []
+  },
+  "latest": {
+    "dev_action_reachability_balanced_accuracy": 0.7538719656148347,
+    "dev_completion_balanced_accuracy": 0.7586688018456538,
+    "dev_joint_stop_action_accuracy": 0.6632330907534246,
+    "dev_policy_optimal_set_accuracy": 0.7194524959742351,
+    "dev_regret_at_1": 0.2785034485415944,
+    "dev_selection_score": 0.688102045425743,
+    "dev_thresholds": {
+      "action_reachability": 0.1,
+      "completion": 0.1
+    },
+    "epoch": 17,
+    "external_replay_fraction": 0.0,
+    "external_replay_pool": 0,
+    "hard_replay_pool": 4190,
+    "learning_rate": 0.000570262136867443,
+    "train": {
+      "action": 0.793578947433661,
+      "action_reachability": 0.05436621177569669,
+      "bellman": 0.03530795502827566,
+      "completion": 0.11772046442788053,
+      "q": 0.03530795502827566,
+      "regret": 0.005486743294509607,
+      "state_reachability": 0.05230744172013017,
+      "total": 1.0637362080169825,
+      "transition": 0.02772371497066852,
+      "value": 0.018561265401911952
+    }
+  },
+  "metrics": "artifacts/acmg/checkpoints/capacity_matched/pair_mlp-h111/seed-43/value_metrics.json",
+  "model_capacity_override": {
+    "hidden_dim": 111
+  },
+  "output_dir": "artifacts/acmg/checkpoints/capacity_matched/pair_mlp-h111/seed-43",
+  "patience": 14,
+  "resume_checkpoint": "artifacts/acmg/checkpoints/capacity_matched/pair_mlp-h111/seed-43/training_resume.pt",
+  "seed": 43,
+  "stale_epochs": 14,
+  "status": "complete",
+  "training_config_sha256": "b8294317e92580dc0a3d5f419c6ffdeb4c2fdf6a83dd581ccefdc650e77100d3"
+}

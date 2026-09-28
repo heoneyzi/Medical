@@ -1,0 +1,7 @@
+# Model-free analyses, toy-runtime integration tests, and feature models.
+numpy>=1.24
+torch>=2.2
+
+# The real-checkpoint path intentionally reuses the already installed Evo 2 /
+# Vortex environment; it is not pinned here because changing that environment
+# would change the runtime provenance being audited.

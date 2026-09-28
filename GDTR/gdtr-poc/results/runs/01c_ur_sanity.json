@@ -1,0 +1,125 @@
+{
+  "script": "01c_ur_sanity.py",
+  "purpose": "Gate A' UR-gDTR cosine-lens sanity (post Gate A FAIL)",
+  "seed": 42,
+  "n_seq_per_kind": 50,
+  "length": 6000,
+  "edge_warmup_bp": 5,
+  "L": 8,
+  "M2_ur_global_rate": 0.17789157631359467,
+  "M2_ur_global_ci95": [
+    0.17692072560467056,
+    0.17888636363636365
+  ],
+  "M2_ur_per_layer_min": 0.46178482068390325,
+  "M2_ur_per_layer_min_layer": 7,
+  "M2_ur_per_layer": [
+    {
+      "metric": "M2_ur",
+      "layer": 1,
+      "n_positions": 599500,
+      "successes": 599500,
+      "rate": 1.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "passes_perlayer_thresh": true
+    },
+    {
+      "metric": "M2_ur",
+      "layer": 2,
+      "n_positions": 599500,
+      "successes": 302736,
+      "rate": 0.5049808173477899,
+      "ci95_low": 0.503700834028357,
+      "ci95_high": 0.5062552960800668,
+      "passes_perlayer_thresh": false
+    },
+    {
+      "metric": "M2_ur",
+      "layer": 3,
+      "n_positions": 599500,
+      "successes": 538247,
+      "rate": 0.8978265221017515,
+      "ci95_low": 0.8970191409507923,
+      "ci95_high": 0.8985939949958298,
+      "passes_perlayer_thresh": true
+    },
+    {
+      "metric": "M2_ur",
+      "layer": 4,
+      "n_positions": 599500,
+      "successes": 549800,
+      "rate": 0.9170975813177648,
+      "ci95_low": 0.9163619266055045,
+      "ci95_high": 0.9177916180150125,
+      "passes_perlayer_thresh": true
+    },
+    {
+      "metric": "M2_ur",
+      "layer": 5,
+      "n_positions": 599500,
+      "successes": 580339,
+      "rate": 0.9680383653044203,
+      "ci95_low": 0.9675678899082568,
+      "ci95_high": 0.968472268557131,
+      "passes_perlayer_thresh": true
+    },
+    {
+      "metric": "M2_ur",
+      "layer": 6,
+      "n_positions": 599500,
+      "successes": 591953,
+      "rate": 0.9874111759799833,
+      "ci95_low": 0.9871090909090909,
+      "ci95_high": 0.9876815679733111,
+      "passes_perlayer_thresh": true
+    },
+    {
+      "metric": "M2_ur",
+      "layer": 7,
+      "n_positions": 599500,
+      "successes": 276840,
+      "rate": 0.46178482068390325,
+      "ci95_low": 0.46051538782318596,
+      "ci95_high": 0.4630597998331943,
+      "passes_perlayer_thresh": false
+    },
+    {
+      "metric": "M2_ur",
+      "layer": 8,
+      "n_positions": 599500,
+      "successes": 599500,
+      "rate": 1.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "passes_perlayer_thresh": true
+    }
+  ],
+  "thresholds": {
+    "global": 0.85,
+    "per_layer": 0.7
+  },
+  "verdict": {
+    "pass_global": false,
+    "pass_perlayer_all": false,
+    "overall_pass": false
+  },
+  "gamma_cos_calibration": {
+    "default": 0.1,
+    "q70_penultimate": 0.48173393607139586,
+    "convergence_depth_mean_default": 8.0,
+    "convergence_depth_mean_q70": 6.255531276063386,
+    "convergence_depth_std_default": 0.0,
+    "convergence_depth_std_q70": 0.7786923752850431
+  },
+  "outputs": {
+    "table": "results/tables/ur_sanity.csv",
+    "figure_pdf": "results/figures/F2b_ur_sanity.pdf",
+    "figure_png": "results/figures/F2b_ur_sanity.png",
+    "cache": "results/runs/01c_ur_cache.npz"
+  },
+  "runtime_s": 57.13023018836975,
+  "host": "<host>",
+  "platform": "Linux-5.4.0-193-generic-x86_64-with-glibc2.35",
+  "torch": "2.3.1+cu121"
+}

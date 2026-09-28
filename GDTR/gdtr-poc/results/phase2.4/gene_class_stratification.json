@@ -1,0 +1,71 @@
+{
+  "phase": "phase2.4",
+  "gamma_cos": 0.39663,
+  "seed": 42,
+  "groups": {
+    "cancer_driver": {
+      "label": "cancer_driver (chr17: TP53,BRCA1,ATM)",
+      "n_genes": 2,
+      "mean_c": 29.00143527984619,
+      "median_c": 29.00143527984619,
+      "std_c": 0.8609650317873245
+    },
+    "other_chr17_protein_coding": {
+      "label": "other chr17 protein_coding",
+      "n_genes": 1184,
+      "mean_c": 27.715117481914728,
+      "median_c": 27.825397491455078,
+      "std_c": 1.484593985779473
+    },
+    "other_chr22_protein_coding": {
+      "label": "other chr22 protein_coding",
+      "n_genes": 447,
+      "mean_c": 27.85385752684318,
+      "median_c": 27.9896183013916,
+      "std_c": 1.274228155842088
+    },
+    "all_other_combined": {
+      "label": "other_chr17 + other_chr22",
+      "n_genes": 1631,
+      "mean_c": 27.753141271052076,
+      "median_c": 27.872007369995117,
+      "std_c": 1.4309789287829615
+    }
+  },
+  "cancer_driver_genes_used": [
+    "TP53",
+    "BRCA1"
+  ],
+  "test_cd_vs_all_other": {
+    "U": 2617.0,
+    "p_two_sided": 0.13922126375318156,
+    "cohens_d_cd_minus_other": 0.8725063694939738,
+    "cancer_driver_mean": 29.00143527984619,
+    "other_mean": 27.753141271052076,
+    "direction": "cd_higher"
+  },
+  "test_cd_vs_other_chr17": {
+    "U": 1907.0,
+    "p_two_sided": 0.13547997088195687,
+    "cohens_d_cd_minus_other17": 0.8666871058957777,
+    "cancer_driver_mean": 29.00143527984619,
+    "other_chr17_mean": 27.715117481914728,
+    "direction": "cd_higher"
+  },
+  "per_gene_cancer_driver": [
+    {
+      "gene_id": "ENSG00000141510.18",
+      "gene_name": "TP53",
+      "n_pos": 25760,
+      "mean_c": 29.6102294921875,
+      "median_c": 31.0
+    },
+    {
+      "gene_id": "ENSG00000012048.25",
+      "gene_name": "BRCA1",
+      "n_pos": 125951,
+      "mean_c": 28.392641067504883,
+      "median_c": 31.0
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "step": "make_fig_v9",
+  "started_utc": "2026-05-04T10:57:38Z",
+  "shallowness": {
+    "panel_b_rows": [
+      {
+        "label": "splice donor (\\S 3.1 ref)",
+        "d": -0.432722777108244,
+        "p": 0.0,
+        "p_corr": 0.0,
+        "color": "#1f77b4",
+        "n_func": 97604,
+        "n_null": 2000000
+      },
+      {
+        "label": "ENCODE cCRE-ELS",
+        "d": -0.19029424467743217,
+        "p": 0.0,
+        "p_corr": 0.0,
+        "color": "#d62728",
+        "n_func": 5570971,
+        "n_null": 2000000
+      },
+      {
+        "label": "GTEx eQTL chr22",
+        "d": -0.022443857976081893,
+        "p": 5.998391042587444e-05,
+        "p_corr": 0.00023993564170349775,
+        "color": "#ff7f0e",
+        "n_func": 42306,
+        "n_null": 100
+      },
+      {
+        "label": "GWAS Catalog chr22",
+        "d": -0.039508417764996154,
+        "p": 0.005127931593430173,
+        "p_corr": 0.02051172637372069,
+        "color": "#ff7f0e",
+        "n_func": 6723,
+        "n_null": 100
+      }
+    ],
+    "panel_a_sig": {
+      "intergenic": [
+        0.15765888230200026,
+        0.0
+      ],
+      "coding_exon": [
+        0.07738792321385791,
+        6.561162722220604e-106
+      ],
+      "5utr": [
+        0.19727137735250322,
+        0.0
+      ],
+      "3utr": [
+        -0.012757145918745924,
+        1.3722374275541513e-63
+      ],
+      "splice_donor": [
+        -0.35751679506298767,
+        0.0
+      ],
+      "splice_acceptor": [
+        -0.3396912986058663,
+        0.0
+      ]
+    },
+    "intron_baseline": 27.71564816800399
+  },
+  "variants": {
+    "kw_p": 2.9829700225201583e-10,
+    "pair_p_adj": {
+      "intron_vs_frameshift": 1.0,
+      "frameshift_vs_nonsense": 0.07620717836822063,
+      "nonsense_vs_missense": 0.00017492825532566513,
+      "missense_vs_canonical_splice": 1.0,
+      "canonical_splice_vs_synonymous": 1.0
+    },
+    "n_per_class": {
+      "intron": 116,
+      "frameshift": 518,
+      "nonsense": 1740,
+      "missense": 935,
+      "canonical_splice": 682,
+      "synonymous": 32
+    },
+    "median_per_class": {
+      "intron": 10,
+      "frameshift": 11,
+      "nonsense": 12,
+      "missense": 16,
+      "canonical_splice": 17,
+      "synonymous": 18
+    }
+  },
+  "status": "PASS",
+  "wall_sec": 2.7279415130615234
+}

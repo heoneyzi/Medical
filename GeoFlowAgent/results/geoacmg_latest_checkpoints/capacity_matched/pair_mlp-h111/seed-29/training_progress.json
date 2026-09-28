@@ -1,0 +1,54 @@
+{
+  "best_dev_selection_score": 0.7974514043760718,
+  "best_epoch": 2,
+  "cache_content_sha256": "00b19e6e3c669e5d2408ae7c157675fe306e837ec8b65aea1f38d0a789f56903",
+  "checkpoint": "artifacts/acmg/checkpoints/capacity_matched/pair_mlp-h111/seed-29/value_geometry.pt",
+  "checkpoint_sha256": "8ff84c0e99763c84c0ab282e35bd291b7986902dc8698f2421bbc80bcd03530d",
+  "completed_epoch": 16,
+  "configured_epochs": 60,
+  "energy": "pair_mlp",
+  "feature_ablation": {
+    "zero_structured": false,
+    "zero_views": []
+  },
+  "latest": {
+    "dev_action_reachability_balanced_accuracy": 0.7589135441304411,
+    "dev_completion_balanced_accuracy": 0.7615322474087584,
+    "dev_joint_stop_action_accuracy": 0.653949058219178,
+    "dev_policy_optimal_set_accuracy": 0.719549114331723,
+    "dev_regret_at_1": 0.277807754567178,
+    "dev_selection_score": 0.6849662966257064,
+    "dev_thresholds": {
+      "action_reachability": 0.1,
+      "completion": 0.1
+    },
+    "epoch": 16,
+    "external_replay_fraction": 0.0,
+    "external_replay_pool": 0,
+    "hard_replay_pool": 5958,
+    "learning_rate": 0.0005841957122256002,
+    "train": {
+      "action": 0.8149738747190899,
+      "action_reachability": 0.05180491930202151,
+      "bellman": 0.03593487839357416,
+      "completion": 0.12454848581052683,
+      "q": 0.03593487839357416,
+      "regret": 0.005060753823687384,
+      "state_reachability": 0.050692686818527344,
+      "total": 1.0895129814735496,
+      "transition": 0.02707848689017878,
+      "value": 0.019274083776128544
+    }
+  },
+  "metrics": "artifacts/acmg/checkpoints/capacity_matched/pair_mlp-h111/seed-29/value_metrics.json",
+  "model_capacity_override": {
+    "hidden_dim": 111
+  },
+  "output_dir": "artifacts/acmg/checkpoints/capacity_matched/pair_mlp-h111/seed-29",
+  "patience": 14,
+  "resume_checkpoint": "artifacts/acmg/checkpoints/capacity_matched/pair_mlp-h111/seed-29/training_resume.pt",
+  "seed": 29,
+  "stale_epochs": 14,
+  "status": "complete",
+  "training_config_sha256": "d4670da80b9876d55da592a96cf4aaf05c6f11b91064b082d781c9dde10eb6ff"
+}

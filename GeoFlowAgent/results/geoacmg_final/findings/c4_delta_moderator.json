@@ -1,0 +1,96 @@
+{
+  "delta_distribution": {
+    "max": 3.0,
+    "median": 3.0,
+    "min": 3.0,
+    "sd": 0.0,
+    "unique_values": 1
+  },
+  "delta_stat_used": "delta_max",
+  "graph_is_structurally_identical": {
+    "nodes_per_task_unique": 1,
+    "note": "모든 task 의 상태 그래프가 같은 노드 수와 지름을 갖는다. 조절변수에 회귀할 변동이 없다."
+  },
+  "moderator_distribution": {
+    "delta_max": {
+      "max": 3.0,
+      "min": 3.0,
+      "sd": 0.0,
+      "unique_values": 1
+    },
+    "delta_mean": {
+      "max": 0.5734146467517701,
+      "min": 0.543857836553363,
+      "sd": 0.004863069293937956,
+      "unique_values": 578
+    },
+    "delta_p95": {
+      "max": 2.0,
+      "min": 1.0,
+      "sd": 0.058420281195999936,
+      "unique_values": 2
+    }
+  },
+  "note": "C4 조절변수 회귀. beta_1(rho) 는 rho 가 상수여서 추정 불가. 여기는 beta_2(delta).",
+  "regressions": {
+    "dqm_minus_cosine~delta_max": {
+      "degenerate": true,
+      "excludes_zero": null,
+      "genes": 47,
+      "high": null,
+      "low": null,
+      "reason": "조절변수의 분산이 0 이라 기울기를 추정할 수 없다",
+      "slope": NaN,
+      "tasks": 584
+    },
+    "dqm_minus_cosine~delta_mean": {
+      "degenerate": false,
+      "excludes_zero": false,
+      "genes": 47,
+      "high": 1.497136880120424,
+      "low": -0.08324351333627482,
+      "slope": 0.6875450080484043,
+      "tasks": 584
+    },
+    "dqm_minus_cosine~delta_p95": {
+      "degenerate": false,
+      "excludes_zero": false,
+      "genes": 47,
+      "high": 0.11669089738923633,
+      "low": -0.03931834567574575,
+      "slope": 0.03836202080507051,
+      "tasks": 584
+    },
+    "poincare_minus_cosine~delta_max": {
+      "degenerate": true,
+      "excludes_zero": null,
+      "genes": 47,
+      "high": null,
+      "low": null,
+      "reason": "조절변수의 분산이 0 이라 기울기를 추정할 수 없다",
+      "slope": NaN,
+      "tasks": 584
+    },
+    "poincare_minus_cosine~delta_mean": {
+      "degenerate": false,
+      "excludes_zero": false,
+      "genes": 47,
+      "high": 1.9359732331131156,
+      "low": -0.024240070090470685,
+      "slope": 1.0462222718126852,
+      "tasks": 584
+    },
+    "poincare_minus_cosine~delta_p95": {
+      "degenerate": false,
+      "excludes_zero": true,
+      "genes": 47,
+      "high": 0.036838970826957605,
+      "low": 0.01781873661663157,
+      "slope": 0.02708508189884995,
+      "tasks": 584
+    }
+  },
+  "rho_is_constant": true,
+  "rho_reason": "상태 그래프가 순수 DAG (간선 1,458,964개 전부 prefix 증가)",
+  "tasks": 584
+}

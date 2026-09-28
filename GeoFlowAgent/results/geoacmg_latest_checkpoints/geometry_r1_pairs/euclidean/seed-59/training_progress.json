@@ -1,0 +1,52 @@
+{
+  "best_dev_selection_score": 0.7824102917576174,
+  "best_epoch": 2,
+  "cache_content_sha256": "00b19e6e3c669e5d2408ae7c157675fe306e837ec8b65aea1f38d0a789f56903",
+  "checkpoint": "artifacts/acmg/checkpoints/geometry_r1_pairs/euclidean/seed-59/value_geometry.pt",
+  "checkpoint_sha256": "82d3cb4677193b09417e5c616702193d68b11b46b0286e8ed3ee8a94fd50661a",
+  "completed_epoch": 16,
+  "configured_epochs": 60,
+  "energy": "euclidean",
+  "feature_ablation": {
+    "zero_structured": false,
+    "zero_views": []
+  },
+  "latest": {
+    "dev_action_reachability_balanced_accuracy": 0.7546292331539104,
+    "dev_completion_balanced_accuracy": 0.7796419567846484,
+    "dev_joint_stop_action_accuracy": 0.6545109160958904,
+    "dev_policy_optimal_set_accuracy": 0.70743961352657,
+    "dev_regret_at_1": 0.3020793074128469,
+    "dev_selection_score": 0.6862080485670624,
+    "dev_thresholds": {
+      "action_reachability": 0.1,
+      "completion": 0.1
+    },
+    "epoch": 16,
+    "external_replay_fraction": 0.0,
+    "external_replay_pool": 0,
+    "hard_replay_pool": 5412,
+    "learning_rate": 0.0005841957122256002,
+    "train": {
+      "action": 0.8301593603641729,
+      "action_reachability": 0.051840512718446446,
+      "bellman": 0.036255590521177425,
+      "completion": 0.12193735713682138,
+      "q": 0.036255590521177425,
+      "regret": 0.006165343831114379,
+      "state_reachability": 0.04842569347677133,
+      "total": 1.100719817610924,
+      "transition": 0.022956063934796822,
+      "value": 0.018729322375618113
+    }
+  },
+  "metrics": "artifacts/acmg/checkpoints/geometry_r1_pairs/euclidean/seed-59/value_metrics.json",
+  "model_capacity_override": {},
+  "output_dir": "artifacts/acmg/checkpoints/geometry_r1_pairs/euclidean/seed-59",
+  "patience": 14,
+  "resume_checkpoint": "artifacts/acmg/checkpoints/geometry_r1_pairs/euclidean/seed-59/training_resume.pt",
+  "seed": 59,
+  "stale_epochs": 14,
+  "status": "complete",
+  "training_config_sha256": "a79d6f769d29f0d8b334c9f21980abfa7cfc343a9e13b36bf4ba25f0022a4d97"
+}

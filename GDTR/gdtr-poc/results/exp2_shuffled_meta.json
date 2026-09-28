@@ -1,0 +1,26 @@
+{
+  "n_donors_requested": 1000,
+  "n_donors_used": 1000,
+  "n_shuffles": 5,
+  "ctx_half": 3000,
+  "shuffle_half": 100,
+  "readout_half": 10,
+  "real": {
+    "mean": 26.774381637573242,
+    "median": 28.904762268066406
+  },
+  "shuf_flank_keepGT": {
+    "mean": 23.589656829833984,
+    "median": 23.380952835083008
+  },
+  "mut_GTtoAA_keepFlank": {
+    "mean": 27.237953186035156,
+    "median": 29.85714340209961
+  },
+  "cohens_d_real_vs_shuf": 0.5149560142511459,
+  "cohens_d_real_vs_mut": -0.0860846692847378,
+  "paired_wilcoxon_p_real_vs_shuf_2sided": 4.134518951453711e-59,
+  "paired_wilcoxon_p_real_vs_mut_less": 2.3444716733518518e-32,
+  "wall_sec": 1897.0182902812958,
+  "gamma_cos": 0.39663
+}

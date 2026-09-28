@@ -1,0 +1,25 @@
+{
+  "dataset": "eqtl",
+  "n_dataset_chr22": 42312,
+  "dataset_chr22_bp_merged": 42312,
+  "q2_n_regions": 5090,
+  "q2_total_bp": 907637,
+  "n_q2_overlap": 789,
+  "intersect_bp": 1222,
+  "expected_intersect_bp": 755.7082740864994,
+  "fold_enrichment_bp": 1.617026095786968,
+  "pval_hypergeom_bp": 5.433255231458584e-56,
+  "expected_n_q2_hits_binom": 688.3011765249369,
+  "fold_enrichment_region": 1.1463005249874287,
+  "shuffle_null": {
+    "n_obs": 789,
+    "null_mean": 556.33,
+    "null_std": 23.339689372397395,
+    "null_max": 612,
+    "null_min": 497,
+    "pval_shuffle": 0.009900990099009901,
+    "n_shuffles": 100
+  },
+  "n_pair_records": 1222,
+  "paired_bed": "/path/to/gDTR/results/tier2_q2_functional/q2_x_eqtl.bed"
+}

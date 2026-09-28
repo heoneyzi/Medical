@@ -1,0 +1,9 @@
+{
+  "phase": "phase1.5",
+  "state": "PASS",
+  "best": {
+    "gamma_cos": 0.4,
+    "rho": 0.8,
+    "cohens_d": 5.281733668007505
+  }
+}

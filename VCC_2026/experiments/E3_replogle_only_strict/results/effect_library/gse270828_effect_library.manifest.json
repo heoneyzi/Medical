@@ -1,0 +1,25 @@
+{
+  "effect_definition": "natural-log CPM fold change",
+  "explicit_perturbation_sources": [
+    "k562",
+    "rpe1"
+  ],
+  "global_scale": 0.25,
+  "n_genes": 4095,
+  "n_targets": 184,
+  "protocol": "STRICT_REPLOGLE_ONLY",
+  "sources": {
+    "k562": {
+      "n_native_targets": 9866,
+      "n_panel_genes_mapped": 3414,
+      "native_cache": "<repo>/data_experiments/replogle_only/native/k562_native_lnfc.npz",
+      "native_cache_sha256": "788bb75245c02cf048edb96c16dbaa5c69f839a36c1da0dbecb81f4c85444ff8"
+    },
+    "rpe1": {
+      "n_native_targets": 2393,
+      "n_panel_genes_mapped": 3674,
+      "native_cache": "<repo>/data_experiments/replogle_only/native/rpe1_native_lnfc.npz",
+      "native_cache_sha256": "97510d29aef09a389fc5929efcb272ba4775459ab04132c5ad37ba5514d20464"
+    }
+  }
+}

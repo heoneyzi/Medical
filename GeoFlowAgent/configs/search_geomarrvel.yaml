@@ -1,0 +1,277 @@
+# Pre-registered real-data protocol for search-distilled GeoFlowAgent.
+#
+# This file does not download or fabricate a training corpus.  `run-search`
+# intentionally fails at the quality gate until data/raw/search_geomarrvel contains
+# enough independently sourced, reviewed tasks and exact versioned snapshots.
+# MARRVEL rows belong only to the test split; never relax that rule after seeing
+# their results.
+seed: 17
+device: auto
+project_root: ..
+
+paths:
+  # One assembled study package: non-MARRVEL train/dev plus sealed MARRVEL test.
+  raw_dir: data/raw/search_geomarrvel
+  processed_dir: artifacts/search_geomarrvel/processed
+  cache_dir: artifacts/search_geomarrvel/cache
+  embedding_report_dir: artifacts/search_geomarrvel/reports/embeddings
+  quality_report: artifacts/search_geomarrvel/reports/data_quality.json
+  value_output_dir: artifacts/search_geomarrvel/checkpoints/value
+  dagger_output_dir: artifacts/search_geomarrvel/checkpoints/dagger
+  state_flow_output_dir: artifacts/search_geomarrvel/checkpoints/state_flow
+  geometry_comparison_dir: artifacts/search_geomarrvel/checkpoints/geometry_comparison
+  search_agent_report_dir: artifacts/search_geomarrvel/reports/search_agent
+  run_summary: artifacts/search_geomarrvel/run_summary.json
+
+synthetic_fixture:
+  # Never overwrite a curated corpus with the procedural fixture.
+  enabled: false
+
+search_preprocessing:
+  # Exact graph construction is deliberately fail-closed.  If a bound is hit,
+  # reduce each task's candidate catalogue or curate the missing snapshots rather
+  # than treating unresolved actions as bad actions.
+  max_depth: 18
+  max_states: 100000
+  top_k_paths: 8
+  near_optimal_slack: 0.0
+  include_unreachable: true
+  require_complete_graph: true
+  require_reachable_root: true
+  split_group_kinds: [case, entity, template, source, release]
+  costs:
+    call: 1.0
+    failure: 2.0
+    redundancy: 0.5
+    status:
+      empty: 1.0
+      domain_error: 2.0
+      transport_error: 2.0
+      parse_error: 2.0
+
+data_quality:
+  # These are independent task counts, never searched-state/prefix counts.
+  # They are a defensible MVP floor, not evidence of clinical readiness.
+  min_tasks: 700
+  min_tasks_per_split: {train: 500, dev: 100, test: 100}
+  min_workflow_families: 7
+  min_entities: 500
+  min_templates: 30
+  min_topologies: 7
+  min_sources: 3
+  min_source_releases: 3
+  min_verifier_coverage: 1.0
+  # The quality gate rejects any row from this external benchmark outside test.
+  test_only_sources: [hjeong84/marrvel-mcp-benchmark-data]
+  # Canonical group names match search supervision's group_ids mapping.  Missing
+  # metadata is a hard failure: a row cannot enter any split unless every
+  # protected grouping dimension is auditable.
+  split_group_keys: [case, entity, template, source, release]
+  require_complete_split_group_metadata: true
+  require_assigned_splits: true
+  fail_on_duplicate_content: true
+  fail_on_private_label_leakage: true
+  require_snapshot_source_revisions: true
+  require_search_supervision: true
+  min_known_applicable_action_fraction: 1.0
+  max_unknown_applicable_action_fraction: 0.0
+  min_branch_state_fraction: 0.10
+  min_branch_label_coverage: 0.99
+  min_nontrivial_regret_fraction: 0.10
+  min_multi_path_state_fraction: 0.10
+  max_oracle_contract_collapse_fraction: 0.80
+  min_search_complete_fraction: 1.0
+  max_incomplete_or_unknown_state_fraction: 0.0
+  allow_synthetic: false
+  # MARRVEL remains absent from all ordinary search/cache/model-selection
+  # artifacts. These floors apply to the non-MARRVEL train+dev package alone;
+  # corpus-wide 500/100/100 counts are still validated as raw inventory.
+  scope_overrides:
+    sealed_development:
+      min_tasks: 600
+      min_tasks_per_split: {train: 500, dev: 100}
+
+embedding:
+  batch_size: 4
+  storage_dtype: float16
+  views:
+    qwen_general:
+      kind: prototype
+      query_encoder: &qwen
+        backend: huggingface
+        model_name: Qwen/Qwen2.5-1.5B-Instruct
+        revision: 989aa7980e4cf806f80c7fef2b1adb7bc71aa306
+        pooling: mean
+        normalize: true
+        max_length: 2048
+        device: auto
+        dtype: bfloat16
+        trust_remote_code: false
+      document_encoder: *qwen
+      example_fields: [query, goal, state, history]
+      tool_fields: [description, contract]
+      encode_background: true
+    medcpt:
+      kind: prototype
+      query_encoder:
+        backend: huggingface
+        model_name: ncbi/MedCPT-Query-Encoder
+        revision: d83a36cc6b8e3a5c5e9d9d6ba156808c1643dcbc
+        pooling: cls
+        normalize: true
+        max_length: 512
+        device: auto
+        dtype: float32
+        trust_remote_code: false
+      document_encoder:
+        backend: huggingface
+        model_name: ncbi/MedCPT-Article-Encoder
+        revision: d05a736da4bb84ee4057b7f7999485be6ed85465
+        pooling: cls
+        normalize: true
+        max_length: 512
+        device: auto
+        dtype: float32
+        trust_remote_code: false
+      example_fields: [query, goal, state, history]
+      tool_fields: [description, contract]
+      encode_background: true
+    sapbert_entity_aux:
+      kind: state_only
+      snapshot_field: entities
+      encode_pairs: false
+      query_encoder:
+        backend: huggingface
+        model_name: cambridgeltl/SapBERT-from-PubMedBERT-fulltext
+        revision: 090663c3ae57bf35ffe4d0d468a2a88d03051a4d
+        pooling: cls
+        normalize: true
+        max_length: 128
+        device: auto
+        dtype: float32
+        trust_remote_code: false
+      example_fields: [entities]
+      tool_fields: []
+      encode_background: false
+    dnabert2_sequence_aux:
+      kind: state_only
+      snapshot_field: sequence
+      encode_pairs: false
+      query_encoder:
+        backend: huggingface
+        model_name: zhihan1996/DNABERT-2-117M
+        revision: 7bce263b15377fc15361f52cfab88f8b586abda0
+        pooling: mean
+        normalize: true
+        max_length: 512
+        device: auto
+        # The pinned eager implementation mixes an FP32 ALiBi bias with
+        # activations, so this small auxiliary encoder must remain FP32.
+        dtype: float32
+        trust_remote_code: true
+        # Pinned DNABERT-2 calls a Triton API removed by current PyTorch when
+        # attention dropout is exactly zero. eval() still disables dropout.
+        config_overrides:
+          attention_probs_dropout_prob: 1.0e-12
+      example_fields: [sequence]
+      tool_fields: []
+      encode_background: false
+
+value_training:
+  structured_dim: 128
+  shared_dim: 128
+  hidden_dim: 256
+  energy: directed_quasimetric
+  energy_rank: 64
+  dropout: 0.10
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  batch_size: 256
+  epochs: 120
+  patience: 18
+  # Task-balanced sampling prevents a large search graph from dominating training.
+  max_states_per_task: 64
+  supervision: boltzmann
+  action_temperature: 1.0
+  regret_temperature: 0.25
+  ranking_margin: 0.10
+  gradient_clip: 1.0
+  view_dropout: 0.15
+  embedding_noise_std: 0.005
+  hard_replay_warmup: 5
+  hard_replay_fraction: 0.25
+  threshold_grid: [0.1, 0.3, 0.5, 0.7, 0.9]
+  bootstrap_reps: 2000
+  loss_weights:
+    action: 1.0
+    q: 1.0
+    value: 0.5
+    regret: 0.5
+    bellman: 0.5
+    transition: 0.25
+    action_reachability: 1.0
+    state_reachability: 0.5
+    completion: 1.0
+
+search_dagger:
+  enabled: true
+  rounds: 5
+  replay_fraction: 0.50
+  hard_example_multiplier: 3
+  max_steps: 18
+  stop_contract_guard: true
+  hard_reachability_guard: true
+
+# Gate 4: run only after the value/geometry and data-quality gates pass.  This
+# model reads non-MARRVEL train/dev paths for fitting and selection.  A separate,
+# explicit unseal is required to construct the MARRVEL test path adapter.
+state_flow_training:
+  structured_dim: 128
+  dim: 128
+  hidden_dim: 256
+  layers: 2
+  heads: 8
+  dropout: 0.10
+  projection_seed: 17
+  tool_mix: 0.35
+  max_plan_length: 20  # at most 19 transitions plus STOP
+  path_beta: 1.0
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  batch_size: 128
+  epochs: 100
+  patience: 15
+  pad_weight: 0.05
+  transition_temperature: 0.07
+  gradient_clip: 1.0
+  nfe: 16
+  evaluation_samples_per_state: 8
+  stop_threshold_grid: [0.1, 0.3, 0.5, 0.7, 0.9]
+  loss_weights:
+    flow_matching: 1.0
+    endpoint: 0.5
+    stop: 0.75
+    transition: 0.75
+
+geometry_comparison:
+  # Selection is dev-only; parameter count is reported for every family.
+  energies:
+    - cosine
+    - euclidean
+    - diagonal_mahalanobis
+    - lowrank_mahalanobis
+    - asymmetric_bilinear
+    - order_violation
+    - directed_quasimetric
+    - pair_mlp
+    - poincare
+  seeds: [17, 29, 43, 61, 89]
+
+search_agent_evaluation:
+  max_steps: 18
+  runtime_embedding_policy: cache_or_encode
+  retry_limit_per_tool: 1
+  bootstrap_reps: 2000
+  # Add pre-registered, task/tool-specific timeout, empty-result, and source-
+  # unavailable interventions here.  Do not design them after viewing test output.
+  perturbations: []

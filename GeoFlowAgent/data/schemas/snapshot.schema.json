@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/geoflowagent/snapshot.schema.json",
+  "title": "GeoFlowAgent deterministic tool snapshot",
+  "description": "One normalized offline outcome selected by an exact canonical match over tool_id and resolved arguments.",
+  "type": "object",
+  "required": [
+    "snapshot_id",
+    "tool_id",
+    "arguments",
+    "status",
+    "output",
+    "source_revision"
+  ],
+  "properties": {
+    "snapshot_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tool_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "arguments": {
+      "type": "object"
+    },
+    "status": {
+      "enum": [
+        "success",
+        "empty",
+        "domain_error",
+        "transport_error",
+        "parse_error"
+      ]
+    },
+    "output": {
+      "type": "object"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "source_revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provenance": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,33 @@
+# Frozen Qwen size control on the completed pilot. It matches the 1.5B Qwen
+# serialization, pooling, and context length and changes only the pinned backbone.
+seed: 17
+device: cuda:0
+project_root: ..
+
+paths:
+  processed_dir: $GEOFLOW_RUNS/search_pilot_gpu_v1/development/processed
+  cache_dir: $GEOFLOW_RUNS/search_pilot_gpu_v1/development/cache_frozen_qwen7b
+  embedding_report_dir: $GEOFLOW_RUNS/search_pilot_gpu_v1/development/reports/embeddings_frozen_qwen7b
+  embedding_progress_backup: $GEOFLOW_RESULTS/search_pilot_gpu_v1/development/embedding_frozen_qwen7b_progress.json
+
+embedding:
+  batch_size: 4
+  storage_dtype: float16
+  views:
+    qwen_general:
+      kind: prototype
+      query_encoder: &qwen
+        backend: huggingface
+        model_name: Qwen/Qwen2.5-7B-Instruct
+        revision: a09a35458c702b33eeacc393d103063234e8bc28
+        pooling: mean
+        normalize: true
+        max_length: 512
+        device: auto
+        dtype: bfloat16
+        trust_remote_code: false
+        local_files_only: true
+      document_encoder: *qwen
+      example_fields: [query, goal, state, history]
+      tool_fields: [description, contract]
+      encode_background: true

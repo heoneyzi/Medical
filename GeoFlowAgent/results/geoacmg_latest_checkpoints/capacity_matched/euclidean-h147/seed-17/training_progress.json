@@ -1,0 +1,54 @@
+{
+  "best_dev_selection_score": 0.7991981659625096,
+  "best_epoch": 3,
+  "cache_content_sha256": "00b19e6e3c669e5d2408ae7c157675fe306e837ec8b65aea1f38d0a789f56903",
+  "checkpoint": "artifacts/acmg/checkpoints/capacity_matched/euclidean-h147/seed-17/value_geometry.pt",
+  "checkpoint_sha256": "fff7aaded43aa8a98d18a1c864fa3c9015a2433c8747126753350676ee91ae80",
+  "completed_epoch": 17,
+  "configured_epochs": 60,
+  "energy": "euclidean",
+  "feature_ablation": {
+    "zero_structured": false,
+    "zero_views": []
+  },
+  "latest": {
+    "dev_action_reachability_balanced_accuracy": 0.7450267057322018,
+    "dev_completion_balanced_accuracy": 0.781906918956097,
+    "dev_joint_stop_action_accuracy": 0.6744167380136986,
+    "dev_policy_optimal_set_accuracy": 0.7327214170692432,
+    "dev_regret_at_1": 0.23690328580285183,
+    "dev_selection_score": 0.6952986531532359,
+    "dev_thresholds": {
+      "action_reachability": 0.1,
+      "completion": 0.1
+    },
+    "epoch": 17,
+    "external_replay_fraction": 0.0,
+    "external_replay_pool": 0,
+    "hard_replay_pool": 4105,
+    "learning_rate": 0.000570262136867443,
+    "train": {
+      "action": 0.7942797263077988,
+      "action_reachability": 0.04415106460052562,
+      "bellman": 0.03503199461709412,
+      "completion": 0.10612340241891619,
+      "q": 0.03503199461709412,
+      "regret": 0.005102041260793493,
+      "state_reachability": 0.04203435805564055,
+      "total": 1.0352010207385658,
+      "transition": 0.02410991371306976,
+      "value": 0.01700631655195884
+    }
+  },
+  "metrics": "artifacts/acmg/checkpoints/capacity_matched/euclidean-h147/seed-17/value_metrics.json",
+  "model_capacity_override": {
+    "hidden_dim": 147
+  },
+  "output_dir": "artifacts/acmg/checkpoints/capacity_matched/euclidean-h147/seed-17",
+  "patience": 14,
+  "resume_checkpoint": "artifacts/acmg/checkpoints/capacity_matched/euclidean-h147/seed-17/training_resume.pt",
+  "seed": 17,
+  "stale_epochs": 14,
+  "status": "complete",
+  "training_config_sha256": "0692e3159e983261dd992f86a7ce89ffc27cab975cbe3eb5ea256e82bc00fe55"
+}

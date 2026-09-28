@@ -1,0 +1,188 @@
+{
+  "script": "01_sanity_check.py",
+  "seed": 42,
+  "n_seq_per_kind": 50,
+  "length": 6000,
+  "edge_warmup_bp": 5,
+  "gamma": 0.5,
+  "L": 8,
+  "vocab_real": 12,
+  "M1_global_rate": 0.28137114261884905,
+  "M2_global_rate": 0.008798999165971643,
+  "M2_per_layer_min": 0.11950458715596331,
+  "M2_per_layer_min_layer": 7,
+  "M1_per_layer": [
+    {
+      "metric": "M1",
+      "layer": 1,
+      "n_positions": 599500,
+      "successes": 264967,
+      "rate": 0.44197998331943283,
+      "ci95_low": 0.44071551292743955,
+      "ci95_high": 0.4432499582985821,
+      "binom_p_vs_0.70": 1.0
+    },
+    {
+      "metric": "M1",
+      "layer": 2,
+      "n_positions": 599500,
+      "successes": 274748,
+      "rate": 0.4582952460383653,
+      "ci95_low": 0.4570257714762302,
+      "ci95_high": 0.45957022518765633,
+      "binom_p_vs_0.70": 1.0
+    },
+    {
+      "metric": "M1",
+      "layer": 3,
+      "n_positions": 599500,
+      "successes": 307633,
+      "rate": 0.5131492910758966,
+      "ci95_low": 0.5118693077564637,
+      "ci95_high": 0.5144237698081735,
+      "binom_p_vs_0.70": 1.0
+    },
+    {
+      "metric": "M1",
+      "layer": 4,
+      "n_positions": 599500,
+      "successes": 339041,
+      "rate": 0.5655396163469558,
+      "ci95_low": 0.5642713094245204,
+      "ci95_high": 0.5668023769808174,
+      "binom_p_vs_0.70": 1.0
+    },
+    {
+      "metric": "M1",
+      "layer": 5,
+      "n_positions": 599500,
+      "successes": 348705,
+      "rate": 0.5816597164303586,
+      "ci95_low": 0.5803980817347789,
+      "ci95_high": 0.5829158048373645,
+      "binom_p_vs_0.70": 1.0
+    },
+    {
+      "metric": "M1",
+      "layer": 6,
+      "n_positions": 599500,
+      "successes": 331294,
+      "rate": 0.5526171809841535,
+      "ci95_low": 0.5513455379482902,
+      "ci95_high": 0.5538833194328607,
+      "binom_p_vs_0.70": 1.0
+    },
+    {
+      "metric": "M1",
+      "layer": 7,
+      "n_positions": 599500,
+      "successes": 268414,
+      "rate": 0.4477297748123436,
+      "ci95_low": 0.44646363636363634,
+      "ci95_high": 0.4490014178482068,
+      "binom_p_vs_0.70": 1.0
+    },
+    {
+      "metric": "M1",
+      "layer": 8,
+      "n_positions": 599500,
+      "successes": 599500,
+      "rate": 1.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "binom_p_vs_0.70": 0.0
+    }
+  ],
+  "M2_per_layer": [
+    {
+      "metric": "M2",
+      "layer": 1,
+      "n_positions": 599500,
+      "successes": 599500,
+      "rate": 1.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "binom_p_vs_0.70": 0.0
+    },
+    {
+      "metric": "M2",
+      "layer": 2,
+      "n_positions": 599500,
+      "successes": 338748,
+      "rate": 0.5650508757297749,
+      "ci95_low": 0.5637825688073395,
+      "ci95_high": 0.5663136363636364,
+      "binom_p_vs_0.70": 1.0
+    },
+    {
+      "metric": "M2",
+      "layer": 3,
+      "n_positions": 599500,
+      "successes": 506553,
+      "rate": 0.8449591326105088,
+      "ci95_low": 0.8440177648040033,
+      "ci95_high": 0.8458766055045872,
+      "binom_p_vs_0.70": 0.0
+    },
+    {
+      "metric": "M2",
+      "layer": 4,
+      "n_positions": 599500,
+      "successes": 445195,
+      "rate": 0.7426105087572977,
+      "ci95_low": 0.7414722268557131,
+      "ci95_high": 0.7437214762301918,
+      "binom_p_vs_0.70": 0.0
+    },
+    {
+      "metric": "M2",
+      "layer": 5,
+      "n_positions": 599500,
+      "successes": 379708,
+      "rate": 0.6333744787322769,
+      "ci95_low": 0.6321412427022519,
+      "ci95_high": 0.634602210175146,
+      "binom_p_vs_0.70": 1.0
+    },
+    {
+      "metric": "M2",
+      "layer": 6,
+      "n_positions": 599500,
+      "successes": 379086,
+      "rate": 0.6323369474562135,
+      "ci95_low": 0.6311037114261885,
+      "ci95_high": 0.6335646788990826,
+      "binom_p_vs_0.70": 1.0
+    },
+    {
+      "metric": "M2",
+      "layer": 7,
+      "n_positions": 599500,
+      "successes": 71643,
+      "rate": 0.11950458715596331,
+      "ci95_low": 0.11868386155129275,
+      "ci95_high": 0.1203474979149291,
+      "binom_p_vs_0.70": 1.0
+    },
+    {
+      "metric": "M2",
+      "layer": 8,
+      "n_positions": 599500,
+      "successes": 599500,
+      "rate": 1.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "binom_p_vs_0.70": 0.0
+    }
+  ],
+  "M1_threshold_global": 0.8,
+  "M2_threshold_global": 0.85,
+  "M2_threshold_perlayer": 0.7,
+  "gate_a_pass": false,
+  "gate_a_branch": "FAIL_M2 -> UR-gDTR primary recommended",
+  "runtime_s": 5.032992124557495,
+  "host": "<host>",
+  "platform": "Linux-5.4.0-193-generic-x86_64-with-glibc2.35",
+  "torch": "2.3.1+cu121",
+  "cuda_device": "NVIDIA GeForce RTX 3090"
+}

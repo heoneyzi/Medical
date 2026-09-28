@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/geoflowagent/processed_example.schema.json",
+  "title": "GeoFlowAgent processed prefix/suffix example",
+  "description": "One replayed trajectory prefix, including an explicit terminal m+1 row.",
+  "type": "object",
+  "required": [
+    "example_id",
+    "task_id",
+    "split",
+    "phase",
+    "terminal",
+    "query",
+    "category",
+    "goal",
+    "state",
+    "next_state",
+    "history",
+    "prefix_tool_ids",
+    "gold_suffix_tool_ids",
+    "gold_next_tool",
+    "valid_next_tools",
+    "action_regret",
+    "action_regret_mask",
+    "action_outcome_status",
+    "candidate_tools",
+    "contract_valid_tools",
+    "background_ids",
+    "provenance",
+    "record_sha256"
+  ],
+  "properties": {
+    "example_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "split": {
+      "enum": [
+        "train",
+        "dev",
+        "test"
+      ]
+    },
+    "phase": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "terminal": {
+      "type": "boolean"
+    },
+    "query": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "goal": {
+      "description": "Public model-visible goal only. Private verifier predicates are deliberately absent.",
+      "type": "object"
+    },
+    "state": {
+      "type": "object"
+    },
+    "next_state": {
+      "type": "object"
+    },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "prefix_tool_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/callableToolId"
+      }
+    },
+    "gold_suffix_tool_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/callableToolId"
+      }
+    },
+    "gold_next_tool": {
+      "$ref": "#/$defs/plannerActionId"
+    },
+    "valid_next_tools": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/plannerActionId"
+      }
+    },
+    "action_regret": {
+      "type": "object",
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "action_regret_mask": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "boolean"
+      }
+    },
+    "action_outcome_status": {
+      "type": "object",
+      "additionalProperties": {
+        "enum": [
+          "observed",
+          "simulated",
+          "contract_invalid",
+          "unobserved"
+        ]
+      }
+    },
+    "candidate_tools": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/callableToolId"
+      }
+    },
+    "contract_valid_tools": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/callableToolId"
+      }
+    },
+    "background_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "provenance": {
+      "type": "object"
+    },
+    "record_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "expected_answer": false,
+    "private_verifier": false,
+    "verification_goal": false,
+    "stop_target": false
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "terminal": {
+            "const": true
+          }
+        },
+        "required": [
+          "terminal"
+        ]
+      },
+      "then": {
+        "properties": {
+          "gold_suffix_tool_ids": {
+            "maxItems": 0
+          },
+          "gold_next_tool": {
+            "const": "<STOP>"
+          },
+          "valid_next_tools": {
+            "const": [
+              "<STOP>"
+            ]
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "gold_suffix_tool_ids": {
+            "minItems": 1
+          },
+          "gold_next_tool": {
+            "$ref": "#/$defs/callableToolId"
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": true,
+  "$defs": {
+    "callableToolId": {
+      "type": "string",
+      "minLength": 1,
+      "not": {
+        "enum": [
+          "<STOP>",
+          "<PAD>"
+        ]
+      }
+    },
+    "plannerActionId": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/callableToolId"
+        },
+        {
+          "const": "<STOP>"
+        }
+      ]
+    }
+  }
+}

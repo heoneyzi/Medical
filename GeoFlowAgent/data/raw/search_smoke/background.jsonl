@@ -1,0 +1,2 @@
+{"card_id":"fixture-safety","redistribution_status":"allowed","source":"GeoFlowAgent","text":"All identifiers and evidence in this corpus are synthetic and only validate the pipeline.","title":"Synthetic fixture warning"}
+{"card_id":"fixture-source-policy","redistribution_status":"allowed","source":"GeoFlowAgent","text":"Prefer the primary annotation source unless its typed status is degraded; preserve build and release provenance.","title":"Pinned source policy"}

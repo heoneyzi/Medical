@@ -1,0 +1,31 @@
+# Phase 1 data versions (locked at download time)
+# Generated: 2026-04-26T14:35:29Z
+
+
+[GRCh38 reference]
+chr17.fa.gz: 023ccefd298db339159a446e88d742ac
+chr22.fa.gz: 41b47ce1cc21b558409c19b892e1c0d1
+source: UCSC hgdownload.soe.ucsc.edu/goldenPath/hg38/chromosomes/
+
+[GENCODE v44]
+gencode.v44.annotation.gtf.gz: ee330cfe6d0654ba9b9cf434d5c1bfb1 (full)
+gencode.v44.chr17_chr22.gtf.gz: 408bcdd558547c96d681bbf295868d3f (filtered)
+gencode.v44.chr17_chr22.gtf.db: e87fcaca80b0e54b0c12bd504ba3a647 (gffutils sqlite)
+source: ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_44/
+
+[ClinVar]
+clinvar.vcf.gz: 9cfdd0716ae60bf0c9b0cc498534286e
+clinvar.vcf.gz.tbi: bc519f0f6c1b76e13fb1e49b64f748b9
+##fileDate: 2026-04-18
+source: ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/
+
+# Phase 3 main FASTAs (added 2026-04-27 05:34:14)
+chr2.fa  c3581f4598d1774f432bac5d8c377efd
+chr3.fa  7defef5b7bd9963c3ef42de4afcba314
+chr5.fa  10f10dd4ed4854f79b601f433bdebce4
+chr7.fa  4c6505f18f25e43d8457cf897c493e16
+chr10.fa  ef51662684ec9d28e99dbd84c67af57a
+chr11.fa  2d5aac78c9ef6c80bcf7697574809503
+chr12.fa  e1bce9597149db2716f4b2645ffa53db
+chr13.fa  ddc745992583720005ac5be35db4cb62
+chr16.fa  d44e09145d8852a524084a62fdafaa50

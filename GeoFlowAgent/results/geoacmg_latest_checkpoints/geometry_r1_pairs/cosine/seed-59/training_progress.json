@@ -1,0 +1,52 @@
+{
+  "best_dev_selection_score": 0.7896860481096049,
+  "best_epoch": 2,
+  "cache_content_sha256": "00b19e6e3c669e5d2408ae7c157675fe306e837ec8b65aea1f38d0a789f56903",
+  "checkpoint": "artifacts/acmg/checkpoints/geometry_r1_pairs/cosine/seed-59/value_geometry.pt",
+  "checkpoint_sha256": "8c06b9bd7ed99929b35c0f087281173fb34139fd865f4e40696548a8631aa9e7",
+  "completed_epoch": 16,
+  "configured_epochs": 60,
+  "energy": "cosine",
+  "feature_ablation": {
+    "zero_structured": false,
+    "zero_views": []
+  },
+  "latest": {
+    "dev_action_reachability_balanced_accuracy": 0.7532553779626262,
+    "dev_completion_balanced_accuracy": 0.7515743158007797,
+    "dev_joint_stop_action_accuracy": 0.650658176369863,
+    "dev_policy_optimal_set_accuracy": 0.7047987117552335,
+    "dev_regret_at_1": 0.33588076498992436,
+    "dev_selection_score": 0.6789286309332199,
+    "dev_thresholds": {
+      "action_reachability": 0.1,
+      "completion": 0.1
+    },
+    "epoch": 16,
+    "external_replay_fraction": 0.0,
+    "external_replay_pool": 0,
+    "hard_replay_pool": 3605,
+    "learning_rate": 0.0005841957122256002,
+    "train": {
+      "action": 0.8409017206666406,
+      "action_reachability": 0.04733107357970728,
+      "bellman": 0.034548016861123625,
+      "completion": 0.102960053315791,
+      "q": 0.034548016861123625,
+      "regret": 0.005432085167539305,
+      "state_reachability": 0.04468953571172354,
+      "total": 1.0857922769449673,
+      "transition": 0.0343324850838795,
+      "value": 0.01826694411545975
+    }
+  },
+  "metrics": "artifacts/acmg/checkpoints/geometry_r1_pairs/cosine/seed-59/value_metrics.json",
+  "model_capacity_override": {},
+  "output_dir": "artifacts/acmg/checkpoints/geometry_r1_pairs/cosine/seed-59",
+  "patience": 14,
+  "resume_checkpoint": "artifacts/acmg/checkpoints/geometry_r1_pairs/cosine/seed-59/training_resume.pt",
+  "seed": 59,
+  "stale_epochs": 14,
+  "status": "complete",
+  "training_config_sha256": "8bc521706946170187958be0da48ef35a07a6171fa88b789509e27e766d755b5"
+}

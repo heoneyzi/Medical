@@ -1,0 +1,81 @@
+{
+  "kind": "geoflowagent_final_evaluation_preregistration",
+  "version": 1,
+  "registered_at_utc": "2026-09-15T14:51:00Z",
+  "status": "registered_while_test_physically_sealed",
+  "scope": {
+    "development_benchmark": "hard-v2 synthetic exact-snapshot search",
+    "claim_boundary": "synthetic algorithmic and representation evidence only; no biomedical or live-API generalization claim",
+    "raw_fixture_content_sha256": "72e8cf56368320dbeab30e5f187b8e05c285be12bd3ff3804af63110de618bf2",
+    "raw_fixture_manifest_file_sha256": "b2aea4a85eccec1d575d688a70849c2a6b725db94ecc44c1da7ccb7255afccc1",
+    "development_processed_manifest_sha256": "2a2503a4344dc2961f75b75836d3d44d5d120fea5aed16e3608169f4583e7f5a",
+    "development_frozen_cache_manifest_sha256": "b5141f841289490562be8461029f101507b5b059faaa875bd7cda44f225e2844",
+    "frozen_cache_evaluation_fingerprint_sha256": "b0aa8d70a7294ac0e6d893d4797c86b92dd9741800609e4ae3499966c678ef9a",
+    "development_tasks": {"train": 144, "dev": 48},
+    "sealed_test_tasks": 48
+  },
+  "frozen_configuration": {
+    "config": "$GEOFLOW_PROJECT_ROOT/configs/search_hard_v2_frozen.yaml",
+    "config_sha256": "5ef95b1653e6abc17b2416e151605200a1037c1895a4ee926e5fb71f608b4df4",
+    "final_evaluation_config": "$GEOFLOW_PROJECT_ROOT/configs/search_hard_v2_final_frozen.yaml",
+    "final_evaluation_config_sha256": "5254b4b60caa00d6c29a45d389a13acb6f75e3f452f8946ab2549d7e36f93c64",
+    "final_embedding_subconfig_sha256": "52bfe7d734c4449f98df4d99b501dcf87a1dc531d9dab8e8ba48ba94a37caee8",
+    "input": "all structured and frozen views",
+    "value_energy": "cosine",
+    "value_capacity": "configured shared_dim=64 hidden_dim=128",
+    "encoder_revisions": {
+      "qwen2_5_1_5b_instruct": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "medcpt_query": "d83a36cc6b8e3a5c5e9d9d6ba156808c1643dcbc",
+      "medcpt_article": "d05a736da4bb84ee4057b7f7999485be6ed85465",
+      "sapbert": "090663c3ae57bf35ffe4d0d468a2a88d03051a4d",
+      "dnabert2": "7bce263b15377fc15361f52cfab88f8b586abda0"
+    }
+  },
+  "development_decision_rules": {
+    "dagger": "Use the dev-selected DAgger checkpoint only if its best dev selection score strictly exceeds the initial cosine seed-17 score; otherwise retain the initial cosine checkpoint.",
+    "capacity": "Retain configured capacity unless the clean resume-v3 two-x model has a positive paired task-bootstrap joint-accuracy interval excluding zero over configured capacity. Capacity does not alter the already selected cosine distance.",
+    "representation": "The frozen-representation contribution is accepted only if the clean resume-v3 frozen-cosine minus parameter-matched-hash joint-accuracy interval excludes zero in the favorable direction; otherwise report it as unresolved.",
+    "input_ablation": "Ablations are attribution analyses and cannot replace the preregistered full-input primary model after seeing test.",
+    "state_flow": "Train seeds 17, 29, and 43 independently; do not select a seed on test. Report each seed and the seed mean."
+  },
+  "single_unseal_evaluation": {
+    "materialization": "After every development controller and robustness check is terminal, build a separate final processed/cache package containing the registered test split and append a test-access ledger event.",
+    "value_policy_primary": "The development-rule-selected full-input cosine/DAgger checkpoint",
+    "value_policy_supporting": "All three already trained full-input cosine seed checkpoints, reported without selecting the best test seed",
+    "state_flow_primary": "Observed execute-observe-replan for seeds 17, 29, and 43",
+    "state_flow_controls": [
+      "one-shot open-loop sampling",
+      "same-noise exactly planner-call/NFE-matched blind replanning",
+      "external verifier STOP guard reported only as an explicit ablation"
+    ],
+    "primary_metrics": [
+      "task-root goal completion",
+      "task-macro goal completion",
+      "policy optimal-set accuracy",
+      "joint STOP/action accuracy",
+      "regret@1"
+    ],
+    "uncertainty": "Paired bootstrap over independent test tasks; correlated prefixes are not treated as independent observations.",
+    "multiplicity": "Primary contrasts are observed replan minus one-shot and observed replan minus blind. Geometry and input comparisons remain development analyses.",
+    "no_post_test_adaptation": true
+  },
+  "future_real_data_split": {
+    "non_marrvel_train_tasks_minimum": 500,
+    "non_marrvel_dev_selection_tasks": 60,
+    "non_marrvel_dev_confirmation_tasks": 40,
+    "marrvel_external_test_tasks_target": 100,
+    "preferred_external_test_tasks_for_precision": "200-400 when an additional independent source is available",
+    "group_before_prefix_generation": true,
+    "connected_component_group_keys": ["case", "entity", "template", "source", "release"],
+    "group_integrity_precedes_stratification": true,
+    "stratification_axes": [
+      "workflow family",
+      "tool-graph topology",
+      "category",
+      "source revision",
+      "path horizon",
+      "branching and multi-path difficulty"
+    ],
+    "marrvel_policy": "All MARRVEL-derived tasks are external test-only. Because public items were inspected for executable curation, call it a curation-fixed held-out external benchmark, not a pristine blind test."
+  }
+}

@@ -1,0 +1,227 @@
+# Fully local end-to-end validation of the search-distilled research path.
+# All records and hash embeddings are synthetic; this proves mechanics, not biology.
+seed: 17
+device: cpu
+project_root: ..
+
+paths:
+  raw_dir: data/raw/search_smoke
+  processed_dir: artifacts/search_smoke/processed
+  cache_dir: artifacts/search_smoke/cache
+  embedding_report_dir: artifacts/search_smoke/reports/embeddings
+  quality_report: artifacts/search_smoke/reports/data_quality.json
+  value_output_dir: artifacts/search_smoke/checkpoints/value
+  dagger_output_dir: artifacts/search_smoke/checkpoints/dagger
+  state_flow_output_dir: artifacts/search_smoke/checkpoints/state_flow
+  geometry_comparison_dir: artifacts/search_smoke/checkpoints/geometry_comparison
+  search_agent_report_dir: artifacts/search_smoke/reports/search_agent
+  run_summary: artifacts/search_smoke/run_summary.json
+
+synthetic_fixture:
+  enabled: true
+  task_count: 21
+
+search_preprocessing:
+  max_depth: 14
+  max_states: 20000
+  top_k_paths: 4
+  near_optimal_slack: 0.0
+  include_unreachable: true
+  require_complete_graph: true
+  require_reachable_root: true
+  split_group_kinds: [case, entity, template, source, release]
+  costs:
+    call: 1.0
+    failure: 1.0
+    redundancy: 0.25
+    status: {}
+
+data_quality:
+  min_tasks: 21
+  min_tasks_per_split: {train: 7, dev: 7, test: 7}
+  min_workflow_families: 7
+  min_entities: 21
+  min_templates: 21
+  min_topologies: 7
+  min_sources: 3
+  min_source_releases: 3
+  min_verifier_coverage: 1.0
+  split_group_keys: [case, entity, template, source, release]
+  require_complete_split_group_metadata: true
+  require_search_supervision: true
+  min_known_applicable_action_fraction: 0.99
+  max_unknown_applicable_action_fraction: 0.01
+  min_branch_state_fraction: 0.10
+  min_branch_label_coverage: 0.99
+  min_nontrivial_regret_fraction: 0.10
+  min_multi_path_state_fraction: 0.10
+  max_oracle_contract_collapse_fraction: 0.80
+  min_search_complete_fraction: 1.0
+  max_incomplete_or_unknown_state_fraction: 0.0
+  allow_synthetic: true
+  # Development artifacts are physically train+dev only. Corpus-wide floors
+  # above are checked against raw split metadata; these floors govern the active
+  # examples that may enter exact search, embedding, and model selection.
+  scope_overrides:
+    sealed_development:
+      min_tasks: 14
+      min_tasks_per_split: {train: 7, dev: 7}
+      min_entities: 14
+      min_templates: 14
+      min_sources: 2
+      min_source_releases: 2
+
+embedding:
+  batch_size: 128
+  storage_dtype: float32
+  views:
+    general:
+      kind: prototype
+      query_encoder: &general_hash
+        backend: hash
+        dim: 64
+        salt: search-smoke-general-v1
+        min_ngram: 1
+        max_ngram: 2
+      document_encoder: *general_hash
+      example_fields: [query, goal, state, history]
+      tool_fields: [description, contract]
+      encode_background: true
+    biomedical:
+      kind: prototype
+      query_encoder: &biomedical_hash
+        backend: hash
+        dim: 64
+        salt: search-smoke-biomedical-v1
+        min_ngram: 1
+        max_ngram: 3
+      document_encoder: *biomedical_hash
+      example_fields: [query, goal, state, history]
+      tool_fields: [description, contract]
+      encode_background: true
+    entity_aux:
+      kind: state_only
+      snapshot_field: entities
+      encode_pairs: false
+      query_encoder:
+        backend: hash
+        dim: 32
+        salt: search-smoke-entity-v1
+        min_ngram: 1
+        max_ngram: 2
+      example_fields: [entities]
+      tool_fields: []
+      encode_background: false
+    sequence_aux:
+      kind: state_only
+      snapshot_field: sequence
+      encode_pairs: false
+      query_encoder:
+        backend: hash
+        dim: 32
+        salt: search-smoke-dna-v1
+        min_ngram: 1
+        max_ngram: 1
+      example_fields: [sequence]
+      tool_fields: []
+      encode_background: false
+
+value_training:
+  structured_dim: 32
+  shared_dim: 24
+  hidden_dim: 48
+  energy: directed_quasimetric
+  energy_rank: 16
+  dropout: 0.05
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  batch_size: 96
+  epochs: 36
+  patience: 10
+  max_states_per_task: 48
+  supervision: boltzmann
+  action_temperature: 1.0
+  regret_temperature: 0.25
+  ranking_margin: 0.05
+  gradient_clip: 1.0
+  view_dropout: 0.10
+  embedding_noise_std: 0.005
+  hard_replay_warmup: 4
+  hard_replay_fraction: 0.20
+  threshold_grid: [0.1, 0.3, 0.5, 0.7, 0.9]
+  bootstrap_reps: 200
+  loss_weights:
+    action: 1.0
+    q: 1.0
+    value: 0.4
+    regret: 0.5
+    bellman: 0.5
+    transition: 0.2
+    action_reachability: 0.8
+    state_reachability: 0.4
+    completion: 1.2
+
+search_dagger:
+  enabled: true
+  rounds: 3
+  replay_fraction: 0.50
+  hard_example_multiplier: 3
+  max_steps: 14
+  stop_contract_guard: true
+  hard_reachability_guard: true
+
+# Genuine multi-path State Flow over fixed successor-state/tool anchors.  Test is
+# sealed unless --include-test is explicitly supplied to the standalone trainer.
+state_flow_training:
+  structured_dim: 32
+  dim: 32
+  hidden_dim: 64
+  layers: 1
+  heads: 4
+  dropout: 0.05
+  projection_seed: 17
+  tool_mix: 0.35
+  max_plan_length: 12  # at most 11 transitions plus STOP
+  path_beta: 1.0
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  batch_size: 32
+  epochs: 24
+  patience: 7
+  steps_per_epoch: 6
+  pad_weight: 0.10
+  transition_temperature: 0.10
+  gradient_clip: 1.0
+  nfe: 12
+  evaluation_samples_per_state: 4
+  stop_threshold_grid: [0.3, 0.5, 0.6, 0.7, 0.8, 0.9]
+  loss_weights:
+    flow_matching: 1.0
+    endpoint: 0.5
+    stop: 0.5
+    transition: 0.5
+
+geometry_comparison:
+  energies:
+    - cosine
+    - euclidean
+    - diagonal_mahalanobis
+    - lowrank_mahalanobis
+    - asymmetric_bilinear
+    - order_violation
+    - directed_quasimetric
+    - pair_mlp
+    - poincare
+  seeds: [17, 29, 43]
+
+search_agent_evaluation:
+  max_steps: 14
+  runtime_embedding_policy: cache_or_encode
+  retry_limit_per_tool: 1
+  perturbations:
+    - name: one_primary_source_empty
+      task_id: "*"
+      tool_id: annotate_primary
+      kind: empty_result
+      once: true
+      message: The pinned primary source returned an empty result; use the alternate source.

@@ -1,0 +1,5 @@
+{
+  "figure_id": "F6",
+  "title": "TP53 settling depth by genomic context",
+  "caption": "Settling depth c_interp distributions across canonical TP53 genomic contexts for both UR-gDTR (left, primary post Gate A FAIL) and JSD-gDTR (right, auxiliary). Significance asterisks: Mann-Whitney U test vs intron (***p<1e-3, **p<1e-2, *p<5e-2). Sample sizes (n positions) printed under each context label."
+}

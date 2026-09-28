@@ -1,0 +1,37 @@
+{
+  "intergenic": {
+    "best_layer": 24,
+    "AUROC_ovr": 0.914281007751938,
+    "f1_at_best": 0.6824324324324325
+  },
+  "intron": {
+    "best_layer": 24,
+    "AUROC_ovr": 0.9173352713178295,
+    "f1_at_best": 0.6986607142857143
+  },
+  "coding_exon": {
+    "best_layer": 24,
+    "AUROC_ovr": 0.9236291989664084,
+    "f1_at_best": 0.7234273318872018
+  },
+  "5utr": {
+    "best_layer": 24,
+    "AUROC_ovr": 0.9872353628531821,
+    "f1_at_best": 0.8376068376068376
+  },
+  "3utr": {
+    "best_layer": 24,
+    "AUROC_ovr": 0.9754244186046511,
+    "f1_at_best": 0.8405797101449275
+  },
+  "splice_donor": {
+    "best_layer": 24,
+    "AUROC_ovr": 0.959833887244308,
+    "f1_at_best": 0.5644599303135889
+  },
+  "splice_acceptor": {
+    "best_layer": 25,
+    "AUROC_ovr": 0.9472054425837321,
+    "f1_at_best": 0.6197183098591549
+  }
+}

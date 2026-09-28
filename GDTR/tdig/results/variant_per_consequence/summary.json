@@ -1,0 +1,103 @@
+{
+  "n_variants_total": 10910,
+  "n_consequence_classes_present": 9,
+  "consequences_present": [
+    "intron",
+    "synonymous",
+    "missense",
+    "splice",
+    "nonsense",
+    "5utr",
+    "3utr",
+    "start_loss",
+    "noncoding"
+  ],
+  "per_consequence_best": {
+    "intron": {
+      "best_layer": 8,
+      "best_AUROC": 0.8300656388451132,
+      "L7_AUROC": 0.8272650233415599,
+      "L8_AUROC": 0.8300656388451132,
+      "L27_AUROC": 0.5935873896107757,
+      "L29_AUROC": 0.6763681573548215,
+      "n_pos": 338,
+      "n_neg": 1592
+    },
+    "synonymous": {
+      "best_layer": 27,
+      "best_AUROC": 0.841472788767039,
+      "L7_AUROC": 0.5554729937480783,
+      "L8_AUROC": 0.5504509582863585,
+      "L27_AUROC": 0.841472788767039,
+      "L29_AUROC": 0.6772829763246899,
+      "n_pos": 22,
+      "n_neg": 1774
+    },
+    "missense": {
+      "best_layer": 27,
+      "best_AUROC": 0.8086681342872867,
+      "L7_AUROC": 0.6300495321959273,
+      "L8_AUROC": 0.6327600440286185,
+      "L27_AUROC": 0.8086681342872867,
+      "L29_AUROC": 0.5739336818932306,
+      "n_pos": 920,
+      "n_neg": 316
+    },
+    "5utr": {
+      "best_layer": 27,
+      "best_AUROC": 0.8884091999293091,
+      "L7_AUROC": 0.8759120401928855,
+      "L8_AUROC": 0.87913100557954,
+      "L27_AUROC": 0.8884091999293091,
+      "L29_AUROC": 0.8645509858870458,
+      "n_pos": 162,
+      "n_neg": 489
+    },
+    "3utr": {
+      "best_layer": 8,
+      "best_AUROC": 0.9266528925619835,
+      "L7_AUROC": 0.9230371900826446,
+      "L8_AUROC": 0.9266528925619835,
+      "L27_AUROC": 0.8842975206611571,
+      "L29_AUROC": 0.8269628099173554,
+      "n_pos": 16,
+      "n_neg": 121
+    },
+    "noncoding": {
+      "best_layer": 27,
+      "best_AUROC": 0.9057940663176265,
+      "L7_AUROC": 0.8882722513089005,
+      "L8_AUROC": 0.8893542757417103,
+      "L27_AUROC": 0.9057940663176265,
+      "L29_AUROC": 0.8310994764397907,
+      "n_pos": 150,
+      "n_neg": 191
+    }
+  },
+  "kw_L7_8_27_29": {
+    "7": {
+      "H": 4129.598929130224,
+      "p": 0.0,
+      "max_c": "nonsense",
+      "min_c": "synonymous"
+    },
+    "8": {
+      "H": 4200.018064812197,
+      "p": 0.0,
+      "max_c": "nonsense",
+      "min_c": "synonymous"
+    },
+    "27": {
+      "H": 3464.3170206809855,
+      "p": 0.0,
+      "max_c": "splice",
+      "min_c": "synonymous"
+    },
+    "29": {
+      "H": 2595.4960041904706,
+      "p": 0.0,
+      "max_c": "nonsense",
+      "min_c": "synonymous"
+    }
+  }
+}

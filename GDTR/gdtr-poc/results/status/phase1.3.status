@@ -1,0 +1,10 @@
+{
+  "phase": "phase1.3",
+  "state": "PASS",
+  "verdict": {
+    "attn_M2_pass_after_tuned": false,
+    "hyena_M2_pass_after_tuned": false,
+    "overall_pass": false,
+    "tuned_recovered": false
+  }
+}

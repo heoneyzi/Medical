@@ -1,0 +1,5 @@
+{
+  "figure_id": "F7",
+  "title": "TP53 hotspot variant Delta_D heatmaps",
+  "caption": "Layer-wise Delta_D(L) = D_alt - D_ref at the variant position for 5 TP53 hotspots (R175H, R248Q, R273H, R249S, G245S). Top row: UR-gDTR (cosine lens, primary post Gate A FAIL); bottom row: JSD-gDTR (auxiliary). Red bars on right show observed max|Delta_D| with red ticks at the 95th percentile of the per-variant null distribution (n=100 random alleles +/-100 bp from variant pos). * = exceeds null p95, ** = exceeds null p99."
+}

@@ -1,0 +1,465 @@
+{
+  "checkpoints": {
+    "cosine-17": {
+      "cosine_on_z_minus_raw_cosine": {
+        "ci_high": 0.22905071501675714,
+        "ci_low": 0.154489670649545,
+        "estimate": 0.1899630433092844,
+        "n_units": 47
+      },
+      "energy": "cosine",
+      "energy_head_minus_cosine_on_z": {
+        "ci_high": 0.0,
+        "ci_low": 0.0,
+        "estimate": 0.0,
+        "n_units": 47
+      },
+      "learned_geometry": {
+        "dimension": 64,
+        "effective_rank": 11.986831726144302,
+        "hub_occurrence_gini": 0.20920373333333328,
+        "k": 10,
+        "mean_cosine_similarity": 0.1767601606021407,
+        "note": "effective rank far below the dimension, or a large hub share, means the space is not usable as a global retrieval index even if a probe reads it",
+        "top1_hub_share": 0.0017333333333333333
+      },
+      "ordering_cosine_on_z": 0.6954994806277691,
+      "ordering_energy_head": 0.6954994806277691,
+      "ordering_l2_on_z": 0.6186182578771455,
+      "seed": 17
+    },
+    "cosine-29": {
+      "cosine_on_z_minus_raw_cosine": {
+        "ci_high": 0.268752767707364,
+        "ci_low": 0.20326731819074334,
+        "estimate": 0.23561126931746715,
+        "n_units": 47
+      },
+      "energy": "cosine",
+      "energy_head_minus_cosine_on_z": {
+        "ci_high": 0.0,
+        "ci_low": 0.0,
+        "estimate": 0.0,
+        "n_units": 47
+      },
+      "learned_geometry": {
+        "dimension": 64,
+        "effective_rank": 11.273249384032122,
+        "hub_occurrence_gini": 0.21588462222222218,
+        "k": 10,
+        "mean_cosine_similarity": 0.1668630923550378,
+        "note": "effective rank far below the dimension, or a large hub share, means the space is not usable as a global retrieval index even if a probe reads it",
+        "top1_hub_share": 0.0020666666666666667
+      },
+      "ordering_cosine_on_z": 0.7411477066359519,
+      "ordering_energy_head": 0.7411477066359519,
+      "ordering_l2_on_z": 0.5781637541779433,
+      "seed": 29
+    },
+    "cosine-43": {
+      "cosine_on_z_minus_raw_cosine": {
+        "ci_high": 0.3053660764537386,
+        "ci_low": 0.23597674231524265,
+        "estimate": 0.2678335464997138,
+        "n_units": 47
+      },
+      "energy": "cosine",
+      "energy_head_minus_cosine_on_z": {
+        "ci_high": 0.0,
+        "ci_low": 0.0,
+        "estimate": 0.0,
+        "n_units": 47
+      },
+      "learned_geometry": {
+        "dimension": 64,
+        "effective_rank": 11.980989430219891,
+        "hub_occurrence_gini": 0.20780364444444452,
+        "k": 10,
+        "mean_cosine_similarity": 0.1071001264224417,
+        "note": "effective rank far below the dimension, or a large hub share, means the space is not usable as a global retrieval index even if a probe reads it",
+        "top1_hub_share": 0.0016
+      },
+      "ordering_cosine_on_z": 0.7733699838181985,
+      "ordering_energy_head": 0.7733699838181985,
+      "ordering_l2_on_z": 0.542952436809712,
+      "seed": 43
+    },
+    "directed_quasimetric-17": {
+      "cosine_on_z_minus_raw_cosine": {
+        "ci_high": 0.22067107848570838,
+        "ci_low": 0.1499396507761609,
+        "estimate": 0.18057901170884064,
+        "n_units": 47
+      },
+      "energy": "directed_quasimetric",
+      "energy_head_minus_cosine_on_z": {
+        "ci_high": 0.1408201574144568,
+        "ci_low": 0.09534409996927495,
+        "estimate": 0.11867125504356367,
+        "n_units": 47
+      },
+      "learned_geometry": {
+        "dimension": 64,
+        "effective_rank": 12.57461970301701,
+        "hub_occurrence_gini": 0.19695715555555549,
+        "k": 10,
+        "mean_cosine_similarity": 0.1570545545935166,
+        "note": "effective rank far below the dimension, or a large hub share, means the space is not usable as a global retrieval index even if a probe reads it",
+        "top1_hub_share": 0.0015333333333333334
+      },
+      "ordering_cosine_on_z": 0.6861154490273254,
+      "ordering_energy_head": 0.804786704070889,
+      "ordering_l2_on_z": 0.6371036695238028,
+      "seed": 17
+    },
+    "directed_quasimetric-29": {
+      "cosine_on_z_minus_raw_cosine": {
+        "ci_high": 0.03672649273995926,
+        "ci_low": -0.016871808997819298,
+        "estimate": 0.005278517775249617,
+        "n_units": 47
+      },
+      "energy": "directed_quasimetric",
+      "energy_head_minus_cosine_on_z": {
+        "ci_high": 0.25059376699105756,
+        "ci_low": 0.17139988596368308,
+        "estimate": 0.22607177936219677,
+        "n_units": 47
+      },
+      "learned_geometry": {
+        "dimension": 64,
+        "effective_rank": 10.936163802472517,
+        "hub_occurrence_gini": 0.22140915555555557,
+        "k": 10,
+        "mean_cosine_similarity": 0.1969685368559766,
+        "note": "effective rank far below the dimension, or a large hub share, means the space is not usable as a global retrieval index even if a probe reads it",
+        "top1_hub_share": 0.0018666666666666666
+      },
+      "ordering_cosine_on_z": 0.5108149550937343,
+      "ordering_energy_head": 0.7368867344559311,
+      "ordering_l2_on_z": 0.5537143947370281,
+      "seed": 29
+    },
+    "directed_quasimetric-43": {
+      "cosine_on_z_minus_raw_cosine": {
+        "ci_high": 0.2207538370866858,
+        "ci_low": 0.1503429579539721,
+        "estimate": 0.18443720542408332,
+        "n_units": 47
+      },
+      "energy": "directed_quasimetric",
+      "energy_head_minus_cosine_on_z": {
+        "ci_high": 0.14394699549316708,
+        "ci_low": 0.09626568974672434,
+        "estimate": 0.11942734795112954,
+        "n_units": 47
+      },
+      "learned_geometry": {
+        "dimension": 64,
+        "effective_rank": 11.857989641077705,
+        "hub_occurrence_gini": 0.21285075555555552,
+        "k": 10,
+        "mean_cosine_similarity": 0.15761243338580322,
+        "note": "effective rank far below the dimension, or a large hub share, means the space is not usable as a global retrieval index even if a probe reads it",
+        "top1_hub_share": 0.0017333333333333333
+      },
+      "ordering_cosine_on_z": 0.689973642742568,
+      "ordering_energy_head": 0.8094009906936975,
+      "ordering_l2_on_z": 0.5385572051414318,
+      "seed": 43
+    },
+    "euclidean-17": {
+      "cosine_on_z_minus_raw_cosine": {
+        "ci_high": 0.12039376896783642,
+        "ci_low": 0.019988223958358062,
+        "estimate": 0.06696721948599815,
+        "n_units": 47
+      },
+      "energy": "euclidean",
+      "energy_head_minus_cosine_on_z": {
+        "ci_high": 0.06508609567175386,
+        "ci_low": 0.034229591305861,
+        "estimate": 0.05372499417031169,
+        "n_units": 47
+      },
+      "learned_geometry": {
+        "dimension": 64,
+        "effective_rank": 13.246317379286683,
+        "hub_occurrence_gini": 0.19672426666666662,
+        "k": 10,
+        "mean_cosine_similarity": 0.22761498594884846,
+        "note": "effective rank far below the dimension, or a large hub share, means the space is not usable as a global retrieval index even if a probe reads it",
+        "top1_hub_share": 0.0015333333333333334
+      },
+      "ordering_cosine_on_z": 0.5725036568044829,
+      "ordering_energy_head": 0.6262286509747945,
+      "ordering_l2_on_z": 0.6262286509747945,
+      "seed": 17
+    },
+    "euclidean-29": {
+      "cosine_on_z_minus_raw_cosine": {
+        "ci_high": 0.06718531973688785,
+        "ci_low": -0.01752762716034921,
+        "estimate": 0.01821689267013857,
+        "n_units": 47
+      },
+      "energy": "euclidean",
+      "energy_head_minus_cosine_on_z": {
+        "ci_high": 0.07757950903501332,
+        "ci_low": 0.030491330218190095,
+        "estimate": 0.05043210356352947,
+        "n_units": 47
+      },
+      "learned_geometry": {
+        "dimension": 64,
+        "effective_rank": 10.918248182340745,
+        "hub_occurrence_gini": 0.21258773333333328,
+        "k": 10,
+        "mean_cosine_similarity": 0.2838032818968538,
+        "note": "effective rank far below the dimension, or a large hub share, means the space is not usable as a global retrieval index even if a probe reads it",
+        "top1_hub_share": 0.0019333333333333333
+      },
+      "ordering_cosine_on_z": 0.5237533299886232,
+      "ordering_energy_head": 0.5741854335521528,
+      "ordering_l2_on_z": 0.5741854335521528,
+      "seed": 29
+    },
+    "euclidean-43": {
+      "cosine_on_z_minus_raw_cosine": {
+        "ci_high": 0.13249727707823664,
+        "ci_low": 0.06526961695854504,
+        "estimate": 0.0979246309630645,
+        "n_units": 47
+      },
+      "energy": "euclidean",
+      "energy_head_minus_cosine_on_z": {
+        "ci_high": -0.01116374428201449,
+        "ci_low": -0.08588709794095625,
+        "estimate": -0.04289237335443798,
+        "n_units": 47
+      },
+      "learned_geometry": {
+        "dimension": 64,
+        "effective_rank": 12.04304015847735,
+        "hub_occurrence_gini": 0.20976808888888884,
+        "k": 10,
+        "mean_cosine_similarity": 0.21878462138295857,
+        "note": "effective rank far below the dimension, or a large hub share, means the space is not usable as a global retrieval index even if a probe reads it",
+        "top1_hub_share": 0.0016666666666666668
+      },
+      "ordering_cosine_on_z": 0.6034610682815492,
+      "ordering_energy_head": 0.5605686949271113,
+      "ordering_l2_on_z": 0.5605686949271113,
+      "seed": 43
+    },
+    "pair_mlp-17": {
+      "cosine_on_z_minus_raw_cosine": {
+        "ci_high": -0.09034308403481314,
+        "ci_low": -0.14029417744006473,
+        "estimate": -0.12099606407710735,
+        "n_units": 47
+      },
+      "energy": "pair_mlp",
+      "energy_head_minus_cosine_on_z": {
+        "ci_high": 0.45250722449956293,
+        "ci_low": 0.41208176187742207,
+        "estimate": 0.43117081340051017,
+        "n_units": 47
+      },
+      "learned_geometry": {
+        "dimension": 64,
+        "effective_rank": 12.474915488259715,
+        "hub_occurrence_gini": 0.2063977777777777,
+        "k": 10,
+        "mean_cosine_similarity": 0.20841475767601722,
+        "note": "effective rank far below the dimension, or a large hub share, means the space is not usable as a global retrieval index even if a probe reads it",
+        "top1_hub_share": 0.0018
+      },
+      "ordering_cosine_on_z": 0.38454037324137735,
+      "ordering_energy_head": 0.8157111866418876,
+      "ordering_l2_on_z": 0.5211458694008494,
+      "seed": 17
+    },
+    "pair_mlp-29": {
+      "cosine_on_z_minus_raw_cosine": {
+        "ci_high": -0.11233750319910035,
+        "ci_low": -0.17594944924149444,
+        "estimate": -0.14993251694142753,
+        "n_units": 47
+      },
+      "energy": "pair_mlp",
+      "energy_head_minus_cosine_on_z": {
+        "ci_high": 0.4910711281519967,
+        "ci_low": 0.4415632701470545,
+        "estimate": 0.46405025544634215,
+        "n_units": 47
+      },
+      "learned_geometry": {
+        "dimension": 64,
+        "effective_rank": 10.130619789974629,
+        "hub_occurrence_gini": 0.21191520000000005,
+        "k": 10,
+        "mean_cosine_similarity": 0.22630208160888193,
+        "note": "effective rank far below the dimension, or a large hub share, means the space is not usable as a global retrieval index even if a probe reads it",
+        "top1_hub_share": 0.0023333333333333335
+      },
+      "ordering_cosine_on_z": 0.3556039203770572,
+      "ordering_energy_head": 0.8196541758233993,
+      "ordering_l2_on_z": 0.5032540260180756,
+      "seed": 29
+    },
+    "pair_mlp-43": {
+      "cosine_on_z_minus_raw_cosine": {
+        "ci_high": 0.2710563699972183,
+        "ci_low": 0.21644014517169582,
+        "estimate": 0.24084738935958225,
+        "n_units": 47
+      },
+      "energy": "pair_mlp",
+      "energy_head_minus_cosine_on_z": {
+        "ci_high": 0.1122360123469118,
+        "ci_low": 0.08279491906090986,
+        "estimate": 0.09800236014047782,
+        "n_units": 47
+      },
+      "learned_geometry": {
+        "dimension": 64,
+        "effective_rank": 12.423393562429128,
+        "hub_occurrence_gini": 0.1996602666666666,
+        "k": 10,
+        "mean_cosine_similarity": 0.13141272444162003,
+        "note": "effective rank far below the dimension, or a large hub share, means the space is not usable as a global retrieval index even if a probe reads it",
+        "top1_hub_share": 0.0018
+      },
+      "ordering_cosine_on_z": 0.7463838266780669,
+      "ordering_energy_head": 0.8443861868185447,
+      "ordering_l2_on_z": 0.47402078902181366,
+      "seed": 43
+    },
+    "poincare-17": {
+      "cosine_on_z_minus_raw_cosine": {
+        "ci_high": -0.014561116173633986,
+        "ci_low": -0.0988077642818222,
+        "estimate": -0.06625352431156681,
+        "n_units": 47
+      },
+      "energy": "poincare",
+      "energy_head_minus_cosine_on_z": {
+        "ci_high": 0.4076409208806165,
+        "ci_low": 0.3357593849139113,
+        "estimate": 0.371093225548874,
+        "n_units": 47
+      },
+      "learned_geometry": {
+        "dimension": 64,
+        "effective_rank": 10.655188809335177,
+        "hub_occurrence_gini": 0.21938977777777777,
+        "k": 10,
+        "mean_cosine_similarity": 0.22823520523966415,
+        "note": "effective rank far below the dimension, or a large hub share, means the space is not usable as a global retrieval index even if a probe reads it",
+        "top1_hub_share": 0.0022
+      },
+      "ordering_cosine_on_z": 0.4392829130069179,
+      "ordering_energy_head": 0.8103761385557919,
+      "ordering_l2_on_z": 0.6461767844145933,
+      "seed": 17
+    },
+    "poincare-29": {
+      "cosine_on_z_minus_raw_cosine": {
+        "ci_high": -0.06735814959261935,
+        "ci_low": -0.15789092661397375,
+        "estimate": -0.1252923677014069,
+        "n_units": 47
+      },
+      "energy": "poincare",
+      "energy_head_minus_cosine_on_z": {
+        "ci_high": 0.37538118275851673,
+        "ci_low": 0.28111900550370944,
+        "estimate": 0.3300098221415095,
+        "n_units": 47
+      },
+      "learned_geometry": {
+        "dimension": 64,
+        "effective_rank": 9.338919032158353,
+        "hub_occurrence_gini": 0.21250257777777778,
+        "k": 10,
+        "mean_cosine_similarity": 0.2591815124786272,
+        "note": "effective rank far below the dimension, or a large hub share, means the space is not usable as a global retrieval index even if a probe reads it",
+        "top1_hub_share": 0.0021333333333333334
+      },
+      "ordering_cosine_on_z": 0.3802440696170778,
+      "ordering_energy_head": 0.7102538917585873,
+      "ordering_l2_on_z": 0.5589999788011334,
+      "seed": 29
+    },
+    "poincare-43": {
+      "cosine_on_z_minus_raw_cosine": {
+        "ci_high": -0.031213393165866004,
+        "ci_low": -0.08608232696344548,
+        "estimate": -0.06493919458439622,
+        "n_units": 47
+      },
+      "energy": "poincare",
+      "energy_head_minus_cosine_on_z": {
+        "ci_high": 0.36982230677886646,
+        "ci_low": 0.3123082245685779,
+        "estimate": 0.3441565324307327,
+        "n_units": 47
+      },
+      "learned_geometry": {
+        "dimension": 64,
+        "effective_rank": 10.71416338096732,
+        "hub_occurrence_gini": 0.2120404444444445,
+        "k": 10,
+        "mean_cosine_similarity": 0.21052433324130687,
+        "note": "effective rank far below the dimension, or a large hub share, means the space is not usable as a global retrieval index even if a probe reads it",
+        "top1_hub_share": 0.0016666666666666668
+      },
+      "ordering_cosine_on_z": 0.44059724273408846,
+      "ordering_energy_head": 0.7847537751648211,
+      "ordering_l2_on_z": 0.6115378364436781,
+      "seed": 43
+    }
+  },
+  "dev_states_total": 112128,
+  "dev_states_used": 31050,
+  "dropped_no_optimal_actions": 81078,
+  "dropped_value_known_mask_false": 0,
+  "frozen_geometry": {
+    "dimension": 768,
+    "effective_rank": 10.27500428031525,
+    "hub_occurrence_gini": 0.24233893333333328,
+    "k": 10,
+    "mean_cosine_similarity": 0.9690400944550347,
+    "note": "effective rank far below the dimension, or a large hub share, means the space is not usable as a global retrieval index even if a probe reads it",
+    "top1_hub_share": 0.0019333333333333333
+  },
+  "gene_clusters": 47,
+  "pairs": 141517,
+  "raw_frozen": {
+    "cosine": 0.5055364373184847,
+    "cosine_vs_chance": {
+      "ci_high": 0.030897259396233515,
+      "ci_low": -0.0346638173330739,
+      "estimate": 0.005536437318484705,
+      "n_units": 47
+    },
+    "neg_dot": 0.49663997964908807,
+    "neg_dot_vs_chance": {
+      "ci_high": 0.02227517930638817,
+      "ci_low": -0.04059020063187636,
+      "estimate": -0.0033600203509119046,
+      "n_units": 47
+    },
+    "squared_l2": 0.5077764508857593,
+    "squared_l2_vs_chance": {
+      "ci_high": 0.033160324069026685,
+      "ci_low": -0.031979642433320625,
+      "estimate": 0.007776450885759308,
+      "n_units": 47
+    }
+  },
+  "split": "dev",
+  "test_reported": false,
+  "unit": "gene"
+}

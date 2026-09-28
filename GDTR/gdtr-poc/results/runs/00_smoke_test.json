@@ -1,0 +1,257 @@
+{
+  "model_id": "LongSafari/hyenadna-medium-160k-seqlen-hf",
+  "timestamp": 1777182960.1946237,
+  "transformers_version": "4.49.0",
+  "torch_version": "2.3.1+cu121",
+  "cuda_device": "NVIDIA GeForce RTX 3090",
+  "model_class": "HyenaDNAForCausalLM",
+  "tokenizer_class": "HyenaDNATokenizer",
+  "n_params_total": 6554624,
+  "n_params_trainable": 6554624,
+  "model_repr_truncated": "HyenaDNAForCausalLM(\n  (hyena): HyenaDNAModel(\n    (backbone): HyenaLMBackbone(\n      (embeddings): HyenaEmbeddings(\n        (word_embeddings): Embedding(16, 256)\n      )\n      (dropout): Dropout(p=0.1, inplace=False)\n      (layers): ModuleList(\n        (0-7): 8 x HyenaBlock(\n          (mixer): HyenaOperator(\n            (dropout): Dropout(p=0.0, inplace=False)\n            (in_proj): Linear(in_features=256, out_features=768, bias=True)\n            (out_proj): Linear(in_features=256, out_features=256, bias=True)\n            (short_filter): Conv1d(768, 768, kernel_size=(3,), stride=(1,), padding=(2,), groups=768)\n            (filter_fn): HyenaFilter(\n              (dropout): Dropout(p=0.0, inplace=False)\n              (pos_emb): HyenaPositionalEmbedding()\n              (implicit_filter): Sequential(\n                (0): Linear(in_features=5, out_features=64, bias=True)\n                (1): HyenaSin()\n                (2): Linear(in_features=64, out_features=64, bias=True)\n                (3): HyenaSin()\n                (4): Linear(in_features=64, out_features=64, bias=True)\n                (5): HyenaSin()\n                (6): Linear(in_features=64, out_features=256, bias=False)\n              )\n              (modulation): HyenaExponentialModulation()\n            )\n          )\n          (norm1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)\n          (mlp): HyenaMlp(\n            (fc1): Linear(in_features=256, out_features=1024, bias=True)\n            (fc2): Linear(in_features=1024, out_features=256, bias=True)\n          )\n          (norm2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)\n        )\n      )\n      (ln_f): LayerNorm((256,), eps=1e-05, elementwise_affine=True)\n    )\n  )\n  (lm_head): Linear(in_features=256, out_features=16, bias=False)\n)",
+  "model_repr_total_len": 1787,
+  "backbone_attr_path": "hyena.backbone.layers",
+  "n_backbone_layers": 8,
+  "backbone_layer_class": "HyenaBlock",
+  "config_hidden_size": 256,
+  "config_vocab_size": 12,
+  "config_n_layer": 8,
+  "config_max_seq_len": 160002,
+  "lm_head_class": "Linear",
+  "lm_head_weight_shape": [
+    16,
+    256
+  ],
+  "lm_head_out_features": 16,
+  "input_embedding_class": "Embedding",
+  "input_embedding_weight_shape": [
+    16,
+    256
+  ],
+  "lm_head_tied_id_match": false,
+  "lm_head_tied_dataptr_match": false,
+  "layernorm_modules_all": [
+    [
+      "hyena.backbone.layers.0.norm1",
+      "LayerNorm"
+    ],
+    [
+      "hyena.backbone.layers.0.norm2",
+      "LayerNorm"
+    ],
+    [
+      "hyena.backbone.layers.1.norm1",
+      "LayerNorm"
+    ],
+    [
+      "hyena.backbone.layers.1.norm2",
+      "LayerNorm"
+    ],
+    [
+      "hyena.backbone.layers.2.norm1",
+      "LayerNorm"
+    ],
+    [
+      "hyena.backbone.layers.2.norm2",
+      "LayerNorm"
+    ],
+    [
+      "hyena.backbone.layers.3.norm1",
+      "LayerNorm"
+    ],
+    [
+      "hyena.backbone.layers.3.norm2",
+      "LayerNorm"
+    ],
+    [
+      "hyena.backbone.layers.4.norm1",
+      "LayerNorm"
+    ],
+    [
+      "hyena.backbone.layers.4.norm2",
+      "LayerNorm"
+    ],
+    [
+      "hyena.backbone.layers.5.norm1",
+      "LayerNorm"
+    ],
+    [
+      "hyena.backbone.layers.5.norm2",
+      "LayerNorm"
+    ],
+    [
+      "hyena.backbone.layers.6.norm1",
+      "LayerNorm"
+    ],
+    [
+      "hyena.backbone.layers.6.norm2",
+      "LayerNorm"
+    ],
+    [
+      "hyena.backbone.layers.7.norm1",
+      "LayerNorm"
+    ],
+    [
+      "hyena.backbone.layers.7.norm2",
+      "LayerNorm"
+    ],
+    [
+      "hyena.backbone.ln_f",
+      "LayerNorm"
+    ]
+  ],
+  "final_layernorm_attr_guess": "hyena.backbone.ln_f",
+  "test_seq_len_chars": 6000,
+  "input_ids_shape": [
+    1,
+    6001
+  ],
+  "input_ids_first_5": [
+    7,
+    8,
+    9,
+    10,
+    7
+  ],
+  "input_ids_last_5": [
+    7,
+    8,
+    9,
+    10,
+    1
+  ],
+  "tokenizer_special_tokens_map": {
+    "bos_token": "[BOS]",
+    "eos_token": "[SEP]",
+    "unk_token": "[UNK]",
+    "sep_token": "[SEP]",
+    "pad_token": "[PAD]",
+    "cls_token": "[CLS]",
+    "mask_token": "[MASK]"
+  },
+  "tokenizer_bos_token_id": 2,
+  "tokenizer_eos_token_id": 1,
+  "tokenizer_pad_token_id": 4,
+  "tokenizer_vocab_size": 12,
+  "tokenizer_get_vocab_size": 12,
+  "tokenizer_offset_input_ids_minus_seq_len": 1,
+  "forward_ok": true,
+  "forward_seconds": 0.1768336296081543,
+  "gpu_peak_bytes": 235635712,
+  "gpu_peak_GB": 0.235635712,
+  "out_logits_shape": [
+    1,
+    6001,
+    16
+  ],
+  "out_has_hidden_states": true,
+  "out_hidden_states_count": 10,
+  "out_hidden_states_shapes": [
+    [
+      1,
+      6001,
+      256
+    ],
+    [
+      1,
+      6001,
+      256
+    ],
+    [
+      1,
+      6001,
+      256
+    ],
+    [
+      1,
+      6001,
+      256
+    ],
+    [
+      1,
+      6001,
+      256
+    ],
+    [
+      1,
+      6001,
+      256
+    ],
+    [
+      1,
+      6001,
+      256
+    ],
+    [
+      1,
+      6001,
+      256
+    ],
+    [
+      1,
+      6001,
+      256
+    ],
+    [
+      1,
+      6001,
+      256
+    ]
+  ],
+  "hook_capture_count": 8,
+  "hook_capture_shapes": [
+    [
+      1,
+      6001,
+      256
+    ],
+    [
+      1,
+      6001,
+      256
+    ],
+    [
+      1,
+      6001,
+      256
+    ],
+    [
+      1,
+      6001,
+      256
+    ],
+    [
+      1,
+      6001,
+      256
+    ],
+    [
+      1,
+      6001,
+      256
+    ],
+    [
+      1,
+      6001,
+      256
+    ],
+    [
+      1,
+      6001,
+      256
+    ]
+  ],
+  "hidden_state_0_mean": -0.0003368892357684672,
+  "hidden_state_0_std": 0.02451254613697529,
+  "hidden_state_last_mean": -0.0018036195542663336,
+  "hidden_state_last_std": 0.9819931387901306,
+  "final_norm_resolved_path": [
+    "hyena.backbone.ln_f",
+    "LayerNorm"
+  ],
+  "final_norm_logit_recompute_max_abs_diff": 0.75,
+  "summary_ok": true,
+  "interpretation_hidden_states_layout": "hidden_states len = n_layers+2 = 10. [0]=embeddings out. [1..n_layer]=each block out (BEFORE final ln_f). [-1]=AFTER final ln_f. Verified: lm_head(hidden_states[-1]) == logits (diff=0). For per-layer logit lens: apply m.hyena.backbone.ln_f to hidden_states[1..n_layer] then m.lm_head.",
+  "lm_head_tied_note": "NOT tied (id+dataptr differ). lm_head.out_features=16 but config.vocab_size=12 (rounded). Use first 12 cols only.",
+  "vocab_dynamic_range_note": "|V|=12, log|V|=2.484. Use first 12 logit cols for JSD."
+}

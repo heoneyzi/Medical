@@ -1,0 +1,9 @@
+{
+  "n_VUS": 2902,
+  "best_classifier": "gbm_n100",
+  "best_CV_AUROC": 0.9487902544567738,
+  "VUS_predicted_LP": 1303,
+  "VUS_predicted_LB": 746,
+  "VUS_uncertain": 853,
+  "baseline_dh_agreement_pct": 67.91867677463817
+}

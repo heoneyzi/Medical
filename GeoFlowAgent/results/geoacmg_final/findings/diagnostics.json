@@ -1,0 +1,285 @@
+{
+  "card": {
+    "decision_freedom": {
+      "discardable_families": {
+        "histogram": {
+          "0": 1723,
+          "1": 832,
+          "2": 628,
+          "3": 562,
+          "4": 309
+        },
+        "mean": 1.235816477553034
+      },
+      "note": "a task with no discardable family is an enumeration, not a decision; a benchmark made only of those would measure ordering and nothing else",
+      "tasks": 4054,
+      "tasks_with_no_choice": 1723,
+      "tasks_with_no_choice_fraction": 0.42501233349777995
+    },
+    "effective_cluster_curve": {
+      "curve": [
+        {
+          "cap": null,
+          "effective_clusters": 12.491157720008147,
+          "tasks": 4054
+        },
+        {
+          "cap": 25,
+          "effective_clusters": 97.55752657920455,
+          "tasks": 1815
+        },
+        {
+          "cap": 50,
+          "effective_clusters": 75.73876451994745,
+          "tasks": 2413
+        },
+        {
+          "cap": 100,
+          "effective_clusters": 57.36847378081989,
+          "tasks": 2921
+        },
+        {
+          "cap": 200,
+          "effective_clusters": 46.3301119579884,
+          "tasks": 3188
+        },
+        {
+          "cap": 400,
+          "effective_clusters": 33.82329506612291,
+          "tasks": 3388
+        }
+      ],
+      "note": "pre-register a cap before opening any test split; the trade is tasks against independent evidence, and it changes every interval in the study"
+    },
+    "expert_panels": 45,
+    "genes": 155,
+    "ordering_multiplicity": {
+      "fraction": 0.6965959546127282,
+      "histogram": {
+        "1": 1230,
+        "2": 1382,
+        "24": 242,
+        "6": 1200
+      },
+      "mean_log2_orderings": 1.3797523251208745,
+      "tasks_with_multiple_orderings": 2824
+    },
+    "required_families_histogram": {
+      "1": 1230,
+      "2": 1382,
+      "3": 1200,
+      "4": 242
+    },
+    "single_family_ceiling": {
+      "best_single_family": "population_frequency",
+      "best_single_family_accuracy": 0.2747903305377405,
+      "full_registry_accuracy": 1.0,
+      "gap": 0.7252096694622595,
+      "note": "full-registry accuracy is 1.0 by construction: a task is only built when every code the panel applied is decidable by the registry. The gap is therefore exactly the share of tasks that need more than the single most useful tool family.",
+      "per_family": {
+        "clinical_assertion": 0.000246669955599408,
+        "gene_mechanism": 0.003206709422792304,
+        "in_silico": 0.0246669955599408,
+        "molecular_consequence": 0.000493339911198816,
+        "population_frequency": 0.2747903305377405
+      }
+    },
+    "target_balance": {
+      "counts": {
+        "Benign": 772,
+        "Likely Benign": 1047,
+        "Likely Pathogenic": 462,
+        "Pathogenic": 143,
+        "Uncertain Significance": 1630
+      },
+      "majority_class_rate": 0.40207202762703503,
+      "note": "a classifier that always answers the commonest label scores this"
+    },
+    "tasks": 4054,
+    "tasks_per_gene": {
+      "effective_number_of_clusters": 12.491157720008147,
+      "largest_gene": "RUNX1",
+      "largest_gene_share": 0.2629501726689689,
+      "max": 1066,
+      "median": 9,
+      "note": "the gene is the independent unit. When one gene holds a large share of the tasks, the gene count overstates the independent evidence; read every interval against effective_number_of_clusters, not against genes"
+    }
+  },
+  "findings": [
+    {
+      "ci": [
+        0.6665276625873513,
+        0.7787367083491282
+      ],
+      "claim_id": "B0",
+      "detail": {
+        "best_single_family": "population_frequency",
+        "left_mean": 1.0,
+        "n_observations": 4054,
+        "note": "full-registry accuracy is 1.0 by construction: a task is only built when every code the panel applied is decidable by the registry. The gap is therefore exactly the share of tasks that need more than the single most useful tool family.",
+        "per_family": {
+          "clinical_assertion": 0.000246669955599408,
+          "gene_mechanism": 0.003206709422792304,
+          "in_silico": 0.0246669955599408,
+          "molecular_consequence": 0.000493339911198816,
+          "population_frequency": 0.2747903305377405
+        },
+        "right_mean": 0.2747903305377405,
+        "tasks": 4054
+      },
+      "estimate": 0.7252096694622595,
+      "evidence": "paired_interval",
+      "method": "paired cluster bootstrap (bca), 2000 resamples",
+      "n_units": 155,
+      "name": "benchmark_needs_more_than_one_tool_family",
+      "null_draws": null,
+      "null_mean": null,
+      "p_value": null,
+      "role": "diagnostic",
+      "unit": "gene"
+    }
+  ],
+  "study_corpus": {
+    "card": {
+      "decision_freedom": {
+        "discardable_families": {
+          "histogram": {
+            "0": 1646,
+            "1": 711,
+            "2": 292,
+            "3": 160,
+            "4": 112
+          },
+          "mean": 0.7610407394727833
+        },
+        "note": "a task with no discardable family is an enumeration, not a decision; a benchmark made only of those would measure ordering and nothing else",
+        "tasks": 2921,
+        "tasks_with_no_choice": 1646,
+        "tasks_with_no_choice_fraction": 0.563505648750428
+      },
+      "effective_cluster_curve": {
+        "curve": [
+          {
+            "cap": null,
+            "effective_clusters": 57.36847378081989,
+            "tasks": 2921
+          },
+          {
+            "cap": 25,
+            "effective_clusters": 97.55752657920455,
+            "tasks": 1815
+          },
+          {
+            "cap": 50,
+            "effective_clusters": 75.73876451994745,
+            "tasks": 2413
+          },
+          {
+            "cap": 100,
+            "effective_clusters": 57.36847378081989,
+            "tasks": 2921
+          },
+          {
+            "cap": 200,
+            "effective_clusters": 57.36847378081989,
+            "tasks": 2921
+          },
+          {
+            "cap": 400,
+            "effective_clusters": 57.36847378081989,
+            "tasks": 2921
+          }
+        ],
+        "note": "pre-register a cap before opening any test split; the trade is tasks against independent evidence, and it changes every interval in the study"
+      },
+      "expert_panels": 45,
+      "genes": 155,
+      "ordering_multiplicity": {
+        "fraction": 0.6545703526189661,
+        "histogram": {
+          "1": 1009,
+          "2": 924,
+          "24": 145,
+          "6": 843
+        },
+        "mean_log2_orderings": 1.2899496578954277,
+        "tasks_with_multiple_orderings": 1912
+      },
+      "required_families_histogram": {
+        "1": 1009,
+        "2": 924,
+        "3": 843,
+        "4": 145
+      },
+      "single_family_ceiling": {
+        "best_single_family": "population_frequency",
+        "best_single_family_accuracy": 0.31016775077028413,
+        "full_registry_accuracy": 1.0,
+        "gap": 0.6898322492297159,
+        "note": "full-registry accuracy is 1.0 by construction: a task is only built when every code the panel applied is decidable by the registry. The gap is therefore exactly the share of tasks that need more than the single most useful tool family.",
+        "per_family": {
+          "clinical_assertion": 0.00034234851078397807,
+          "gene_mechanism": 0.004450530640191715,
+          "in_silico": 0.03046901745977405,
+          "molecular_consequence": 0.0,
+          "population_frequency": 0.31016775077028413
+        }
+      },
+      "target_balance": {
+        "counts": {
+          "Benign": 728,
+          "Likely Benign": 607,
+          "Likely Pathogenic": 367,
+          "Pathogenic": 90,
+          "Uncertain Significance": 1129
+        },
+        "majority_class_rate": 0.38651146867511127,
+        "note": "a classifier that always answers the commonest label scores this"
+      },
+      "tasks": 2921,
+      "tasks_per_gene": {
+        "effective_number_of_clusters": 57.36847378081989,
+        "largest_gene": "ACADVL",
+        "largest_gene_share": 0.034234851078397806,
+        "max": 100,
+        "median": 9,
+        "note": "the gene is the independent unit. When one gene holds a large share of the tasks, the gene count overstates the independent evidence; read every interval against effective_number_of_clusters, not against genes"
+      }
+    },
+    "findings": [
+      {
+        "ci": [
+          0.6323135703814566,
+          0.7391299759498898
+        ],
+        "claim_id": "B0",
+        "detail": {
+          "best_single_family": "population_frequency",
+          "left_mean": 1.0,
+          "n_observations": 2921,
+          "note": "full-registry accuracy is 1.0 by construction: a task is only built when every code the panel applied is decidable by the registry. The gap is therefore exactly the share of tasks that need more than the single most useful tool family.",
+          "per_family": {
+            "clinical_assertion": 0.00034234851078397807,
+            "gene_mechanism": 0.004450530640191715,
+            "in_silico": 0.03046901745977405,
+            "molecular_consequence": 0.0,
+            "population_frequency": 0.31016775077028413
+          },
+          "right_mean": 0.31016775077028413,
+          "tasks": 2921
+        },
+        "estimate": 0.6898322492297159,
+        "evidence": "paired_interval",
+        "method": "paired cluster bootstrap (bca), 2000 resamples",
+        "n_units": 155,
+        "name": "benchmark_needs_more_than_one_tool_family",
+        "null_draws": null,
+        "null_mean": null,
+        "p_value": null,
+        "role": "primary",
+        "unit": "gene"
+      }
+    ],
+    "max_tasks_per_gene": 100
+  }
+}

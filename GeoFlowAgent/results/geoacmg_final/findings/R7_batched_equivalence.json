@@ -1,0 +1,13 @@
+{
+  "measured_at": "2026-09-20",
+  "stop_threshold": 0.5,
+  "dev_roots_total": 584,
+  "equivalence_subset": 24,
+  "original_seconds": 24.58,
+  "batched_seconds": 6.52,
+  "speedup": 3.77,
+  "metrics_compared": 59,
+  "metrics_mismatched": 0,
+  "mismatches": [],
+  "equivalent": true
+}

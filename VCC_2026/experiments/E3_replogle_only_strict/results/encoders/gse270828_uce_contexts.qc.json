@@ -1,0 +1,55 @@
+{
+  "contexts": {
+    "k562": {
+      "fraction_zero": 0.5054601648351649,
+      "mean_cell_embedding_norm": 1.0,
+      "median_detected_genes": 2025.0,
+      "median_library_size": 10000.0,
+      "n_input_cells": 128,
+      "n_output_cells": 128,
+      "pooled_context_embedding_norm": 0.9654359817504883,
+      "retained_fraction": 1.0
+    },
+    "rep3": {
+      "fraction_zero": 0.7279555586882589,
+      "mean_cell_embedding_norm": 1.0,
+      "median_detected_genes": 5361.5,
+      "median_library_size": 17522.5,
+      "n_input_cells": 484,
+      "n_output_cells": 484,
+      "pooled_context_embedding_norm": 0.8842878341674805,
+      "retained_fraction": 1.0
+    },
+    "rpe1": {
+      "fraction_zero": 0.4581788003663003,
+      "mean_cell_embedding_norm": 1.0,
+      "median_detected_genes": 2218.5,
+      "median_library_size": 10000.0,
+      "n_input_cells": 128,
+      "n_output_cells": 128,
+      "pooled_context_embedding_norm": 0.9705632328987122,
+      "retained_fraction": 1.0
+    }
+  },
+  "model": "uce",
+  "pairwise_context_distance": [
+    {
+      "cosine_similarity": 0.8007423651693854,
+      "euclidean_distance": 0.6110987926959534,
+      "left": "k562",
+      "right": "rpe1"
+    },
+    {
+      "cosine_similarity": 0.5639566843679858,
+      "euclidean_distance": 0.8666635467853302,
+      "left": "k562",
+      "right": "rep3"
+    },
+    {
+      "cosine_similarity": 0.6742932744867874,
+      "euclidean_distance": 0.7526777069711643,
+      "left": "rpe1",
+      "right": "rep3"
+    }
+  ]
+}

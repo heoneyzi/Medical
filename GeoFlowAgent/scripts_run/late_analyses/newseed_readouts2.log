@@ -1,0 +1,9 @@
+[  724.6s] store 적재 완료
+[  725.3s] 쌍 141,517 (기존 마진과 같은 구성이어야 한다)
+[  725.3s] 쌍 개수 일치 확인
+[  727.7s]   cosine     s83: own_energy=0.293 cos_std=0.422
+[  728.1s]   cosine     s97: own_energy=0.313 cos_std=0.344
+[  728.5s]   euclidean  s83: own_energy=0.974 cos_std=0.377
+[  728.9s]   euclidean  s97: own_energy=0.49 cos_std=0.367
+[  732.9s] 마진 병합: 벡터 123 -> 147개 (74.2 MB)
+[  732.9s] 완료 12.2 분

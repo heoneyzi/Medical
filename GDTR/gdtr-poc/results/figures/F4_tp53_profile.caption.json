@@ -1,0 +1,5 @@
+{
+  "figure_id": "F4",
+  "title": "TP53 region gDTR profile (UR primary post Gate A FAIL)",
+  "caption": "Layer-wise prediction-convergence profile for HyenaDNA-medium-160k sliding-window forward over TP53 region (chr17:7,668,402-7,687,550, ~19 kb). Window=6 kb stride=500 bp central-1000-bp stitch (n_windows=39, 5 dinuc-shuffled replicates as gray baseline). Tracks: (a) GENCODE v44 canonical transcript ENST00000269305; (b) UR-gDTR settling depth (primary, gamma_cos calibrated to q70 of penultimate-layer cosine distribution = 0.510); (c) JSD-gDTR (auxiliary, gamma=0.5); (d) GC content per 100 bp."
+}

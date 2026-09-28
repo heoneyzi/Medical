@@ -1,0 +1,51 @@
+{
+  "best_dev_selection_score": 0.7748504786527046,
+  "best_epoch": 2,
+  "cache_content_sha256": "00b19e6e3c669e5d2408ae7c157675fe306e837ec8b65aea1f38d0a789f56903",
+  "completed_epoch": 16,
+  "configured_epochs": 60,
+  "energy": "cosine",
+  "feature_ablation": {
+    "zero_structured": false,
+    "zero_views": [
+      "medcpt"
+    ]
+  },
+  "latest": {
+    "dev_action_reachability_balanced_accuracy": 0.7255618149317068,
+    "dev_completion_balanced_accuracy": 0.7456800327394696,
+    "dev_joint_stop_action_accuracy": 0.6104719606164384,
+    "dev_policy_optimal_set_accuracy": 0.6788727858293075,
+    "dev_regret_at_1": 0.3721522897521044,
+    "dev_selection_score": 0.6558643239674874,
+    "dev_thresholds": {
+      "action_reachability": 0.1,
+      "completion": 0.1
+    },
+    "epoch": 16,
+    "external_replay_fraction": 0.0,
+    "external_replay_pool": 0,
+    "hard_replay_pool": 7843,
+    "learning_rate": 0.0005841957122256002,
+    "train": {
+      "action": 0.9013272491442565,
+      "action_reachability": 0.0878252315652146,
+      "bellman": 0.03842003073604938,
+      "completion": 0.1465762764814746,
+      "q": 0.03842003073604938,
+      "regret": 0.008442080113133634,
+      "state_reachability": 0.06360373339114771,
+      "total": 1.2496484717163983,
+      "transition": 0.0360367174203472,
+      "value": 0.022515176702025137
+    }
+  },
+  "model_capacity_override": {},
+  "output_dir": "artifacts/acmg/checkpoints/geometry_ablate_medcpt/cosine/seed-29",
+  "patience": 14,
+  "resume_checkpoint": "artifacts/acmg/checkpoints/geometry_ablate_medcpt/cosine/seed-29/training_resume.pt",
+  "seed": 29,
+  "stale_epochs": 14,
+  "status": "early_stopping",
+  "training_config_sha256": "16049acf019f6ee03313bd116430a1ed7f8be41e1a2a5250a328a28e9395d30b"
+}

@@ -1,0 +1,12 @@
+# Inferred from the retained project sources. The original environment lockfile
+# was not available; these are not claimed to reproduce the 2024 environment.
+torch
+numpy
+nibabel
+SimpleITK
+tqdm
+matplotlib
+torchsummary
+streamlit
+Pillow
+notebook

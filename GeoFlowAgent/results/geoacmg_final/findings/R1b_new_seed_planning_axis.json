@@ -1,0 +1,61 @@
+{
+  "title": "신규 시드(59·71)에서 계획 지표 부호 반전 — 사전 기록 예측표와 불일치",
+  "split": "dev",
+  "test_reported": false,
+  "seeds_new": [
+    59,
+    71
+  ],
+  "seeds_original": [
+    17,
+    29,
+    43
+  ],
+  "contrast": "cosine − euclidean (reference = euclidean)",
+  "new_seeds": {
+    "policy_accuracy": {
+      "estimate": -0.009880495365402014,
+      "ci": [
+        -0.01674404655048608,
+        -0.0027690251628159006
+      ],
+      "tasks": 584,
+      "excludes_zero": true
+    },
+    "joint_stop_action_accuracy": {
+      "estimate": -0.01618685787671233,
+      "ci": [
+        -0.0227294921875,
+        -0.009792045697773973
+      ],
+      "tasks": 584,
+      "excludes_zero": true
+    },
+    "regret_at_1": {
+      "estimate": 0.022972161299241154,
+      "ci": [
+        0.013726620117831396,
+        0.03316273096991846
+      ]
+    },
+    "selected_energy": "euclidean",
+    "aggregate": {
+      "euclidean": {
+        "joint": 0.7841663099315068,
+        "regret_at_1": 0.13365717378812836
+      },
+      "cosine": {
+        "joint": 0.7679794520547946,
+        "regret_at_1": 0.15526503278516016
+      }
+    }
+  },
+  "prior_recorded_prediction": {
+    "source": "EXPERIMENT_JOURNAL_20260919 §3 / metric_profile.json (2026-09-19)",
+    "policy_cosine_minus_euclidean": "+0.0114 [+0.0065, +0.0165]",
+    "note": "기존 3시드(17·29·43)에서는 cosine 이 euclidean 을 policy 에서 앞섰다"
+  },
+  "reading": "정렬(ordering) 축은 재현된다 — cosine − euclidean 이 시드 5개에서 +0.1432 [+0.0950, +0.1802](시드) · +0.1530 [+0.1099, +0.1943](유전자)로 0을 배제한다. 그러나 **계획 축(policy·joint·regret)은 신규 시드에서 부호가 뒤집히고 구간이 0을 배제한다.** 신규 2시드만 쓰면 euclidean 이 선택된다(selected_energy=euclidean). 이는 이 연구가 이미 발견한 해리 — '표현 품질과 계획 품질은 같은 축이 아니다' — 와 방향이 같지만, 기존 3시드에서 cosine 이 계획에서도 앞섰던 것이 시드 변동이었음을 시사한다.",
+  "limits": "신규 시드는 n=2 다. 이 구간들은 시드 평균 후 task 를 재표집하므로 **시드 분산이 들어 있지 않다.** 따라서 '계획 축에서 euclidean 이 낫다'는 주장이 아니라 '계획 축의 부호가 시드에 따라 바뀐다'는 관측이다. 확정하려면 계획 지표를 결과변수로 시드 클러스터 구간을 따로 내야 한다.",
+  "consequence": "사전등록 수정본이 첨부한 '사전 기록된 예측표'는 policy/joint/regret 축의 표다. 정렬 축의 재현을 근거로 '재실행이 예측표를 재현했다'고 쓰면 안 된다 — 같은 표의 지표에서 어긋났다."
+}

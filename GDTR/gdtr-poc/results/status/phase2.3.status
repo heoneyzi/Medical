@@ -1,0 +1,9 @@
+{
+  "phase": "phase2.3",
+  "state": "PASS",
+  "replication_verdict": {
+    "chr17_intron_gt_exon": false,
+    "chr22_intron_gt_exon": false,
+    "qualitative_replicates": false
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "best_dev_selection_score": 0.7835174358019094,
+  "best_epoch": 1,
+  "cache_content_sha256": "00b19e6e3c669e5d2408ae7c157675fe306e837ec8b65aea1f38d0a789f56903",
+  "checkpoint": "artifacts/acmg/checkpoints/geometry_r1_pairs2/euclidean/seed-97/value_geometry.pt",
+  "checkpoint_sha256": "4a851e381c76baaf41a3cf2c2aa8383b94f08f9ca57993a5a793520c8afce716",
+  "completed_epoch": 15,
+  "configured_epochs": 60,
+  "energy": "euclidean",
+  "feature_ablation": {
+    "zero_structured": false,
+    "zero_views": []
+  },
+  "latest": {
+    "dev_action_reachability_balanced_accuracy": 0.74666519873186,
+    "dev_completion_balanced_accuracy": 0.7744429831507876,
+    "dev_joint_stop_action_accuracy": 0.6449058219178082,
+    "dev_policy_optimal_set_accuracy": 0.7048631239935588,
+    "dev_regret_at_1": 0.2686496321493553,
+    "dev_selection_score": 0.6768744539543499,
+    "dev_thresholds": {
+      "action_reachability": 0.1,
+      "completion": 0.1
+    },
+    "epoch": 15,
+    "external_replay_fraction": 0.0,
+    "external_replay_pool": 0,
+    "hard_replay_pool": 5128,
+    "learning_rate": 0.0005974873734152915,
+    "train": {
+      "action": 0.8347391899490247,
+      "action_reachability": 0.055309548859282076,
+      "bellman": 0.0362275938650607,
+      "completion": 0.1284649147384859,
+      "q": 0.0362275938650607,
+      "regret": 0.007622226928793748,
+      "state_reachability": 0.0508424800562981,
+      "total": 1.117288760668335,
+      "transition": 0.02271513220196918,
+      "value": 0.019045156825289206
+    }
+  },
+  "metrics": "artifacts/acmg/checkpoints/geometry_r1_pairs2/euclidean/seed-97/value_metrics.json",
+  "model_capacity_override": {},
+  "output_dir": "artifacts/acmg/checkpoints/geometry_r1_pairs2/euclidean/seed-97",
+  "patience": 14,
+  "resume_checkpoint": "artifacts/acmg/checkpoints/geometry_r1_pairs2/euclidean/seed-97/training_resume.pt",
+  "seed": 97,
+  "stale_epochs": 14,
+  "status": "complete",
+  "training_config_sha256": "6159da7fb8df8bc2849cd335ade7e28a11fe10a4b136390521755336133efaca"
+}

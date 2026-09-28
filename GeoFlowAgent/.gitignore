@@ -1,0 +1,20 @@
+.venv/
+.venv-gpu/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+build/
+dist/
+artifacts/
+runtime/
+*.pt
+*.npy
+*.private.jsonl
+!data/raw/search_smoke/verifiers.private.jsonl
+.env
+.env.*
+!.env.example
+# results/**/*.npz are intentional small verification assets.

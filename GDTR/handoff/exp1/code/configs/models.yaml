@@ -1,0 +1,53 @@
+# Model registry.
+#
+# Only 7B is in scope for now; 1B and 40B are kept configured so the operator
+# audit (step 1) and a later scale replication cost nothing to switch on.
+#
+# mixer_attr / mlp_attr are left null so that step 3 discovers them and then
+# *verifies* the discovery by reconstructing each block output.  If that gate
+# fails, pin the attribute names here (the failure message prints the module
+# tree) and re-run step 3 -- never proceed on a guess.
+
+models:
+  7b:
+    hf_name: evo2_7b
+    n_blocks: 32
+    width: 4096
+    context: "1M"
+    dtype: bfloat16
+    requires_te: false
+    block_module_path: model.blocks
+    norm_module_path: model.norm
+    unembed_module_path: model.unembed
+    mixer_attr: null
+    mlp_attr: null
+    notes: "primary model; onset 28 (hcs), rotation 30 (hcl)"
+
+  # ---- out of scope for now, kept for step 1 and later replication ----
+  1b:
+    hf_name: evo2_1b_base
+    n_blocks: 25
+    width: 1920
+    context: "8k"
+    dtype: bfloat16
+    requires_te: false
+    block_module_path: model.blocks
+    norm_module_path: model.norm
+    unembed_module_path: model.unembed
+    mixer_attr: null
+    mlp_attr: null
+    notes: "onset never measured; the protocol predicts block 21"
+
+  40b:
+    hf_name: evo2_40b
+    n_blocks: 50
+    width: 8192
+    context: "1M"
+    dtype: float8
+    requires_te: true
+    block_module_path: model.blocks
+    norm_module_path: model.norm
+    unembed_module_path: model.unembed
+    mixer_attr: null
+    mlp_attr: null
+    notes: "needs the TransformerEngine container; onset 21, rotation 23"

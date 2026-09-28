@@ -1,0 +1,58 @@
+{
+  "alpha": {
+    "note": "used for every interval and null-referenced p-value in this study",
+    "provenance": "guideline",
+    "sample": "",
+    "source": "conventional two-sided level; pre-registered before any test split was opened",
+    "value": 0.05
+  },
+  "amends": null,
+  "claims": [
+    {
+      "claim_id": "B0",
+      "direction": 1,
+      "falsifier": "the full registry does not beat the best single tool family",
+      "statement": "The benchmark contains a planning problem."
+    },
+    {
+      "claim_id": "C1",
+      "direction": 1,
+      "falsifier": "a metric- and parameter-matched random-feature control is not beaten",
+      "statement": "Frozen encoder embeddings carry remaining-cost and next-action information."
+    },
+    {
+      "claim_id": "C2",
+      "direction": 1,
+      "falsifier": "counterfactual entity swaps leave the model's action distribution unchanged",
+      "statement": "That information is biological rather than surface-procedural."
+    },
+    {
+      "claim_id": "C3",
+      "direction": 1,
+      "falsifier": "the commit-length curve is optimised at k=1",
+      "statement": "Generating a whole plan beats step-wise selection at matched tool cost."
+    },
+    {
+      "claim_id": "C4",
+      "direction": 1,
+      "falsifier": "the moderator slope interval includes zero",
+      "statement": "Non-Euclidean geometry helps in proportion to measured task structure."
+    },
+    {
+      "claim_id": "C5",
+      "direction": 1,
+      "falsifier": "ablating the learned geometry leaves the planner's advantage intact",
+      "statement": "Planner validity and representation validity are the same claim."
+    }
+  ],
+  "fingerprint": "143e496ce323074c",
+  "note": "",
+  "primary_findings": [
+    "benchmark_needs_more_than_one_tool_family",
+    "P1_learned_geometry_minus_raw_l2",
+    "P2_frozen_minus_trained_from_scratch",
+    "P3_flow_minus_greedy_at_matched_cost"
+  ],
+  "registered_at": "2026-09-19T04:17:57Z",
+  "study": "GeoFlowAgent phase 2: execution geometry of frozen biomedical representations"
+}

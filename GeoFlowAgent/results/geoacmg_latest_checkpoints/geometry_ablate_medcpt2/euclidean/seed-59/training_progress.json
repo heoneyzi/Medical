@@ -1,0 +1,54 @@
+{
+  "best_dev_selection_score": 0.7591030658306439,
+  "best_epoch": 3,
+  "cache_content_sha256": "00b19e6e3c669e5d2408ae7c157675fe306e837ec8b65aea1f38d0a789f56903",
+  "checkpoint": "artifacts/acmg/checkpoints/geometry_ablate_medcpt2/euclidean/seed-59/value_geometry.pt",
+  "checkpoint_sha256": "34d24ac5498294d3e13d4de84584478646d12b3b92fd8ea3bd54be82ce6e2896",
+  "completed_epoch": 17,
+  "configured_epochs": 60,
+  "energy": "euclidean",
+  "feature_ablation": {
+    "zero_structured": false,
+    "zero_views": [
+      "medcpt"
+    ]
+  },
+  "latest": {
+    "dev_action_reachability_balanced_accuracy": 0.7130306574667127,
+    "dev_completion_balanced_accuracy": 0.7412264683792487,
+    "dev_joint_stop_action_accuracy": 0.6280768407534246,
+    "dev_policy_optimal_set_accuracy": 0.6884380032206119,
+    "dev_regret_at_1": 0.3388249922287846,
+    "dev_selection_score": 0.656228836092537,
+    "dev_thresholds": {
+      "action_reachability": 0.1,
+      "completion": 0.1
+    },
+    "epoch": 17,
+    "external_replay_fraction": 0.0,
+    "external_replay_pool": 0,
+    "hard_replay_pool": 8333,
+    "learning_rate": 0.000570262136867443,
+    "train": {
+      "action": 0.8648184208820971,
+      "action_reachability": 0.08488162798128057,
+      "bellman": 0.03891781948536584,
+      "completion": 0.13428010865833442,
+      "q": 0.03891781948536584,
+      "regret": 0.008023582056591885,
+      "state_reachability": 0.06170913680444359,
+      "total": 1.1941981748792014,
+      "transition": 0.02522747479761694,
+      "value": 0.02133613158308535
+    }
+  },
+  "metrics": "artifacts/acmg/checkpoints/geometry_ablate_medcpt2/euclidean/seed-59/value_metrics.json",
+  "model_capacity_override": {},
+  "output_dir": "artifacts/acmg/checkpoints/geometry_ablate_medcpt2/euclidean/seed-59",
+  "patience": 14,
+  "resume_checkpoint": "artifacts/acmg/checkpoints/geometry_ablate_medcpt2/euclidean/seed-59/training_resume.pt",
+  "seed": 59,
+  "stale_epochs": 14,
+  "status": "complete",
+  "training_config_sha256": "81efae2a76a1be68bbb5ecc909169a4312c4a259fb02cccd7ff5f5b62f575518"
+}

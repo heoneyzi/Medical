@@ -1,0 +1,89 @@
+{
+  "title": "헤드라인 격차의 분해 — 학습된 표현의 차이 vs 읽는 방법의 차이 (5시드)",
+  "split": "dev",
+  "test_reported": false,
+  "unit": "gene",
+  "pairs": 141517,
+  "contrast": "cosine − euclidean (깊이고정 순서 일치율, 동점 보정)",
+  "by_readout": [
+    {
+      "readout": "own_energy",
+      "n_seeds": 5,
+      "cosine": 0.7326992516800103,
+      "euclidean": 0.5894994947603468,
+      "difference": 0.14319975691966336,
+      "ci": [
+        0.10786121864145552,
+        0.17877312839010814
+      ],
+      "excludes_zero": true,
+      "gene_clusters": 47
+    },
+    {
+      "readout": "cos_std",
+      "n_seeds": 5,
+      "cosine": 0.7401287477829519,
+      "euclidean": 0.7146505366846386,
+      "difference": 0.025478211098313275,
+      "ci": [
+        0.007091610522365155,
+        0.03401719264033885
+      ],
+      "excludes_zero": true,
+      "gene_clusters": 47
+    },
+    {
+      "readout": "l2",
+      "n_seeds": 5,
+      "cosine": 0.5904152857960528,
+      "euclidean": 0.5894994947603468,
+      "difference": 0.0009157910357059584,
+      "ci": [
+        -0.01044419173854472,
+        0.010338322294961441
+      ],
+      "excludes_zero": false,
+      "gene_clusters": 47
+    },
+    {
+      "readout": "neg_dot",
+      "n_seeds": 5,
+      "cosine": 0.7281443218835899,
+      "euclidean": 0.5564433954931209,
+      "difference": 0.171700926390469,
+      "ci": [
+        0.14704664060797518,
+        0.1884004907645871
+      ],
+      "excludes_zero": true,
+      "gene_clusters": 47
+    },
+    {
+      "readout": "cos",
+      "n_seeds": 5,
+      "cosine": 0.7326992516800103,
+      "euclidean": 0.5777652154864786,
+      "difference": 0.1549340361935315,
+      "ci": [
+        0.13246265240089428,
+        0.176356017918594
+      ],
+      "excludes_zero": true,
+      "gene_clusters": 47
+    },
+    {
+      "readout": "cos_whiten",
+      "n_seeds": 5,
+      "cosine": 0.4323296847728542,
+      "euclidean": 0.4772670421221478,
+      "difference": -0.04493735734929373,
+      "ci": [
+        -0.05459726415582373,
+        -0.033097774825019265
+      ],
+      "excludes_zero": true,
+      "gene_clusters": 47
+    }
+  ],
+  "limits": "cos_std 의 표준화 통계는 같은 dev z 에서 추정했다 — 홀드아웃 검정은 R2d_holdout_standardiser.json 을 볼 것."
+}

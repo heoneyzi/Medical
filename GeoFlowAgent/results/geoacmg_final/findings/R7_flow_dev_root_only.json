@@ -1,0 +1,161 @@
+{
+  "split": "dev",
+  "evaluation_scope": "task_roots",
+  "eligible_states": 584,
+  "eligible_tasks": 584,
+  "samples_per_state": 4,
+  "sample_count": 2336,
+  "nfe": 16,
+  "stop_threshold": 0.5,
+  "open_loop": {
+    "first_action_optimal_set_accuracy": 0.8180650684931506,
+    "valid_transition_chain_rate": 0.9875856164383562,
+    "goal_completion_rate": 0.11686643835616438,
+    "task_macro_goal_completion_rate": 0.11686643835616438,
+    "valid_stop_after_goal_rate": 0.059931506849315065,
+    "premature_stop_rate": 0.8707191780821918,
+    "serialized_top_k_path_rate": 0.06592465753424658,
+    "novel_valid_goal_path_rate": 0.05094178082191781,
+    "optimal_cost_given_goal_rate": 0.6007326007326007,
+    "mean_excess_cost_given_goal": 0.9816849816849816,
+    "closest_reference_normalized_edit_distance": 0.5430650684931506,
+    "mean_reference_coverage_at_k": 0.07826769406392695,
+    "mean_unique_paths_at_k": 3.720890410958904
+  },
+  "receding_horizon": {
+    "rollouts": 584,
+    "goal_completion_rate": 0.5993150684931506,
+    "mean_excess_cost_given_goal": 2.3085714285714287,
+    "mean_planner_calls": 4.833904109589041,
+    "mean_total_nfe": 77.34246575342466,
+    "failure_counts": {
+      "no_decodable_transition": 169,
+      "premature_stop": 65
+    }
+  },
+  "receding_horizon_verifier_stop_guard": {
+    "rollouts": 584,
+    "goal_completion_rate": 0.6232876712328768,
+    "mean_excess_cost_given_goal": 2.2637362637362637,
+    "mean_planner_calls": 4.993150684931507,
+    "mean_total_nfe": 79.89041095890411,
+    "failure_counts": {
+      "no_decodable_transition": 220
+    }
+  },
+  "compute_matched_blind_replanning": {
+    "rollouts": 584,
+    "goal_completion_rate": 0.0273972602739726,
+    "mean_excess_cost_given_goal": 0.5,
+    "mean_planner_calls": 4.833904109589041,
+    "mean_total_nfe": 77.34246575342466,
+    "per_state_planner_call_match_rate": 1.0,
+    "failure_counts": {
+      "blind_invalid_action": 557,
+      "planner_call_budget": 11
+    }
+  },
+  "feedback_effects": {
+    "replanning_minus_one_shot_task_macro": {
+      "estimate": 0.4824486301369863,
+      "low": 0.4417808219178082,
+      "high": 0.5235445205479452,
+      "units": 584,
+      "unit": "independent_task"
+    },
+    "replanning_minus_blind_task_macro": {
+      "estimate": 0.571917808219178,
+      "low": 0.5308219178082192,
+      "high": 0.613013698630137,
+      "units": 584,
+      "unit": "independent_task"
+    },
+    "root_start": {
+      "tasks": 584,
+      "one_shot_goal_completion_rate": 0.11686643835616438,
+      "replanning_goal_completion_rate": 0.5993150684931506,
+      "blind_replanning_goal_completion_rate": 0.0273972602739726,
+      "replanning_minus_one_shot": {
+        "estimate": 0.4824486301369863,
+        "low": 0.44389982876712325,
+        "high": 0.5222602739726028,
+        "units": 584
+      },
+      "replanning_minus_blind": {
+        "estimate": 0.571917808219178,
+        "low": 0.5308219178082192,
+        "high": 0.6113013698630136,
+        "units": 584
+      }
+    }
+  },
+  "test_unsealed": false,
+  "implementation": "geoflowagent.geoacmg.flowfast_eval.evaluate_batched",
+  "_runtime_seconds": 19.2,
+  "_stop_threshold_calibration": {
+    "selection_split": "dev",
+    "test_sealed": true,
+    "protocol": "teacher_forced_rectified_interpolation_endpoints",
+    "count": 210116,
+    "positive_count": 64774,
+    "negative_count": 145342,
+    "grid": [
+      {
+        "threshold": 0.1,
+        "sensitivity": 0.995769907679007,
+        "specificity": 0.690454238967401,
+        "balanced_accuracy": 0.843112073323204
+      },
+      {
+        "threshold": 0.3,
+        "sensitivity": 0.9709605705993145,
+        "specificity": 0.800291725722778,
+        "balanced_accuracy": 0.8856261481610462
+      },
+      {
+        "threshold": 0.5,
+        "sensitivity": 0.9304813659801773,
+        "specificity": 0.8643200176136285,
+        "balanced_accuracy": 0.8974006917969028
+      },
+      {
+        "threshold": 0.7,
+        "sensitivity": 0.8623676166363047,
+        "specificity": 0.9165760757386028,
+        "balanced_accuracy": 0.8894718461874538
+      },
+      {
+        "threshold": 0.9,
+        "sensitivity": 0.7008367554883133,
+        "specificity": 0.9706210180126873,
+        "balanced_accuracy": 0.8357288867505003
+      }
+    ],
+    "selected": {
+      "threshold": 0.5,
+      "sensitivity": 0.9304813659801773,
+      "specificity": 0.8643200176136285,
+      "balanced_accuracy": 0.8974006917969028
+    },
+    "warning": "Calibration endpoints are denoising approximations; free-running STOP metrics must be interpreted separately."
+  },
+  "_checkpoint": {
+    "best_epoch": 49,
+    "best_loss": 1.4802867376775273
+  },
+  "_protocol": "root-only (task 당 독립 루트 1개), train 롤아웃 미보고. 전수 평가와 다른 프로토콜이다.",
+  "_equivalence": {
+    "measured_at": "2026-09-20",
+    "stop_threshold": 0.5,
+    "dev_roots_total": 584,
+    "equivalence_subset": 24,
+    "original_seconds": 24.58,
+    "batched_seconds": 6.52,
+    "speedup": 3.77,
+    "metrics_compared": 59,
+    "metrics_mismatched": 0,
+    "mismatches": [],
+    "equivalent": true
+  },
+  "_implementation_note": "flowfast_eval.evaluate_batched. 원본 evaluate_search_state_flow 와 dev 루트 24개에서 59개 수치 지표 전부 1e-9 이내 일치를 확인한 뒤 전수 평가했다. 원본 코드는 수정하지 않았다."
+}

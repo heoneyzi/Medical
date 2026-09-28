@@ -1,0 +1,52 @@
+{
+  "best_dev_selection_score": 0.8016393599607936,
+  "best_epoch": 2,
+  "cache_content_sha256": "00b19e6e3c669e5d2408ae7c157675fe306e837ec8b65aea1f38d0a789f56903",
+  "checkpoint": "artifacts/acmg/checkpoints/geometry_comparison/directed_quasimetric/seed-29/value_geometry.pt",
+  "checkpoint_sha256": "8c8d2ac03555dcfc0e2792b3a0340b5582e5538d0e5d25e2d1815b62a86de4db",
+  "completed_epoch": 16,
+  "configured_epochs": 60,
+  "energy": "directed_quasimetric",
+  "feature_ablation": {
+    "zero_structured": false,
+    "zero_views": []
+  },
+  "latest": {
+    "dev_action_reachability_balanced_accuracy": 0.7457912698611409,
+    "dev_completion_balanced_accuracy": 0.778417951443645,
+    "dev_joint_stop_action_accuracy": 0.6393139982876712,
+    "dev_policy_optimal_set_accuracy": 0.6964251207729468,
+    "dev_regret_at_1": 0.3036673857619141,
+    "dev_selection_score": 0.6725415007453313,
+    "dev_thresholds": {
+      "action_reachability": 0.1,
+      "completion": 0.1
+    },
+    "epoch": 16,
+    "external_replay_fraction": 0.0,
+    "external_replay_pool": 0,
+    "hard_replay_pool": 5676,
+    "learning_rate": 0.0005841957122256002,
+    "train": {
+      "action": 0.7944085070356531,
+      "action_reachability": 0.046418525897820744,
+      "bellman": 0.03407229943508022,
+      "completion": 0.12457916021041032,
+      "q": 0.03407229943508022,
+      "regret": 0.0053428181950005565,
+      "state_reachability": 0.046269570006279695,
+      "total": 1.0576584741583703,
+      "transition": 0.026221031628451345,
+      "value": 0.01756476259132113
+    }
+  },
+  "metrics": "artifacts/acmg/checkpoints/geometry_comparison/directed_quasimetric/seed-29/value_metrics.json",
+  "model_capacity_override": {},
+  "output_dir": "artifacts/acmg/checkpoints/geometry_comparison/directed_quasimetric/seed-29",
+  "patience": 14,
+  "resume_checkpoint": "artifacts/acmg/checkpoints/geometry_comparison/directed_quasimetric/seed-29/training_resume.pt",
+  "seed": 29,
+  "stale_epochs": 14,
+  "status": "complete",
+  "training_config_sha256": "98cc0310f849bccc921bbff2dc7b950925bb0e45542835bc61e436f8c37bcc9a"
+}

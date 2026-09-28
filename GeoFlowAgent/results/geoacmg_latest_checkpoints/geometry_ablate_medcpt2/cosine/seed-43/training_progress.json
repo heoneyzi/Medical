@@ -1,0 +1,54 @@
+{
+  "best_dev_selection_score": 0.7718375993723141,
+  "best_epoch": 2,
+  "cache_content_sha256": "00b19e6e3c669e5d2408ae7c157675fe306e837ec8b65aea1f38d0a789f56903",
+  "checkpoint": "artifacts/acmg/checkpoints/geometry_ablate_medcpt2/cosine/seed-43/value_geometry.pt",
+  "checkpoint_sha256": "7c68d49987519a3d508f8e15d11b4d11a385612b06aaec9d14348b8d29d32c56",
+  "completed_epoch": 16,
+  "configured_epochs": 60,
+  "energy": "cosine",
+  "feature_ablation": {
+    "zero_structured": false,
+    "zero_views": [
+      "medcpt"
+    ]
+  },
+  "latest": {
+    "dev_action_reachability_balanced_accuracy": 0.7194466026044032,
+    "dev_completion_balanced_accuracy": 0.7451465109132591,
+    "dev_joint_stop_action_accuracy": 0.6205318921232876,
+    "dev_policy_optimal_set_accuracy": 0.6744283413848631,
+    "dev_regret_at_1": 0.3697158427403659,
+    "dev_selection_score": 0.6519135615726211,
+    "dev_thresholds": {
+      "action_reachability": 0.1,
+      "completion": 0.1
+    },
+    "epoch": 16,
+    "external_replay_fraction": 0.0,
+    "external_replay_pool": 0,
+    "hard_replay_pool": 6164,
+    "learning_rate": 0.0005841957122256002,
+    "train": {
+      "action": 0.8935392058446485,
+      "action_reachability": 0.09191255774317098,
+      "bellman": 0.03920295628322171,
+      "completion": 0.1332954880812817,
+      "q": 0.03920295628322171,
+      "regret": 0.008772288744124817,
+      "state_reachability": 0.06857351061451863,
+      "total": 1.236197363031434,
+      "transition": 0.03400895473400117,
+      "value": 0.022941066985615172
+    }
+  },
+  "metrics": "artifacts/acmg/checkpoints/geometry_ablate_medcpt2/cosine/seed-43/value_metrics.json",
+  "model_capacity_override": {},
+  "output_dir": "artifacts/acmg/checkpoints/geometry_ablate_medcpt2/cosine/seed-43",
+  "patience": 14,
+  "resume_checkpoint": "artifacts/acmg/checkpoints/geometry_ablate_medcpt2/cosine/seed-43/training_resume.pt",
+  "seed": 43,
+  "stale_epochs": 14,
+  "status": "complete",
+  "training_config_sha256": "dc4c0889d678354441ab0f69233a3ede58c16e16ed69e734796978db7201fdcb"
+}

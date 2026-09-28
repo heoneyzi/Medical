@@ -1,0 +1,8 @@
+representation,top_source,top_weight_tau0.01,top_weight_tau1.0,effective_sources_tau0.01,effective_sources_tau1.0
+raw,A549,0.802,0.220,1.47,4.97
+PCA,A549,1.000,0.328,1.00,4.43
+TranscriptFormer,A549,0.980,0.218,1.04,4.98
+UCE-4L,A549,0.999,0.226,1.00,4.96
+scPRINT-2,HT29,0.668,0.215,1.80,4.98
+STATE-SE-100M,HT29,0.888,0.230,1.25,4.93
+STACK-Large,HT29,0.999,0.246,1.00,4.88
