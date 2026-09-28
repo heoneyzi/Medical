@@ -1,0 +1,60 @@
+name: Publish reviewed source snapshot
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/publish-source.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish:
+    if: github.repository_owner == 'heoneyzi'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify and import the reviewed files
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path, PurePosixPath
+          import hashlib, io, json, zipfile, subprocess, os
+          p=Path('.publication/manifest.json')
+          if not p.exists():
+              print('The source import is already complete.'); raise SystemExit(0)
+          assert hashlib.sha256(p.read_bytes()).hexdigest() == '0fc21030118aced0d80a30d4bf4917a92a89c48db07fec33697935a6c0b8e7ca'
+          m=json.loads(p.read_text())
+          parts=[]
+          for c in m['chunks']:
+              b=(p.parent/c['name']).read_bytes()
+              assert hashlib.sha256(b).hexdigest()==c['sha256']
+              parts.append(b)
+          data=b''.join(parts)
+          assert hashlib.sha256(data).hexdigest()==m['zip_sha256']
+          z=zipfile.ZipFile(io.BytesIO(data))
+          assert set(z.namelist())==set(m['files'])
+          for name in z.namelist():
+              rel=PurePosixPath(name)
+              assert not rel.is_absolute() and '..' not in rel.parts
+              assert '.git' not in rel.parts and '.github' not in rel.parts
+              b=z.read(name)
+              assert hashlib.sha256(b).hexdigest()==m['files'][name]
+              f=Path(name);f.parent.mkdir(parents=True,exist_ok=True);f.write_bytes(b)
+              executable=(z.getinfo(name).external_attr >> 16) & 0o111
+              f.chmod(0o755 if executable else 0o644)
+          # Replace the old site only; previous source remains in Git history and the archive.
+          if m['repository']=='heoneyzi.github.io':
+              old=subprocess.check_output(['git','ls-files','-z']).decode().split('\0')
+              for name in old:
+                  if name and name not in m['files'] and not name.startswith(('.publication/','.github/')):
+                      Path(name).unlink(missing_ok=True)
+          for c in m['chunks']:(p.parent/c['name']).unlink()
+          p.unlink()
+          subprocess.run(['git','config','user.name','github-actions[bot]'],check=True)
+          subprocess.run(['git','config','user.email','41898282+github-actions[bot]@users.noreply.github.com'],check=True)
+          subprocess.run(['git','add','-A'],check=True)
+          if subprocess.run(['git','diff','--cached','--quiet']).returncode:
+              subprocess.run(['git','commit','-m','Publish reviewed source files and experiment documentation'],check=True)
+              subprocess.run(['git','push','origin','HEAD:main'],check=True)
+          print('Verified and published',len(m['files']),'files.')
+          PY
