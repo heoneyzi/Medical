@@ -4,16 +4,6 @@
 
 > **Question —** Can an NLP "deep-thinking" lens be ported to a small genomic causal language model at all, and what has to change?
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-큰 모델(Evo 2)에 쓰기 전에 작은 DNA 모델(HyenaDNA)로 방법이 통하는지 먼저 확인한 사전 실험입니다.
-NLP에서 쓰던 로짓 렌즈(JSD)는 DNA처럼 글자 수가 적은 모델에서는 거의 쓸모가 없어서, 코사인 렌즈를 주 지표로 바꾸고 임계값을 분위수(q70)로 정하게 되었습니다.
-마지막 층 직전에서 표현이 출력 방향으로 "회전"하는 현상도 발견했는데, 이는 새 저울을 쓰기 전에 영점부터 맞추는 과정과 비슷합니다.
-TP53·BRCA1 유전자에서는 엑손과 인트론의 정착 깊이가 뚜렷하게 달랐지만, 이 방향은 나중에 염색체 전체(E1)에서는 뒤집혔습니다.
-
-</details>
-
 | | |
 |---|---|
 | **Status** | ✅ done (2026-04-26) — pre-registered three-gate design |

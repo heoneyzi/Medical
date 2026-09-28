@@ -2,14 +2,6 @@
 
 # ⚙️ Experiment configs
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-실험별 설정 파일 15개와 각 파일이 쓰인 단계입니다. GPU 서버의 절대 경로는 `$GEOFLOW_*` 자리표시자로 바꿨습니다.
-
-</details>
-
-
 Each YAML fixes the data paths, encoder views (with pinned Hugging Face revisions), seeds and training settings of one experiment family. `project_root: ..` resolves relative paths from this folder.
 
 | Config | Stage | Purpose |

@@ -4,16 +4,6 @@
 
 > **Question —** A token might "settle" early simply because the model is confident about the next base. Does the splice signal survive once that uncertainty is removed?
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-정착 깊이가 단지 "다음 염기를 얼마나 확신하는가(엔트로피)"를 다르게 표현한 것일 수 있다는 반론을 검증했습니다.
-22번 염색체 120개 창(72만 위치)에서 두 값의 상관은 −0.079로 작았고, 엔트로피 영향을 빼고 나서도 스플라이스 효과는 오히려 커졌습니다(d −0.452 → −0.583).
-시험 점수가 단지 "자신감"을 잰 것인지 확인하려고 자신감 효과를 빼고 다시 채점해 본 것과 같습니다.
-다만 5′UTR만은 엔트로피와 강하게 묶여 있어(ρ = +0.41) 논문에서 따로 보고했습니다.
-
-</details>
-
 | | |
 |---|---|
 | **Status** | ✅ done (2026-05-04) — added during the v11 revision |

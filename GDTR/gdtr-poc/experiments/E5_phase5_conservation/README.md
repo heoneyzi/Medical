@@ -4,16 +4,6 @@
 
 > **Question —** Where does the model "think deeply" about DNA that evolution does not conserve — and what is in those regions?
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-22번 염색체의 위치별 정착 깊이를 진화적 보존도(phyloP)와 겹쳐, "모델은 깊게 처리하지만 보존되지 않은" 영역(Q2)을 찾았습니다.
-Q2는 염색체의 3.71%(5,090개 영역)였고 저복잡도 반복서열·LTR 같은 반복서열이 많았습니다.
-처음에는 "보존되지 않은 새로운 기능 영역"일 수 있다고 봤지만, 이후 검증(E10)에서 알려진 기능 영역은 오히려 **얕게** 정착한다는 반대 결과가 나와 이 해석을 스스로 철회했습니다.
-가설이 틀렸을 때 숨기지 않고 기록한 사례입니다.
-
-</details>
-
 | | |
 |---|---|
 | **Status** | ✅ done (2026-04-28); interpretation revised in E10 |

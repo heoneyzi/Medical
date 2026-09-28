@@ -2,13 +2,6 @@
 
 # ✅ Verification — recomputing the headline numbers
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-README와 안내 문서의 수치를 저장된 결과에서 다시 계산하는 스크립트입니다. `verify_hard_v2.py`는 hard-v2 test 수치를, `verify_portfolio.py`는 GeoACMG 7 시드 비교와 MedCPT 제거 실험의 신뢰구간까지 run별 파일에서 다시 계산하고, 모든 페이지에 적힌 소수 수치를 원본 값과 대조합니다. margin 배열이 필요한 두 검증기의 결과(276/276, 233/233 통과)도 함께 저장해 두었습니다. 단위 테스트는 295개 통과, 1개 선택 테스트 건너뜀입니다.
-
-</details>
-
 ## Runs in this repository (NumPy only, a few seconds)
 
 | Command | What it recomputes | Result |

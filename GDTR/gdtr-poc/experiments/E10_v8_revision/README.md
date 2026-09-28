@@ -4,16 +4,6 @@
 
 > **Question —** Do the paper's claims survive the checks a reviewer would ask for: a held-out chromosome, motif-class breakdowns, population-level variant statistics, and a functional positive control?
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-논문 수정 단계에서 심사자가 물을 만한 네 가지를 미리 검증했습니다.
-첫째, 22번 염색체에서 정한 기준값을 고정한 채 17번 염색체에 적용했더니 스플라이스 효과 크기의 94.6%가 유지되었습니다 — 연습 문제로 채점 기준을 정하고 처음 보는 시험지로 확인한 셈입니다.
-둘째, 변이 종류별로 표현이 가장 크게 흔들리는 층이 달랐고(인트론 10층 → 동의 변이 18층), 셋째, 알려진 조절 영역(cCRE-ELS)은 예상과 달리 더 **얕게** 정착했습니다.
-넷째, 스플라이스 부위를 모티프 종류별로 나누면 "강한 모티프일수록 빨리 정착"한다는 직관과 반대 순서가 나와, 논문에서 그대로 보고했습니다.
-
-</details>
-
 | | |
 |---|---|
 | **Status** | ✅ done (2026-05-04) — pre-registered branches, outcomes reported whichever way they fell |

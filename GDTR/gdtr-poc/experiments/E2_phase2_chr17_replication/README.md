@@ -4,16 +4,6 @@
 
 > **Question —** Is the chr22 picture a single-chromosome artefact, or does it replicate on a second, gene-dense chromosome with the threshold frozen?
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-22번 염색체에서 정한 기준값을 바꾸지 않고 17번 염색체 전체(27,586개 창)에 그대로 적용했습니다.
-일곱 가지 유전체 영역의 순서가 두 염색체에서 거의 같게 나왔고(인트론과 3′UTR만 0.1층 미만 차이로 뒤바뀜), 스플라이스 부위 주변의 깊이 변화 모양도 거의 같았습니다.
-시험 문제를 바꿔도 같은 채점 기준으로 비슷한 성적이 나오는지 확인한 셈입니다.
-또 E0에서 본 방향 차이는 TP53·BRCA1 같은 암 유전자의 특수성 때문일 가능성이 컸습니다(표본이 2개라 유의하지는 않음).
-
-</details>
-
 | | |
 |---|---|
 | **Status** | ✅ done (2026-04-28) — six sub-stages, verdicts auto-generated |

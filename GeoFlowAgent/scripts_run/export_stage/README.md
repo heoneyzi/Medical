@@ -2,14 +2,6 @@
 
 # 🧾 Finishing scripts of the main GeoACMG analysis (R1–R4, R7)
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-④단계 주요 분석(R1–R4, R7)을 마무리한 스크립트입니다. 함께 쓰인 라이브러리 모듈과 실행기는 `src/geoflowagent/geoacmg/`와 상위 폴더에 있습니다.
-
-</details>
-
-
 The scripts that finished the main GeoACMG analysis. The modules and runners they call (`adapters.py`, `flowfast_eval.py`, `stages.py`, `r1_paired_seeds.sh`, `train_flow_rootonly_v2.sh`) are in `src/geoflowagent/geoacmg/` and `../`.
 
 | Script | What it does | Output |

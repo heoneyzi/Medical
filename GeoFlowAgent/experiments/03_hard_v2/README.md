@@ -4,13 +4,6 @@
 
 > **Question —** When the benchmark no longer gives the answer away, which ingredients actually help: the frozen representation, the choice of geometry, DAgger, or observing results and replanning?
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-도구 50개, 과제 240개로 만든 더 어려운 합성 벤치마크에서 모든 선택을 dev에서 끝낸 뒤 test 48개를 단 한 번 평가했습니다. 여러 동결 표현을 단순히 이어붙이는 것보다 MedCPT 하나만 쓰는 편이 좋았고, 최종 모델(MedCPT + cosine)의 test 정책 정확도는 0.8010으로 사전등록한 기준 모델(0.6875)보다 높았습니다. 관측 후 재계획은 0.4028로, 한 번에 계획하기(0.1233)와 관측 없는 반복(0.0000)을 크게 앞섰습니다. 요리에 비유하면, 모든 재료를 섞기보다 맞는 재료 하나를 고르는 것이 중요했고, 맛을 보며 간을 다시 맞추는 과정이 결과를 바꿨습니다. 에피소드 전체 성공률의 차이는 순위 개선보다 작았고, 이 점이 실제 전문가 기록으로 넘어가는 다음 단계의 동기가 되었습니다.
-
-</details>
-
 | | |
 |---|---|
 | **Why this stage** | Stages ①–② ran into ceilings. hard-v2 is hard enough to separate the ingredients, and a pre-registered, one-time test keeps model selection honest |

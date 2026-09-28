@@ -4,16 +4,6 @@
 
 > **Question —** Do the variant results depend on arbitrary modelling choices, where does the classifier fail, what does the lens cost to run, and do E5's Q2 regions overlap known functional annotations?
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-E3·E5 결과가 설정 선택에 흔들리지 않는지, 어디서 틀리는지, 비용은 얼마인지 점검했습니다.
-분류기 설정 9가지를 바꿔도 AUROC 차이는 0.0017에 불과했고, 오류는 특정 유전자(PALB2, BRCA1)와 CADD 점수와 의견이 갈리는 변이에 몰려 있었습니다.
-계산 비용은 변이당 약 0.5초로 다른 해석 기법과 비슷했고, 적분 그래디언트는 약 3배 느렸습니다.
-자동차로 치면 연비·고장 기록·정비 비용을 함께 점검한 단계입니다.
-
-</details>
-
 | | |
 |---|---|
 | **Status** | ✅ done (2026-04-28) |

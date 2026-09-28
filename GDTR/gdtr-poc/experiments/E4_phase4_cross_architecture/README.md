@@ -4,16 +4,6 @@
 
 > **Question —** Is "splice sites settle early" a property of Evo 2 only, or of genomic language models in general?
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-같은 22번 염색체 창 12,978개를 Evo 2, HyenaDNA-large, NT-v2, DNABERT-2 네 모델에 넣고 모델마다 따로 기준값을 맞췄습니다.
-염기 하나 단위로 읽는 두 인과 언어모델(Evo 2, HyenaDNA)에서는 스플라이스 부위가 인트론보다 먼저 정착하는 현상이 재현되었습니다.
-반면 여러 염기를 한 토큰으로 묶는 두 MLM(NT-v2, DNABERT-2)은 단일 염기 경계를 볼 수 없어 이 질문 자체를 검증할 수 없었습니다 — 돋보기 배율이 다른 두 도구로 같은 점을 보려는 것과 같습니다.
-모델 간 상관은 같은 계열 안에서만 양수(+0.52, +0.66)였습니다.
-
-</details>
-
 | | |
 |---|---|
 | **Status** | ✅ done (2026-04-28) |

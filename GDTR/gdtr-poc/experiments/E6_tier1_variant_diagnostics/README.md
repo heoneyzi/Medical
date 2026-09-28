@@ -4,16 +4,6 @@
 
 > **Question —** Where along depth does the variant signal live, how stable is it, and how does it compare with standard attribution baselines?
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-E3의 변이 분류 결과를 여러 방향에서 점검했습니다.
-층 하나만 쓰면 AUROC가 0.73–0.79에 그치고 32개 층을 모두 쓰면 0.84로 올라, 정보가 여러 층에 퍼져 있음을 확인했습니다.
-같은 데이터에서 단순한 은닉 상태 변화량(‖Δh‖₂)은 0.926으로 더 높았고, 어텐션 롤아웃(0.672)과 적분 그래디언트(0.527)는 낮았습니다.
-즉 GDTR의 변이 특징은 "가장 좋은 점수기"가 아니라 "어느 층에서 흔들리는지"를 보여 주는 해석용 지표입니다 — 정답률이 가장 높은 학생보다, 어디서 틀리는지 보여 주는 오답 노트에 가깝습니다.
-
-</details>
-
 | | |
 |---|---|
 | **Status** | ✅ done (2026-04-28); CPU outputs independently re-derived (\|Δ\| < 0.001) |

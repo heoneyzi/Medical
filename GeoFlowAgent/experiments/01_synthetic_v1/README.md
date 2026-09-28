@@ -4,13 +4,6 @@
 
 > **Question —** Can frozen encoders + a small learned metric + a whole-plan flow planner drive a contract-checked tool agent on genomics-style tasks, and does the learned model's contribution show up in task success?
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-첫 합성 실험(12개 과제)에서 동결 인코더 → 임베딩 캐시 → 학습된 거리 → flow 계획기 → 도구 실행 에이전트까지 전체 파이프라인이 GPU에서 끝까지 동작함을 확인했습니다. 학습된 bilinear 거리의 test 행동 정확도는 0.8551(3 시드 평균)이었습니다. 그런데 정확한 계약(contract)과 올바른 STOP을 주면 무작위 정책도 모든 test 과제를 풀었습니다. 시험지에 정답 후보가 거의 적혀 있으면 누가 풀어도 만점이 나오는 것처럼, 이 환경은 모델의 기여를 가려낼 수 없었습니다. 이 감사 결과가 다음 단계(정확 탐색 기반 벤치마크)의 출발점이 되었습니다.
-
-</details>
-
 | | |
 |---|---|
 | **Why this stage** | Before measuring anything, confirm that the full chain — frozen encoder → cache → learned geometry → flow planner → contract-checked tools — runs on GPUs with traceable inputs |

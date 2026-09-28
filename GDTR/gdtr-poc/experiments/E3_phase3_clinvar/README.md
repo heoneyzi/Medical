@@ -4,16 +4,6 @@
 
 > **Question —** Does the change a variant causes in the layer-wise trajectory carry information about pathogenicity — beyond what Evo 2's own likelihood already says?
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-염기 하나를 바꾼 서열(변이)과 원래 서열을 모델에 넣고, 각 층의 코사인 거리가 얼마나 달라지는지(ΔD_cos, 32차원)를 특징으로 썼습니다.
-15개 암 유전자의 ClinVar 변이 8,008개에서 병원성/양성 구분 AUROC 0.844를 얻었고, Evo 2 자체의 가능도(likelihood) 점수와 합치면 0.861로 통계적으로 유의하게 올랐습니다.
-비유하면 "최종 성적표(가능도)"만 보는 대신 "과목별 점수 변화(층별 변화)"까지 보면 추가 정보가 있다는 뜻입니다.
-다만 이것은 지표의 정보량을 확인하는 점검이지 임상용 변이 판정기가 아닙니다.
-
-</details>
-
 | | |
 |---|---|
 | **Status** | ✅ done (2026-04-28) — pilot → main → ensemble |

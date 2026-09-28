@@ -6,17 +6,6 @@
 
 ![Line B: TDiG multi-axis](https://img.shields.io/badge/Line%20B-TDiG%20multi--axis-2563eb?style=flat-square) ![Status: Done · team project](https://img.shields.io/badge/Status-Done%20%C2%B7%20team%20project-16a34a?style=flat-square) ![Role: Team member](https://img.shields.io/badge/Role-Team%20member-334155?style=flat-square)
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-TDiG(Think Deep in Genome)는 GDTR의 "방향(코사인) 한 가지" 정착 지표를 다섯 가지 기하 지표 × 세 가지 기준 = 17개 "정착 셀"로 넓힌 팀 후속 프로젝트입니다(YAICON 8회, 팀 띵디지놈).
-한 번의 순전파로 17개 값을 모두 계산하며, 22번 염색체에서 정한 기준을 17번 염색체에 적용해도 효과의 순위가 거의 그대로(ρ = 0.989) 유지되었습니다.
-여러 측정이 공통적으로 28–29층에서 급격한 변화를 보였는데(선형 probe 성능 급락, 선형 근사 붕괴), 이 관찰이 Line C(handoff) 연구의 출발점이 되었습니다.
-여러 각도에서 찍은 사진을 겹쳐 보면 한 장의 사진으로는 안 보이던 굴곡이 보이는 것과 같습니다.
-저는 팀원으로 참여했고, 코사인 렌즈의 정당성을 따로 검증한 [`cos_lens`](cos_lens/README.md) 확장은 제 포크에만 있습니다.
-
-</details>
-
 | | |
 |---|---|
 | **Status** | ✅ done (May–Jul 2026) — YAICON 8th; the team repository reports **1st prize** ([`TEAM_README.md`](TEAM_README.md)) |

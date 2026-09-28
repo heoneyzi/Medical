@@ -4,16 +4,6 @@
 
 > **Question —** Taking EXP2's writer → re-encoder → readout structure as fixed, can it be *used* — to trace output effects back to the input sequence, validate motif and variant candidates, explain benchmark differences, and generalise across chromosomes and checkpoints?
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-EXP3는 EXP2에서 확정한 늦은 층 구조를 출발점으로 삼아, 그 관점이 실제로 쓸모 있는지(출력 효과를 입력 서열까지 거꾸로 추적, 모티프·변이 검증, 벤치마크 차이 설명 등)를 검증하는 8단계 연구 설계입니다.
-결과를 본 뒤 분석을 고르는 "갈림길의 함정"을 막기 위해, 가능한 모든 분기의 판정 기준·임계값·대조군을 데이터를 열기 전에 선언하고 해시로 봉인하도록 코드가 강제합니다.
-시험 문제를 보기 전에 채점 기준표를 밀봉해 두는 것과 같습니다.
-아직 실제 모델로 돌린 과학적 결과는 없고, 장난감 런타임으로 모든 단계가 도달 가능한지 확인한 dry run과 테스트 38개(통과)만 있습니다.
-
-</details>
-
 | | |
 |---|---|
 | **Status** | 🔄 designed; dry run passes on a toy runtime (`scientific_evidence: false`); no real-model results yet |

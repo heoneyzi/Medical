@@ -19,19 +19,6 @@
 > [!TIP]
 > **TL;DR** — Drug programs stall when every promising compound shares one molecular skeleton. PhenoFocus asks whether a model that has learned to align chemical structure with *cell-image appearance* can retrieve compounds with the **same biological mechanism but an independent skeleton**. In an exploratory MVP on a **31-compound library**, feeding in a single HDAC-inhibitor hit put both of the library's other HDAC inhibitors inside the top 5 (ranks 1 and 4) — **AUROC 0.97, 6.2× top-5 enrichment, p = 0.02 (hypergeometric)** — and the rank-4 compound belongs to a *different chemical class* of HDAC inhibitor (Tanimoto 0.10 to the query). Small, single-query, structure-side only; see the scope notes.
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-신약을 찾을 때 출발점은 세포 실험에서 처음 효과가 확인된 화합물, 즉 **hit**입니다. 그런데 가진 hit들이 전부 같은 분자 골격(scaffold)이면, 그 골격에서 독성이나 특허 문제가 하나만 터져도 프로그램 전체가 멈춥니다. **PhenoFocus**는 "같은 자물쇠를 여는, 모양이 다른 열쇠"를 찾는 문제입니다 — 기전(작용 방식)은 같은데 화학 구조는 독립적인 후보를 AI로 찾아내는 것이죠.
-
-바탕이 되는 공개 모델 **PhenoCompass**(Genentech, bioRxiv 2026)는 화합물의 화학 구조와, 그 화합물을 처리했을 때 세포가 보이는 **Cell Painting 이미지**를 하나의 공유 임베딩 공간에 정렬해 둔 멀티모달 모델입니다. 학습에는 구조와 이미지가 모두 필요하지만, 검색할 때는 구조만 있으면 됩니다.
-
-지헌은 이 팀의 **팀장**으로서, 공개 체크포인트로 지금 당장 돌릴 수 있는 **구조 기반(Direction A) MVP**를 직접 설계·구현하고 서버에서 실행했습니다. HDAC 저해제 hit 하나를 넣자 모델은 라이브러리(31개)에 있던 나머지 HDAC 저해제 2개를 모두 top-5(1위·4위)로 끌어올렸습니다 — **AUROC 0.97, 6.2배 농축, p = 0.02**. 특히 4위 화합물은 입력 hit과 **화학 계열 자체가 다른** HDAC 저해제였습니다(구조 유사도 Tanimoto 0.10).
-
-이 프로젝트는 **2026 연구아이디어 사업화 경진대회 본선에 진출**했고 현재도 진행 중입니다. 다만 위 수치는 화합물 31개짜리 탐색적 MVP의 결과이며, 세포 이미지를 직접 모델에 넣는 교차 세포주 검증(Direction B)은 아직 로드맵 단계입니다.
-
-</details>
-
 | | |
 |---|---|
 | **Period** | 2026 – ongoing |

@@ -4,16 +4,6 @@
 
 > **Question —** Where exactly does the representation-to-output handoff happen, is its detection robust across chromosomes, model scales and architectures, and what does it imply for *which layer to read*?
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-층마다 표현의 크기 비(‖hℓ‖/‖hℓ₋₁‖)를 재서 handoff 시작 블록(onset)을 찾고, 이것이 염색체·모델 크기·아키텍처가 바뀌어도 같은 곳에서 나오는지 확인한 기반 실험입니다.
-Evo 2 7B는 세 염색체 모두 28번, 40B는 21번 블록에서 비율이 200배 이상 뛰었고, 그 전에는 어느 블록도 3.5배(40B는 5.3배)를 넘지 않았습니다.
-HyenaDNA와 NT-v2에서는 이런 급변이 없어 검출기가 판정을 보류했습니다.
-또 "onset보다 4블록 앞에서 읽어라"라는 라벨 없는 규칙이, 사후에 고른 최적 층에 비해 AUROC를 0.004–0.010만 잃는다는 실용적 결과도 얻었습니다 — 지도 없이도 "어디서 내려야 할지" 알려 주는 표지판과 같습니다.
-
-</details>
-
 | | |
 |---|---|
 | **Status** | 🔄 runs 2026-09-16 → 09-21 (archived 2026-09-21); base measurements of the ongoing paper |

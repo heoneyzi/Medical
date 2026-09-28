@@ -2,14 +2,6 @@
 
 # 🏃 `scripts_run/` — GeoACMG runners and analyses (stages ④–⑤)
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-GeoACMG(④–⑤단계) 결과를 만든 실행·분석 스크립트입니다. 스크립트마다 어떤 결과(R1–R11 등)를 만들었는지 표로 정리했습니다. 폴더 이름은 스크립트 안의 경로와 맞추기 위해 원래 이름을 그대로 썼습니다.
-
-</details>
-
-
 Scripts that produced the GeoACMG findings on the GPU container (comments are mostly Korean). Analyses read saved artifacts (feature store, checkpoints, per-run metrics) and write JSON into `artifacts/acmg/findings/`, collected here in `results/geoacmg_final/findings/` and `results/geoacmg_working_findings/`. The folder keeps its original name because the scripts call each other as `scripts_run/…`.
 
 | Script | Produces / does | Finding |
@@ -26,6 +18,5 @@ Scripts that produced the GeoACMG findings on the GPU container (comments are mo
 | `geometry_report.py`, `geometry_table.py` | Read-only summaries of the 15-run sweep | — |
 | [`export_stage/`](export_stage/README.md) | Finishing scripts of the main GeoACMG analysis | R1–R4, R7 |
 | [`late_analyses/`](late_analyses/README.md) | Readout ladder, information-source arms, holdout standardizer, margin extension | R2c–R2f, R8, R9 |
-
 
 **Paths.** `$GEOACMG_WORK` (project checkout on the GPU container), `$GEOWORK` (scratch/log directory) and `$HF_CACHE_DIR` stand for the machine paths; Python scripts expand `$GEOWORK` at runtime. Their inputs (feature store, checkpoints, margin arrays) are kept with the large artifacts of the local research archive.

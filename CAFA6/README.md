@@ -19,13 +19,6 @@
 > [!TIP]
 > **TL;DR** — CAFA 6 asks for a protein's functions, written as Gene Ontology (GO) terms, from its sequence alone: a hierarchical, extreme multi-label problem scored by information-accretion-weighted F-max. The five-person team trained on **82,404** labelled proteins and predicted for a **224,309-protein** test superset, exploring protein-language-model pipelines (ProtT5 fine-tuning, ESM-C embeddings, JEPA pre-training, a label-space JEPA) plus ontology-aware GOA ensembling — and finished with a **bronze medal**. Jiheon was a team member; his documented line was the **ProtT5 (T5) branch**.
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-CAFA 6는 단백질의 아미노산 서열만 보고 그 단백질이 하는 일을 Gene Ontology(GO)라는 표준 용어로 맞히는 국제 단백질 기능 예측 챌린지(Kaggle)입니다. 단백질을 "20가지 글자로 쓴 긴 문장"이라고 하면, GO는 그 문장이 무슨 뜻인지 적는 사전이고, 한 문장에 뜻(라벨)이 여러 개 붙습니다. 도서관 분류에 비유하면 "프로그래밍 › 파이썬" 태그를 붙인 책에는 "프로그래밍" 태그도 자동으로 붙어야 하듯, GO도 하위 기능을 가지면 상위 기능을 모두 가져야 하는 계층 구조(DAG)입니다. 평가는 희귀하고 구체적인 기능을 맞힐수록 점수를 더 주는 IA 가중 F-max로, 분자 기능(MF)·생물학적 과정(BP)·세포 내 위치(CC) 세 영역을 따로 채점해 평균합니다. 5인 팀(팀장 조윤진)은 82,404개 학습 단백질로 ProtT5·ESM-C·JEPA 기반 파이프라인과 GOA 앙상블을 시도했고, 224,309개 테스트 상위집합에 대한 예측으로 **동메달**을 받았습니다. 지헌은 팀원으로서 역할 분담에서 **ProtT5(T5) 라인과 T5 임베딩 비교 실험**을 맡았고, 데이터셋 정리·아이디어 노트를 작성했으며, 이후 공개 포크의 재현 문서를 코드 기준으로 정리했습니다. 어떤 제출이 메달 점수를 냈는지와 T5 비교 실험의 수치는 보관된 자료에 남아 있지 않습니다.
-
-</details>
-
 | | |
 |---|---|
 | **Period** | Jan – Feb 2026 (team kick-off 17 Jan; final submission deadline 2 Feb 2026) |

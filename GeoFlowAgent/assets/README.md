@@ -2,14 +2,6 @@
 
 # 🖼️ Figures
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-모든 그림은 `make_figures.py`가 저장된 결과 JSON에서 직접 그립니다.
-
-</details>
-
-
 All figures are drawn by [`make_figures.py`](make_figures.py) directly from the saved result JSON in [`../results/`](../results/README.md). Regenerate them with `python assets/make_figures.py` (NumPy + matplotlib).
 
 | Figure | Shows | Source files |

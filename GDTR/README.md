@@ -15,18 +15,6 @@
 > [!TIP]
 > **TL;DR** — Three lines of work on Evo 2 7B. **A · gDTR-PoC** built and validated the settling-depth lens behind the [GDTR paper](https://github.com/heoneyzi/Paper/blob/main/GDTR/README.md) (ICML 2026 GenBio Workshop, oral): splice sites settle ~2 layers early and a chr22 calibration keeps 94.6 % of the effect on held-out chr17. **B · TDiG** widened one metric into 17 geometric "settling cells" and saw linear probes lose genomic context at layers 28–29. **C · Handoff** *(ongoing, unpublished)* traces that late-stack event causally — so far, an MLP "writer" at block 28 and a mixer "re-encoder" at block 30 hand the residual stream over from representing sequence to predicting the next base.
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-이 폴더는 GDTR 논문과 그 이후의 연구를 실험 단위로 정리한 것입니다.
-**A (gDTR-PoC)** 는 DNA 언어모델 Evo 2 7B가 각 염기를 "몇 번째 층에서 정리하는지"를 재는 정착 깊이(settling depth) 지표를 만들고 검증했습니다 — HyenaDNA 개념 증명 → Evo 2 보정 → 17번 염색체 재현 → ClinVar 변이 → 4개 모델 비교.
-**B (TDiG)** 는 이 지표 하나를 17개의 기하학적 지표로 넓혔고, 28–29층에서 선형 probe가 유전체 문맥 정보를 급격히 잃는 현상을 찾았습니다.
-**C (Handoff, 진행 중)** 는 그 현상의 원인을 개입 실험으로 추적합니다: 28번 블록의 MLP가 새 방향을 쓰고(writer), 30번 블록의 mixer가 그것을 출력 형식으로 다시 부호화(re-encoder)합니다.
-비유하자면 모델 속 표현은 긴 릴레이 경주와 같은데, 우리는 "바통이 넘어가는 순간 앞 주자의 정보가 버려지는가, 요약되어 넘어가는가"를 묻고 있습니다 — 지금까지의 답은 "다음 염기 예측에 필요한 것만 남기는 요약"에 가깝습니다.
-저는 GDTR 논문의 저자이자 TDiG 팀원이며, C는 제가 진행 중인 논문 프로젝트입니다.
-
-</details>
-
 | | |
 |---|---|
 | **Period** | Apr 2026 – ongoing (paper line Apr–Jun 2026; TDiG May–Jul 2026; handoff follow-ups Sep 2026 –) |

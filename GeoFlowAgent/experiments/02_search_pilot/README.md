@@ -4,13 +4,6 @@
 
 > **Question —** If every state is labelled by exact search (minimum remaining cost V\*, action values Q\*, regret, all optimal actions) rather than by one reference trajectory, can the contributions of frozen features, learned geometry, DAgger and replanning be separated?
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-정답 경로 하나를 따라 하게 하는 대신, 환경을 정확히 탐색해 모든 상태의 남은 최소 비용(V*)과 최적 행동을 계산하도록 바꾼 210개 과제 파일럿입니다. 관측 후 재계획(0.8630)이 한 번에 계획하기(0.5731)와 같은 계산량의 blind 재계획(0.0859)보다 훨씬 좋다는 신호가 여기서 처음 나타났습니다. 동시에 무작위 정책도 41/41을 성공할 만큼 여전히 쉬운 문제였습니다. 너무 쉬운 모의고사에서는 실력 차이가 보이지 않는 것과 같아서, 다음 단계에서 더 어려운 hard-v2를 만들었습니다.
-
-</details>
-
 | | |
 |---|---|
 | **Why this stage** | In stage ① the contracts almost gave the answer away. Exact search labels every state against all optimal actions, and costly, low-quality or dead-end tools make the choice real |

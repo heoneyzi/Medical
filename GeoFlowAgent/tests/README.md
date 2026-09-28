@@ -2,14 +2,6 @@
 
 # 🧪 Tests
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-연구 코드 경로를 검사하는 34개 테스트 모듈입니다. 실행 결과는 295개 통과, 1개 선택 테스트 건너뜀입니다.
-
-</details>
-
-
 34 pytest modules (plus two `conftest.py`) covering the research code paths rather than only happy paths:
 
 | Area | Examples |

@@ -2,13 +2,6 @@
 
 # 📊 Saved results
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-README와 그림, 안내 문서의 모든 수치가 나온 저장 결과입니다. 단계별 폴더와, 그중 어떤 파일을 기준으로 읽으면 되는지 정리했습니다.
-
-</details>
-
 Every number and figure in this folder's pages comes from these files; [`verification/`](../verification/README.md) recomputes the headline ones. Machine paths inside some JSON/Markdown files are `$GEOFLOW_*` placeholders.
 
 | Folder | Stage | Contents |

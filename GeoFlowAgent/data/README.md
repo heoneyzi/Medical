@@ -2,14 +2,6 @@
 
 # 🗃️ Data — synthetic fixtures and schemas
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-테스트와 smoke 실행용 합성 fixture와 JSON schema가 들어 있습니다. ClinGen 기록은 실행할 때 `clingen.py`가 공개 저장소에서 내려받습니다.
-
-</details>
-
-
 Everything here is small, invented and used by the tests and smoke runs; real records are fetched at run time from their public sources.
 
 | Path | Content |

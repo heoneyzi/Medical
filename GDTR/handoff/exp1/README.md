@@ -4,16 +4,6 @@
 
 > **Question —** When the alignment between the state and the output frame collapses at block 28, is earlier computation *lost*, *diluted*, or *overwritten* — and does the late stack discard it or summarise it?
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-코사인 값은 "정렬 성분 ÷ 전체 크기"의 비율이라, 28번 블록에서 코사인이 무너졌다고 해서 앞의 정보가 사라졌다고 단정할 수 없습니다 — 분모(크기)가 폭발했을 수도 있기 때문입니다.
-EXP1은 분자와 분모를 따로 재어, 정렬 성분은 78배 커지는 동안 전체 크기가 242배 커진 "분모 효과"임을 보였고, 28번 직후 상태는 앞 상태로부터 81% 선형 복원되지만 30번 이후에는 27%만 복원됨을 확인했습니다.
-같은 용량의 디코더로 비교하면 다음 염기·확신도처럼 출력에 필요한 정보는 늘고, GC·유전체 영역 같은 서열 정보는 줄었습니다 — 버리는 것도 그대로 보존하는 것도 아닌 "출력을 위한 손실 압축"입니다.
-40개의 예측을 먼저 적어 두고 검증했으며(14개 실패·반증), 스스로 찾은 버그 17개와 감사 정정 내역도 모두 기록했습니다.
-
-</details>
-
 | | |
 |---|---|
 | **Status** | ✅ sessions 1–4b done (2026-09-18 → 09-19); 40 pre-registered predictions, 14 failed or refuted, 6 half-supported |

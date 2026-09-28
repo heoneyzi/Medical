@@ -4,13 +4,6 @@
 
 > **Question —** On tasks built from ClinGen expert records, do the tasks really need several tools, does the frozen MedCPT space carry execution information that distances can read, and does observe→replan still help?
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-ClinGen 전문가들이 변이마다 어떤 근거를 적용(Met)하고 기각(Not Met)했는지 남긴 기록으로 2,921개의 변이 해석 과제를 만들고, 584개 개발(dev) 과제에서 분석했습니다. 대부분의 과제는 한 종류의 도구만으로 풀 수 없었고(격차 0.6898), 동결 MedCPT 벡터에는 다음 행동 정보가 선형으로 들어 있었지만(0.5523 vs 우연 0.2896) 단순 거리로는 읽히지 않았습니다(약 0.50). 학습된 기하 모듈들은 정렬 능력에서 크게 달랐지만 실제 행동 선택의 차이는 작았고, 새 시드에서는 우열이 뒤집혔습니다. 도서관에 책은 다 있어도 색인이 없으면 찾을 수 없는 것처럼, 정보가 있는 것과 그것을 '읽는 방법'은 별개였습니다. 관측 후 재계획은 여기서도 0.5993으로 가장 뚜렷한 효과였습니다.
-
-</details>
-
 | | |
 |---|---|
 | **Why this stage** | ClinGen records both applied (**Met**) and rejected (**Not Met**) evidence, so an environment built from them contains tool calls that cost something and return nothing useful — exactly where planning should matter |

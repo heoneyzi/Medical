@@ -107,10 +107,6 @@ docs/notebook-guide.md        Exact historical cell order and prerequisites
 docs/reproduction-notes.md    Provenance, discrepancies and limitations
 ```
 
-## 한국어 요약
-
-2024년 deep daiv. 제8회 오픈 세미나의 **보강재 팀(강지헌·권보영·황재령)** 프로젝트입니다. BraTS 2018 뇌 MRI를 이용해 U-Net, WC 블록 추가 모델, 단순화한 BU-Net을 비교하며 의료영상 분할 구조를 탐구했습니다. 당시 연구 노트북과 모델 구현을 보존하고, 실행 안내와 사용자 이미지 비교 데모를 추가했습니다. 논문 원형을 완전히 재현한 결과나 검증된 의료 성능을 주장하지 않으며, 의료 데이터와 학습 가중치는 포함하지 않습니다.
-
 ## Attribution
 
 The project presentation names *BU-Net: Brain Tumor Segmentation Using Modified U-Net Architecture* by Mobeen Ur Rehman, SeungBin Cho, Jee Hong Kim and Kil To Chong as its research reference. U-Net and BU-Net remain the work of their respective paper authors. The source directory also contained AIKU/CS231n-derived teaching exercises; those separate materials are not bundled here. No original software license was found in the source folder, so this restoration does not assign a new license to the historical team code or third-party material.

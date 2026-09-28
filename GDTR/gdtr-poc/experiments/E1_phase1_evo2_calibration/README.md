@@ -4,16 +4,6 @@
 
 > **Question —** What does the lens need to work on Evo 2 7B, and is there a genome-scale signal on a whole chromosome?
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-Evo 2 7B(32개 블록)에 정착 깊이 지표를 옮기면서 기준값(γ = 0.397)을 22번 염색체에서 한 번 정하고 고정했습니다.
-뜻밖에 마지막 블록(31번)은 입력을 그대로 통과시키는 "빈 블록"이어서, 비교 기준을 최종 정규화 이후의 상태로 바꿔야 했습니다.
-염색체 전체(약 7,800만 위치)에서 스플라이스 부위가 인트론보다 약 2층 먼저 정착했지만, 엑손과 인트론의 차이는 작고 방향도 E0와 반대였습니다.
-자로 비유하면 눈금의 0점과 끝점을 먼저 확인한 뒤 실제 길이를 잰 단계입니다.
-
-</details>
-
 | | |
 |---|---|
 | **Status** | ✅ done (2026-04-27) — 8/8 sub-stages pass their verifier (`scripts/verify_phase.py`) |

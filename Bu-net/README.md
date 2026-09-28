@@ -19,13 +19,6 @@
 > [!TIP]
 > **TL;DR** — Brain-tumor segmentation means coloring every MRI pixel as healthy tissue or one of three tumor sub-regions. Team 보강재 (deep daiv. 2024 Medical AI) studied **BU-Net** — a U-Net with *wide-context* (WC) and *residual-extended-skip* (RES) blocks — and built PyTorch U-Net, U-Net + WC and a **Simplified BU-Net** on 2-D BraTS 2018 slices, presenting a qualitative comparison at the 8th deep daiv. Open Seminar. A synthetic re-check for this portfolio shows the Simplified BU-Net is the only BU-Net variant in the code that runs end-to-end (97.4 M parameters, vs 31.0 M for the plain U-Net); no Dice score was ever recorded. Jiheon led the team (CV).
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-뇌종양 분할(segmentation)은 MRI 영상의 모든 픽셀을 "정상 조직 / 괴사·비조영 종양 핵 / 부종 / 조영 증강 종양"으로 색칠하는 문제입니다. 지도에서 호수·습지·숲의 경계를 한 픽셀씩 칠하는 일과 비슷한데, 종양은 사진 전체의 극히 일부라서 "전부 정상"이라고만 칠해도 정확도가 높게 나오는 함정이 있습니다. deep daiv. 2024 봄 Medical AI의 **보강재 팀(강지헌·권보영·황재령)** 은 U-Net에 넓은 맥락을 보는 WC 블록과 다중 스케일 스킵 경로(RES 블록)를 더한 **BU-Net** 논문을 리뷰하고, 제한된 GPU에서도 돌아가도록 RES 블록을 하나로 줄인 **단순화 BU-Net**을 U-Net, U-Net+WC와 함께 BraTS 2018 2D 슬라이스로 구현·비교해 제8회 deep daiv. 오픈 세미나에서 발표했습니다. 지헌은 CV 기준 **팀장**으로, 논문 리뷰·전처리 논문 리뷰와 BU-Net 구현 초안을 작성했고 2026년에는 연구 노트북을 복원해 비교 뷰어·스모크 테스트·재현 노트를 갖춘 공개 아카이브로 정리했습니다. 이번 포트폴리오를 위해 합성 입력으로 다시 점검한 결과, 코드의 BU-Net 계열 중 끝까지 실행되는 모델은 단순화 BU-Net(파라미터 9,740만 개)뿐이었고 전체 BU-Net 초안들은 1억 400만~1억 7,700만 개였습니다. 함께 보관된 Notion 보고서는 BraTS 2019에서 3D U-Net 3단 캐스케이드를 시도한 별도 트랙으로, 최종 정확도가 약 12%에 그친 원인을 솔직하게 분석합니다. 정량적 분할 성능(Dice 등)은 어느 트랙에서도 검증된 값이 없습니다.
-
-</details>
-
 | | |
 |---|---|
 | **Period** | Spring 2024 (paper reviews May 2024; team repository commits 17 May – 5 Jul 2024) · archive restored Sep 2026 |

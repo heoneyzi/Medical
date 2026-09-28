@@ -4,16 +4,6 @@
 
 > **Question —** Does the change really start at block 28, what distinguishes block 28 from block 30, why do these particular branches explode, and does EXP1 hold up under intervention?
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-EXP2는 블록의 각 가지(mixer, MLP)를 하나씩 끄거나 크기를 바꾸는 개입 실험으로 늦은 층의 역할을 나눴습니다.
-28번 블록의 MLP는 새 방향을 **쓰는(writer)** 단계이고, 30번 블록은 MLP 없이 mixer만으로 그것을 출력 형식으로 **다시 부호화(re-encoder)** 하며, 마지막 31번 블록은 아무 기여도 하지 않았습니다.
-눈에 띄는 수십만 배의 크기 증가는 정작 출력에 영향이 없었고(크기를 반으로 줄여도 변화 0), 중요한 것은 쓰인 **방향**이었습니다 — 목소리 크기가 아니라 말의 내용이 결과를 바꾸는 것과 같습니다.
-또 가중치만 보고도 어느 블록이 writer/re-encoder인지 4개 체크포인트 모두에서 맞혔고, 40B 모델에서는 발표된 onset 위치를 독립적으로 재현했습니다.
-
-</details>
-
 | | |
 |---|---|
 | **Status** | ✅ done (2026-09-20) — 30 experiments, 39 recorded findings |

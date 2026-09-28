@@ -17,19 +17,6 @@
 > [!TIP]
 > **TL;DR** — GeoFlowAgent is a tool-using agent for genomic variant interpretation. Frozen biomedical encoders (MedCPT and others) turn each workflow state into vectors, a small learned geometry head scores how close a state is to the goal, and a flow-matching planner proposes the whole remaining plan; the agent runs the first tool, observes the result and replans. Five experimental stages — from a 12-task pilot to 2,921 tasks built from ClinGen expert records — lead to three conclusions: **observing and replanning is the dependable win** (goal completion 0.4028 vs 0.1233 one-shot on the held-out synthetic test; 0.5993 vs 0.1169 on 584 ClinGen development tasks), **frozen encoders carry execution information that a learned readout exposes**, and **the "best" distance geometry depends on how the space is read**.
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-GeoFlowAgent는 유전 변이 해석처럼 여러 분석 도구를 차례로 불러야 하는 일을 계획하는 **도구 사용 에이전트**입니다. 이미 학습된 생의학 언어모델(MedCPT 등)은 고정(frozen)한 채, 그 임베딩 공간 위에 작은 "기하(geometry)" 모듈과 flow-matching 계획기만 학습합니다. 에이전트는 첫 도구를 실행하고, 결과를 보고, 다시 계획합니다.
-
-실험은 다섯 단계로 진행했고, 각 단계는 앞 단계가 보여 주지 못한 것을 확인하도록 설계했습니다: 12개 과제의 합성 파일럿 → 정확 탐색으로 정답을 만든 210개 과제 → 사전등록과 1회 test를 둔 240개 과제(hard-v2) → ClinGen 전문가 기록으로 만든 2,921개 변이 해석 과제(GeoACMG) → 7개 시드·readout·MedCPT 제거 후속 분석.
-
-결론은 세 가지입니다. ① "실행 → 결과 관측 → 재계획"이 한 번에 계획하는 방식보다 확실히 낫습니다(hard-v2 test 0.4028 vs 0.1233, ClinGen 0.5993 vs 0.1169). ② 동결 모델의 공간에는 실행 정보가 들어 있고, 학습된 readout이 그 정보를 읽어 냅니다. ③ 어떤 거리 기하가 가장 좋은지는 공간을 읽는 방식에 따라 달라집니다. 탐정에 비유하면, 수사 계획을 처음에 한꺼번에 짜는 것보다 단서를 하나 확인할 때마다 다음 조사처를 다시 정하는 쪽이 사건을 훨씬 잘 풀었습니다.
-
-단계별 이유와 결과는 [연구 안내](docs/README.md)에 한국어로 정리했습니다.
-
-</details>
-
 | | |
 |---|---|
 | **Period** | Sep 2026 |

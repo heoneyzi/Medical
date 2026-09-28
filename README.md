@@ -12,13 +12,6 @@
 
 Six projects that follow the flow of biological information — DNA → RNA and cell state → protein → cellular phenotype → clinic. Each folder holds a project README, curated code, results and one README per experiment.
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-유전 정보가 흘러가는 순서(DNA → RNA·세포 상태 → 단백질 → 세포 표현형 → 임상)를 따라 여섯 프로젝트를 정리했습니다. **GDTR**은 DNA 언어모델 내부를 층별로 해석하고, **GeoFlowAgent**는 고정된(frozen) 임베딩 공간에서 유전체 도구 사용을 계획하는 에이전트입니다. **VCC 2026**은 처음 보는 세포주에서 유전자를 껐을 때의 반응을 예측하는 챌린지로 팀장을 맡고 있고, **CAFA 6**는 단백질 서열만으로 기능을 맞히는 대회로 동메달을 받았습니다. **PhenoFocus**는 세포 이미지로 "같은 작용, 다른 골격"의 후보 약물을 찾는 프로젝트(팀장, 본선 진출)이며, **BU-Net**은 뇌종양 MRI 분할 모델 경량화 프로젝트(팀장)입니다. 비유하자면 설계도(DNA)를 읽는 법부터, 공장(세포)이 어떻게 반응하는지, 완제품(단백질·약)이 무엇을 하는지까지 한 줄로 이어 보는 구성입니다.
-
-</details>
-
 ## 🧬 Where each project sits
 
 ```mermaid

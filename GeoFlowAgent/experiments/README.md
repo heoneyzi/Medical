@@ -2,13 +2,6 @@
 
 # 🔬 GeoFlowAgent experiments — five stages, each built on what the last one could not show
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-다섯 단계 실험의 목차입니다. 각 단계는 앞 단계의 감사 결과(무작위 정책도 성공하는 쉬운 벤치마크, 시드와 readout에 따라 바뀌는 우열 등)를 바탕으로 설계했습니다. 아래 카드마다 **왜 이 단계를 했는지, 무엇을 했는지, 어떤 결과가 나왔는지, 그래서 다음에 무엇을 했는지**를 정리했고, 단계별 페이지에는 설정·수치·파일 지도가 있습니다.
-
-</details>
-
 ```mermaid
 %%{init: {"flowchart": {"wrappingWidth": 360}}}%%
 flowchart TB

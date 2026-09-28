@@ -2,14 +2,6 @@
 
 # 💻 `src/geoflowagent` — code map
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-GeoFlowAgent와 GeoACMG의 전체 라이브러리(83개 모듈)입니다. 데이터·계약, 정확 탐색, 동결 임베딩, 기하/State Flow 모델, 학습·평가, ClinGen 기반 GeoACMG 분석으로 나뉩니다. 신뢰구간이 0을 포함하면 UNRESOLVED로 판정하는 등 연구의 증거 규칙이 코드로 강제됩니다.
-
-</details>
-
-
 The library (83 modules) behind every stage: the GeoFlowAgent core plus the GeoACMG extension and its "finish"/"flowfast" analyses. Console entry point: `geoflow = geoflowagent.cli:main`; GeoACMG: `python -m geoflowagent.geoacmg`.
 
 | Package | Responsibility | Used by stage |

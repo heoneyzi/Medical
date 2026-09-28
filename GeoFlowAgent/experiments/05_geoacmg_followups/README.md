@@ -4,13 +4,6 @@
 
 > **Question —** Are the geometry and frozen-representation effects from stage ④ robust to more training seeds, to *how* the learned space is read out, and to removing the frozen view altogether?
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-시드를 7개로 늘리고, 같은 학습 공간을 여러 방식(readout)으로 읽어 보고, MedCPT 입력을 지운 채 다시 학습했습니다. cosine이 Euclidean보다 크게 앞선 정렬 차이(+0.1523)는 각 모델 고유의 에너지로 읽을 때 나타났고, 표준화 cosine으로 읽으면 +0.0197로 줄며(구간이 0 포함) whitening으로 읽으면 반대(−0.0368)가 되었습니다. 행동 지표는 시드 기준 구간에서는 0을 포함했고 유전자 기준 구간에서는 작은 차이가 남아, '재학습 안정성'과 '유전자 간 일반화'가 서로 다른 질문임을 보여 줍니다. 같은 사진도 보정 필터마다 순위가 바뀌는 사진 대회처럼, 기하의 '1등'은 읽는 방식에 따라 달라졌습니다. MedCPT를 지우면 regret이 +0.0441 나빠져, 에이전트가 동결 표현을 실제로 활용한다는 근거를 얻었습니다.
-
-</details>
-
 | | |
 |---|---|
 | **Why this stage** | Stage ④ showed large ordering gaps between geometries but small planning gaps, and two new seeds flipped a planning sign — so the geometry claim needed stress tests before any conclusion |

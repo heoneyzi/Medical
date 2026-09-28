@@ -4,16 +4,6 @@
 
 > **Question —** Is the early settling at splice donors driven by the 2-nt GT motif itself, or by the surrounding sequence context ("grammar")?
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-스플라이스 부위의 핵심 두 글자(GT)와 그 주변 서열 중 무엇이 빠른 정착을 만드는지 직접 서열을 바꿔(Perturbation) 확인했습니다.
-GT를 AA로 바꾸면 정착이 조금 늦어졌고(0.46층), 반대로 GT는 두고 주변 ±100bp를 섞으면 정착이 3.18층이나 빨라졌습니다.
-문장에서 핵심 단어는 그대로 두고 앞뒤 문맥만 뒤섞으면 오히려 "쉽게" 읽혀 버리는 것과 비슷합니다 — 실제 스플라이스 부위는 주변 문맥까지 통합하느라 더 깊이 처리된다는 해석입니다.
-두 조작이 깊이를 반대 방향으로 움직인다는 점이 논문의 "양방향(bidirectional)" 주장의 근거입니다.
-
-</details>
-
 | | |
 |---|---|
 | **Status** | ✅ done (2026-05-04) — added during the v11 revision |

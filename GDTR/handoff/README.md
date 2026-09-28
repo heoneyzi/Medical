@@ -9,17 +9,6 @@ Every depth readout in Lines A–B changes abruptly near the top of Evo 2 7B. Th
 > [!WARNING]
 > **Ongoing, unpublished work.** This is Jiheon's current paper project. Code, result files, figures and the internal result summaries are included; the manuscript and draft text are not. Numbers are internal results, not peer-reviewed claims, and may change.
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-Evo 2 7B의 28–30번 블록에서는 내부 표현의 크기가 수백~수십만 배로 뛰고, 선형 probe로 읽히던 유전체 문맥 정보가 급격히 줄어듭니다.
-이 연구는 그 구간이 앞 층의 계산을 **버리는 바통터치**인지, 출력에 필요한 형태로 **요약하는 과정**인지를 인과 실험으로 가립니다.
-지금까지의 결과는 "요약"에 가깝습니다: 28번 블록 직후의 상태는 앞 상태로부터 여전히 81% 복원되고, 다음 염기 예측과 모델 자신의 확신도 정보는 오히려 늘어나며, 실제 정보 손실은 30번 블록에서 일어납니다.
-비유하자면 긴 보고서를 넘겨받은 사람이 원문을 버리는 게 아니라, 결론에 필요한 부분만 남긴 요약본을 만드는 과정입니다.
-최종 목표는 이 요약을 거꾸로 따라가 입력 서열에서 새로운 특징(모티프 등)을 찾는 것입니다(EXP3, 설계 단계).
-
-</details>
-
 ## 🧭 The event
 
 In Evo 2 7B (32 blocks), block 28's MLP writes an update ~235× the size of the stream it joins (**onset / writer**; block-output norm ratio 214–252×), block 30's mixer rewrites the state into the output frame (**re-encoder**, norm ×7 · 10⁵), and block 31 contributes nothing. Before the onset, genomic context is linearly readable; after it, next-base prediction keeps improving while context readability falls. The same pattern appears at block 21 → 23 of the 40B model and 22 → 23 of the 1B model.

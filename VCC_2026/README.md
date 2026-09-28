@@ -18,13 +18,6 @@
 > [!TIP]
 > **TL;DR** — Arc Institute's Virtual Cell Challenge 2026 asks for *zero-shot* predictions of single-cell responses to CRISPRi gene knockdowns in cell lines whose responses are never shown. As team lead, Jiheon built a training-free, submission-ready pipeline (frozen context representation → transfer of effects measured in similar reference cell lines → raw-count generator; 18,533 genes × 400 cells per perturbation) and a leakage-resistant shadow benchmark around it. On a public Jiang24 IFNG split with BxPC3 held out, raw nearest-context transfer reached **0.5794 public-proxy PDS** (no-effect 0.5102), and frozen STATE/STACK encoders did not beat it. This is a proxy result, **not an official leaderboard score**.
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-Arc Institute의 Virtual Cell Challenge 2026은 한 번도 반응을 본 적 없는 새로운 세포주에서, 특정 유전자를 CRISPRi로 억제하는 Perturbation을 가했을 때 세포 속 유전자 발현이 어떻게 바뀌는지를 제로샷으로 예측하는 대회입니다. 비유하자면, 처음 만난 사람의 평소 모습(대조군 세포)만 보고, 다른 사람들이 같은 약을 먹었을 때 남긴 기록(Replogle 공개 데이터)을 참고해 이 사람의 반응을 맞히는 문제입니다. 강지헌은 6인 팀(YAI Functional Genomics 2)의 팀장으로서, 학습 없이 동작하는 제출용 파이프라인(세포 상태 표현 → 닮은 세포주의 Perturbation 효과 이식 → 원시 카운트 세포 생성, 유전자 18,533개 × Perturbation당 세포 400개)과 정답 누출을 막는 섀도 평가 체계를 만들었습니다. 공개 데이터 Jiang24(IFNG)에서 BxPC3 세포주를 통째로 숨긴 분할에서, 가장 닮은 세포주의 효과를 그대로 옮기는 방법이 공개 프록시 PDS 0.5794(효과 없음 기준 0.5102)를 기록했으며, 이는 공식 리더보드 점수가 아닙니다. STATE·STACK 같은 대형 파운데이션 모델을 고정 표현기로 써도 이 단순한 통계적 이식을 넘지 못했고, 2026 공식 6개 지표에서는 한 지표(Jaccard 또는 PDS)가 전체 순위를 사실상 좌우한다는 점도 확인했습니다. 팀원들의 리더보드 실험(정유민의 공개 스크린 조회 방식은 validation 리더보드 181팀 중 30위)과 함께 챌린지는 진행 중입니다.
-
-</details>
-
 | | |
 |---|---|
 | **Period** | Aug 2026 – present (challenge launched 20 Aug 2026; team kickoff 22 Aug 2026) |

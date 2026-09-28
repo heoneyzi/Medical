@@ -6,17 +6,6 @@
 
 ![Line B: cos_lens](https://img.shields.io/badge/Line%20B-cos__lens-2563eb?style=flat-square) ![Status: Done · exploratory](https://img.shields.io/badge/Status-Done%20%C2%B7%20exploratory-16a34a?style=flat-square)
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-"왜 하필 코사인(방향)으로 재는가, 왜 32개 층을 다 쓰는가"라는 심사자형 질문에 실험 10개로 답한 연구입니다.
-크기(norm) 기반 정착은 거의 모든 위치가 마지막 두 층에 몰려 정보가 없었고, 모델의 출력층은 크기 변화를 사실상 읽지 못했습니다(JS 2.8 × 10⁻⁵).
-같은 크기의 개입을 줬을 때 "방향"을 바꾸는 쪽이 "크기"를 바꾸는 쪽보다 출력을 40–145배 더 바꿨고, 방향 동결 대 크기 동결은 133배 차이였습니다.
-층 순서를 섞으면 성능이 떨어져, "몇 번째 층에서 변했는가"가 실제 정보임도 확인했습니다 — 악보에서 음 자체뿐 아니라 음의 순서가 곡을 만드는 것과 같습니다.
-다만 "코사인 정착 층 = 인과적으로 확정되는 층"이라는 정밀 일치는 약하게만 성립했고, 그대로 보고합니다.
-
-</details>
-
 | | |
 |---|---|
 | **Status** | ✅ done — exploratory follow-up in Jiheon's fork of the TDiG repository (not in the team repository) |

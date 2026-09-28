@@ -2,14 +2,6 @@
 
 # 🧪 Late analyses (stage ⑤)
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-⑤단계 후속 분석 — readout 사다리(R8), 정보원 분리(R9), train 적합 표준화(R2d), 새 시드 margin 확장 — 의 스크립트와 실행 로그입니다.
-
-</details>
-
-
 Stage-⑤ analysis scripts with their run logs. Each loads the saved feature store and checkpoints once and writes one findings JSON; the docstrings (Korean) state the question and the result that would overturn the current reading.
 
 | Script | Question | Output (in [`results/geoacmg_working_findings/`](../../results/geoacmg_working_findings/)) |

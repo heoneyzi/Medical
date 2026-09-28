@@ -6,16 +6,6 @@ The code, results and write-ups behind the [GDTR paper](https://github.com/heone
 
 ![Line A: GDTR lens](https://img.shields.io/badge/Line%20A-GDTR%20lens-2563eb?style=flat-square) ![Status: Done · paper accepted](https://img.shields.io/badge/Status-Done%20%C2%B7%20paper%20accepted-16a34a?style=flat-square) ![Tests: 21 passed · 6 skipped](https://img.shields.io/badge/Tests-21%20passed%20%C2%B7%206%20skipped-334155?style=flat-square)
 
-<details>
-<summary><b>🇰🇷 한국어 요약</b></summary>
-
-GDTR 논문의 실험 코드와 결과를 단계별로 정리한 폴더입니다.
-작은 모델(HyenaDNA)로 방법이 통하는지 먼저 확인한 뒤(E0), Evo 2 7B에서 기준값을 정하고(E1), 다른 염색체·변이·모델에서 재현했으며(E2–E7), 논문 수정 단계에서 엔트로피·모티프 대조 실험과 염색체 간 전이 검증을 추가했습니다(E8–E10).
-각 단계는 미리 정한 통과 기준(gate)과 자동 검증 스크립트로 확인했습니다.
-비유하자면 새 온도계를 만든 뒤 여러 장소와 조건에서 같은 값을 주는지 하나씩 확인하는 과정입니다.
-
-</details>
-
 > [!NOTE]
 > **Provenance.** Curated copy of the team's proof-of-concept repository `darejinn/gDTR-PoC` (MIT, © 2026 Yoonjin Cho — see [`LICENSE`](LICENSE)). Code and result files are unchanged except that hard-coded server roots were replaced with `/path/to/…` placeholders and host names were redacted. Manuscript sources, DOCX drafts, revision memos, PDF duplicates of figures, logs and data caches were left out.
 
